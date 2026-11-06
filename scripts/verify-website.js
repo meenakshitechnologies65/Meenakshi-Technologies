@@ -6,6 +6,7 @@ const routes = [
   '/',
   '/about',
   '/products',
+  '/products/essl-k90-pro-biometric-attendance',
   '/products/essl-k30-pro-biometric-attendance',
   '/products/biomax-speedface-5-ai-face-recognition-terminal',
   '/products/electromagnetic-door-lock-600lbs',

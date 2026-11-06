@@ -172,14 +172,14 @@ function initBiometricWizard() {
           };
         }
         return {
-          title: 'eSSL K30 Pro Biometric Terminal + 600 lbs EM Lock Kit',
+          title: 'eSSL K90 Pro Biometric Terminal + 600 lbs EM Lock Kit',
           brand: 'eSSL Access Security',
           category: 'Biometric Door Locking Solution',
           image: '/images/products/em-lock-600lbs.svg',
           slug: 'electromagnetic-door-lock-600lbs',
           desc: 'Complete single-door access control package combining fingerprint terminal, 600 lbs heavy-duty magnetic lock, exit switch, and battery backup.',
           specs: ['🧲 600 lbs (280 kg) Force', '⚡ Fail-Safe Operation', '🔘 Push-to-Exit Switch', '🔋 Power Supply & Battery'],
-          model: 'eSSL K30 Pro + EM Lock Kit'
+          model: 'eSSL K90 Pro + EM Lock Kit'
         };
       }
 
@@ -255,14 +255,14 @@ function initBiometricWizard() {
 
       // 8. Small Office (1-25 Staff Default)
       return {
-        title: 'eSSL K30 Pro Biometric Attendance Machine',
+        title: 'eSSL K90 Pro Biometric Attendance Machine',
         brand: 'eSSL Genuine',
         category: 'Fingerprint Biometric Attendance',
-        image: '/images/products/essl-k30-pro.svg',
-        slug: 'essl-k30-pro-biometric-attendance',
-        desc: 'India’s most dependable fingerprint attendance device for small offices with built-in battery backup, USB/TCP/IP communication, and free payroll software.',
-        specs: ['⚡ < 1s Quick Verification', '👥 1,000 Fingerprints', '🔋 Built-in Battery Backup', '📊 Tally & Excel Sync'],
-        model: 'eSSL K30 Pro'
+        image: '/images/products/essl-k90-pro.svg',
+        slug: 'essl-k90-pro-biometric-attendance',
+        desc: 'India’s most dependable fingerprint attendance device for small offices with built-in battery backup, USB/TCP/IP communication, and free payroll software integration.',
+        specs: ['⚡ < 1s Quick Verification', '👥 1,000 Fingerprints', '🔋 Built-in Battery Backup', '📊 Excel & HRMS Sync'],
+        model: 'eSSL K90 Pro'
       };
     }
   };

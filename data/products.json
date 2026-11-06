@@ -1,5 +1,46 @@
 [
   {
+    "id": "essl-k90-pro",
+    "name": "eSSL K90 Pro",
+    "slug": "essl-k90-pro-biometric-attendance",
+    "brand": "eSSL",
+    "category": "Fingerprint Biometric Devices",
+    "tagline": "Standalone Fingerprint Time Attendance Terminal with Built-in Battery Backup",
+    "image": "/images/products/essl-k90-pro.svg",
+    "capacity": {
+      "fingerprints": "1,000 templates",
+      "cards": "1,000 RFID cards",
+      "transactions": "100,000 logs"
+    },
+    "specs": {
+      "display": "2.8-inch TFT Color Display",
+      "sensor": "High Precision Optical 500 DPI Sensor",
+      "communication": "TCP/IP, USB Host, USB Client",
+      "powerSupply": "12V DC 1.5A with Built-in Battery Backup",
+      "verificationSpeed": "< 1 second",
+      "identificationMode": "Fingerprint, RFID Card, PIN Password",
+      "operatingTemp": "0°C to 45°C",
+      "operatingHumidity": "20% - 80%",
+      "dimension": "185 x 140 x 38 mm"
+    },
+    "features": [
+      "Built-in battery backup providing continuous operation during power cuts",
+      "High-speed 500 DPI optical sensor with scratch-resistant glass",
+      "TCP/IP network push technology for centralized office data sync",
+      "USB pen drive direct report download without computer connection",
+      "Voice guidance and multi-color LED punch status indicator",
+      "Direct integration with eTimeTrackLite and Microsoft Excel payroll export"
+    ],
+    "applications": [
+      "Offices and Corporate Branches (10 to 200 staff)",
+      "Retail Showrooms, Boutiques and Outlets",
+      "Educational Institutes, Coaching Centers and Schools",
+      "Hospitals, Clinics and Diagnostic Laboratories"
+    ],
+    "installationInfo": "Wall-mountable with standard bracket. Connects via CAT6 network cable to LAN router or standalone with USB.",
+    "popular": true
+  },
+  {
     "id": "essl-k30-pro",
     "name": "eSSL K30 Pro",
     "slug": "essl-k30-pro-biometric-attendance",

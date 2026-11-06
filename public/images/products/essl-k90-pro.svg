@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="sensorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <!-- Device Chassis -->
+  <rect x="50" y="30" width="300" height="260" rx="18" fill="url(#bodyGrad)" filter="url(#shadow)" stroke="#334155" stroke-width="2"/>
+  <!-- Accent Silver Trim -->
+  <rect x="62" y="42" width="276" height="236" rx="12" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 2"/>
+  
+  <!-- Screen Section -->
+  <rect x="75" y="55" width="160" height="100" rx="8" fill="#000" stroke="#1e293b" stroke-width="2"/>
+  <rect x="80" y="60" width="150" height="90" rx="6" fill="url(#screenGrad)"/>
+  <text x="155" y="85" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">eSSL K30 Pro</text>
+  <text x="155" y="112" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle">09:42:18</text>
+  <text x="155" y="134" font-family="system-ui, sans-serif" font-size="10" fill="#bae6fd" text-anchor="middle">FRIDAY, NOV 06 2026</text>
+  
+  <!-- Optical Fingerprint Sensor -->
+  <rect x="250" y="55" width="75" height="100" rx="10" fill="#020617" stroke="#334155" stroke-width="2"/>
+  <rect x="257" y="65" width="61" height="80" rx="8" fill="url(#sensorGrad)"/>
+  <path d="M287 78 C278 78 271 85 271 94 C271 106 287 114 287 130" fill="none" stroke="#ccfbf1" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M287 84 C281 84 276 89 276 96 C276 104 287 112 287 125" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M294 92 C294 88 290 85 287 85" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Keypad Area -->
+  <g fill="#334155">
+    <rect x="75" y="170" width="34" height="24" rx="4"/><text x="92" y="186" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">1</text>
+    <rect x="117" y="170" width="34" height="24" rx="4"/><text x="134" y="186" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">2</text>
+    <rect x="159" y="170" width="34" height="24" rx="4"/><text x="176" y="186" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">3</text>
+    <rect x="201" y="170" width="34" height="24" rx="4"/><text x="218" y="186" font-family="sans-serif" font-size="12" fill="#38bdf8" text-anchor="middle">ESC</text>
+    
+    <rect x="75" y="202" width="34" height="24" rx="4"/><text x="92" y="218" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">4</text>
+    <rect x="117" y="202" width="34" height="24" rx="4"/><text x="134" y="218" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">5</text>
+    <rect x="159" y="202" width="34" height="24" rx="4"/><text x="176" y="218" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">6</text>
+    <rect x="201" y="202" width="34" height="24" rx="4"/><text x="218" y="218" font-family="sans-serif" font-size="12" fill="#38bdf8" text-anchor="middle">▲</text>
+
+    <rect x="75" y="234" width="34" height="24" rx="4"/><text x="92" y="250" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">7</text>
+    <rect x="117" y="234" width="34" height="24" rx="4"/><text x="134" y="250" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">8</text>
+    <rect x="159" y="234" width="34" height="24" rx="4"/><text x="176" y="250" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle">9</text>
+    <rect x="201" y="234" width="34" height="24" rx="4"/><text x="218" y="250" font-family="sans-serif" font-size="12" fill="#22c55e" text-anchor="middle">OK</text>
+  </g>
+  <!-- Card Badge / Battery Indicator -->
+  <rect x="250" y="170" width="75" height="88" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="287" cy="195" r="14" fill="#0369a1" opacity="0.3"/>
+  <circle cx="287" cy="195" r="8" fill="#38bdf8"/>
+  <text x="287" y="222" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">RFID CARD</text>
+  <text x="287" y="244" font-family="sans-serif" font-size="8" font-weight="bold" fill="#22c55e" text-anchor="middle">BATTERY READY</text>
+</svg>
