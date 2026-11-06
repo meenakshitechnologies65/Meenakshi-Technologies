@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <rect x="65" y="25" width="270" height="270" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 8px 14px rgba(0,0,0,0.3))"/>
+  <rect x="85" y="45" width="230" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="120" cy="75" r="8" fill="#ef4444"/>
+  <circle cx="280" cy="75" r="8" fill="#ef4444"/>
+  <circle cx="200" cy="75" r="10" fill="#38bdf8"/>
+  <text x="200" y="115" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Biomax N-BM60 Cloud</text>
+  <text x="200" y="138" font-family="sans-serif" font-size="10" fill="#38bdf8" text-anchor="middle">Wi-Fi Multi-Biometric (Face + Finger)</text>
+  <!-- Bottom Specs -->
+  <rect x="85" y="180" width="230" height="95" rx="8" fill="#020617"/>
+  <text x="200" y="215" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4ade80" text-anchor="middle">Cloud Push Protocol Ready</text>
+  <text x="200" y="240" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Connect Multiple Hyderabad Branches Seamlessly</text>
+</svg>

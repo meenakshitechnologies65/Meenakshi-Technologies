@@ -1,0 +1,44 @@
+<%- include('partials/head', { 
+  title: post.metaTitle || post.title,
+  metaDescription: post.metaDescription || post.summary,
+  metaKeywords: 'Best Biometric Dealers in Hyderabad, eSSL Biometric Attendance Machines, Biomax Biometric Attendance, Access Control Systems Hyderabad, EM Lock Installation, Tingirikar Teja',
+  canonicalUrl: 'https://www.meenakshitechnologies.org/guide/biometric-dealers-hyderabad',
+  ogImage: post.featuredImage
+}) %>
+
+<%- include('partials/header', { activePage: 'blog' }) %>
+
+<article class="pillar-article-wrapper">
+  <!-- Article Hero Header -->
+  <header class="pillar-page-header">
+    <div class="container">
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+          Hyderabad 2026 Definitive Pillar Guide
+        </span>
+        <h1 style="font-size: 2.6rem; font-weight: 900; line-height: 1.2; margin: 1.2rem 0; color: #ffffff;">
+          <%= post.title %>
+        </h1>
+        
+        <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: #cbd5e1;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <img src="/images/founder.svg" alt="Tingirikar Teja" style="width:36px; height:36px; border-radius:50%; border:2px solid #38bdf8;">
+            <span>By <strong><%= post.author %></strong> (<%= post.designation %>)</span>
+          </div>
+          <span>&bull;</span>
+          <span><%= post.readTime %></span>
+          <span>&bull;</span>
+          <span><%= post.wordCount %> Words</span>
+          <span>&bull;</span>
+          <span>Updated: November 2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <%- post.content %>
+  </div>
+</article>
+
+<%- include('partials/footer') %>

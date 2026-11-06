@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+  <rect width="900" height="320" fill="#091e3a" rx="16"/>
+  <text x="450" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">HOW A BIOMETRIC ATTENDANCE SYSTEM WORKS</text>
+  <text x="450" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">From Biological Trait Capture to Automated Payroll Processing</text>
+  
+  <!-- Step 1 -->
+  <g transform="translate(40, 100)">
+    <rect width="180" height="170" rx="12" fill="#134074" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="90" cy="50" r="26" fill="#0b2545" stroke="#38bdf8" stroke-width="2"/>
+    <text x="90" y="55" font-family="sans-serif" font-size="16" fill="#38bdf8" text-anchor="middle">01</text>
+    <text x="90" y="100" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Biological Capture</text>
+    <text x="90" y="125" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Fingerprint or 3D Face</text>
+    <text x="90" y="142" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">scanned in &lt; 0.5s</text>
+  </g>
+  <!-- Arrow 1 -->
+  <path d="M225 185 L255 185" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="255,180 265,185 255,190" fill="#38bdf8"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(265, 100)">
+    <rect width="180" height="170" rx="12" fill="#134074" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="90" cy="50" r="26" fill="#0b2545" stroke="#38bdf8" stroke-width="2"/>
+    <text x="90" y="55" font-family="sans-serif" font-size="16" fill="#38bdf8" text-anchor="middle">02</text>
+    <text x="90" y="100" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Encrypted Match</text>
+    <text x="90" y="125" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Mathematical template</text>
+    <text x="90" y="142" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">verified in device RAM</text>
+  </g>
+  <!-- Arrow 2 -->
+  <path d="M450 185 L480 185" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="480,180 490,185 480,190" fill="#38bdf8"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(490, 100)">
+    <rect width="180" height="170" rx="12" fill="#134074" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="90" cy="50" r="26" fill="#0b2545" stroke="#38bdf8" stroke-width="2"/>
+    <text x="90" y="55" font-family="sans-serif" font-size="16" fill="#38bdf8" text-anchor="middle">03</text>
+    <text x="90" y="100" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Network Sync</text>
+    <text x="90" y="125" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">TCP/IP or Cloud push to</text>
+    <text x="90" y="142" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">centralized SQL server</text>
+  </g>
+  <!-- Arrow 3 -->
+  <path d="M675 185 L705 185" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="705,180 715,185 705,190" fill="#38bdf8"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(715, 100)">
+    <rect width="150" height="170" rx="12" fill="#134074" stroke="#22c55e" stroke-width="1.5"/>
+    <circle cx="75" cy="50" r="26" fill="#0b2545" stroke="#22c55e" stroke-width="2"/>
+    <text x="75" y="55" font-family="sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">04</text>
+    <text x="75" y="100" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Payroll &amp; Access</text>
+    <text x="75" y="125" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Overtime &amp; salary</text>
+    <text x="75" y="142" font-family="sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">slips auto-generated</text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<%- include('partials/head', { 
+  title: 'Biometric Attendance & Access Control Solutions | Meenakshi Technologies',
+  metaDescription: 'Explore our 12 specialized biometric attendance, eSSL and Biomax hardware, door access controllers, EM locks, and payroll integration solutions in Hyderabad.',
+  canonicalUrl: 'https://www.meenakshitechnologies.org/services'
+}) %>
+
+<%- include('partials/header', { activePage: 'services' }) %>
+
+<header class="pillar-page-header">
+  <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+      End-to-End Capabilities
+    </span>
+    <h1 style="font-size: 2.8rem; font-weight: 900; color: #fff; margin: 1rem 0;">
+      Our Specialized Solutions
+    </h1>
+    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.6;">
+      Precision biometric attendance, enterprise door security, and payroll synchronization for modern enterprises across Hyderabad and Telangana.
+    </p>
+  </div>
+</header>
+
+<div class="container" style="padding: 4rem 1.5rem;">
+  <div class="solutions-grid">
+    <% solutions.forEach(sol => { %>
+      <div class="solution-card">
+        <span class="solution-badge"><%= sol.badge %></span>
+        <div class="solution-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-10 10c0 4.1 2.5 7.6 6.1 9.2"></path><path d="M12 6a6 6 0 0 0-6 6c0 2.5 1.5 4.6 3.7 5.5"></path></svg>
+        </div>
+        <h2 class="solution-title" style="font-size:1.3rem;"><%= sol.name %></h2>
+        <p class="solution-desc"><%= sol.shortDesc %></p>
+        <a href="/services/<%= sol.slug %>" class="btn btn-primary btn-sm" style="margin-top:auto;">
+          <span>Detailed Service Guide &rarr;</span>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

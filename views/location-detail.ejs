@@ -1,0 +1,168 @@
+<%- include('partials/head', { 
+  title: `${location.title} | Meenakshi Technologies`,
+  metaDescription: `Verified physical location of Meenakshi Technologies in ${location.address.addressLocality}. Biometric attendance machine supply, installation, and support.`,
+  canonicalUrl: `https://www.meenakshitechnologies.org/locations/${location.slug}`
+}) %>
+
+<!-- Individual Location LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "<%= location.title %>",
+  "image": "https://www.meenakshitechnologies.org/images/logo.png",
+  "telephone": "<%= location.telephone %>",
+  "email": "<%= location.email %>",
+  "url": "https://www.meenakshitechnologies.org/locations/<%= location.slug %>",
+  "hasMap": "<%= location.mapUrl %>",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<%= location.address.streetAddress %>",
+    "addressLocality": "<%= location.address.addressLocality %>",
+    "addressRegion": "<%= location.address.addressRegion %>",
+    "postalCode": "<%= location.address.postalCode %>",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": <%= location.geo.latitude %>,
+    "longitude": <%= location.geo.longitude %>
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:30",
+    "closes": "19:30"
+  },
+  "priceRange": "₹₹"
+}
+</script>
+
+<%- include('partials/header', { activePage: 'locations' }) %>
+
+<header class="pillar-page-header">
+  <div class="container" style="max-width: 900px; margin: 0 auto;">
+    <div style="font-size:0.85rem; color:#93c5fd; margin-bottom:0.5rem;">
+      <a href="/locations" style="color:#38bdf8;">Locations</a> &rarr; <span><%= location.address.addressLocality %></span>
+    </div>
+    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+      <%= location.type %>
+    </span>
+    <h1 style="font-size: 2.6rem; font-weight: 900; color: #fff; margin: 0.8rem 0;">
+      <%= location.title %>
+    </h1>
+    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.6;">
+      <%= location.description %>
+    </p>
+  </div>
+</header>
+
+<div class="container" style="padding: 4rem 1.5rem;">
+  <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 3.5rem; align-items: flex-start;">
+    <div>
+      <!-- Address & Geo Details -->
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.04);">
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #0b2545; margin-bottom: 1.2rem;">Location Verified NAP &amp; Contact</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.95rem;">
+          <div style="display:flex; gap: 0.6rem;">
+            <strong style="color: #0b2545; min-width: 80px;">Address:</strong>
+            <span style="color: #334155;"><%= location.address.streetAddress %>, <%= location.address.addressLocality %>, <%= location.address.addressRegion %> - <%= location.address.postalCode %></span>
+          </div>
+          <div style="display:flex; gap: 0.6rem;">
+            <strong style="color: #0b2545; min-width: 80px;">Phone:</strong>
+            <a href="tel:<%= location.telephone %>" style="color: #0066cc; font-weight: 700;"><%= location.telephone %></a>
+          </div>
+          <div style="display:flex; gap: 0.6rem;">
+            <strong style="color: #0b2545; min-width: 80px;">Email:</strong>
+            <a href="mailto:<%= location.email %>" style="color: #0066cc;"><%= location.email %></a>
+          </div>
+          <div style="display:flex; gap: 0.6rem;">
+            <strong style="color: #0b2545; min-width: 80px;">Coordinates:</strong>
+            <span style="color: #64748b; font-family: monospace;"><%= location.geo.latitude %>, <%= location.geo.longitude %></span>
+          </div>
+          <div style="display:flex; gap: 0.6rem;">
+            <strong style="color: #0b2545; min-width: 80px;">Hours:</strong>
+            <span style="color: #334155;"><%= location.openingHours %> (IST)</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="<%= location.mapUrl %>" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            <span>Get Directions on Google Maps &rarr;</span>
+          </a>
+          <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20I%20am%20heading%20to%20your%20<%= encodeURIComponent(location.title) %>." 
+             target="_blank" 
+             rel="noopener" 
+             class="btn btn-whatsapp btn-sm">
+            <span>WhatsApp for Location Pin</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Embedded Map -->
+      <div style="height: 380px; width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid #cbd5e1; margin-bottom: 2.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <iframe 
+          src="<%= location.embedMapUrl %>" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- Services Available at this location -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem;">
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Services Dispatched from this Location</h3>
+        <ul style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <% location.servicesAvailable.forEach(srv => { %>
+            <li style="display: flex; align-items: center; gap: 0.65rem; color: #334155; font-size: 0.95rem;">
+              <span style="color: #10b981; font-weight: bold;">&#10004;</span>
+              <span><%= srv %></span>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Sidebar Enquiry -->
+    <div class="contact-form-card">
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: #0b2545; margin-bottom: 0.4rem;">Schedule a Visit / Demo</h3>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.2rem;">Book an appointment at this location or request an engineer visit.</p>
+
+      <form class="enquiry-form">
+        <input type="text" name="website_source" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="location" value="<%= location.title %>">
+
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="fullName" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number *</label>
+          <input type="tel" name="mobileNumber" class="form-control" required placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input type="text" name="companyName" class="form-control" placeholder="Company Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Required</label>
+          <select name="productOrService" class="form-control">
+            <option value="Biometric Attendance Consultation">Biometric Attendance Consultation</option>
+            <option value="Door Access Control Setup">Door Access Control Setup</option>
+            <option value="Onsite Inspection">Onsite Inspection</option>
+            <option value="AMC / Hardware Repair">AMC / Hardware Repair</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <span>Confirm Request</span>
+        </button>
+        <div class="form-status-msg"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

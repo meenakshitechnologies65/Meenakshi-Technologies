@@ -1,0 +1,95 @@
+<%- include('partials/head', { 
+  title: `${industry.name} Biometric Solutions Hyderabad | Meenakshi Technologies`,
+  metaDescription: `Biometric attendance and door access control solutions specifically tailored for ${industry.name} across Hyderabad and Telangana.`,
+  canonicalUrl: `https://www.meenakshitechnologies.org/industries/${industry.slug}`
+}) %>
+
+<%- include('partials/header', { activePage: 'industries' }) %>
+
+<header class="pillar-page-header">
+  <div class="container" style="max-width: 900px; margin: 0 auto;">
+    <div style="font-size:0.85rem; color:#93c5fd; margin-bottom:0.5rem;">
+      <a href="/industries" style="color:#38bdf8;">Industries</a> &rarr; <span><%= industry.name %></span>
+    </div>
+    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+      <%= industry.badge %>
+    </span>
+    <h1 style="font-size: 2.6rem; font-weight: 900; color: #fff; margin: 0.8rem 0;">
+      Biometric &amp; Access Solutions for <%= industry.name %>
+    </h1>
+    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.6;">
+      <%= industry.challenge %>
+    </p>
+  </div>
+</header>
+
+<div class="container" style="padding: 4rem 1.5rem;">
+  <div style="display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 3.5rem; align-items: flex-start;">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Industry Operational Requirements</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155;"><%= industry.solution %></p>
+      </div>
+
+      <div style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Key Capabilities &amp; Features</h3>
+        <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <% industry.keyFeatures.forEach(kf => { %>
+            <li style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.98rem; color: #334155;">
+              <span style="color: #0066cc; font-weight: bold;">&#10004;</span>
+              <span><%= kf %></span>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <div style="background: #eef4f8; border-left: 4px solid #0066cc; padding: 1.5rem; border-radius: 8px;">
+        <h4 style="font-size: 1.1rem; color: #0b2545; font-weight: 800; margin-bottom: 0.4rem;">Target Geographic Clusters</h4>
+        <p style="font-size: 0.95rem; color: #334155;"><%= industry.targetAreas %></p>
+      </div>
+    </div>
+
+    <!-- Right Sidebar Form -->
+    <div class="contact-form-card">
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: #0b2545; margin-bottom: 0.4rem;">Consult Our Engineers</h3>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.2rem;">Custom architecture design for your <%= industry.name %> facility.</p>
+
+      <form class="enquiry-form">
+        <input type="text" name="website_source" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="productOrService" value="<%= industry.name %> Biometric Solution">
+
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="fullName" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number *</label>
+          <input type="tel" name="mobileNumber" class="form-control" required placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input type="text" name="companyName" class="form-control" placeholder="Facility / Enterprise">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location / Industrial Area</label>
+          <input type="text" name="location" class="form-control" placeholder="e.g. Genome Valley, Patancheru">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <span>Request Industry Proposal</span>
+        </button>
+
+        <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20I%20am%20looking%20for%20biometric%20solutions%20for%20our%20<%= encodeURIComponent(industry.name) %>." 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-whatsapp" 
+           style="width: 100%; margin-top: 0.75rem;">
+          <span>WhatsApp Consultation</span>
+        </a>
+        <div class="form-status-msg"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

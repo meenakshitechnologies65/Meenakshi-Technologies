@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="speedChassis" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ipsDisplay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <!-- Tall Modern AI Terminal Chassis -->
+  <rect x="115" y="15" width="170" height="290" rx="22" fill="url(#speedChassis)" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 12px 18px rgba(0,0,0,0.3))"/>
+  
+  <!-- Dual Cameras & Light Sensors -->
+  <circle cx="160" cy="45" r="9" fill="#020617" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="160" cy="45" r="4" fill="#38bdf8"/>
+  <circle cx="205" cy="45" r="9" fill="#020617" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="205" cy="45" r="4" fill="#818cf8"/>
+  <rect x="180" y="42" width="6" height="6" rx="2" fill="#22c55e"/>
+
+  <!-- 5-Inch IPS Touch Screen -->
+  <rect x="130" y="68" width="140" height="195" rx="12" fill="url(#ipsDisplay)" stroke="#1e293b" stroke-width="1.5"/>
+  
+  <!-- AI Recognition HUD -->
+  <ellipse cx="200" cy="135" rx="36" ry="46" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 3"/>
+  <circle cx="200" cy="135" r="4" fill="#22c55e"/>
+  
+  <!-- Recognition Stats on Screen -->
+  <text x="200" y="196" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Access Granted</text>
+  <text x="200" y="210" font-family="sans-serif" font-size="9" fill="#4ade80" text-anchor="middle">TEMP: 36.5°C | MASK OK</text>
+  <text x="200" y="226" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">TIME: 09:14:02 AM</text>
+  
+  <!-- Brand Footer -->
+  <text x="200" y="285" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#f8fafc" letter-spacing="1" text-anchor="middle">BIOMAX AI</text>
+</svg>

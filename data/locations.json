@@ -1,0 +1,112 @@
+{
+  "verifiedLocations": [
+    {
+      "id": "hyderabad-main",
+      "slug": "hyderabad",
+      "title": "Meenakshi Technologies – Hyderabad Central Office",
+      "type": "Primary Business Location & Regional Headquarters",
+      "address": {
+        "streetAddress": "Meenakshi Technologies, Near Charminar / Santosh Nagar Ring Road",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500053",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "latitude": 17.3459799,
+        "longitude": 78.479843
+      },
+      "telephone": "+91-6301593064",
+      "email": "meenakshitechnologies65@gmail.com",
+      "openingHours": "Mo-Sa 09:30-19:30",
+      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3047629,78.4530547,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad!3m6!1s0x3bcb998ed73d905b:0x8fff8136f685f7af!8m2!3d17.3459799!4d78.479843!15sCh5iaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWRaICIeYmlvbWV0cmljIGRlYWxlcnMgaW4gaHlkZXJhYmFkkgEYc2VjdXJpdHlfc3lzdGVtX3N1cHBsaWVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5HZDJGdFkyTjNFQUXgAQD6AQUIlAIQOw!16s%2Fg%2F11qnq_8w6p?entry=ttu",
+      "embedMapUrl": "https://maps.google.com/maps?q=17.3459799,78.479843&hl=en&z=15&output=embed",
+      "description": "Our central Hyderabad location serves corporate offices, IT parks, retail showrooms, educational institutions and commercial establishments across Greater Hyderabad with same-day consultations, hardware demonstrations, and prompt installation assistance.",
+      "servicesAvailable": [
+        "Biometric Device Demonstrations & Consultations",
+        "eSSL and Biomax Hardware Stock Dispatch",
+        "Access Control Controller & Lock Showcasing",
+        "Onsite Installation Team Deployment",
+        "Technical Support & Software Configuration Desk"
+      ]
+    },
+    {
+      "id": "balapur-branch",
+      "slug": "balapur",
+      "title": "Meenakshi Technologies – Balapur Business Location",
+      "type": "Verified Branch Office & South Hyderabad Service Hub",
+      "address": {
+        "streetAddress": "Meenakshi Technologies, Balapur Main Road, Near DRDL / Kanchanbagh Sector",
+        "addressLocality": "Balapur, Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500005",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "latitude": 17.309578,
+        "longitude": 78.5152011
+      },
+      "telephone": "+91-6301593064",
+      "email": "meenakshitechnologies65@gmail.com",
+      "openingHours": "Mo-Sa 09:30-19:30",
+      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3459462,78.327064,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad+balapur!3m6!1s0x3bcba32a595dbdf5:0x751584db54ecd738!8m2!3d17.309578!4d78.5152011!15sCiZiaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWQgYmFsYXB1clooIiZiaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWQgYmFsYXB1cpIBGHNlY3VyaXR5X3N5c3RlbV9zdXBwbGllcpoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyNXdiVnBYV1hwWFZYQnRWVE52ZWsxcVFteE9TRUpoVGxkb2MxRnJSUkFC4AEA-gEECHwQSA!16s%2Fg%2F11nq1lxkll?entry=ttu",
+      "embedMapUrl": "https://maps.google.com/maps?q=17.309578,78.5152011&hl=en&z=15&output=embed",
+      "description": "Our Balapur branch anchors our fast-response field engineering operations for South Hyderabad, Chandrayangutta, Falaknuma, LB Nagar, Saroornagar, Shamshabad Airport corridor, and Adibatla Aerospace SEZ.",
+      "servicesAvailable": [
+        "Local Customer Walk-in Consultations",
+        "Express Delivery of Biometric Attendance Machines",
+        "Rapid Onsite Door Lock & Access Control Setup",
+        "Replacement Parts, Cables, and EM Lock Brackets",
+        "Dedicated Field Engineers for South Hyderabad and Rangareddy"
+      ]
+    }
+  ],
+  "hyderabadAreas": [
+    { "name": "Balapur", "slug": "balapur", "zone": "South Hyderabad", "highlight": "Home to verified Meenakshi Technologies location with immediate onsite dispatch." },
+    { "name": "LB Nagar", "slug": "lb-nagar", "zone": "East Hyderabad", "highlight": "Major commercial hub with bustling retail, corporate branches, and hospital installations." },
+    { "name": "Vanasthalipuram", "slug": "vanasthalipuram", "zone": "East Hyderabad", "highlight": "High concentration of educational academies, colleges, and healthcare centers." },
+    { "name": "Dilsukhnagar", "slug": "dilsukhnagar", "zone": "Central-East Hyderabad", "highlight": "Vibrant coaching institute zone with massive demand for RFID and fingerprint attendance." },
+    { "name": "Kothapet", "slug": "kothapet", "zone": "East Hyderabad", "highlight": "Active wholesale trade and medical centers requiring reliable workforce tracking." },
+    { "name": "Nagole", "slug": "nagole", "zone": "East Hyderabad", "highlight": "Fast-growing residential and commercial corridor connecting Uppal and LB Nagar." },
+    { "name": "Hayathnagar", "slug": "hayathnagar", "zone": "Outer East Hyderabad", "highlight": "Logistics warehouses, industrial depots, and educational campuses." },
+    { "name": "Uppal", "slug": "uppal", "zone": "East Hyderabad", "highlight": "Industrial estate and IT parks with multi-shift attendance and turnstile deployments." },
+    { "name": "Malakpet", "slug": "malakpet", "zone": "South-Central Hyderabad", "highlight": "Hospitals, trading establishments, and commercial offices with EM lock needs." },
+    { "name": "Charminar", "slug": "charminar", "zone": "Old City Hyderabad", "highlight": "Wholesale textile markets, jewelry enterprises, and commercial businesses." },
+    { "name": "Mehdipatnam", "slug": "mehdipatnam", "zone": "West-Central Hyderabad", "highlight": "Major junction connecting Gachibowli and City center, dense clinic and retail cluster." },
+    { "name": "Banjara Hills", "slug": "banjara-hills", "zone": "Central Hyderabad", "highlight": "Premium corporate headquarters, private clinics, luxury gyms, and boutique offices." },
+    { "name": "Jubilee Hills", "slug": "jubilee-hills", "zone": "Central Hyderabad", "highlight": "High-end corporate offices, media houses, and biometric door access setups." },
+    { "name": "Gachibowli", "slug": "gachibowli", "zone": "Cyberabad / West", "highlight": "IT campuses, multinational headquarters, and high-security access control infrastructure." },
+    { "name": "Hitech City", "slug": "hitech-city", "zone": "Cyberabad / West", "highlight": "Heart of Hyderabad technology corridor; touchless face recognition & turnstile gates." },
+    { "name": "Madhapur", "slug": "madhapur", "zone": "Cyberabad / West", "highlight": "Tech startups, IT services, co-working spaces, and high-density office buildings." },
+    { "name": "Kukatpally", "slug": "kukatpally", "zone": "North-West Hyderabad", "highlight": "Thriving commercial markets, shopping malls, and manufacturing peripheral units." },
+    { "name": "Miyapur", "slug": "miyapur", "zone": "North-West Hyderabad", "highlight": "Rapidly developing residential and transit hub with numerous SME offices." },
+    { "name": "Ameerpet", "slug": "ameerpet", "zone": "Central Hyderabad", "highlight": "India's renowned training institute hub requiring rapid student RFID logging." },
+    { "name": "Secunderabad", "slug": "secunderabad", "zone": "North Hyderabad", "highlight": "Historic twin city business center, railway establishments, and wholesale hubs." },
+    { "name": "Begumpet", "slug": "begumpet", "zone": "North-Central Hyderabad", "highlight": "Corporate offices, airline counters, banking headquarters, and consulates." },
+    { "name": "Shamshabad", "slug": "shamshabad", "zone": "South Hyderabad", "highlight": "Rajiv Gandhi International Airport corridor, air cargo docks, and logistics parks." },
+    { "name": "Attapur", "slug": "attapur", "zone": "South-West Hyderabad", "highlight": "Active retail spine and commercial complexes connecting Mehdipatnam to airport." },
+    { "name": "Rajendranagar", "slug": "rajendranagar", "zone": "South-West Hyderabad", "highlight": "Agricultural universities, research institutions, and growing commercial hubs." },
+    { "name": "Saroornagar", "slug": "saroornagar", "zone": "East Hyderabad", "highlight": "Established residential and commercial locality near LB Nagar." },
+    { "name": "Ibrahimpatnam", "slug": "ibrahimpatnam", "zone": "Outer South-East", "highlight": "Engineering colleges, polytechnics, and industrial development zones." },
+    { "name": "Adibatla", "slug": "adibatla", "zone": "Outer South-East", "highlight": "TCS Adibatla & Tata Aerospace SEZ requiring high-security biometric access." },
+    { "name": "Kandukur", "slug": "kandukur", "zone": "Outer South", "highlight": "Pharma City corridor and growing industrial warehousing belts." }
+  ],
+  "telanganaDistricts": [
+    { "name": "Rangareddy", "slug": "rangareddy", "focus": "Surrounds Hyderabad; major industrial estates in Kothur, Maheshwaram, and Shamshabad." },
+    { "name": "Medchal-Malkajgiri", "slug": "medchal-malkajgiri", "focus": "Industrial corridors in Jeedimetla, Gundlapochampally, and Kompally logistics parks." },
+    { "name": "Sangareddy", "slug": "sangareddy", "focus": "Major pharmaceutical and heavy engineering corridor in Patancheru, Bollaram, and Pashamylaram." },
+    { "name": "Warangal", "slug": "warangal", "focus": "Second largest city in Telangana; textile park, universities, hospitals, and commercial banks." },
+    { "name": "Karimnagar", "slug": "karimnagar", "focus": "Granite industries, agriculture markets, educational academies, and regional businesses." },
+    { "name": "Nizamabad", "slug": "nizamabad", "focus": "Agro-processing industries, wholesale commerce, and commercial establishments." },
+    { "name": "Khammam", "slug": "khammam", "focus": "Mining enterprises, granite processing, and expanding retail infrastructure." },
+    { "name": "Nalgonda", "slug": "nalgonda", "focus": "Cement manufacturing clusters, rice mills, and institutional facilities." },
+    { "name": "Mahabubnagar", "slug": "mahabubnagar", "focus": "Pharmaceutical manufacturing SEZ, solar energy parks, and retail centers." },
+    { "name": "Siddipet", "slug": "siddipet", "focus": "Rapidly urbanizing commercial center with new IT towers and government offices." },
+    { "name": "Suryapet", "slug": "suryapet", "focus": "Strategic highway commercial junction with hotels, hospitals, and educational institutions." },
+    { "name": "Adilabad", "slug": "adilabad", "focus": "Cotton processing mills, paper factories, and regional commercial distribution centers." },
+    { "name": "Mancherial", "slug": "mancherial", "focus": "Coal mining sector, thermal power plants, and associated engineering vendors." },
+    { "name": "Jagtial", "slug": "jagtial", "focus": "Agro-industrial centers, commercial markets, and healthcare establishments." },
+    { "name": "Peddapalli", "slug": "peddapalli", "focus": "Heavy industry hub anchored by NTPC Ramagundam and fertilizer manufacturing." },
+    { "name": "Bhadradri Kothagudem", "slug": "bhadradri-kothagudem", "focus": "Mining corporations, power generation plants, and paper manufacturing facilities." }
+  ]
+}

@@ -1,0 +1,125 @@
+<%- include('partials/head', { 
+  title: `${solution.name} in Hyderabad | Meenakshi Technologies`,
+  metaDescription: `${solution.shortDesc} Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.`,
+  canonicalUrl: `https://www.meenakshitechnologies.org/services/${solution.slug}`
+}) %>
+
+<!-- Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "<%= solution.name %>",
+  "provider": {
+    "@type": "Organization",
+    "name": "Meenakshi Technologies",
+    "url": "https://www.meenakshitechnologies.org/"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Hyderabad, Telangana, India"
+  },
+  "description": "<%= solution.longDesc %>"
+}
+</script>
+
+<%- include('partials/header', { activePage: 'services' }) %>
+
+<header class="pillar-page-header">
+  <div class="container" style="max-width: 900px; margin: 0 auto;">
+    <div style="font-size:0.85rem; color:#93c5fd; margin-bottom:0.5rem;">
+      <a href="/services" style="color:#38bdf8;">Solutions</a> &rarr; <span><%= solution.name %></span>
+    </div>
+    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+      <%= solution.badge %>
+    </span>
+    <h1 style="font-size: 2.6rem; font-weight: 900; color: #fff; margin: 0.8rem 0;">
+      <%= solution.name %> in Hyderabad
+    </h1>
+    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.6;">
+      <%= solution.shortDesc %>
+    </p>
+  </div>
+</header>
+
+<div class="container" style="padding: 4rem 1.5rem;">
+  <div style="display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 3.5rem; align-items: flex-start;">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Overview &amp; Implementation</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155;"><%= solution.longDesc %></p>
+      </div>
+
+      <div style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Key Operational Advantages</h3>
+        <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <% solution.benefits.forEach(b => { %>
+            <li style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.98rem; color: #334155;">
+              <span style="color: #0066cc; font-weight: bold; flex-shrink: 0;">&#10004;</span>
+              <span><%= b %></span>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <div style="background: #eef4f8; border-left: 4px solid #0066cc; padding: 1.5rem; border-radius: 8px; margin-bottom: 2.5rem;">
+        <h4 style="font-size: 1.1rem; color: #0b2545; font-weight: 800; margin-bottom: 0.4rem;">Suitable Environments</h4>
+        <p style="font-size: 0.95rem; color: #334155; line-height: 1.6;"><%= solution.suitableFor %></p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #0b2545; margin-bottom: 1rem;">Recommended Hardware Lineup</h3>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <% solution.modelsRecommended.forEach(mod => { %>
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.75rem 1.25rem; font-weight: 700; color: #0b2545; font-size: 0.92rem;">
+              <%= mod %>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar Contact Box -->
+    <div class="contact-form-card" style="box-shadow: 0 10px 25px rgba(0,0,0,0.06);">
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: #0b2545; margin-bottom: 0.4rem;">Get Solution Quotation</h3>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.2rem;">Our Hyderabad field team provides fast consultation and site inspection.</p>
+
+      <form class="enquiry-form">
+        <input type="text" name="website_source" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="productOrService" value="<%= solution.name %>">
+
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="fullName" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number (WhatsApp) *</label>
+          <input type="tel" name="mobileNumber" class="form-control" required placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input type="text" name="companyName" class="form-control" placeholder="Company / Business">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location in Hyderabad</label>
+          <input type="text" name="location" class="form-control" placeholder="e.g. LB Nagar, Madhapur, Uppal">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+          <span>Submit Solution Enquiry</span>
+        </button>
+
+        <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20I%20am%20enquiring%20about%20<%= encodeURIComponent(solution.name) %>." 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-whatsapp" 
+           style="width: 100%; margin-top: 0.75rem;">
+          <span>Instant WhatsApp Connect</span>
+        </a>
+        <div class="form-status-msg"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

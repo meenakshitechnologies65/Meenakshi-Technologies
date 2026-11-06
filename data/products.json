@@ -1,0 +1,455 @@
+[
+  {
+    "id": "essl-k30-pro",
+    "name": "eSSL K30 Pro",
+    "slug": "essl-k30-pro-biometric-attendance",
+    "brand": "eSSL",
+    "category": "Fingerprint Biometric Devices",
+    "tagline": "Standalone Fingerprint Time Attendance with Built-in Battery Backup",
+    "image": "/images/products/essl-k30-pro.svg",
+    "capacity": {
+      "fingerprints": "1,000 templates",
+      "cards": "1,000 RFID cards",
+      "transactions": "100,000 logs"
+    },
+    "specs": {
+      "display": "2.8-inch TFT Color Screen",
+      "sensor": "Optical 500 DPI Fingerprint Sensor",
+      "communication": "TCP/IP, USB Host",
+      "powerSupply": "12V DC 1.5A with Built-in Battery Backup (up to 4 hours)",
+      "verificationSpeed": "< 1 second",
+      "identificationMode": "Fingerprint, RFID Card, PIN password",
+      "operatingTemp": "0°C to 45°C",
+      "operatingHumidity": "20% - 80%",
+      "dimension": "184 x 136 x 37.6 mm"
+    },
+    "features": [
+      "Built-in battery backup ensures zero downtime during power cuts",
+      "High-speed optical fingerprint sensor with scratch-resistant surface",
+      "TCP/IP network connectivity for automated attendance push data",
+      "USB flash drive export for offline data download without PC network",
+      "Voice prompt and audible confirmation on successful punch",
+      "Seamless integration with eTimeTrackLite & MS Excel payroll export"
+    ],
+    "applications": [
+      "Small to Medium Offices (10 to 200 employees)",
+      "Retail Showrooms & Commercial Outlets",
+      "Educational Coaching Institutes & Schools",
+      "Clinics and Diagnostic Centers"
+    ],
+    "installationInfo": "Wall-mountable with standard backplate. Connects directly to local LAN router via RJ45 CAT6 cable or standalone operation with USB pen drive.",
+    "popular": true
+  },
+  {
+    "id": "essl-silkbio-100tc",
+    "name": "eSSL SilkBio-100TC",
+    "slug": "essl-silkbio-100tc-face-fingerprint-attendance",
+    "brand": "eSSL",
+    "category": "Face + Fingerprint Devices",
+    "tagline": "Advanced Multi-Biometric Time Attendance & Access Control with SilkID",
+    "image": "/images/products/essl-silkbio-100tc.svg",
+    "capacity": {
+      "faces": "800 face templates",
+      "fingerprints": "1,500 SilkID templates",
+      "cards": "2,000 RFID cards",
+      "transactions": "100,000 logs"
+    },
+    "specs": {
+      "display": "2.8-inch Color Touch Screen with intuitive UI",
+      "sensor": "SilkID Revolutionary Fingerprint Sensor + Dual Infrared Cameras",
+      "communication": "TCP/IP, USB Host, Wi-Fi (Optional)",
+      "accessControlInterface": "3rd Party Electric Lock, Door Sensor, Exit Button",
+      "powerSupply": "12V DC 3A",
+      "verificationSpeed": "< 0.5 second",
+      "operatingTemp": "0°C to 45°C",
+      "dimension": "173 x 159 x 36.1 mm"
+    },
+    "features": [
+      "SilkID sensor reliably reads dry, wet, rough and aged fingertips",
+      "Dual IR cameras enable fast facial recognition even in low-light environments",
+      "Live finger detection prevents fake rubber or silicone fingerprint spoofing",
+      "Built-in access control relay for electromagnetic door lock integration",
+      "Multi-biometric verification modes: Face, Fingerprint, Card, or Multi-factor"
+    ],
+    "applications": [
+      "Corporate Head Offices & IT Parks",
+      "Pharmaceutical Cleanrooms & R&D Labs",
+      "Manufacturing Units with challenging ambient conditions",
+      "Hospitals and Healthcare Facilities"
+    ],
+    "installationInfo": "Flush or surface wall mount. Includes relay wiring terminals for fail-safe EM locks and emergency push buttons.",
+    "popular": true
+  },
+  {
+    "id": "essl-uface-202",
+    "name": "eSSL uFace 202",
+    "slug": "essl-uface-202-multi-biometric-terminal",
+    "brand": "eSSL",
+    "category": "Face Recognition Machines",
+    "tagline": "High-Capacity Multi-Biometric Time Attendance & Access Terminal",
+    "image": "/images/products/essl-uface-202.svg",
+    "capacity": {
+      "faces": "1,200 face templates (optional up to 3,000)",
+      "fingerprints": "2,000 fingerprints",
+      "cards": "10,000 RFID cards",
+      "transactions": "100,000 logs"
+    },
+    "specs": {
+      "display": "4.3-inch Touch Screen with icon-driven menu",
+      "camera": "High-Definition Infrared Dual Camera",
+      "communication": "TCP/IP, USB Host, Optional Wi-Fi / 4G",
+      "battery": "Built-in 2000 mAh backup battery providing ~4 hours operation",
+      "accessControl": "Relay for Door Lock, Door Sensor, Alarm, Exit Switch",
+      "verificationSpeed": "< 1 second",
+      "dimension": "193.6 x 165.2 x 86 mm"
+    },
+    "features": [
+      "Large 4.3-inch touchscreen for effortless user enrollment and navigation",
+      "High-speed face recognition without requiring user to stop completely",
+      "Integrated door access control interface supporting EM locks & drop bolts",
+      "Internal backup battery provides seamless operation during load shedding",
+      "Full compatibility with eTimeTrackLite Web & Central Cloud Server"
+    ],
+    "applications": [
+      "Large Manufacturing Plants & Factories",
+      "Pharma Quality Assurance & Production Lines",
+      "Corporate IT Offices in Hitech City & Gachibowli",
+      "Colleges, Universities & Multi-Floor Campuses"
+    ],
+    "installationInfo": "Heavy-duty steel mounting bracket. Supports standalone or centralized networked multi-device architecture.",
+    "popular": true
+  },
+  {
+    "id": "essl-f22",
+    "name": "eSSL F22",
+    "slug": "essl-f22-ultra-thin-access-control-terminal",
+    "brand": "eSSL",
+    "category": "Door Access Controllers",
+    "tagline": "Ultra-Thin Fingerprint Time Attendance & Access Control with Wi-Fi",
+    "image": "/images/products/essl-f22.svg",
+    "capacity": {
+      "fingerprints": "3,000 templates",
+      "cards": "5,000 RFID / Mifare cards",
+      "transactions": "30,000 logs"
+    },
+    "specs": {
+      "display": "2.4-inch TFT LCD Color Screen with Touch Keypad",
+      "sensor": "BioID Sensor with Anti-Interference Technology",
+      "communication": "Wi-Fi, TCP/IP, RS485, USB Host",
+      "accessInterface": "Electric lock, Door sensor, Exit button, Alarm, Doorbell",
+      "wiegandSignal": "Input & Output for external slave reader integration",
+      "dimension": "158.5 x 78 x 19.4 mm (Ultra Slim)"
+    },
+    "features": [
+      "Ultra-thin aesthetic design with sleek touch keypad suitable for glass doors",
+      "Built-in Wi-Fi eliminates tedious Ethernet cabling across interior partitions",
+      "BioID sensor guarantees outstanding recognition rate on dry/moist fingers",
+      "Full access control features: Anti-passback, access schedules, duress alarm",
+      "Wiegand-in/out for master-slave in/out door verification"
+    ],
+    "applications": [
+      "Executive Cabins & Boardrooms",
+      "Server Rooms & Critical Data Centers",
+      "Premium Corporate Interiors in Banjara Hills & Jubilee Hills",
+      "Financial Institutions & Cash Vaults"
+    ],
+    "installationInfo": "Slim architectural form factor designed for wooden, aluminum, and glass door frames. Supports Wiegand slave readers.",
+    "popular": true
+  },
+  {
+    "id": "essl-identix-k21",
+    "name": "eSSL Identix K21",
+    "slug": "essl-identix-k21-entry-level-fingerprint-machine",
+    "brand": "eSSL",
+    "category": "Fingerprint Biometric Devices",
+    "tagline": "Economical Fingerprint Time Attendance Terminal for Startups & Small Offices",
+    "image": "/images/products/essl-identix-k21.svg",
+    "capacity": {
+      "fingerprints": "500 templates",
+      "cards": "500 RFID cards",
+      "transactions": "50,000 logs"
+    },
+    "specs": {
+      "display": "2.8-inch Color Display",
+      "communication": "TCP/IP, USB Host",
+      "sensor": "500 DPI Optical Fingerprint Sensor",
+      "powerSupply": "5V DC 1A",
+      "verificationTime": "< 1 second",
+      "dimension": "185 x 140 x 30 mm"
+    },
+    "features": [
+      "Budget-friendly entry price for businesses upgrading from manual registers",
+      "Plug-and-play installation with fast 3-step employee enrollment",
+      "Supports daily attendance, overtime, late arrival and early departure tracking",
+      "Direct Excel report generation via USB drive without network setup",
+      "Reliable performance with zero monthly recurring cloud license fees"
+    ],
+    "applications": [
+      "Micro & Small Enterprises (5 to 50 employees)",
+      "Boutiques, Retail Stores & Supermarkets",
+      "Law Chambers, Accounting Firms & Real Estate Offices",
+      "Co-working Spaces and Small Warehouses"
+    ],
+    "installationInfo": "Lightweight wall mount with included mounting screws. Operates directly via standard 5V power adapter.",
+    "popular": false
+  },
+  {
+    "id": "biomax-speedface-5",
+    "name": "Biomax SpeedFace 5",
+    "slug": "biomax-speedface-5-ai-face-recognition-terminal",
+    "brand": "Biomax",
+    "category": "Face Recognition Machines",
+    "tagline": "AI-Powered Visible Light Facial Recognition & Access Control Terminal",
+    "image": "/images/products/biomax-speedface-5.svg",
+    "capacity": {
+      "faces": "6,000 face templates (Deep Learning AI)",
+      "fingerprints": "6,000 fingerprints",
+      "cards": "10,000 RFID cards",
+      "transactions": "200,000 logs"
+    },
+    "specs": {
+      "display": "5-inch IPS Touch LCD Screen",
+      "camera": "2MP Dual-Lens CMOS Camera with WDR & Live Anti-Spoofing",
+      "recognitionDistance": "0.3m to 2.5 meters",
+      "recognitionSpeed": "< 0.3 second (Walk-through)",
+      "communication": "TCP/IP, Wi-Fi, Wiegand In/Out, RS485",
+      "accessControl": "Relay output for Electromagnetic & Motorized Locks",
+      "dimension": "203 x 91 x 22 mm"
+    },
+    "features": [
+      "Visible light facial recognition reads moving persons from up to 2.5m away",
+      "Anti-spoofing algorithm blocks photos, videos, and 3D silicone mask fraud",
+      "Mask detection & reminder capability for sterile or regulated areas",
+      "Wide dynamic range camera handles direct sunlight and dim corridors",
+      "Multi-device cloud push protocol for real-time multi-branch sync"
+    ],
+    "applications": [
+      "Pharma Formulation Units in Jeedimetla, Bollaram & Genome Valley",
+      "Heavy Engineering & Automotive Assembly Lines",
+      "High-Traffic Turnstiles at Corporate Office Entrances",
+      "Gyms, Health Clubs & Premium Fitness Centers"
+    ],
+    "installationInfo": "Mounts on walls, desktop pedestals, or turnstile barrier brackets. Fully weatherproof and tamper-resistant.",
+    "popular": true
+  },
+  {
+    "id": "biomax-bio-finger-100",
+    "name": "Biomax Bio-Finger 100",
+    "slug": "biomax-bio-finger-100-fingerprint-attendance",
+    "brand": "Biomax",
+    "category": "Fingerprint Biometric Devices",
+    "tagline": "Commercial High-Capacity Fingerprint & Card Attendance System",
+    "image": "/images/products/biomax-bio-finger-100.svg",
+    "capacity": {
+      "fingerprints": "5,000 fingerprint templates",
+      "cards": "5,000 RFID cards",
+      "transactions": "150,000 logs"
+    },
+    "specs": {
+      "display": "3.0-inch Color TFT Display with multilingual audio",
+      "sensor": "Scratch-proof 500 DPI Optical Sensor",
+      "communication": "TCP/IP, USB Host, USB Device",
+      "powerSupply": "12V DC 1.5A with internal power-saving mode",
+      "dimension": "180 x 135 x 42 mm"
+    },
+    "features": [
+      "High storage capacity suitable for medium-to-large shift operations",
+      "Robust hardware built for Indian manufacturing ambient conditions",
+      "Instant data sync to centralized database via local area network",
+      "Custom shift schedule assignment, overtime calculation and punch rounding",
+      "Supports battery backup module for uninterrupted service"
+    ],
+    "applications": [
+      "Industrial Plants in Balanagar, Kattedan & Cherlapally",
+      "Construction Company Regional Site Offices",
+      "Logistics Hubs & Courier Sorting Centers in Shamshabad",
+      "Educational Institutions and Residential Schools"
+    ],
+    "installationInfo": "Standard wall mounting plate. Fast setup with Biomax attendance software and SQL database.",
+    "popular": false
+  },
+  {
+    "id": "biomax-n-bm60",
+    "name": "Biomax N-BM60",
+    "slug": "biomax-n-bm60-cloud-attendance-terminal",
+    "brand": "Biomax",
+    "category": "Face + Fingerprint Devices",
+    "tagline": "Compact Multi-Biometric Attendance Terminal with Built-in Cloud Connectivity",
+    "image": "/images/products/biomax-n-bm60.svg",
+    "capacity": {
+      "faces": "1,000 face templates",
+      "fingerprints": "2,000 fingerprints",
+      "cards": "2,000 RFID cards",
+      "transactions": "100,000 logs"
+    },
+    "specs": {
+      "display": "2.8-inch TFT Color Display",
+      "communication": "Wi-Fi, TCP/IP, USB Drive",
+      "dualCamera": "Infrared Night Vision + RGB Camera",
+      "powerSupply": "12V DC 1.5A",
+      "operatingTemp": "-10°C to 50°C",
+      "dimension": "165 x 140 x 35 mm"
+    },
+    "features": [
+      "Built-in Wi-Fi enables cable-free connection to office router",
+      "Dual IR cameras guarantee accurate face capture in dark or backlight conditions",
+      "Cloud push protocol for remote branch tracking from Hyderabad central office",
+      "Mobile app support for employees and HR administrators",
+      "Affordable pricing with long-term commercial durability"
+    ],
+    "applications": [
+      "Multi-Branch Retail Showrooms across Hyderabad & Telangana",
+      "Gyms and Fitness Studios with shift trainers",
+      "Architectural & Creative Design Studios",
+      "Small Hospitals and Nursing Homes"
+    ],
+    "installationInfo": "Wall bracket with lock screw. Connects over Wi-Fi within minutes.",
+    "popular": true
+  },
+  {
+    "id": "electromagnetic-lock-600lbs",
+    "name": "Heavy Duty 600 lbs Electromagnetic Lock (EM Lock)",
+    "slug": "electromagnetic-door-lock-600lbs",
+    "brand": "eSSL / SecureTech",
+    "category": "Electromagnetic Locks",
+    "tagline": "Fail-Safe Magnetic Lock for Single Wooden, Glass & Metal Doors",
+    "image": "/images/products/em-lock-600lbs.svg",
+    "capacity": {
+      "holdingForce": "280 kg (600 lbs) linear holding force",
+      "voltage": "12V DC or 24V DC (auto-switchable)",
+      "currentDraw": "12V/500mA or 24V/250mA"
+    },
+    "specs": {
+      "lockSize": "250L x 48.5W x 25H mm",
+      "armaturePlate": "180L x 38W x 11H mm",
+      "surfaceTemp": "Low temperature design (< 20°C rise)",
+      "bracketOptions": "ZL Bracket, U Bracket for Frameless Glass Doors",
+      "statusOutput": "LED status indicator (Red/Green) and NO/NC relay feedback",
+      "safetyStandard": "CE, FCC, RoHS certified fail-safe mechanism"
+    },
+    "features": [
+      "Anti-residual magnetism design prevents door sticking upon release",
+      "Anodized aluminum housing offers high corrosion and wear resistance",
+      "Fail-safe operation automatically releases door during fire alarms or power failure",
+      "Dual LED indicator confirms magnetic lock status at a glance",
+      "Versatile ZL and U brackets ensure compatibility with all door types"
+    ],
+    "applications": [
+      "Office Entrance Glass Doors",
+      "Server Room Wooden Doors",
+      "Cleanroom Airlocks in Pharma Facilities",
+      "Emergency Exits and High-Security Corridors"
+    ],
+    "installationInfo": "Installed on top door frame with armature plate on door leaf. Available with ZL brackets for inward swinging doors and U-brackets for glass doors.",
+    "popular": true
+  },
+  {
+    "id": "drop-bolt-lock",
+    "name": "Heavy-Duty Electric Drop Bolt Lock",
+    "slug": "electric-drop-bolt-lock",
+    "brand": "eSSL / SecureTech",
+    "category": "Electromagnetic Locks",
+    "tagline": "Concealed Motorized Drop Bolt Lock with Time Delay for Glass Doors",
+    "image": "/images/products/drop-bolt-lock.svg",
+    "capacity": {
+      "holdingForce": "1000 kg tensile strength",
+      "operatingVoltage": "12V DC ±10%",
+      "autoLockDelay": "0, 3, 6, 9 seconds selectable timer"
+    },
+    "specs": {
+      "boltDiameter": "16 mm solid stainless steel throw",
+      "currentDraw": "Start: 900mA, Standby: 100mA",
+      "dimensions": "205 x 35 x 40 mm",
+      "failSafeMode": "Fail Safe (Power to lock, unlocks upon power loss)",
+      "doorSuitability": "Double-swing 180° glass doors and wooden frames"
+    },
+    "features": [
+      "Solid stainless steel bolt provides maximum pry-resistance against forced entry",
+      "Adjustable 0/3/6/9 second relock delay prevents lock chatter when door swings",
+      "Magnetic induction sensor automatically engages bolt only when door is aligned",
+      "Ideal for frameless glass doors swinging both inwards and outwards",
+      "Fail-safe mechanism ensures life safety compliance during building evacuation"
+    ],
+    "applications": [
+      "Modern Glass Facade Entrances",
+      "Corporate Boardrooms & Meeting Spaces",
+      "Bank Branch Cash Enclosures",
+      "Laboratory Interlocking Air Showers"
+    ],
+    "installationInfo": "Top or header mounted. Frameless glass brackets available for bottom and top glass installation.",
+    "popular": false
+  },
+  {
+    "id": "essl-inbio-260",
+    "name": "eSSL InBio 260 Multi-Door Controller",
+    "slug": "essl-inbio-260-access-controller-panel",
+    "brand": "eSSL",
+    "category": "Door Access Controllers",
+    "tagline": "Industrial 2-Door Biometric & RFID Networked Access Control Panel",
+    "image": "/images/products/essl-inbio-260.svg",
+    "capacity": {
+      "fingerprints": "3,000 templates",
+      "cards": "30,000 RFID cards",
+      "transactions": "100,000 event records",
+      "doors": "2 doors (In/Out 4 readers)"
+    },
+    "specs": {
+      "communication": "TCP/IP and RS-485",
+      "readerInterface": "4 x RS-485 Readers (eSSL FR1200) + 4 x Wiegand 26/34 Readers",
+      "inputPorts": "6 (2 Exit Buttons, 2 Door Sensors, 2 Auxiliary Inputs)",
+      "outputPorts": "4 (2 Form-C Relays for SPDT Locks, 2 Aux Relays)",
+      "cpu": "32-bit 400MHz high-speed processor",
+      "powerSupply": "9.6V - 14.4V DC"
+    },
+    "features": [
+      "Centralized controller panel mounted inside secure IT server room rack",
+      "Anti-passback, multi-card unlock, first-card unlock and interlock door logic",
+      "RS-485 reader loop protects against door tampering on public exterior wall",
+      "Auxiliary relay outputs connect directly to fire alarm panel and intruder sirens",
+      "Scalable multi-controller network managed via centralized ZKAccess software"
+    ],
+    "applications": [
+      "Pharmaceutical Manufacturing Plants with 2-door Interlocking Airlocks",
+      "Multi-story Corporate Headquarters",
+      "Industrial Warehouses with Multi-Access Checkpoints",
+      "Data Centers and Server Server Room Corridors"
+    ],
+    "installationInfo": "Enclosed in heavy-duty lockable metal box with power supply and battery backup space.",
+    "popular": false
+  },
+  {
+    "id": "rfid-smart-cards-tags",
+    "name": "RFID Proximity Cards & Mifare Smart Cards",
+    "slug": "rfid-proximity-cards-mifare-keyfobs",
+    "brand": "Meenakshi Technologies",
+    "category": "RFID Card Readers",
+    "tagline": "High-Frequency 13.56MHz Mifare & 125kHz EM Proximity Cards and Keyfobs",
+    "image": "/images/products/rfid-cards.svg",
+    "capacity": {
+      "frequencies": "125 kHz EM-Marine / 13.56 MHz Mifare 1K S50",
+      "readDistance": "3 to 10 cm depending on reader antenna",
+      "memory": "1K Byte EEPROM (for Mifare)"
+    },
+    "specs": {
+      "material": "Durable Glossy White PVC with printable surface",
+      "dimensions": "85.5 x 54 x 0.84 mm (ISO CR80 Credit Card standard)",
+      "operatingTemp": "-20°C to +75°C",
+      "customization": "Supports double-sided thermal ID card printing and serial coding"
+    },
+    "features": [
+      "Compatible with all eSSL, Biomax, and generic Wiegand RFID readers",
+      "Durable PVC construction withstands bending, moisture, and daily handling",
+      "Unique pre-printed 18-digit ID code for instant database registration",
+      "Mifare smart cards support multi-application: Attendance, Access & Canteen",
+      "Available as thin ISO cards, clamshell thick cards, and rugged epoxy keyfobs"
+    ],
+    "applications": [
+      "School & College Student ID Cards",
+      "Corporate Employee Photo Identity Badges",
+      "Gym & Health Club Membership Tokens",
+      "Visitor Management Badges for Commercial Buildings"
+    ],
+    "installationInfo": "Ready to use out of box. Supported by ID card thermal printers (Zebra, Evolis, Magicard).",
+    "popular": false
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "biometric-attendance-systems",
+    "name": "Biometric Attendance Systems",
+    "slug": "biometric-attendance-systems-hyderabad",
+    "icon": "fingerprint",
+    "badge": "Core Solution",
+    "shortDesc": "Modern automated workforce time tracking eliminating buddy punching, manual registers, and calculation errors.",
+    "longDesc": "Meenakshi Technologies supplies, configures, and deploys high-precision biometric attendance systems designed for businesses of all scales in Hyderabad and Telangana. By replacing vulnerable paper registers and plastic punch cards with encrypted biological traits (fingerprint, facial geometry, or smart RFID), organizations gain 100% accurate attendance records, eliminate payroll discrepancies, and enhance workplace discipline.",
+    "benefits": [
+      "Completely eliminates buddy punching and proxy attendance",
+      "Calculates work hours, overtime, late arrival and early departure automatically",
+      "Integrates directly with HRMS and payroll software (Excel, Tally, Spine, SAP)",
+      "Supports standalone USB operation or networked multi-branch real-time push",
+      "Built-in battery backup modules prevent data disruption during power cuts"
+    ],
+    "suitableFor": "Offices, manufacturing units, hospitals, schools, retail chains and construction sites across Hyderabad.",
+    "modelsRecommended": ["eSSL K30 Pro", "Biomax SpeedFace 5", "eSSL SilkBio-100TC"]
+  },
+  {
+    "id": "essl-biometric-devices",
+    "name": "eSSL Biometric Devices",
+    "slug": "essl-biometric-dealers-hyderabad",
+    "icon": "award",
+    "badge": "Leading Brand",
+    "shortDesc": "Genuine eSSL time attendance machines and door controllers with manufacturer technical support and local warranty.",
+    "longDesc": "As a trusted biometric technology supplier in Hyderabad, Meenakshi Technologies delivers authentic eSSL hardware across Telangana. eSSL is India's most recognized biometric security brand, celebrated for robust optical sensors, intuitive firmware, and compatibility with eTimeTrackLite software. We provide pre-sales model selection, genuine product delivery, onsite installation, and ongoing maintenance.",
+    "benefits": [
+      "Access to authentic eSSL hardware with original manufacturer warranties",
+      "Full compatibility with eTimeTrackLite desktop and web software",
+      "Versatile product portfolio spanning entry-level USB devices to enterprise controllers",
+      "Proven reliability in demanding Indian environmental and power conditions",
+      "Prompt onsite service and technical assistance from Hyderabad technicians"
+    ],
+    "suitableFor": "Corporate offices, pharmaceutical plants, commercial banks, educational institutions and SMEs.",
+    "modelsRecommended": ["eSSL K30 Pro", "eSSL SilkBio-100TC", "eSSL uFace 202", "eSSL F22"]
+  },
+  {
+    "id": "biomax-biometric-devices",
+    "name": "Biomax Biometric Devices",
+    "slug": "biomax-biometric-dealers-hyderabad",
+    "icon": "shield-check",
+    "badge": "Authorized Lineup",
+    "shortDesc": "Cutting-edge Biomax AI visible light face recognition and high-speed fingerprint attendance terminals.",
+    "longDesc": "Meenakshi Technologies provides Biomax biometric and access control systems in Hyderabad. Biomax is renowned for rapid visible-light facial recognition terminals, robust cloud synchronization, and ergonomic modern form factors. Our engineers assist in complete setup, employee enrollment, and software integration to ensure smooth daily operations.",
+    "benefits": [
+      "Deep learning AI facial recognition with wide dynamic range cameras",
+      "Walk-through recognition from up to 2.5 meters away within 0.3 seconds",
+      "Anti-spoofing algorithms stopping photo, video, and mask presentation",
+      "Direct cloud connectivity without mandatory static IP address requirements",
+      "Sleek industrial aesthetics matching contemporary office and club interiors"
+    ],
+    "suitableFor": "Gyms, corporate headquarters, IT campuses, fitness studios and multi-branch retail outlets.",
+    "modelsRecommended": ["Biomax SpeedFace 5", "Biomax Bio-Finger 100", "Biomax N-BM60"]
+  },
+  {
+    "id": "face-recognition-attendance-machines",
+    "name": "Face Recognition Attendance Machines",
+    "slug": "face-recognition-attendance-machines-hyderabad",
+    "icon": "scan-face",
+    "badge": "Touchless & Hygienic",
+    "shortDesc": "Touchless AI facial geometry scanners for hygienic, non-contact employee clocking in milliseconds.",
+    "longDesc": "Touchless face recognition is the modern benchmark for corporate and sterile industrial attendance. Meenakshi Technologies supplies advanced dual-camera infrared and visible-light face terminals that accurately verify employees even with medical face masks, eyeglasses, varied hairstyles, or varying lighting conditions. Ideal for pharmaceutical cleanrooms, healthcare centers, and high-footfall entrances.",
+    "benefits": [
+      "100% contactless and hygienic operation preventing cross-contamination",
+      "Infrared dual cameras operate flawlessly in total darkness or bright sunlight",
+      "Sub-second recognition speeds prevent entry bottlenecks during shift changes",
+      "Built-in live face detection ensures photographs or mobile screens cannot spoof system",
+      "Touchscreen interfaces simplify standalone employee enrollment and device setup"
+    ],
+    "suitableFor": "Pharma cleanrooms, hospitals, food processing facilities, luxury offices and IT firms.",
+    "modelsRecommended": ["Biomax SpeedFace 5", "eSSL uFace 202", "eSSL SilkBio-100TC"]
+  },
+  {
+    "id": "fingerprint-attendance-machines",
+    "name": "Fingerprint Attendance Machines",
+    "slug": "fingerprint-attendance-machines-hyderabad",
+    "icon": "fingerprint",
+    "badge": "High Accuracy",
+    "shortDesc": "Cost-effective, dependable biometric fingerprint terminals equipped with scratch-resistant 500 DPI sensors.",
+    "longDesc": "Fingerprint attendance machines remain the world's most widely adopted biometric solution due to exceptional cost efficiency and rock-solid reliability. Meenakshi Technologies offers a comprehensive lineup of optical and SilkID fingerprint machines that capture unique minutiae points with negligible false rejection rates, even on worn, dry, or working fingertips.",
+    "benefits": [
+      "Most economical biometric investment for micro, small and growing businesses",
+      "Scratch-proof optical glass sensors engineered for decades of mechanical resilience",
+      "Encrypted template storage guarantees individual employee privacy",
+      "Standalone USB flash drive data download or automatic TCP/IP network sync",
+      "Internal battery backup options provide continuous operation during power cuts"
+    ],
+    "suitableFor": "Offices, retail stores, workshops, accounting firms, coaching centers and warehouse docks.",
+    "modelsRecommended": ["eSSL K30 Pro", "eSSL Identix K21", "Biomax Bio-Finger 100"]
+  },
+  {
+    "id": "rfid-attendance-systems",
+    "name": "RFID Attendance Systems",
+    "slug": "rfid-attendance-systems-hyderabad",
+    "icon": "credit-card",
+    "badge": "Rapid High-Throughput",
+    "shortDesc": "High-throughput contactless smart card and proximity card readers ideal for schools, colleges and turnstiles.",
+    "longDesc": "When thousands of students or factory workers need to record attendance in short windows of 15 to 30 minutes, RFID card attendance systems provide unrivaled speed. By tapping a personalized 125kHz Proximity or 13.56MHz Mifare card against the reader, attendance is logged in under 0.2 seconds. Meenakshi Technologies provides complete RFID solutions including cards, readers, and automated notification software.",
+    "benefits": [
+      "Lightning-fast tap-and-go speed processing up to 60 individuals per minute",
+      "Cards double as customized student identity cards or employee photo badges",
+      "Automated SMS/WhatsApp notifications to parents upon student arrival and departure",
+      "Zero physical wear on sensor surfaces ensures minimal long-term maintenance",
+      "Compatible with boom barriers, turnstiles, and speed gates"
+    ],
+    "suitableFor": "Schools, junior colleges, universities, large factories, event venues and transit centers.",
+    "modelsRecommended": ["RFID Smart Cards & Readers", "eSSL K30 Pro RFID", "eSSL InBio 260"]
+  },
+  {
+    "id": "door-access-control-systems",
+    "name": "Door Access Control Systems",
+    "slug": "door-access-control-systems-hyderabad",
+    "icon": "lock",
+    "badge": "Access Security",
+    "shortDesc": "Restricted door access systems utilizing biometric or card credentials to safeguard premises 24/7.",
+    "longDesc": "Protect your enterprise assets, intellectual property, and personnel with Meenakshi Technologies' comprehensive door access control systems. We engineer single-door standalone setups and networked multi-door controller architectures that ensure only authorized individuals enter designated zones, while logging every entry attempt with timestamp and credential details.",
+    "benefits": [
+      "Strict restriction of unauthorized visitors and non-permitted staff members",
+      "Time-zone based access rules (e.g., access restricted after 8 PM or on weekends)",
+      "Audit trail reports identifying who accessed critical zones and when",
+      "Emergency fire alarm integration automatically releases locks for life safety",
+      "Anti-passback functionality prevents badge sharing among coworkers"
+    ],
+    "suitableFor": "Server rooms, executive suites, R&D labs, cash vaults, pharma storehouses and corporate floors.",
+    "modelsRecommended": ["eSSL F22", "eSSL InBio 260", "Biomax SpeedFace 5", "EM Locks"]
+  },
+  {
+    "id": "electromagnetic-door-locks",
+    "name": "Electromagnetic Door Locks",
+    "slug": "electromagnetic-door-locks-hyderabad",
+    "icon": "shield",
+    "badge": "Physical Security",
+    "shortDesc": "Heavy-duty 600 lbs and 1200 lbs electromagnetic locks with custom brackets for glass, wood, and metal doors.",
+    "longDesc": "The physical backbone of any reliable access control installation is the locking mechanism. Meenakshi Technologies supplies and expertly installs industrial-grade electromagnetic locks (EM locks) and motorized drop bolts. Designed on fail-safe magnetic principles, our locks deliver up to 280 kg (600 lbs) or 500 kg (1200 lbs) of linear holding force with zero mechanical wear.",
+    "benefits": [
+      "No moving mechanical parts ensures silent operation and immense operational lifespan",
+      "Fail-safe architecture complies with fire safety norms by releasing upon power interruption",
+      "Specialized ZL brackets for wooden doors and U brackets for frameless glass doors",
+      "Integrated dual-color LED status indicator and door sensor feedback",
+      "Surge protection circuitry defends against voltage spikes and power anomalies"
+    ],
+    "suitableFor": "Frameless glass doors, wooden executive doors, fire exit metal doors and aluminum frames.",
+    "modelsRecommended": ["Electromagnetic Lock 600 lbs", "Electric Drop Bolt Lock", "ZL & U Brackets"]
+  },
+  {
+    "id": "employee-attendance-management",
+    "name": "Employee Attendance Management",
+    "slug": "employee-attendance-management-solutions",
+    "icon": "users",
+    "badge": "Workforce Ops",
+    "shortDesc": "End-to-end workforce scheduling, multi-shift assignment, late mark tracking, and leave management.",
+    "longDesc": "Managing workforce punctuality across varying shifts is a major operational challenge. Meenakshi Technologies sets up comprehensive attendance management software that synchronizes directly with your biometric devices. Configure day, night, rotational, and split shifts, set grace periods for late coming, and track real-time presenteeism on visual dashboards.",
+    "benefits": [
+      "Configurable shift rosters supporting 24/7 continuous operations and rotational shifts",
+      "Automated calculation of half-days, late deductions, short-hours, and overtime",
+      "Leave application and approval workflows directly linked to attendance records",
+      "Multi-branch centralization allowing head office visibility over distant branches",
+      "Comprehensive daily, weekly, and monthly attendance reports in PDF and Excel"
+    ],
+    "suitableFor": "Manufacturing plants, 24/7 call centers, logistics hubs, retail chains and hospitality businesses.",
+    "modelsRecommended": ["eTimeTrackLite Software", "Biomax Cloud Attendance", "eSSL Web Suite"]
+  },
+  {
+    "id": "payroll-management-software",
+    "name": "Payroll Management Software",
+    "slug": "payroll-management-software-integration",
+    "icon": "calculator",
+    "badge": "Payroll & HR",
+    "shortDesc": "Automated payroll calculation linking biometric punch logs directly with salary slips, PF, ESI, and TDS deductions.",
+    "longDesc": "Manual payroll calculation consumes dozens of HR hours and leads to expensive payroll disputes. Meenakshi Technologies provides seamless integration between biometric punch logs and statutory payroll engines. Convert raw biometric timestamps into net salary slips with automated deductions for PF, ESI, Professional Tax, TDS, and advances in minutes.",
+    "benefits": [
+      "One-click monthly payroll generation directly from biometric punch data",
+      "Automated compliance calculations: PF, ESI, PT, and income tax TDS",
+      "Salary slip generation with customizable company branding and email delivery",
+      "Direct integration with Tally Prime, SAP ERP, Zoho Books, and Excel",
+      "Eliminates manual human data entry errors and employee salary disputes"
+    ],
+    "suitableFor": "Accounting departments, HR agencies, medium enterprises and manufacturing payroll teams.",
+    "modelsRecommended": ["eTimeTrackLite Payroll Module", "Biomax Payroll Suite", "Custom Tally Connector"]
+  },
+  {
+    "id": "gym-management-software",
+    "name": "Gym Management Software",
+    "slug": "gym-management-software-hyderabad",
+    "icon": "activity",
+    "badge": "Fitness & Clubs",
+    "shortDesc": "Biometric access control tied directly to membership validity, expiry lockout, and fee collection tracking.",
+    "longDesc": "Prevent unauthorized workout access and unpaid memberships in your fitness club. Meenakshi Technologies deploys smart gym management software integrated with biometric turnstiles, flap barriers, or electromagnetic glass door locks. When a member's package expires, the biometric scanner automatically denies door entry and prompts membership renewal.",
+    "benefits": [
+      "Automatic door access lockout the moment a member's subscription package expires",
+      "Member attendance logging and peak workout hour footfall analytics",
+      "Automated WhatsApp and SMS reminders before renewal due dates",
+      "Trainer shift tracking, PT session logging and commission calculation",
+      "Eliminates unpaid guest entries and friendly card handoffs"
+    ],
+    "suitableFor": "Gyms, CrossFit boxes, yoga academies, dance studios and sports clubs across Hyderabad.",
+    "modelsRecommended": ["Biomax SpeedFace 5", "eSSL F22", "EM Lock Glass Assembly"]
+  },
+  {
+    "id": "biometric-installation-support",
+    "name": "Biometric Installation & Technical Support",
+    "slug": "biometric-installation-technical-support-hyderabad",
+    "icon": "wrench",
+    "badge": "Expert Service",
+    "shortDesc": "Onsite installation, LAN cabling, door lock alignment, software configuration, and quick-response troubleshooting.",
+    "longDesc": "A biometric machine is only as good as its installation and configuration. Meenakshi Technologies delivers expert end-to-end technical services across Hyderabad and Telangana. Our trained field engineers handle neat wall mounting, structured CAT6 cabling, door lock bracket alignment, firewall port forwarding, database configuration, and HR staff training.",
+    "benefits": [
+      "Professional onsite installation with neat, concealed casing and cabling",
+      "Precision alignment of electromagnetic locks and brackets on glass or wooden doors",
+      "Software installation, database setup, and user enrollment training for your staff",
+      "Prompt onsite service and remote troubleshooting via AnyDesk / TeamViewer",
+      "Annual Maintenance Contracts (AMC) available for continuous peace of mind"
+    ],
+    "suitableFor": "New office setups, facility upgrades, relocated businesses, and organizations needing AMC support.",
+    "modelsRecommended": ["Onsite Installation Package", "Annual Maintenance Contract", "Emergency Lock Support"]
+  }
+]

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <!-- RFID Card Graphic -->
+  <rect x="70" y="60" width="260" height="160" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="drop-shadow(0 10px 16px rgba(0,0,0,0.15))"/>
+  <!-- Card Header Strip -->
+  <rect x="70" y="60" width="260" height="40" rx="12 12 0 0" fill="#0f2b5c"/>
+  <text x="90" y="85" font-family="sans-serif" font-size="12" font-weight="900" fill="#fff">MEENAKSHI TECHNOLOGIES</text>
+  <!-- RFID Chip & Wireless Waves -->
+  <rect x="95" y="120" width="36" height="30" rx="4" fill="#f59e0b"/>
+  <path d="M145 130 C155 125 155 145 145 140" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <path d="M152 125 C165 120 165 150 152 145" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="200" y="140" font-family="monospace" font-size="12" font-weight="bold" fill="#334155">ID: 0008472910</text>
+  <text x="200" y="195" font-family="sans-serif" font-size="10" fill="#64748b">125kHz Proximity / 13.56MHz Mifare 1K</text>
+  <text x="200" y="270" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">RFID Proximity Cards &amp; Mifare Smart Badges</text>
+</svg>

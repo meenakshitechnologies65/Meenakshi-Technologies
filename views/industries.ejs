@@ -1,0 +1,47 @@
+<%- include('partials/head', { 
+  title: 'Biometric Attendance & Access Control for Industries | Meenakshi Technologies',
+  metaDescription: 'Specialized biometric solutions for Pharmaceutical Cleanrooms, Manufacturing, Corporate Offices, Gyms, Schools, and MSMEs in Hyderabad.',
+  canonicalUrl: 'https://www.meenakshitechnologies.org/industries'
+}) %>
+
+<%- include('partials/header', { activePage: 'industries' }) %>
+
+<header class="pillar-page-header">
+  <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">
+      Vertical Expertise
+    </span>
+    <h1 style="font-size: 2.8rem; font-weight: 900; color: #fff; margin: 1rem 0;">
+      Industries We Serve
+    </h1>
+    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.6;">
+      Addressing the exact security regulations, shift complexities, and environmental demands of Hyderabad's premier economic sectors.
+    </p>
+  </div>
+</header>
+
+<div class="container" style="padding: 4rem 1.5rem;">
+  <div class="industries-grid">
+    <% industries.forEach(ind => { %>
+      <div class="industry-card" style="background:#0b2545;">
+        <span class="industry-badge"><%= ind.badge %></span>
+        <h2 class="industry-title" style="font-size:1.3rem;">
+          <a href="/industries/<%= ind.slug %>" style="color:inherit;"><%= ind.name %></a>
+        </h2>
+        <div class="industry-challenge">
+          <strong style="color:#fff;">Challenge:</strong> <%= ind.challenge %>
+        </div>
+        <div class="industry-solution">
+          <strong style="color:#38bdf8;">Solution:</strong> <%= ind.solution %>
+        </div>
+        <div style="margin-top:auto; padding-top:1rem;">
+          <a href="/industries/<%= ind.slug %>" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.2);">
+            <span>Industry Solution Guide &rarr;</span>
+          </a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

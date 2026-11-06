@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Management Portal | Meenakshi Technologies</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/cms.css">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+
+<div class="cms-layout">
+  <!-- Sidebar -->
+  <aside class="cms-sidebar">
+    <div class="cms-logo-area">
+      <img src="/images/logo.png" alt="Meenakshi Technologies Logo">
+      <div>
+        <h3>Meenakshi</h3>
+        <span>CMS Management v2.0</span>
+      </div>
+    </div>
+
+    <nav class="cms-nav">
+      <a href="#overview" class="cms-nav-item active">&#128202; Overview &amp; Stats</a>
+      <a href="#leads" class="cms-nav-item">&#128140; Enquiries &amp; Leads (<%= leads.length %>)</a>
+      <a href="#publish" class="cms-nav-item">&#9997; Publish New Article</a>
+      <a href="#articles" class="cms-nav-item">&#128218; Manage Articles (<%= posts.length %>)</a>
+      <a href="#products-view" class="cms-nav-item">&#128295; Products &amp; Inventory</a>
+      <a href="/" target="_blank" class="cms-nav-item" style="margin-top:auto; background:rgba(255,255,255,0.08);">&#127760; View Live Website</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="cms-main">
+    <div class="cms-header-bar">
+      <div>
+        <h2>Meenakshi Technologies Administration</h2>
+        <span style="font-size:0.85rem; color:#64748b;">Logged in as Tingirikar Teja (Founder)</span>
+      </div>
+      <div>
+        <a href="/" target="_blank" class="btn btn-outline btn-sm" style="color:#0b2545; border-color:#cbd5e1;">Live Website &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="cms-stats-grid" id="overview">
+      <div class="cms-stat-box">
+        <div class="title">Total Enquiries Received</div>
+        <div class="count"><%= leads.length %></div>
+      </div>
+      <div class="cms-stat-box">
+        <div class="title">Published SEO Articles</div>
+        <div class="count"><%= posts.length %></div>
+      </div>
+      <div class="cms-stat-box">
+        <div class="title">Active Products</div>
+        <div class="count"><%= products.length %></div>
+      </div>
+      <div class="cms-stat-box">
+        <div class="title">Verified Locations</div>
+        <div class="count">2</div>
+      </div>
+    </div>
+
+    <!-- Leads Section -->
+    <div class="cms-table-card" id="leads">
+      <h3>
+        <span>Customer Business Enquiries</span>
+        <span style="font-size:0.8rem; font-weight:normal; color:#64748b;">Instant WhatsApp &amp; status updater</span>
+      </h3>
+
+      <% if (leads.length === 0) { %>
+        <p style="color:#64748b; font-size:0.95rem;">No enquiries recorded yet. Submissions from the website forms will appear here in real time.</p>
+      <% } else { %>
+        <div style="overflow-x:auto;">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Date / Time</th>
+                <th>Client Name</th>
+                <th>Company</th>
+                <th>Phone / WhatsApp</th>
+                <th>Product Required</th>
+                <th>Employees</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% leads.forEach(lead => { %>
+                <tr>
+                  <td><%= new Date(lead.timestamp).toLocaleString('en-IN') %></td>
+                  <td><strong><%= lead.fullName %></strong></td>
+                  <td><%= lead.companyName || '—' %></td>
+                  <td>
+                    <a href="tel:<%= lead.mobileNumber %>" style="color:#0066cc;"><%= lead.mobileNumber %></a>
+                  </td>
+                  <td><%= lead.productOrService %></td>
+                  <td><%= lead.employeeCount %></td>
+                  <td>
+                    <span class="cms-badge <%= lead.status %>"><%= lead.status.toUpperCase() %></span>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline btn-sm update-lead-status-btn" data-lead-id="<%= lead.id %>" style="color:#0b2545; padding:0.25rem 0.6rem; font-size:0.75rem;">Status</button>
+                    <a href="https://wa.me/<%= lead.mobileNumber.replace(/[^0-9]/g, '') %>?text=Hello%20<%= encodeURIComponent(lead.fullName) %>%2C%20this%20is%20Tingirikar%20Teja%20from%20Meenakshi%20Technologies%20regarding%20your%20enquiry." 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="btn btn-whatsapp btn-sm" 
+                       style="padding:0.25rem 0.6rem; font-size:0.75rem;">
+                      WA
+                    </a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Article Publisher -->
+    <div class="cms-form-card" id="publish">
+      <h3>Publish New SEO Article</h3>
+      <form id="cmsNewPostForm">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Article Title *</label>
+            <input type="text" name="title" class="form-control" required placeholder="e.g. Best Fingerprint Attendance Machines for Small Offices in Hyderabad">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Blog Category *</label>
+            <select name="category" class="form-control">
+              <option value="Biometric Attendance">Biometric Attendance</option>
+              <option value="eSSL Products">eSSL Products</option>
+              <option value="Biomax Products">Biomax Products</option>
+              <option value="Access Control Systems">Access Control Systems</option>
+              <option value="Payroll Software">Payroll Software</option>
+              <option value="Gym Management Software">Gym Management Software</option>
+              <option value="Industrial Security">Industrial Security</option>
+              <option value="Biometric Installation Guides">Biometric Installation Guides</option>
+              <option value="Product Comparisons">Product Comparisons</option>
+              <option value="Hyderabad Local Guides">Hyderabad Local Guides</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Author Name</label>
+            <input type="text" name="author" class="form-control" value="Tingirikar Teja">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Read Time</label>
+            <input type="text" name="readTime" class="form-control" value="6 min read">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">SEO Meta Title</label>
+            <input type="text" name="metaTitle" class="form-control" placeholder="60 characters recommended">
+          </div>
+          <div class="form-group">
+            <label class="form-label">SEO Meta Description</label>
+            <input type="text" name="metaDescription" class="form-control" placeholder="155 characters recommended">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Short Summary (Excerpt) *</label>
+          <input type="text" name="summary" class="form-control" required placeholder="Brief 1-2 sentence overview for social cards and search engines.">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Article Body Content (HTML / Markdown) *</label>
+          <textarea name="content" class="form-control" rows="10" required placeholder="Write your comprehensive article content here..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">
+          <span>Publish Article to Website</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Articles List -->
+    <div class="cms-table-card" id="articles" style="margin-top:2.5rem;">
+      <h3>Published Articles</h3>
+      <table class="cms-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Read Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% posts.forEach(p => { %>
+            <tr>
+              <td><strong><%= p.title %></strong></td>
+              <td><%= p.category %></td>
+              <td><%= p.author %></td>
+              <td><%= p.readTime %></td>
+              <td>
+                <a href="/blog/<%= p.slug %>" target="_blank" style="color:#0066cc; font-weight:700;">View &rarr;</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Products & Verified Stock -->
+    <div class="cms-table-card" id="products-view" style="margin-top:2.5rem;">
+      <h3>Verified Product Catalog (<%= products.length %> Items)</h3>
+      <table class="cms-table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Capacity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(p => { %>
+            <tr>
+              <td><strong><%= p.name %></strong></td>
+              <td><%= p.brand %></td>
+              <td><%= p.category %></td>
+              <td><%= p.capacity.fingerprints || p.capacity.faces || p.capacity.holdingForce %></td>
+              <td>
+                <a href="/products/<%= p.slug %>" target="_blank" style="color:#0066cc; font-weight:700;">Inspect &rarr;</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="/js/cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <rect x="60" y="35" width="280" height="250" rx="16" fill="#1e293b" stroke="#64748b" stroke-width="2" filter="drop-shadow(0 8px 12px rgba(0,0,0,0.25))"/>
+  <rect x="80" y="55" width="140" height="90" rx="8" fill="#0284c7"/>
+  <text x="150" y="90" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Identix K21</text>
+  <text x="150" y="115" font-family="sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">09:00 AM</text>
+  <!-- Optical Sensor -->
+  <rect x="240" y="55" width="80" height="90" rx="8" fill="#0f766e" stroke="#2dd4bf" stroke-width="1.5"/>
+  <circle cx="280" cy="100" r="18" fill="none" stroke="#fff" stroke-width="2"/>
+  <!-- Keypad Area -->
+  <rect x="80" y="165" width="240" height="100" rx="8" fill="#0f172a"/>
+  <text x="200" y="210" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">Plug &amp; Play Small Office Attendance</text>
+  <text x="200" y="235" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Direct USB Excel Reports • Zero Cloud License Fee</text>
+</svg>

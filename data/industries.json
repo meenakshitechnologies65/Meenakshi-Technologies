@@ -1,0 +1,182 @@
+[
+  {
+    "id": "pharmaceutical-manufacturing",
+    "name": "Pharmaceutical Manufacturing Industries",
+    "slug": "biometric-solutions-pharmaceutical-manufacturing",
+    "badge": "High Compliance & Cleanrooms",
+    "icon": "flask-conical",
+    "image": "/images/industries/pharma.svg",
+    "challenge": "Strict cGMP cleanroom protocols, 21 CFR Part 11 audit trails, sterile entry locks, multi-tier clean zone access, and zero tolerance for contamination.",
+    "solution": "Touchless AI face recognition terminals with visible-light and infrared cameras. Biometric interlocking airlocks that prevent opening cleanroom doors simultaneously. Comprehensive audit logs recording every access event with non-editable timestamps.",
+    "keyFeatures": [
+      "Contactless face recognition operates through safety goggles and surgical masks",
+      "Two-door interlocking airlock controller integration (cleanroom positive pressure maintenance)",
+      "Audit logs with operator credentials meeting regulatory validation requirements",
+      "Corrosion-resistant stainless steel housings suitable for frequent sanitization",
+      "Multi-shift rotational roster tracking for 24/7 formulation and API operations"
+    ],
+    "targetAreas": "Jeedimetla, Bollaram, Pashamylaram, Genome Valley, Sanathnagar, Kothur & Kazipalli industrial corridors."
+  },
+  {
+    "id": "manufacturing-companies",
+    "name": "Manufacturing Companies & Factories",
+    "slug": "biometric-solutions-manufacturing-companies",
+    "badge": "Industrial Durability",
+    "icon": "factory",
+    "image": "/images/industries/manufacturing.svg",
+    "challenge": "Challenging shop floor environments with machine dust, oil, high ambient temperatures, and workers with worn or scarred fingerprints.",
+    "solution": "High-durability optical sensors with SilkID technology and dual-camera visible-light face recognition that recognize wet, dry, or soiled fingers in milliseconds.",
+    "keyFeatures": [
+      "Ruggedized, dust-proof enclosures designed for tough industrial environments",
+      "SilkID sensors capture valid fingerprint minutiae despite minor abrasions",
+      "Multi-shift scheduling with automated overtime and night-shift allowance calculation",
+      "Siren and external hooter relay outputs for scheduled lunch and shift change bells",
+      "Integration with motorized tripod turnstiles and perimeter security barriers"
+    ],
+    "targetAreas": "Cherlapally, Balanagar, Kattedan, Patancheru, Nacharam, Mallapur, Uppal and Jeedimetla."
+  },
+  {
+    "id": "msmes",
+    "name": "Micro, Small and Medium Enterprises (MSMEs)",
+    "slug": "biometric-solutions-msme-small-business",
+    "badge": "High ROI & Easy Setup",
+    "icon": "briefcase",
+    "image": "/images/industries/msme.svg",
+    "challenge": "Limited budget, absence of dedicated IT staff, vulnerability to buddy punching, and tedious manual attendance tracking on paper registers.",
+    "solution": "Affordable standalone biometric attendance machines with direct USB Excel reporting, plug-and-play setup, and optional Wi-Fi connectivity.",
+    "keyFeatures": [
+      "Extremely economical entry investment with zero mandatory monthly recurring fees",
+      "Plug-and-play installation taking less than 30 minutes from unboxing to first punch",
+      "Direct Excel attendance summary download using any standard USB pen drive",
+      "Built-in battery backup ensuring seamless operation through power fluctuations",
+      "Eliminates 100% of proxy punches and provides transparent work-hour visibility"
+    ],
+    "targetAreas": "Ameerpet, Dilsukhnagar, LB Nagar, Kothapet, Kukatpally, Secunderabad, Malakpet and Abids."
+  },
+  {
+    "id": "large-scale-industries",
+    "name": "Large-Scale Industries & Campuses",
+    "slug": "biometric-solutions-large-scale-industries",
+    "badge": "Enterprise Scale",
+    "icon": "building-2",
+    "image": "/images/industries/enterprise.svg",
+    "challenge": "Massive employee footfall (1,000 to 10,000+ staff), severe shift-change gate congestion, multi-entry campus perimeters, and complex ERP systems.",
+    "solution": "Multi-lane biometric turnstiles, high-speed AI walk-through facial recognition terminals, networked multi-door controller panels, and enterprise SQL/SAP database sync.",
+    "keyFeatures": [
+      "Walk-through recognition handles up to 40 individuals per minute per lane",
+      "Multi-device centralized push protocol syncing attendance logs instantaneously",
+      "Anti-passback logic across turnstiles preventing duplicate badge entries",
+      "Automated biometric data feeds directly into SAP ERP, Oracle HRMS, or customized SQL databases",
+      "Centralized credential management: enroll an employee once, push to all campus devices"
+    ],
+    "targetAreas": "HITEC City, Gachibowli, Shamshabad, Medchal, Adibatla Aerospace SEZ and Sangareddy."
+  },
+  {
+    "id": "corporate-offices",
+    "name": "Corporate Offices & IT Campuses",
+    "slug": "biometric-solutions-corporate-offices",
+    "badge": "Modern Aesthetics & Security",
+    "icon": "laptop",
+    "image": "/images/industries/corporate.svg",
+    "challenge": "Maintaining sleek architectural aesthetics, securing sensitive intellectual property zones, and offering flexible hybrid work tracking.",
+    "solution": "Ultra-thin touch keypad biometric controllers, frameless glass door electromagnetic locks, and modern mobile app attendance synchronization.",
+    "keyFeatures": [
+      "Sleek architectural form factors with brushed aluminum and tempered glass aesthetics",
+      "Concealed wiring and silent electromagnetic locks tailored for frameless glass doors",
+      "Department-wise access restrictions: R&D, Server Room, Accounts, and Boardroom",
+      "Employee self-service mobile app integration for leave requests and geo-attendance",
+      "Comprehensive visitor management with temporary RFID passes and host notifications"
+    ],
+    "targetAreas": "Madhapur, Hitech City, Gachibowli, Financial District, Banjara Hills, Jubilee Hills and Begumpet."
+  },
+  {
+    "id": "schools-educational-institutions",
+    "name": "Schools & Educational Institutions",
+    "slug": "biometric-solutions-schools-colleges",
+    "badge": "Student Safety & Speed",
+    "icon": "graduation-cap",
+    "image": "/images/industries/education.svg",
+    "challenge": "Rapid arrival of thousands of students within a 20-minute morning window, student safety assurance, and timely parent communication.",
+    "solution": "High-speed contactless RFID smart card readers and multi-card turnstiles integrated with automated SMS/WhatsApp parent notification gateways.",
+    "keyFeatures": [
+      "Contactless RFID tap-and-go speed logging up to 60 students per minute",
+      "Instant automated SMS alerts to parents when student enters and departs premises",
+      "Faculty and staff biometric fingerprint or face tracking for accurate salary processing",
+      "Library book borrowing and canteen cashless payment integration on same student ID card",
+      "Emergency muster reporting for rapid roll-call during fire or evacuation drills"
+    ],
+    "targetAreas": "Dilsukhnagar, LB Nagar, Secunderabad, Kukatpally, Mehdipatnam, Uppal and Miyapur."
+  },
+  {
+    "id": "hospitals-healthcare",
+    "name": "Hospitals & Healthcare Facilities",
+    "slug": "biometric-solutions-hospitals-healthcare",
+    "badge": "24/7 Rotational & Touchless",
+    "icon": "cross",
+    "image": "/images/industries/healthcare.svg",
+    "challenge": "Round-the-clock rotational medical shifts, sterile surgical wings, restricted drug storage access, and strict hygiene demands.",
+    "solution": "Hygienic touchless face recognition terminals and restricted access control locks for ICUs, surgical suites, and pharmaceutical storage.",
+    "keyFeatures": [
+      "100% touchless facial recognition operable even while wearing medical masks and caps",
+      "Restricted biometric authorization for operating theaters, ICUs, and narcotics storage",
+      "Handles complicated doctor on-call schedules, 24/7 nursing rotations, and emergency callouts",
+      "Integration with hospital information management software (HIMS)",
+      "Antibacterial touchless operation eliminating infection transmission risks"
+    ],
+    "targetAreas": "Banjara Hills, Jubilee Hills, Somajiguda, Secunderabad, Malakpet, Attapur and LB Nagar."
+  },
+  {
+    "id": "gyms-fitness-centres",
+    "name": "Gyms & Fitness Centres",
+    "slug": "biometric-solutions-gyms-fitness-centres",
+    "badge": "Membership Lockout & Growth",
+    "icon": "dumbbell",
+    "image": "/images/industries/gym.svg",
+    "challenge": "Unpaid member entries, friends sharing access cards, lack of workout footfall tracking, and awkward manual payment collection.",
+    "solution": "Biometric gym management systems connected to glass door EM locks or tripod turnstiles that automatically lock out expired subscriptions.",
+    "keyFeatures": [
+      "Automated door lockout when membership package expires, ending revenue leakage",
+      "Biometric fingerprint or facial recognition prevents sharing access with non-members",
+      "Automated renewal reminders sent to members via WhatsApp before expiry date",
+      "Personal trainer session tracking and performance commission automation",
+      "Member attendance logging and peak-hour gym utilization analytics"
+    ],
+    "targetAreas": "Gachibowli, Kondapur, Madhapur, Banjara Hills, Jubilee Hills, Dilsukhnagar, LB Nagar and Himayatnagar."
+  },
+  {
+    "id": "warehouses-logistics",
+    "name": "Warehouses & Logistics Hubs",
+    "slug": "biometric-solutions-warehouses-logistics",
+    "badge": "Perimeter Security & Shifts",
+    "icon": "truck",
+    "image": "/images/industries/logistics.svg",
+    "challenge": "High turnover contract labor, massive perimeter access, inventory loss prevention, and multi-dock loading shift tracking.",
+    "solution": "Heavy-duty biometric terminals with rapid contractor enrollment, door access controllers for high-value cargo cages, and centralized web reports.",
+    "keyFeatures": [
+      "Rapid worker registration allowing new warehouse contractors to clock in within minutes",
+      "Restricted biometric access to high-value bond cages and hazardous goods bays",
+      "Time-zone restricted entry preventing unauthorized personnel on docks after hours",
+      "Centralized cloud software monitors multiple distribution centers from Hyderabad HQ",
+      "Heavy-duty weatherproof mounting stands withstand loading bay vibration"
+    ],
+    "targetAreas": "Shamshabad, Medchal, Kothur, Kompally, Adibatla, Ghatkesar and Patancheru."
+  },
+  {
+    "id": "retail-commercial",
+    "name": "Retail & Commercial Businesses",
+    "slug": "biometric-solutions-retail-commercial",
+    "badge": "Multi-Store Visibility",
+    "icon": "store",
+    "image": "/images/industries/retail.svg",
+    "challenge": "Multiple showroom branches across Hyderabad, split store shifts, cash counter security, and retail staff turnover.",
+    "solution": "Compact Wi-Fi biometric attendance machines with cloud data sync, cash office access control, and centralized payroll reports.",
+    "keyFeatures": [
+      "Wi-Fi connectivity enables instant installation without invasive data cabling",
+      "Centralized dashboard shows real-time attendance across all Hyderabad store branches",
+      "Restricted biometric lock on cash deposit rooms and back-office stockrooms",
+      "Flexible split-shift management for retail staff working lunch and evening peaks",
+      "Eliminates discrepancy in overtime and holiday attendance calculations"
+    ],
+    "targetAreas": "Abids, Somajiguda, Kukatpally, Dilsukhnagar, Begumpet, Secunderabad, Ameerpet and AS Rao Nagar."
+  }
+]

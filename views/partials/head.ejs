@@ -1,0 +1,153 @@
+<%
+  const pageTitle = (typeof title !== 'undefined' && title) ? title : 'Meenakshi Technologies | Biometric Attendance & Access Control Dealers Hyderabad';
+  const pageDesc = (typeof metaDescription !== 'undefined' && metaDescription) ? metaDescription : 'Meenakshi Technologies provides biometric attendance machines, eSSL and Biomax systems, door access control, and payroll software in Hyderabad.';
+  const pageKeywords = (typeof metaKeywords !== 'undefined' && metaKeywords) ? metaKeywords : 'Biometric Dealers in Hyderabad, Biometric Attendance Machine, eSSL, Biomax, Door Access Control';
+  const pageCanonical = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : 'https://www.meenakshitechnologies.org/';
+  const pageOgType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website';
+  const pageOgImage = (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://www.meenakshitechnologies.org/images/logo.png';
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDesc %>">
+  <meta name="keywords" content="<%= pageKeywords %>">
+  <meta name="author" content="Tingirikar Teja, Meenakshi Technologies">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<%= pageCanonical %>">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="<%= pageOgType %>">
+  <meta property="og:url" content="<%= pageCanonical %>">
+  <meta property="og:title" content="<%= pageTitle %>">
+  <meta property="og:description" content="<%= pageDesc %>">
+  <meta property="og:image" content="<%= pageOgImage %>">
+  <meta property="og:site_name" content="Meenakshi Technologies">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= pageTitle %>">
+  <meta name="twitter:description" content="<%= pageDesc %>">
+  <meta name="twitter:image" content="<%= pageOgImage %>">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+  <% if (typeof extraCss !== 'undefined') { %>
+    <link rel="stylesheet" href="<%= extraCss %>">
+  <% } %>
+
+  <!-- JSON-LD Structured Data: Organization & Dual LocalBusiness Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.meenakshitechnologies.org/#organization",
+        "name": "Meenakshi Technologies",
+        "url": "https://www.meenakshitechnologies.org/",
+        "logo": "https://www.meenakshitechnologies.org/images/logo.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Tingirikar Teja",
+          "jobTitle": "Founder of Meenakshi Technologies"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-6301593064",
+          "contactType": "customer service",
+          "areaServed": ["IN-TG", "Hyderabad", "Telangana", "India"],
+          "availableLanguage": ["English", "Telugu", "Hindi"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/meenakshitechnologies/",
+          "https://www.youtube.com/channel/UCNxCMmFZaWIWKZClzLP0v9g"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.meenakshitechnologies.org/locations/hyderabad#localbusiness",
+        "name": "Meenakshi Technologies - Hyderabad Central Location",
+        "image": "https://www.meenakshitechnologies.org/images/logo.png",
+        "telephone": "+91-6301593064",
+        "email": "meenakshitechnologies65@gmail.com",
+        "url": "https://www.meenakshitechnologies.org/locations/hyderabad",
+        "hasMap": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3047629,78.4530547,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad!3m6!1s0x3bcb998ed73d905b:0x8fff8136f685f7af!8m2!3d17.3459799!4d78.479843",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Near Charminar / Santosh Nagar Ring Road",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "postalCode": "500053",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 17.3459799,
+          "longitude": 78.479843
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:30",
+          "closes": "19:30"
+        },
+        "priceRange": "₹₹"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.meenakshitechnologies.org/locations/balapur#localbusiness",
+        "name": "Meenakshi Technologies - Balapur Location",
+        "image": "https://www.meenakshitechnologies.org/images/logo.png",
+        "telephone": "+91-6301593064",
+        "email": "meenakshitechnologies65@gmail.com",
+        "url": "https://www.meenakshitechnologies.org/locations/balapur",
+        "hasMap": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3459462,78.327064,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad+balapur!3m6!1s0x3bcba32a595dbdf5:0x751584db54ecd738!8m2!3d17.309578!4d78.5152011",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Balapur Main Road, Near DRDL / Kanchanbagh Sector",
+          "addressLocality": "Balapur, Hyderabad",
+          "addressRegion": "Telangana",
+          "postalCode": "500005",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 17.309578,
+          "longitude": 78.5152011
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:30",
+          "closes": "19:30"
+        },
+        "priceRange": "₹₹"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.meenakshitechnologies.org/#website",
+        "url": "https://www.meenakshitechnologies.org/",
+        "name": "Meenakshi Technologies",
+        "publisher": {
+          "@id": "https://www.meenakshitechnologies.org/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>

@@ -1,0 +1,78 @@
+<%- include('partials/head', { 
+  title: post.metaTitle || post.title,
+  metaDescription: post.metaDescription || post.summary,
+  canonicalUrl: `https://www.meenakshitechnologies.org/blog/${post.slug}`,
+  ogImage: post.featuredImage
+}) %>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "<%= post.title %>",
+  "image": "https://www.meenakshitechnologies.org<%= post.featuredImage || '/images/logo.png' %>",
+  "author": {
+    "@type": "Person",
+    "name": "<%= post.author %>",
+    "jobTitle": "<%= post.designation %>"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Meenakshi Technologies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.meenakshitechnologies.org/images/logo.png"
+    }
+  },
+  "datePublished": "<%= post.date %>",
+  "description": "<%= post.summary %>"
+}
+</script>
+
+<%- include('partials/header', { activePage: 'blog' }) %>
+
+<article class="pillar-article-wrapper">
+  <header class="pillar-page-header">
+    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
+      <div style="font-size:0.85rem; color:#93c5fd; margin-bottom:0.8rem;">
+        <a href="/blog" style="color:#38bdf8;">Blog</a> &rarr; <span><%= post.category %></span>
+      </div>
+      <h1 style="font-size: 2.5rem; font-weight: 900; line-height: 1.25; margin: 0.8rem 0; color: #ffffff;">
+        <%= post.title %>
+      </h1>
+      
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; font-size: 0.88rem; color: #cbd5e1; margin-top: 1.2rem;">
+        <span>By <strong><%= post.author %></strong></span>
+        <span>&bull;</span>
+        <span><%= post.date %></span>
+        <span>&bull;</span>
+        <span><%= post.readTime %></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="pillar-content">
+      <% if (post.featuredImage) { %>
+        <div style="border-radius: 12px; overflow: hidden; margin-bottom: 2rem; border: 1px solid #e2e8f0;">
+          <img src="<%= post.featuredImage %>" alt="<%= post.title %>" style="width: 100%; height: auto;">
+        </div>
+      <% } %>
+
+      <%- post.content %>
+
+      <!-- Author Bio Footer -->
+      <div style="border-top: 2px solid #e2e8f0; padding-top: 2rem; margin-top: 3.5rem; display: flex; align-items: center; gap: 1.5rem; background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+        <img src="/images/founder.svg" alt="Tingirikar Teja" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #0066cc;">
+        <div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: #0b2545; margin-bottom: 0.2rem;"><%= post.author %></h4>
+          <span style="font-size: 0.82rem; color: #0066cc; font-weight: 600;"><%= post.designation %></span>
+          <p style="font-size: 0.88rem; color: #475569; margin-top: 0.35rem;">Leading biometric security technologist based in Hyderabad, specializing in eSSL and Biomax attendance hardware, EM locks, and payroll integration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<%- include('partials/footer') %>
