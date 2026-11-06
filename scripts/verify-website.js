@@ -33,6 +33,7 @@ const routes = [
   '/css/style.css',
   '/js/main.js',
   '/images/logo.png',
+  '/images/tingirikar-teja.jpg',
   '/images/client-1.png',
   '/images/review-1.png',
   '/images/products/essl-k30-pro.svg',
