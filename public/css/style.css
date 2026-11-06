@@ -1831,16 +1831,51 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   BIOMETRIC SYSTEM SELECTOR WIZARD COMPONENT (DARK THEME)
+   BIOMETRIC SYSTEM SELECTOR WIZARD COMPONENT (HIGH BRIGHTNESS DARK THEME)
    ========================================================================== */
+.wizard-step-card {
+  background: #091e36;
+  border: 1.5px solid #1a4474;
+  border-radius: 14px;
+  padding: 1.35rem 1.15rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.wizard-step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.15rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.wizard-step-num {
+  background: #0066cc;
+  color: #ffffff;
+  border: 2px solid #38bdf8;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
 .wizard-opt-btn {
-  background: rgba(11, 37, 69, 0.65);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  color: #cbd5e1;
-  padding: 0.75rem 0.95rem;
+  background: #0d2745;
+  border: 1.5px solid #1e4b7c;
+  color: #ffffff;
+  padding: 0.82rem 1rem;
   border-radius: var(--radius-md);
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-align: left;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -1848,84 +1883,97 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.6rem;
+  gap: 0.7rem;
   position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .wizard-opt-btn .opt-icon {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .wizard-opt-btn .opt-text {
   flex-grow: 1;
-  color: inherit;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-/* Radio circle indicator */
+/* Radio circle indicator (Bright Cyan Rim) */
 .wizard-opt-btn .opt-indicator {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  border: 2px solid rgba(148, 163, 184, 0.4);
-  background: rgba(3, 25, 38, 0.8);
+  border: 2px solid #38bdf8;
+  background: #081d33;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: all var(--transition-fast);
   position: relative;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.35);
 }
 
 .wizard-opt-btn:hover {
-  background: rgba(19, 64, 116, 0.8);
+  background: #153c69;
   border-color: #38bdf8;
   color: #ffffff;
   transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(0, 180, 216, 0.35);
 }
 
 .wizard-opt-btn:hover .opt-indicator {
-  border-color: #38bdf8;
+  border-color: #7dd3fc;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
 }
 
-/* ACTIVE STATE */
+/* SUPER BRIGHT ACTIVE STATE */
 .wizard-opt-btn.active {
-  background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
-  border: 1.5px solid #38bdf8;
+  background: linear-gradient(135deg, #0056b3 0%, #0099dd 100%);
+  border: 2px solid #38bdf8;
   color: #ffffff;
-  font-weight: 700;
-  box-shadow: 0 4px 16px rgba(0, 180, 216, 0.25);
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.wizard-opt-btn.active .opt-text {
+  color: #ffffff;
+  font-weight: 800;
 }
 
 .wizard-opt-btn.active .opt-indicator {
-  background: #38bdf8;
-  border-color: #38bdf8;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
 }
 
-/* Checkmark inside active radio indicator */
+/* Dark Navy Checkmark inside active white radio indicator */
 .wizard-opt-btn.active .opt-indicator::after {
   content: '';
   display: block;
-  width: 5px;
-  height: 9px;
-  border: solid #031926;
-  border-width: 0 2.5px 2.5px 0;
+  width: 6px;
+  height: 10px;
+  border: solid #0056b3;
+  border-width: 0 2.8px 2.8px 0;
   transform: rotate(45deg);
   margin-top: -2px;
 }
 
 .wizard-spec-pill {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #e0f2fe;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1.5px solid #38bdf8;
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.38rem 0.85rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
+  box-shadow: 0 2px 6px rgba(0, 180, 216, 0.25);
 }
 
 @media (max-width: 860px) {
