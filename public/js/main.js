@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuoteModal();
   initComparisonTool();
   initAccessControlSimulator();
+  initClientSlider();
   initAnalyticsTracking();
 });
 
@@ -812,4 +813,51 @@ function initAccessControlSimulator() {
 
   // Start smooth auto-cycle
   autoCycleTimer = setInterval(cycleNext, 7500);
+}
+
+
+/* ==========================================================================
+   MEDIUM ICONS CLIENT SLIDING SHOW CONTROLLER
+   ========================================================================== */
+function initClientSlider() {
+  const track = document.getElementById('clientSliderTrack');
+  const prevBtn = document.getElementById('clientPrevBtn');
+  const nextBtn = document.getElementById('clientNextBtn');
+  const pauseBtn = document.getElementById('clientPauseBtn');
+
+  if (!track) return;
+
+  let isPaused = false;
+  let nudgeOffset = 0;
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', () => {
+      isPaused = !isPaused;
+      track.classList.toggle('paused', isPaused);
+      pauseBtn.textContent = isPaused ? '▶' : '❚❚';
+      pauseBtn.title = isPaused ? 'Resume Sliding' : 'Pause Sliding';
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      track.classList.add('paused');
+      if (pauseBtn) pauseBtn.textContent = '▶';
+      isPaused = true;
+      nudgeOffset = Math.min(nudgeOffset + 240, 0);
+      track.style.transition = 'transform 0.4s ease';
+      track.style.transform = `translateX(${nudgeOffset}px)`;
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      track.classList.add('paused');
+      if (pauseBtn) pauseBtn.textContent = '▶';
+      isPaused = true;
+      nudgeOffset -= 240;
+      track.style.transition = 'transform 0.4s ease';
+      track.style.transform = `translateX(${nudgeOffset}px)`;
+    });
+  }
 }

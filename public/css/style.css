@@ -560,6 +560,113 @@ button, input, select, textarea {
   margin-right: auto;
 }
 
+/* ==========================================================================
+   MEDIUM ICONS CLIENT SLIDING SHOW (INFINITE CAROUSEL)
+   ========================================================================== */
+.client-slider-container {
+  margin-top: 2.25rem;
+  position: relative;
+}
+
+.client-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 1.15rem 0;
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Gradient Fade Masks on Left & Right Edges */
+.slider-fade-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.slider-fade-mask.mask-left {
+  left: 0;
+  background: linear-gradient(to right, #f8fafc 25%, rgba(248, 250, 252, 0));
+}
+
+.slider-fade-mask.mask-right {
+  right: 0;
+  background: linear-gradient(to left, #f8fafc 25%, rgba(248, 250, 252, 0));
+}
+
+/* Infinite Sliding Track */
+.client-slider-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  animation: clientSlideInfinite 28s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on Hover */
+.client-slider-wrapper:hover .client-slider-track,
+.client-slider-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes clientSlideInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Halfway point of duplicated items */
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+/* Medium Icon Slide Item & Card */
+.client-slide-item {
+  flex-shrink: 0;
+}
+
+.client-logo-card {
+  width: 175px;
+  height: 98px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #0284c7;
+  box-shadow: 0 10px 22px rgba(2, 132, 199, 0.16);
+  background: #ffffff;
+}
+
+.client-logo-card img {
+  max-height: 56px;
+  max-width: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: contrast(1.05);
+  transition: transform 0.25s ease;
+}
+
+.client-logo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Fallback Grid */
 .client-logos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -568,30 +675,90 @@ button, input, select, textarea {
   margin-top: 2rem;
 }
 
-.client-logo-card {
-  background: var(--color-silver-light);
-  border: 1px solid var(--color-silver);
-  border-radius: var(--radius-md);
-  padding: 1.2rem;
+/* Slider Controls Bar */
+.client-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  gap: 1rem;
+}
+
+.slider-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0b2545;
+  font-size: 1.1rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 110px;
-  transition: all var(--transition-fast);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-.client-logo-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-blue-accent);
-  box-shadow: var(--shadow-md);
-  background: #ffffff;
+.slider-nav-btn:hover {
+  background: #0b2545;
+  color: #ffffff;
+  border-color: #0b2545;
+  transform: scale(1.06);
 }
 
-.client-logo-card img {
-  max-height: 75px;
-  width: auto;
-  object-fit: contain;
-  filter: contrast(1.05);
+.slider-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0284c7;
+}
+
+.slider-dot-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0284c7;
+  box-shadow: 0 0 8px #0284c7;
+  animation: sliderDotPulse 1.8s infinite;
+}
+
+@keyframes sliderDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+@media (max-width: 640px) {
+  .client-logo-card {
+    width: 145px;
+    height: 84px;
+    padding: 0.65rem 1rem;
+  }
+  .client-logo-card img {
+    max-height: 46px;
+    max-width: 110px;
+  }
+  .slider-fade-mask {
+    width: 40px;
+  }
+  .client-slider-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 
 /* Genuine Customer Review Cards */
