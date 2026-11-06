@@ -107,16 +107,19 @@
                   <td><%= lead.productOrService %></td>
                   <td><%= lead.employeeCount %></td>
                   <td>
-                    <span class="cms-badge <%= lead.status %>"><%= lead.status.toUpperCase() %></span>
+                    <select class="cms-status-select" data-lead-id="<%= lead.id %>" style="padding: 0.35rem 0.6rem; font-size: 0.78rem; border-radius: 6px; border: 1.5px solid #cbd5e1; background: #fff; font-weight: 700; color: #0b2545; cursor: pointer;">
+                      <option value="new" <%= lead.status === 'new' ? 'selected' : '' %>>🟡 NEW</option>
+                      <option value="contacted" <%= lead.status === 'contacted' ? 'selected' : '' %>>🔵 CONTACTED</option>
+                      <option value="converted" <%= lead.status === 'converted' ? 'selected' : '' %>>🟢 CONVERTED</option>
+                    </select>
                   </td>
                   <td>
-                    <button class="btn btn-outline btn-sm update-lead-status-btn" data-lead-id="<%= lead.id %>" style="color:#0b2545; padding:0.25rem 0.6rem; font-size:0.75rem;">Status</button>
                     <a href="https://wa.me/<%= lead.mobileNumber.replace(/[^0-9]/g, '') %>?text=Hello%20<%= encodeURIComponent(lead.fullName) %>%2C%20this%20is%20Tingirikar%20Teja%20from%20Meenakshi%20Technologies%20regarding%20your%20enquiry." 
                        target="_blank" 
                        rel="noopener" 
                        class="btn btn-whatsapp btn-sm" 
-                       style="padding:0.25rem 0.6rem; font-size:0.75rem;">
-                      WA
+                       style="padding:0.35rem 0.75rem; font-size:0.75rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                      <span>WhatsApp</span>
                     </a>
                   </td>
                 </tr>

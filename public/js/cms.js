@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initCmsLeadActions() {
-  document.querySelectorAll('.update-lead-status-btn').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      const leadId = btn.getAttribute('data-lead-id');
-      const newStatus = prompt('Enter new status (new, contacted, converted):', 'contacted');
+  document.querySelectorAll('.cms-status-select').forEach(select => {
+    select.addEventListener('change', async (e) => {
+      const leadId = select.getAttribute('data-lead-id');
+      const newStatus = select.value;
 
-      if (!newStatus) return;
+      select.style.opacity = '0.5';
 
       try {
         const res = await fetch(`/api/cms/leads/${leadId}`, {
@@ -23,13 +23,21 @@ function initCmsLeadActions() {
         });
         const data = await res.json();
         if (data.success) {
-          window.location.reload();
+          select.style.opacity = '1';
+          select.style.borderColor = '#10b981';
+          select.style.backgroundColor = '#ecfdf5';
+          setTimeout(() => { 
+            select.style.borderColor = '#cbd5e1'; 
+            select.style.backgroundColor = '#ffffff'; 
+          }, 1500);
         } else {
           alert('Failed to update lead: ' + data.message);
+          select.style.opacity = '1';
         }
       } catch (err) {
         console.error(err);
         alert('Server communication error.');
+        select.style.opacity = '1';
       }
     });
   });

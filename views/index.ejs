@@ -334,8 +334,8 @@
   </div>
 </section>
 
-<!-- INTERACTIVE BIOMETRIC SELECTOR / WIZARD -->
-<section class="wizard-section" id="selector-wizard" style="background: linear-gradient(135deg, #031926 0%, #0b2545 100%); color: #fff; padding: 4.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;">
+<!-- INTERACTIVE BIOMETRIC SELECTOR / WIZARD (WEBSITE DARK THEME) -->
+<section class="wizard-section" id="selector-wizard" style="background: radial-gradient(circle at 15% 20%, rgba(19, 64, 116, 0.5) 0%, transparent 50%), radial-gradient(circle at 85% 80%, rgba(0, 102, 204, 0.3) 0%, transparent 50%), #031926; color: #fff; padding: 4.5rem 0; border-top: 1px solid rgba(56, 189, 248, 0.15); border-bottom: 1px solid rgba(56, 189, 248, 0.15); position: relative; overflow: hidden;">
   <div class="container">
     <div class="section-header-center" style="margin-bottom: 2.5rem;">
       <span class="section-tagline" style="color: #38bdf8;">Interactive System Finder</span>
@@ -343,119 +343,119 @@
       <p class="section-subtext" style="color: #cbd5e1;">Select your workplace type, staff size, and security requirement to get an instant tailored hardware recommendation and official pricing quote.</p>
       
       <!-- Current Selection Breadcrumb Pill -->
-      <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.45rem 1.25rem; border-radius: 9999px; font-size: 0.88rem; color: #e0f2fe;">
-        <span>Selected:</span>
+      <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(3, 25, 38, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.35); padding: 0.5rem 1.4rem; border-radius: 9999px; font-size: 0.88rem; color: #e0f2fe; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+        <span style="color:#94a3b8;">Your Selection:</span>
         <strong id="wizardSelectionPill" style="color: #38bdf8;">Corporate Office • 1–25 Staff • Attendance Only</strong>
       </div>
     </div>
 
-    <div class="wizard-container" style="max-width: 1040px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 2.5rem 2rem; backdrop-filter: blur(12px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
-      <div class="wizard-steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2.5rem;">
+    <div class="wizard-container" style="max-width: 1060px; margin: 0 auto; background: rgba(11, 37, 69, 0.45); border: 1.5px solid rgba(56, 189, 248, 0.22); border-radius: 20px; padding: 2.25rem; backdrop-filter: blur(14px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);">
+      <div class="wizard-steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.25rem;">
         
         <!-- Step 1: Industry -->
-        <div class="wizard-step">
-          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">
-            <span style="background: #0066cc; color:#fff; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">1</span>
+        <div class="wizard-step-card" style="background: rgba(3, 25, 38, 0.7); border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 14px; padding: 1.25rem;">
+          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.65rem; font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-bottom: 1.1rem;">
+            <span style="background: #134074; color: #38bdf8; border: 1.5px solid #38bdf8; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">1</span>
             <span>Select Facility / Workplace</span>
           </label>
-          <div class="wizard-options" id="wizardIndustryGroup" style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <div class="wizard-options" id="wizardIndustryGroup" style="display: flex; flex-direction: column; gap: 0.55rem;">
             <button type="button" class="wizard-opt-btn active" data-type="industry" data-val="Office" data-label="Corporate Office">
               <span class="opt-icon">🏢</span>
               <span class="opt-text">Corporate Office / IT Park</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="industry" data-val="Factory" data-label="Factory">
               <span class="opt-icon">🏭</span>
               <span class="opt-text">Factory / Manufacturing</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="industry" data-val="Pharma" data-label="Pharma">
               <span class="opt-icon">🧪</span>
               <span class="opt-text">Pharma &amp; Cleanroom</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="industry" data-val="Gym" data-label="Gym">
               <span class="opt-icon">🏋️</span>
               <span class="opt-text">Gym / Fitness Center</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="industry" data-val="School" data-label="School">
               <span class="opt-icon">🏫</span>
               <span class="opt-text">School / Educational</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="industry" data-val="Retail" data-label="Retail">
               <span class="opt-icon">🛒</span>
               <span class="opt-text">Retail / Commercial Store</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
           </div>
         </div>
 
         <!-- Step 2: Staff Size -->
-        <div class="wizard-step">
-          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">
-            <span style="background: #0066cc; color:#fff; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">2</span>
+        <div class="wizard-step-card" style="background: rgba(3, 25, 38, 0.7); border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 14px; padding: 1.25rem;">
+          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.65rem; font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-bottom: 1.1rem;">
+            <span style="background: #134074; color: #38bdf8; border: 1.5px solid #38bdf8; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">2</span>
             <span>Workforce / Member Size</span>
           </label>
-          <div class="wizard-options" id="wizardSizeGroup" style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <div class="wizard-options" id="wizardSizeGroup" style="display: flex; flex-direction: column; gap: 0.55rem;">
             <button type="button" class="wizard-opt-btn active" data-type="size" data-val="small" data-label="1–25 Staff">
               <span class="opt-icon">👥</span>
               <span class="opt-text">1 – 25 Staff (Small Office)</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="size" data-val="medium" data-label="25–100 Staff">
               <span class="opt-icon">👥👥</span>
               <span class="opt-text">25 – 100 Staff (Growing Firm)</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="size" data-val="large" data-label="100–500 Staff">
               <span class="opt-icon">🏢</span>
               <span class="opt-text">100 – 500 Staff (Enterprise)</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="size" data-val="industrial" data-label="500+ Staff">
               <span class="opt-icon">🏭</span>
               <span class="opt-text">500+ Staff (Multi-Shift Plant)</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
           </div>
         </div>
 
         <!-- Step 3: Security Goal -->
-        <div class="wizard-step">
-          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">
-            <span style="background: #0066cc; color:#fff; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">3</span>
+        <div class="wizard-step-card" style="background: rgba(3, 25, 38, 0.7); border: 1px solid rgba(148, 163, 184, 0.16); border-radius: 14px; padding: 1.25rem;">
+          <label class="wizard-step-title" style="display: flex; align-items: center; gap: 0.65rem; font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-bottom: 1.1rem;">
+            <span style="background: #134074; color: #38bdf8; border: 1.5px solid #38bdf8; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">3</span>
             <span>Operational Requirement</span>
           </label>
-          <div class="wizard-options" id="wizardGoalGroup" style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <div class="wizard-options" id="wizardGoalGroup" style="display: flex; flex-direction: column; gap: 0.55rem;">
             <button type="button" class="wizard-opt-btn active" data-type="goal" data-val="attendance" data-label="Attendance Only">
               <span class="opt-icon">⏱️</span>
               <span class="opt-text">Attendance &amp; Payroll Only</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="goal" data-val="access" data-label="Door EM Lock Access">
               <span class="opt-icon">🔐</span>
               <span class="opt-text">Attendance + Door EM Lock</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
             <button type="button" class="wizard-opt-btn" data-type="goal" data-val="face" data-label="Touchless AI Face">
               <span class="opt-icon">👤</span>
               <span class="opt-text">Touchless AI Face Recognition</span>
-              <span class="opt-check">✓</span>
+              <span class="opt-indicator"></span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Recommendation Card Result Showcase -->
-      <div class="wizard-result-box" id="wizardResult" style="background: rgba(19, 64, 116, 0.45); border: 2px solid #00b4d8; border-radius: 16px; padding: 2rem; box-shadow: 0 15px 35px rgba(0, 180, 216, 0.15); transition: all 0.3s ease;">
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem; align-items: center;" class="wizard-result-grid">
+      <!-- Recommendation Card Result Showcase (Dark Surface) -->
+      <div class="wizard-result-box" id="wizardResult" style="background: rgba(7, 26, 46, 0.9); border: 2px solid #00b4d8; border-radius: 16px; padding: 2rem; box-shadow: 0 15px 35px rgba(0, 180, 216, 0.18); transition: all 0.3s ease;">
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: 2rem; align-items: center;" class="wizard-result-grid">
           
-          <!-- Product Visual -->
-          <div style="background: #ffffff; border-radius: 14px; padding: 1.25rem; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.25); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
-            <img id="wizardResultImg" src="/images/products/essl-k30-pro.svg" alt="Recommended Biometric Hardware" style="max-height: 140px; width: auto; object-fit: contain;">
-            <span id="wizardResultBrand" style="font-size: 0.75rem; font-weight: 800; color: #0b2545; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">eSSL Genuine</span>
+          <!-- Product Visual Dark Surface -->
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 14px; padding: 1.25rem; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+            <img id="wizardResultImg" src="/images/products/essl-k30-pro.svg" alt="Recommended Biometric Hardware" style="max-height: 135px; width: auto; object-fit: contain;">
+            <span id="wizardResultBrand" style="font-size: 0.75rem; font-weight: 800; color: #38bdf8; margin-top: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em;">eSSL Genuine</span>
           </div>
 
           <!-- Product Details & CTAs -->
@@ -469,7 +469,7 @@
               </span>
             </div>
 
-            <h3 id="wizardResultTitle" style="font-size: 1.7rem; color: #fff; margin: 0 0 0.5rem 0; font-weight: 800;">
+            <h3 id="wizardResultTitle" style="font-size: 1.65rem; color: #fff; margin: 0 0 0.5rem 0; font-weight: 800;">
               eSSL K30 Pro Biometric Attendance Machine
             </h3>
             
@@ -507,7 +507,7 @@
               <a id="wizardResultLinkBtn" 
                  href="/products/essl-k30-pro-biometric-attendance" 
                  class="btn btn-outline" 
-                 style="border-color: rgba(255,255,255,0.4); color: #fff; padding: 0.75rem 1.25rem; font-size: 0.95rem;">
+                 style="border-color: rgba(255,255,255,0.35); color: #fff; padding: 0.75rem 1.25rem; font-size: 0.95rem; background: rgba(255,255,255,0.05);">
                 <span>View Full Specs &rarr;</span>
               </a>
             </div>
