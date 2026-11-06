@@ -30,3 +30,4 @@ industries.forEach(ind => {
 });
 
 console.log('Generated 10 industry SVGs!');
+

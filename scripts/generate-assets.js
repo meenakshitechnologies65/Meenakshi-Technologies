@@ -563,3 +563,4 @@ saveSvg('public/images/blog/em-locks-guide.svg', `
 `);
 
 console.log('All image assets and diagrams generated successfully!');
+

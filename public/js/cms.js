@@ -78,3 +78,4 @@ function initCmsBlogForm() {
     });
   }
 }
+

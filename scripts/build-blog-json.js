@@ -437,3 +437,4 @@ const posts = [
 const targetPath = path.join(__dirname, '..', 'data', 'blog-posts.json');
 fs.writeFileSync(targetPath, JSON.stringify(posts, null, 2), 'utf8');
 console.log('Successfully wrote valid JSON to data/blog-posts.json');
+
