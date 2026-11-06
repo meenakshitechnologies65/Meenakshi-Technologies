@@ -817,7 +817,7 @@ function initAccessControlSimulator() {
 
 
 /* ==========================================================================
-   MEDIUM ICONS CLIENT SLIDING SHOW CONTROLLER
+   LARGE ICONS CLIENT SLIDING SHOW CONTROLLER
    ========================================================================== */
 function initClientSlider() {
   const track = document.getElementById('clientSliderTrack');
@@ -829,6 +829,7 @@ function initClientSlider() {
 
   let isPaused = false;
   let nudgeOffset = 0;
+  const cardStep = 322; // 290px card width + 32px gap
 
   if (pauseBtn) {
     pauseBtn.addEventListener('click', () => {
@@ -844,8 +845,8 @@ function initClientSlider() {
       track.classList.add('paused');
       if (pauseBtn) pauseBtn.textContent = '▶';
       isPaused = true;
-      nudgeOffset = Math.min(nudgeOffset + 240, 0);
-      track.style.transition = 'transform 0.4s ease';
+      nudgeOffset = Math.min(nudgeOffset + cardStep, 0);
+      track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
       track.style.transform = `translateX(${nudgeOffset}px)`;
     });
   }
@@ -855,8 +856,8 @@ function initClientSlider() {
       track.classList.add('paused');
       if (pauseBtn) pauseBtn.textContent = '▶';
       isPaused = true;
-      nudgeOffset -= 240;
-      track.style.transition = 'transform 0.4s ease';
+      nudgeOffset -= cardStep;
+      track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
       track.style.transform = `translateX(${nudgeOffset}px)`;
     });
   }
