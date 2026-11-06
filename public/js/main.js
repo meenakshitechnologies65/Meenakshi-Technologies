@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initComparisonTool();
   initAccessControlSimulator();
   initClientSlider();
+  initVideoFilter();
   initAnalyticsTracking();
 });
 
@@ -861,4 +862,33 @@ function initClientSlider() {
       track.style.transform = `translateX(${nudgeOffset}px)`;
     });
   }
+}
+
+
+/* ==========================================================================
+   YOUTUBE INSTALLATION VIDEO FILTER CONTROLLER
+   ========================================================================== */
+function initVideoFilter() {
+  const filterBtns = document.querySelectorAll('.video-filter-btn');
+  const videoCards = document.querySelectorAll('.videos-grid .video-card');
+
+  if (!filterBtns.length || !videoCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      videoCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter || (filter === 'Corporate & IT Parks' && category.includes('Corporate'))) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }

@@ -73,6 +73,7 @@ app.get('/', (req, res) => {
   const industries = loadData('industries.json');
   const locations = loadData('locations.json');
   const faqs = loadData('faqs.json');
+  const videos = loadData('videos.json');
 
   res.render('index', {
     products,
@@ -80,13 +81,15 @@ app.get('/', (req, res) => {
     industries,
     verifiedLocations: locations.verifiedLocations || [],
     hyderabadAreas: locations.hyderabadAreas || [],
-    faqs
+    faqs,
+    videos
   });
 });
 
 // 2. About Us & Founder Profile
 app.get('/about', (req, res) => {
-  res.render('about');
+  const videos = loadData('videos.json');
+  res.render('about', { videos });
 });
 
 // 3. Products Catalog

@@ -31,6 +31,7 @@ const routes = [
   '/api/cms/leads/export-csv',
   '/sitemap.xml',
   '/robots.txt',
+  '/site.webmanifest',
   '/css/style.css',
   '/js/main.js',
   '/images/logo.png',

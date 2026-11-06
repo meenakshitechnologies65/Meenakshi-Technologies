@@ -186,6 +186,59 @@
       </div>
     </div>
   </div>
+
+  <!-- ON-SITE VIDEO FOOTAGE & FIELD INSTALLATION PROOF -->
+  <div style="border-top: 1px solid #e2e8f0; padding-top: 3.5rem; margin-top: 3.5rem;">
+    <div class="section-header-center">
+      <span class="section-tagline">On-Site Field Demos</span>
+      <h2 class="section-heading">Watch Our Installations in Action</h2>
+      <p class="section-subtext">Direct video recordings of biometric attendance machines and access control setups completed by Tingirikar Teja and our engineering team across Hyderabad.</p>
+    </div>
+
+    <div class="videos-grid" style="margin-top: 2rem;">
+      <% if (typeof videos !== 'undefined' && videos.length > 0) { %>
+        <% videos.slice(0, 3).forEach(video => { %>
+          <div class="video-card">
+            <div class="video-embed-frame">
+              <iframe src="<%= video.embedUrl %>" 
+                      title="<%= video.title %>" 
+                      loading="lazy" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card-body">
+              <div class="video-meta-badges">
+                <span class="video-location-pill">📍 <%= video.location %></span>
+                <span class="video-hardware-pill">🛠️ <%= video.hardware %></span>
+              </div>
+              <h3 class="video-card-title"><%= video.title %></h3>
+              <div class="video-card-footer">
+                <a href="<%= video.youtubeUrl %>" target="_blank" rel="noopener" class="video-yt-link">
+                  <span>Watch on YouTube &rarr;</span>
+                </a>
+                <button type="button" 
+                        class="video-quote-link open-quote-modal-btn" 
+                        data-product-name="<%= video.hardware %> (Seen on YouTube @ <%= video.location %>)">
+                  Get Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.youtube.com/channel/UCNxCMmFZaWIWKZClzLP0v9g?sub_confirmation=1" 
+         target="_blank" 
+         rel="noopener" 
+         class="btn" 
+         style="background: #ff0000; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 0.65rem 1.6rem; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.35);">
+        <span>▶ View All Field Videos on YouTube Channel</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <%- include('partials/footer') %>

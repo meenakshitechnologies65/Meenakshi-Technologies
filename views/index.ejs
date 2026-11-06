@@ -1084,6 +1084,82 @@
   </div>
 </section>
 
+<!-- OFFICIAL YOUTUBE ON-SITE INSTALLATIONS & DEMONSTRATIONS -->
+<section class="videos-section" id="demonstrations">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-tagline">On-Site Proof &amp; Live Demos</span>
+      <h2 class="section-heading">Real Installation Demos Across Hyderabad</h2>
+      <p class="section-subtext">Watch our engineers complete real biometric time attendance and door access control installations across corporate offices, IT parks, hospitals, gyms, and commercial centers in Hyderabad.</p>
+    </div>
+
+    <!-- Official YouTube Channel Banner -->
+    <div class="video-channel-banner">
+      <div class="video-channel-info">
+        <div class="yt-icon-badge">▶</div>
+        <div>
+          <h4 style="color:#ffffff; margin:0 0 0.25rem 0; font-size:1.2rem; font-weight:800;">Official Meenakshi Technologies YouTube Channel</h4>
+          <p style="color:#cbd5e1; margin:0; font-size:0.88rem;">Subscribe for weekly on-site installation footage, eSSL &amp; Biomax device unboxings, and payroll tutorials.</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+        <a href="https://www.youtube.com/channel/UCNxCMmFZaWIWKZClzLP0v9g?sub_confirmation=1" 
+           target="_blank" 
+           rel="noopener" 
+           class="btn" 
+           style="background:#ff0000; color:#fff; font-weight:700; border-radius:9999px; padding:0.6rem 1.4rem; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 4px 14px rgba(255,0,0,0.4);">
+          <span>▶ Subscribe to Channel</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Video Category Filter Bar -->
+    <div class="video-filter-bar">
+      <button type="button" class="video-filter-btn active" data-filter="all">All Installations (12)</button>
+      <button type="button" class="video-filter-btn" data-filter="Access Control">Access Control</button>
+      <button type="button" class="video-filter-btn" data-filter="Corporate &amp; IT Parks">Corporate &amp; IT Parks</button>
+      <button type="button" class="video-filter-btn" data-filter="Gym &amp; Fitness">Gym &amp; Fitness</button>
+      <button type="button" class="video-filter-btn" data-filter="Hospital &amp; Healthcare">Hospitals</button>
+      <button type="button" class="video-filter-btn" data-filter="Biometric Attendance">Biometric Attendance</button>
+    </div>
+
+    <!-- Videos Grid -->
+    <div class="videos-grid" id="videosGrid">
+      <% if (typeof videos !== 'undefined' && videos.length > 0) { %>
+        <% videos.forEach(video => { %>
+          <div class="video-card" data-category="<%= video.category %>">
+            <div class="video-embed-frame">
+              <iframe src="<%= video.embedUrl %>" 
+                      title="<%= video.title %>" 
+                      loading="lazy" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card-body">
+              <div class="video-meta-badges">
+                <span class="video-location-pill">📍 <%= video.location %></span>
+                <span class="video-hardware-pill">🛠️ <%= video.hardware %></span>
+              </div>
+              <h3 class="video-card-title"><%= video.title %></h3>
+              <div class="video-card-footer">
+                <a href="<%= video.youtubeUrl %>" target="_blank" rel="noopener" class="video-yt-link">
+                  <span>Watch on YouTube &rarr;</span>
+                </a>
+                <button type="button" 
+                        class="video-quote-link open-quote-modal-btn" 
+                        data-product-name="<%= video.hardware %> (As installed in <%= video.location %>)">
+                  Get Quote for This Setup
+                </button>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
 <!-- SECTION 11: GOOGLE MAPS AND BUSINESS LOCATIONS (Two Distinct Location Sections) -->
 <section class="locations-section" id="locations">
   <div class="container">

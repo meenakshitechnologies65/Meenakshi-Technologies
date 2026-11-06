@@ -1,0 +1,24 @@
+{
+  "name": "Meenakshi Technologies - Biometric & Access Control Solutions",
+  "short_name": "Meenakshi Tech",
+  "description": "Biometric attendance machines, eSSL and Biomax systems, face recognition, and door access control in Hyderabad, Telangana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031926",
+  "theme_color": "#031926",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
