@@ -594,11 +594,321 @@
       </div>
     </div>
 
-    <div class="diagram-card">
-      <h3>Complete Door Access Control Engineering</h3>
-      <p>Fail-safe 600 lbs electromagnetic lock integration with push exit switches, access controllers, and fire release relays.</p>
-      <div class="diagram-img-wrap">
-        <img src="/images/diagrams/access-control-architecture.svg" alt="Door access control system architecture diagram" loading="lazy">
+    <!-- COMPLETE DOOR ACCESS CONTROL ENGINEERING SIMULATOR -->
+    <div class="diagram-card access-sim-card" id="accessControlEngineering">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <span style="display:inline-block; padding:0.3rem 0.8rem; background:rgba(56, 189, 248, 0.15); color:#38bdf8; border:1px solid rgba(56, 189, 248, 0.35); border-radius:9999px; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">
+            ⚡ Live Interactive Engineering Simulation
+          </span>
+          <h3 style="margin-bottom:0.35rem; color:#ffffff; font-size:1.75rem; font-weight:800;">Complete Door Access Control Engineering</h3>
+          <p style="margin:0; color:#cbd5e1; font-size:0.95rem; max-width:760px;">
+            Experience how a fail-safe 600 lbs electromagnetic lock integrates with biometric face/finger terminals, 12V 5A power supplies with battery backup, inside push exit switches, and emergency fire alarm release relays.
+          </p>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <button type="button" id="simAutoPlayBtn" class="sim-btn-toggle active" title="Toggle Auto-Cycle Animation">
+            <span class="sim-dot-pulse"></span>
+            <span id="simAutoPlayText">Auto Simulation: Active</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scenario Selector Buttons -->
+      <div class="sim-controls-bar">
+        <span class="sim-controls-label">Test Scenarios:</span>
+        <button type="button" class="sim-scenario-btn active" data-scenario="authorized">
+          <span class="sim-icon">🟢</span>
+          <span>1. Scan Face / Finger (Access Granted)</span>
+        </button>
+        <button type="button" class="sim-scenario-btn" data-scenario="denied">
+          <span class="sim-icon">🔴</span>
+          <span>2. Unregistered Punch (Access Denied)</span>
+        </button>
+        <button type="button" class="sim-scenario-btn" data-scenario="exit">
+          <span class="sim-icon">🔘</span>
+          <span>3. Inside Push-to-Exit Switch</span>
+        </button>
+        <button type="button" class="sim-scenario-btn" data-scenario="fire">
+          <span class="sim-icon">🚨</span>
+          <span>4. Fire Alarm / Fail-Safe Cutoff</span>
+        </button>
+      </div>
+
+      <!-- Simulation Stage -->
+      <div class="access-sim-stage">
+        <!-- Telemetry HUD Bar -->
+        <div class="sim-hud">
+          <div class="hud-item">
+            <span class="hud-lbl">EM Lock Status</span>
+            <span class="hud-val lock-locked" id="hudLockState">
+              <span class="hud-led led-red" id="hudLockLed"></span>
+              <strong id="hudLockStateText">600 LBS LOCKED</strong>
+            </span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-lbl">Holding Force</span>
+            <span class="hud-val" id="hudForce">280 kg / 600 lbs</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-lbl">12V DC Relay Circuit</span>
+            <span class="hud-val" id="hudRelay">NC Energized (480mA)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-lbl">Door Sensor State</span>
+            <span class="hud-val" id="hudDoorSensor">CONTACT CLOSED</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-lbl">Life-Safety Architecture</span>
+            <span class="hud-val text-green" id="hudSafety">FAIL-SAFE PASSIVE</span>
+          </div>
+        </div>
+
+        <!-- Animated Arena (3 Columns) -->
+        <div class="sim-arena">
+          
+          <!-- ZONE 1: OUTSIDE ENTRANCE (Biometric Terminal) -->
+          <div class="sim-zone sim-zone-outside">
+            <div class="zone-badge">OUTSIDE PREMISES</div>
+            
+            <div class="terminal-unit" id="simTerminalUnit">
+              <div class="terminal-header">
+                <span class="terminal-brand">eSSL / Biomax AI Terminal</span>
+                <span class="terminal-led-indicator" id="termStatusLed"></span>
+              </div>
+              
+              <!-- Camera & IR Face Recognition Sensor -->
+              <div class="terminal-cam-area">
+                <div class="cam-lens cam-ir-left"></div>
+                <div class="cam-sensor-hud">
+                  <div class="face-target-reticle" id="faceReticle">
+                    <span class="reticle-corner tl"></span>
+                    <span class="reticle-corner tr"></span>
+                    <span class="reticle-corner bl"></span>
+                    <span class="reticle-corner br"></span>
+                    <div class="reticle-scan-beam" id="scanBeam"></div>
+                    <div class="face-silhouette">
+                      <svg viewBox="0 0 40 40" width="32" height="32" fill="currentColor">
+                        <circle cx="20" cy="14" r="7" opacity="0.8"/>
+                        <path d="M7 34 C7 25 13 22 20 22 C27 22 33 25 33 34 Z" opacity="0.8"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="cam-lens cam-ir-right"></div>
+              </div>
+
+              <!-- Terminal OLED Status Screen -->
+              <div class="terminal-screen" id="termScreen">
+                <span class="term-line-1" id="termLine1">STANDBY - PRESENT ID</span>
+                <span class="term-line-2" id="termLine2">eTimeTrackLite Ready</span>
+              </div>
+
+              <!-- Fingerprint Optical Glass Sensor -->
+              <div class="terminal-finger-sensor" id="fingerSensor" title="Click to simulate touch fingerprint punch">
+                <div class="finger-glow"></div>
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" class="finger-icon">
+                  <path d="M12 2a6 6 0 0 0-6 6v3a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6z"/>
+                  <path d="M12 5a3 3 0 0 0-3 3v3a3 3 0 0 0 6 0V8a3 3 0 0 0-3-3z"/>
+                  <path d="M12 9v2"/>
+                  <path d="M6 15v1a6 6 0 0 0 12 0v-1"/>
+                  <path d="M3 15a9 9 0 0 0 18 0"/>
+                </svg>
+              </div>
+              
+              <div class="terminal-card-prompt">RFID 13.56MHz / NFC Tap Ready</div>
+            </div>
+
+            <!-- Signal Output Wire -->
+            <div class="conduit-wire conduit-out-wire" id="conduitOut">
+              <span class="wire-pulse pulse-to-controller" id="wirePulseOut"></span>
+              <span class="wire-label">Encrypted Wiegand / TCP-IP</span>
+            </div>
+          </div>
+
+          <!-- ZONE 2: SECURE DOOR & 600 LBS EM LOCK -->
+          <div class="sim-zone sim-zone-door">
+            <div class="zone-badge">SECURE ACCESS BARRIER</div>
+
+            <div class="door-frame-wrapper">
+              <!-- Top Header with 600 lbs Electromagnetic Lock -->
+              <div class="door-header-beam">
+                <div class="em-lock-unit" id="emLockUnit">
+                  <div class="em-lock-housing">
+                    <span class="em-lock-brand">600 LBS FAIL-SAFE EM LOCK</span>
+                    <div class="em-lock-cores">
+                      <span class="core-pole pole-1"></span>
+                      <span class="core-pole pole-2"></span>
+                    </div>
+                  </div>
+                  <div class="em-lock-led" id="emLockLed" title="Red: Locked (600 lbs force) | Green: Unlocked (0 lbs force)"></div>
+                </div>
+
+                <!-- Animated Magnetic Flux Wave Lines -->
+                <div class="magnetic-flux-container" id="magneticFlux">
+                  <div class="flux-wave flux-1"></div>
+                  <div class="flux-wave flux-2"></div>
+                  <div class="flux-wave flux-3"></div>
+                  <span class="flux-text" id="fluxText">600 LBS (280 KG) MAGNETIC CLAMP ACTIVE</span>
+                </div>
+              </div>
+
+              <!-- 3D Perspective Door Assembly -->
+              <div class="door-scene">
+                <!-- Doorway Background (Corridor inside) -->
+                <div class="doorway-back" id="doorwayBack">
+                  <div class="corridor-guide">
+                    <span>AUTHORIZED ENTRY CORRIDOR</span>
+                    <div class="corridor-arrows">▲ ▲ ▲</div>
+                  </div>
+                </div>
+
+                <!-- Swinging Door Leaf -->
+                <div class="door-leaf" id="doorLeaf">
+                  <!-- Armature Plate mounted on door header -->
+                  <div class="armature-plate" id="armaturePlate">
+                    <span class="armature-screw"></span>
+                    <span class="armature-label">Anti-Residual Magnetism Armature</span>
+                    <span class="armature-screw"></span>
+                  </div>
+
+                  <!-- Door Glass Body & Handle -->
+                  <div class="door-glass">
+                    <div class="door-frosted-band">
+                      <img src="/images/logo.png" alt="Meenakshi Technologies" class="door-logo-watermark">
+                      <span>MEENAKSHI TECHNOLOGIES</span>
+                    </div>
+                    <div class="door-handle"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Door Bottom Sensor & Sill -->
+              <div class="door-threshold">
+                <span class="reed-sensor" id="reedSensorDot"></span>
+                <span class="threshold-label">Magnetic Reed Sensor: <strong id="doorSensorLabel" style="color:#ffffff;">CLOSED (SECURE)</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ZONE 3: INSIDE SECURE PREMISES (Exit Hardware) -->
+          <div class="sim-zone sim-zone-inside">
+            <div class="zone-badge">INSIDE PREMISES (EGRESS)</div>
+
+            <div class="inside-hardware-panel">
+              <!-- Overhead Motion PIR Sensor -->
+              <div class="pir-motion-sensor">
+                <div class="pir-head">
+                  <span class="pir-lens"></span>
+                </div>
+                <span class="pir-label">Ceiling Request-To-Exit PIR</span>
+              </div>
+
+              <!-- Stainless Steel Push To Exit Switch -->
+              <div class="exit-button-unit" id="simExitBtn">
+                <div class="exit-faceplate">
+                  <div class="exit-btn-push" id="exitBtnPush" title="Click to test inside exit release">
+                    <span class="exit-text">PUSH TO EXIT</span>
+                  </div>
+                </div>
+                <span class="exit-note">Green Halo Ring Stainless Switch</span>
+              </div>
+
+              <!-- Emergency Break-Glass Call Point -->
+              <div class="break-glass-unit" id="simBreakGlass" title="Simulates NFPA / NBC emergency manual release">
+                <span class="bg-title">EMERGENCY DOOR RELEASE</span>
+                <div class="bg-glass-window" id="bgGlass">
+                  <span>BREAK GLASS</span>
+                  <span>🔨</span>
+                </div>
+                <span class="bg-sub">Direct 12V NC Circuit Breaker</span>
+              </div>
+            </div>
+
+            <!-- Conduit from Inside Switch to Controller -->
+            <div class="conduit-wire conduit-in-wire" id="conduitIn">
+              <span class="wire-pulse pulse-from-exit" id="wirePulseIn"></span>
+              <span class="wire-label">Dry Contact Egress Loop</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ZONE 4: CENTRAL CONTROLLER & 12V 5A POWER HUB -->
+        <div class="sim-power-hub">
+          <div class="hub-header">
+            <span class="hub-title">CENTRAL ACCESS CONTROLLER &amp; POWER DISTRIBUTION (12V 5A + BATTERY BACKUP)</span>
+            <span class="hub-badge">FAIL-SAFE RELAY LOGIC</span>
+          </div>
+          
+          <div class="hub-grid">
+            <div class="hub-card">
+              <div class="hub-card-icon">⚡</div>
+              <div>
+                <strong style="color:#ffffff;">12V 5A Heavy-Duty SMPS</strong>
+                <p style="margin:0; font-size:0.8rem; color:#94a3b8;">Direct 230V AC to 12V DC conversion with built-in surge suppressor</p>
+              </div>
+            </div>
+
+            <div class="hub-card">
+              <div class="hub-card-icon">🔋</div>
+              <div>
+                <strong style="color:#ffffff;">12V 7Ah Standby Battery</strong>
+                <p style="margin:0; font-size:0.8rem; color:#94a3b8;">Automatic switchover guaranteeing 4+ hours continuous operation during power cuts</p>
+              </div>
+            </div>
+
+            <div class="hub-card">
+              <div class="hub-card-icon">🔀</div>
+              <div>
+                <strong style="color:#ffffff;">Fail-Safe NC Relay Terminal</strong>
+                <p style="margin:0; font-size:0.8rem; color:#94a3b8;">Energized to lock. Any loss of power or signal cut instantaneously unlocks door</p>
+              </div>
+            </div>
+
+            <div class="hub-card">
+              <div class="hub-card-icon">🚨</div>
+              <div>
+                <strong style="color:#ffffff;">Fire Alarm Interlock (NC Loop)</strong>
+                <p style="margin:0; font-size:0.8rem; color:#94a3b8;">Direct building fire panel connection for immediate life-safety evacuation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE EVENT LOG CONSOLE -->
+        <div class="sim-event-console">
+          <div class="console-header">
+            <span class="console-title"><span class="console-dot"></span> LIVE SYSTEM TELEMETRY EVENT LOG</span>
+            <span class="console-filter">OSDP &amp; TCP/IP Real-Time Stream</span>
+          </div>
+          <div class="console-logs" id="simEventLogs">
+            <!-- Populated dynamically via JavaScript -->
+          </div>
+        </div>
+
+        <!-- Action / Quote Callout -->
+        <div class="sim-cta-bar">
+          <div style="flex:1;">
+            <strong style="color:#ffffff; font-size:1.05rem; display:block; margin-bottom:0.25rem;">Need This Complete Door Access Control System Installed?</strong>
+            <span style="color:#cbd5e1; font-size:0.88rem;">Meenakshi Technologies provides complete supply, bracket mounting, concealed wiring, 12V power supply &amp; software setup across Hyderabad.</span>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20I%20tested%20your%20Door%20Access%20Control%20Engineering%20Simulation.%20Please%20quote%20for%20our%20facility%20doors." 
+               target="_blank" 
+               class="btn btn-whatsapp" 
+               style="padding:0.65rem 1.25rem; font-size:0.9rem;">
+              Chat on WhatsApp
+            </a>
+            <button type="button" 
+                    class="btn btn-primary open-quote-modal-btn" 
+                    data-product-name="Door Access Control System (600 lbs EM Lock + Face/Finger Terminal Kit)" 
+                    style="padding:0.65rem 1.25rem; font-size:0.9rem;">
+              Request Custom Door Quote
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

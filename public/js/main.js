@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLeadForm();
   initQuoteModal();
   initComparisonTool();
+  initAccessControlSimulator();
   initAnalyticsTracking();
 });
 
@@ -501,3 +502,314 @@ function initAnalyticsTracking() {
   });
 }
 
+
+
+/* ==========================================================================
+   DOOR ACCESS CONTROL ENGINEERING SIMULATOR
+   Interactive Real-Time Physical Access Control & 3D Door Simulation
+   ========================================================================== */
+function initAccessControlSimulator() {
+  const container = document.getElementById('accessControlEngineering');
+  if (!container) return;
+
+  // DOM Elements - HUD
+  const hudLockLed = document.getElementById('hudLockLed');
+  const hudLockStateText = document.getElementById('hudLockStateText');
+  const hudForce = document.getElementById('hudForce');
+  const hudRelay = document.getElementById('hudRelay');
+  const hudDoorSensor = document.getElementById('hudDoorSensor');
+  const hudSafety = document.getElementById('hudSafety');
+
+  // DOM Elements - Terminal
+  const terminalUnit = document.getElementById('simTerminalUnit');
+  const termStatusLed = document.getElementById('termStatusLed');
+  const termLine1 = document.getElementById('termLine1');
+  const termLine2 = document.getElementById('termLine2');
+  const fingerSensor = document.getElementById('fingerSensor');
+  const wirePulseOut = document.getElementById('wirePulseOut');
+
+  // DOM Elements - Lock & 3D Door
+  const emLockLed = document.getElementById('emLockLed');
+  const magneticFlux = document.getElementById('magneticFlux');
+  const fluxText = document.getElementById('fluxText');
+  const doorLeaf = document.getElementById('doorLeaf');
+  const reedSensorDot = document.getElementById('reedSensorDot');
+  const doorSensorLabel = document.getElementById('doorSensorLabel');
+
+  // DOM Elements - Inside Egress
+  const simExitBtn = document.getElementById('simExitBtn');
+  const exitBtnPush = document.getElementById('exitBtnPush');
+  const simBreakGlass = document.getElementById('simBreakGlass');
+  const wirePulseIn = document.getElementById('wirePulseIn');
+
+  // DOM Elements - Controls & Logs
+  const scenarioBtns = document.querySelectorAll('.sim-scenario-btn');
+  const autoPlayBtn = document.getElementById('simAutoPlayBtn');
+  const autoPlayText = document.getElementById('simAutoPlayText');
+  const logsContainer = document.getElementById('simEventLogs');
+
+  // Simulator State
+  let isLocked = true;
+  let isDoorOpen = false;
+  let autoCycleActive = true;
+  let autoCycleTimer = null;
+  let scenarioTimers = [];
+  let autoIndex = 0;
+  const autoSequence = ['authorized', 'exit', 'authorized', 'denied'];
+
+  function clearActiveTimers() {
+    scenarioTimers.forEach(t => clearTimeout(t));
+    scenarioTimers = [];
+  }
+
+  function getTimestamp() {
+    const d = new Date();
+    return d.toTimeString().split(' ')[0];
+  }
+
+  function addLog(message, type = 'normal') {
+    if (!logsContainer) return;
+    const entry = document.createElement('div');
+    entry.className = `log-entry log-${type}`;
+    entry.innerHTML = `<span class="log-time">[${getTimestamp()}]</span> <span>${message}</span>`;
+    logsContainer.insertBefore(entry, logsContainer.firstChild);
+
+    // Keep log clean (max 8 entries)
+    while (logsContainer.children.length > 8) {
+      logsContainer.removeChild(logsContainer.lastChild);
+    }
+  }
+
+  // Set Lock State (Hardware Magnetics & HUD)
+  function setLock(locked, options = {}) {
+    isLocked = locked;
+
+    if (locked) {
+      if (hudLockLed) hudLockLed.className = 'hud-led led-red';
+      if (hudLockStateText) hudLockStateText.textContent = '600 LBS LOCKED';
+      if (hudForce) hudForce.textContent = '280 kg / 600 lbs';
+      if (hudRelay) hudRelay.textContent = 'NC Energized (480mA)';
+      if (emLockLed) emLockLed.className = 'em-lock-led';
+      if (magneticFlux) magneticFlux.classList.remove('unlocked');
+      if (fluxText) fluxText.textContent = '600 LBS (280 KG) MAGNETIC CLAMP ACTIVE';
+    } else {
+      if (hudLockLed) hudLockLed.className = 'hud-led led-green';
+      if (hudLockStateText) hudLockStateText.textContent = options.emergency ? 'FAIL-SAFE 0 LBS (EMERGENCY)' : 'DISENGAGED 0 LBS';
+      if (hudForce) hudForce.textContent = '0 kg / 0 lbs (Free Egress)';
+      if (hudRelay) hudRelay.textContent = options.emergency ? 'CIRCUIT BROKEN (0mA)' : 'OPEN De-energized (0mA)';
+      if (emLockLed) emLockLed.className = 'em-lock-led unlocked';
+      if (magneticFlux) magneticFlux.classList.add('unlocked');
+      if (fluxText) fluxText.textContent = options.emergency ? 'FAIL-SAFE EVACUATION PASSAGE' : 'MAGNETIC CIRCUIT OPEN - READY FOR OPENING';
+    }
+  }
+
+  // Set 3D Door State
+  function setDoor(open) {
+    isDoorOpen = open;
+
+    if (open) {
+      if (doorLeaf) doorLeaf.classList.add('unlocked');
+      if (reedSensorDot) reedSensorDot.className = 'reed-sensor sensor-open';
+      if (doorSensorLabel) {
+        doorSensorLabel.textContent = 'OPEN (EGRESS IN PROGRESS)';
+        doorSensorLabel.style.color = '#38bdf8';
+      }
+      if (hudDoorSensor) hudDoorSensor.textContent = 'DOOR OPEN (REED TRIP)';
+    } else {
+      if (doorLeaf) doorLeaf.classList.remove('unlocked');
+      if (reedSensorDot) reedSensorDot.className = 'reed-sensor';
+      if (doorSensorLabel) {
+        doorSensorLabel.textContent = 'CLOSED (SECURE)';
+        doorSensorLabel.style.color = '#ffffff';
+      }
+      if (hudDoorSensor) hudDoorSensor.textContent = 'CONTACT CLOSED';
+    }
+  }
+
+  // Execute Scenarios
+  function runScenario(type) {
+    clearActiveTimers();
+
+    // Update scenario button styling
+    scenarioBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-scenario') === type);
+    });
+
+    if (type === 'authorized') {
+      // 1. Scanning State
+      terminalUnit.classList.remove('terminal-success', 'terminal-denied');
+      termStatusLed.className = 'terminal-led-indicator';
+      termLine1.textContent = 'SCANNING BIOMETRICS...';
+      termLine2.textContent = 'Live Fingerprint & Face Mapping';
+      addLog('👤 Trait Presented: Infrared face & SilkID sensor scanning...', 'normal');
+
+      // 2. Verified
+      scenarioTimers.push(setTimeout(() => {
+        terminalUnit.classList.add('terminal-success');
+        termStatusLed.className = 'terminal-led-indicator led-green';
+        termLine1.textContent = '✓ ACCESS GRANTED: #1042';
+        termLine2.textContent = 'Auth: Tingirikar Teja (Tech Lead)';
+        addLog('✓ Biometric Verified: User #1042 (Confidence: 99.8%)', 'success');
+        addLog('🔓 Controller Relay: De-energized • 600 lbs EM Lock Released', 'success');
+        setLock(false);
+      }, 800));
+
+      // 3. Door Opens
+      scenarioTimers.push(setTimeout(() => {
+        setDoor(true);
+        addLog('🚪 3D Door Swung Open: Safe corridor egress permitted (4s window)', 'exit');
+      }, 1400));
+
+      // 4. Door Returns via Closer
+      scenarioTimers.push(setTimeout(() => {
+        addLog('🔄 Hydraulic Closer: Door gently returning to frame...', 'normal');
+        setDoor(false);
+      }, 4800));
+
+      // 5. Re-Lock
+      scenarioTimers.push(setTimeout(() => {
+        setLock(true);
+        terminalUnit.classList.remove('terminal-success');
+        termStatusLed.className = 'terminal-led-indicator';
+        termLine1.textContent = 'STANDBY - PRESENT ID';
+        termLine2.textContent = 'eTimeTrackLite Ready';
+        addLog('🔒 Door Latched: 600 lbs (280 kg) Holding Force Re-engaged', 'normal');
+      }, 5600));
+
+    } else if (type === 'denied') {
+      terminalUnit.classList.remove('terminal-success', 'terminal-denied');
+      termStatusLed.className = 'terminal-led-indicator';
+      termLine1.textContent = 'SCANNING BIOMETRICS...';
+      termLine2.textContent = 'Comparing against user database';
+      addLog('⚠️ Trait Presented: Unregistered fingerprint pattern...', 'normal');
+
+      scenarioTimers.push(setTimeout(() => {
+        terminalUnit.classList.add('terminal-denied');
+        termStatusLed.className = 'terminal-led-indicator led-red';
+        termLine1.textContent = '✗ ACCESS DENIED: UNKNOWN';
+        termLine2.textContent = 'Record not found in system';
+        addLog('✗ Access Denied: Biometric template mismatch!', 'denied');
+        addLog('🛡️ High-Security Interlock: 600 lbs EM Lock maintains full force', 'denied');
+      }, 800));
+
+      scenarioTimers.push(setTimeout(() => {
+        terminalUnit.classList.remove('terminal-denied');
+        termStatusLed.className = 'terminal-led-indicator';
+        termLine1.textContent = 'STANDBY - PRESENT ID';
+        termLine2.textContent = 'eTimeTrackLite Ready';
+      }, 3500));
+
+    } else if (type === 'exit') {
+      if (exitBtnPush) exitBtnPush.classList.add('pressed');
+      addLog('🔘 Inside Zone: Stainless Steel Push-to-Exit switch activated', 'exit');
+
+      scenarioTimers.push(setTimeout(() => {
+        if (exitBtnPush) exitBtnPush.classList.remove('pressed');
+        setLock(false);
+        addLog('🔓 Egress Relay: 12V NC circuit released for 4-second exit window', 'exit');
+        setDoor(true);
+        addLog('🚪 Door Opened: Occupant moving outward from secure facility', 'exit');
+      }, 400));
+
+      scenarioTimers.push(setTimeout(() => {
+        setDoor(false);
+        addLog('🔄 Closer Retraction: Door returned to frame threshold', 'normal');
+      }, 4400));
+
+      scenarioTimers.push(setTimeout(() => {
+        setLock(true);
+        addLog('🔒 Egress Complete: 600 lbs holding clamp re-energized', 'normal');
+      }, 5200));
+
+    } else if (type === 'fire') {
+      if (simBreakGlass) simBreakGlass.style.boxShadow = '0 0 25px #ef4444';
+      if (hudSafety) {
+        hudSafety.textContent = 'EMERGENCY CUTOFF ACTIVE';
+        hudSafety.style.color = '#ef4444';
+      }
+      setLock(false, { emergency: true });
+      setDoor(true);
+      termLine1.textContent = 'EMERGENCY EVACUATION';
+      termLine2.textContent = 'Life-Safety Fail-Safe Triggered';
+      addLog('🚨 FIRE ALARM / EMERGENCY BREAK-GLASS ACTIVATED!', 'fire');
+      addLog('⚠️ LIFE SAFETY OVERRIDE: 12V DC power cut, 100% fail-safe unlocked', 'fire');
+
+      scenarioTimers.push(setTimeout(() => {
+        if (simBreakGlass) simBreakGlass.style.boxShadow = '';
+        if (hudSafety) {
+          hudSafety.textContent = 'FAIL-SAFE PASSIVE';
+          hudSafety.style.color = '#4ade80';
+        }
+        setDoor(false);
+        setLock(true);
+        termLine1.textContent = 'STANDBY - PRESENT ID';
+        termLine2.textContent = 'eTimeTrackLite Ready';
+        addLog('✅ Fire Loop Reset: Standard access control operations resumed', 'normal');
+      }, 6500));
+    }
+  }
+
+  // Interactive Click Listeners
+  scenarioBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const scenario = btn.getAttribute('data-scenario');
+      runScenario(scenario);
+      // Pause auto-cycle briefly so visitor can inspect
+      if (autoCycleTimer) clearInterval(autoCycleTimer);
+      if (autoCycleActive) {
+        autoCycleTimer = setInterval(cycleNext, 7500);
+      }
+    });
+  });
+
+  if (fingerSensor) {
+    fingerSensor.addEventListener('click', () => {
+      runScenario('authorized');
+    });
+  }
+
+  if (exitBtnPush) {
+    exitBtnPush.addEventListener('click', () => {
+      runScenario('exit');
+    });
+  }
+
+  if (simBreakGlass) {
+    simBreakGlass.addEventListener('click', () => {
+      runScenario('fire');
+    });
+  }
+
+  // Auto-Cycle Loop
+  function cycleNext() {
+    if (!autoCycleActive) return;
+    autoIndex = (autoIndex + 1) % autoSequence.length;
+    runScenario(autoSequence[autoIndex]);
+  }
+
+  if (autoPlayBtn) {
+    autoPlayBtn.addEventListener('click', () => {
+      autoCycleActive = !autoCycleActive;
+      autoPlayBtn.classList.toggle('active', autoCycleActive);
+      if (autoPlayText) {
+        autoPlayText.textContent = autoCycleActive ? 'Auto Simulation: Active' : 'Auto Simulation: Paused';
+      }
+      if (autoCycleActive) {
+        cycleNext();
+        autoCycleTimer = setInterval(cycleNext, 7500);
+      } else {
+        if (autoCycleTimer) clearInterval(autoCycleTimer);
+      }
+    });
+  }
+
+  // Initialize Default State & Logs
+  setLock(true);
+  setDoor(false);
+  addLog('⚡ 12V 5A Heavy-Duty Power Supply: 480mA Normal • Battery Standby', 'normal');
+  addLog('🧲 600 lbs Electromagnetic Lock: Magnetic circuit energized & armed', 'normal');
+  addLog('📡 Biometric Terminal: Optical SilkID & dual IR camera ready', 'normal');
+
+  // Start smooth auto-cycle
+  autoCycleTimer = setInterval(cycleNext, 7500);
+}
