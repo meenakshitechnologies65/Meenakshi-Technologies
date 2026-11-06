@@ -117,9 +117,17 @@ function initBiometricWizard() {
   if (!wizard) return;
 
   const optButtons = wizard.querySelectorAll('.wizard-opt-btn');
+  const selectionPill = document.getElementById('wizardSelectionPill');
+  const imgEl = document.getElementById('wizardResultImg');
+  const brandEl = document.getElementById('wizardResultBrand');
+  const categoryEl = document.getElementById('wizardResultCategory');
   const titleEl = document.getElementById('wizardResultTitle');
   const descEl = document.getElementById('wizardResultDesc');
+  const specsEl = document.getElementById('wizardResultSpecs');
   const waBtnEl = document.getElementById('wizardResultWaBtn');
+  const modalBtnEl = document.getElementById('wizardResultModalBtn');
+  const linkBtnEl = document.getElementById('wizardResultLinkBtn');
+  const resultBox = document.getElementById('wizardResult');
 
   const state = {
     industry: 'Office',
@@ -127,75 +135,193 @@ function initBiometricWizard() {
     goal: 'attendance'
   };
 
+  const labels = {
+    industry: 'Corporate Office',
+    size: '1–25 Staff',
+    goal: 'Attendance Only'
+  };
+
   const recommendations = {
     calc: function(ind, size, goal) {
+      // 1. Pharma or Touchless Face
       if (goal === 'face' || ind === 'Pharma') {
         return {
           title: 'Biomax SpeedFace 5 AI Face Recognition Terminal',
-          desc: 'High-speed 0.2-second facial recognition with mask detection, anti-spoofing, and 50,000 face capacity. Zero physical contact required.',
+          brand: 'Biomax AI Face',
+          category: 'Visible-Light Face Recognition',
+          image: '/images/products/biomax-speedface-5.svg',
+          slug: 'biomax-speedface-5-ai-face-recognition-terminal',
+          desc: 'High-speed 0.2-second facial recognition with dual WDR anti-spoofing cameras, mask detection, and 50,000 face capacity. Zero physical contact required.',
+          specs: ['⚡ 0.2s Verification', '👤 50,000 Face Capacity', '🛡️ Anti-Spoofing AI', '🌐 Cloud & LAN Push'],
           model: 'Biomax SpeedFace 5'
         };
       }
+
+      // 2. Access Control with Door Lock
       if (goal === 'access') {
         if (size === 'industrial' || size === 'large') {
           return {
-            title: 'eSSL Multi-Door Access Controller + 600 lbs EM Locks',
-            desc: 'Centralized network access control for multi-door facilities with fire alarm integration and anti-passback security.',
+            title: 'eSSL Multi-Door Access Controller (C3-400)',
+            brand: 'eSSL Professional',
+            category: 'Centralized Door Access Control',
+            image: '/images/products/essl-multi-door-controller.svg',
+            slug: 'essl-multi-door-access-controller-c3-400',
+            desc: 'Enterprise multi-door networked controller supporting 4 doors, 30,000 card holders, anti-passback security, and fire alarm interlocking.',
+            specs: ['🚪 4-Door Network Controller', '👥 30,000 Card Capacity', '🔥 Fire Alarm Integration', '⚡ Fail-Safe Relays'],
             model: 'eSSL Multi-Door Access Controller'
           };
         }
         return {
-          title: 'eSSL K30 Pro Biometric Terminal + 600 lbs Electromagnetic Lock',
-          desc: 'Integrated fingerprint attendance and door lock release kit with exit button and battery backup.',
-          model: 'eSSL K30 Pro with EM Lock Kit'
+          title: 'eSSL K30 Pro Biometric Terminal + 600 lbs EM Lock Kit',
+          brand: 'eSSL Access Security',
+          category: 'Biometric Door Locking Solution',
+          image: '/images/products/em-lock-600lbs.svg',
+          slug: 'electromagnetic-door-lock-600lbs',
+          desc: 'Complete single-door access control package combining fingerprint terminal, 600 lbs heavy-duty magnetic lock, exit switch, and battery backup.',
+          specs: ['🧲 600 lbs (280 kg) Force', '⚡ Fail-Safe Operation', '🔘 Push-to-Exit Switch', '🔋 Power Supply & Battery'],
+          model: 'eSSL K30 Pro + EM Lock Kit'
         };
       }
+
+      // 3. Factory or Industrial / 500+ Staff
       if (ind === 'Factory' || size === 'industrial') {
         return {
           title: 'Biomax Bio-5000 Industrial Biometric Machine',
-          desc: 'Rugged industrial terminal with 5,000 fingerprint capacity, fast verification for dusty or rough factory hands, and dual LAN/WiFi.',
+          brand: 'Biomax Industrial',
+          category: 'High-Capacity Industrial Biometric',
+          image: '/images/products/biomax-bio-5000.svg',
+          slug: 'biomax-bio-5000-industrial-fingerprint-system',
+          desc: 'Engineered specifically for factories and manufacturing plants with 5,000 fingerprint capacity, scratch-resistant optical sensor for rough hands, and dual LAN/WiFi.',
+          specs: ['👥 5,000 Fingerprints', '📝 150,000 Transaction Logs', '🏭 Rough-Hand Detection', '🔊 Voice & Siren Relay'],
           model: 'Biomax Bio-5000'
         };
       }
+
+      // 4. Gym / Fitness Center
       if (ind === 'Gym') {
         return {
-          title: 'eSSL SilkBio 100TC Multi-Biometric System',
-          desc: 'SilkID optical fingerprint + face reader integrated with gym membership expiry access control.',
+          title: 'eSSL SilkBio-100TC Multi-Biometric System',
+          brand: 'eSSL Multi-Biometric',
+          category: 'Face + SilkID Fingerprint Terminal',
+          image: '/images/products/essl-silkbio-100tc.svg',
+          slug: 'essl-silkbio-100tc-face-fingerprint-attendance',
+          desc: 'Dual face and SilkID fingerprint verification directly integrated with gym membership expiry access control to prevent unpaid entries.',
+          specs: ['🏋️ Member Expiry Control', '👤 800 Faces + 1,500 SilkID', '🚪 Turnstile / EM Lock Relay', '📱 Real-time Cloud Alerts'],
           model: 'eSSL SilkBio 100TC'
         };
       }
-      if (size === 'medium' || size === 'large') {
+
+      // 5. School / Educational
+      if (ind === 'School') {
         return {
-          title: 'eSSL SilkBio 100TC Multi-Biometric Terminal',
-          desc: 'Dual face and fingerprint recognition with push data technology and seamless payroll software sync.',
+          title: 'eSSL SilkBio-100TC Multi-Biometric System',
+          brand: 'eSSL Education Line',
+          category: 'Student & Faculty Attendance',
+          image: '/images/products/essl-silkbio-100tc.svg',
+          slug: 'essl-silkbio-100tc-face-fingerprint-attendance',
+          desc: 'Rapid student clocking with contactless face recognition, RFID smart card tapping, and automated parent SMS notifications.',
+          specs: ['🏫 SMS Parent Gateway', '⚡ 0.5s Fast Clock-in', '👥 Multi-Tier Verification', '📊 Automated Late Reports'],
           model: 'eSSL SilkBio 100TC'
         };
       }
+
+      // 6. Enterprise / 100-500 Staff
+      if (size === 'large') {
+        return {
+          title: 'eSSL uFace 202 Multi-Biometric Terminal',
+          brand: 'eSSL Enterprise',
+          category: 'High-Capacity Multi-Biometric',
+          image: '/images/products/essl-uface-202.svg',
+          slug: 'essl-uface-202-multi-biometric-terminal',
+          desc: 'High-capacity touch terminal with 1,200 face and 2,000 fingerprint storage, 4.3" color touchscreen, and multi-shift roster scheduling.',
+          specs: ['📱 4.3" Touchscreen', '👥 1,200 Faces / 2,000 Finger', '🔄 Multi-Shift Rostering', '🔋 Internal Battery Backup'],
+          model: 'eSSL uFace 202'
+        };
+      }
+
+      // 7. Mid Size Office (25-100 Staff)
+      if (size === 'medium') {
+        return {
+          title: 'eSSL SilkBio-100TC Multi-Biometric Terminal',
+          brand: 'eSSL Genuine',
+          category: 'Face + Fingerprint Terminal',
+          image: '/images/products/essl-silkbio-100tc.svg',
+          slug: 'essl-silkbio-100tc-face-fingerprint-attendance',
+          desc: 'Dual face and SilkID fingerprint recognition with push data technology, live finger detection, and seamless payroll software sync.',
+          specs: ['👥 800 Faces + 1,500 Fingerprints', '⚡ SilkID Sensor for All Hands', '🌐 TCP/IP & Push Data', '💻 Free eTimeTrackLite'],
+          model: 'eSSL SilkBio 100TC'
+        };
+      }
+
+      // 8. Small Office (1-25 Staff Default)
       return {
         title: 'eSSL K30 Pro Biometric Attendance Machine',
-        desc: 'India’s most dependable fingerprint attendance device for small offices with battery backup and USB/TCP/IP export.',
+        brand: 'eSSL Genuine',
+        category: 'Fingerprint Biometric Attendance',
+        image: '/images/products/essl-k30-pro.svg',
+        slug: 'essl-k30-pro-biometric-attendance',
+        desc: 'India’s most dependable fingerprint attendance device for small offices with built-in battery backup, USB/TCP/IP communication, and free payroll software.',
+        specs: ['⚡ < 1s Quick Verification', '👥 1,000 Fingerprints', '🔋 Built-in Battery Backup', '📊 Tally & Excel Sync'],
         model: 'eSSL K30 Pro'
       };
     }
   };
 
+  function updateWizardUI() {
+    if (selectionPill) {
+      selectionPill.textContent = `${labels.industry} • ${labels.size} • ${labels.goal}`;
+    }
+
+    const rec = recommendations.calc(state.industry, state.size, state.goal);
+
+    if (resultBox) {
+      resultBox.style.opacity = '0.5';
+      resultBox.style.transform = 'translateY(2px)';
+    }
+
+    setTimeout(() => {
+      if (titleEl) titleEl.textContent = rec.title;
+      if (brandEl) brandEl.textContent = rec.brand;
+      if (categoryEl) categoryEl.textContent = rec.category;
+      if (descEl) descEl.textContent = rec.desc;
+      if (imgEl) {
+        imgEl.src = rec.image;
+        imgEl.alt = rec.title;
+      }
+      if (specsEl && rec.specs) {
+        specsEl.innerHTML = rec.specs.map(s => `<span class="wizard-spec-pill">${s}</span>`).join('');
+      }
+      if (modalBtnEl) {
+        modalBtnEl.setAttribute('data-product-name', rec.model);
+      }
+      if (linkBtnEl) {
+        linkBtnEl.href = `/products/${rec.slug}`;
+      }
+      if (waBtnEl) {
+        const text = `Hello Meenakshi Technologies, I used your System Finder for ${labels.industry} (${labels.size}, requirement: ${labels.goal}). Please send quotation and availability for ${rec.model}.`;
+        waBtnEl.href = `https://wa.me/916301593064?text=${encodeURIComponent(text)}`;
+      }
+
+      if (resultBox) {
+        resultBox.style.opacity = '1';
+        resultBox.style.transform = 'translateY(0)';
+      }
+    }, 120);
+  }
+
   optButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const type = btn.getAttribute('data-type');
       const val = btn.getAttribute('data-val');
+      const label = btn.getAttribute('data-label') || val;
 
       btn.closest('.wizard-options').querySelectorAll('.wizard-opt-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       state[type] = val;
-      const rec = recommendations.calc(state.industry, state.size, state.goal);
+      labels[type] = label;
 
-      if (titleEl) titleEl.textContent = rec.title;
-      if (descEl) descEl.textContent = rec.desc;
-      if (waBtnEl) {
-        const text = `Hello Meenakshi Technologies, I used your System Finder for ${state.industry} (${state.size} staff, requirement: ${state.goal}). Please send quotation for ${rec.model}.`;
-        waBtnEl.href = `https://wa.me/916301593064?text=${encodeURIComponent(text)}`;
-      }
+      updateWizardUI();
     });
   });
 }
