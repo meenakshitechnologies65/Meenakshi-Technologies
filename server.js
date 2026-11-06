@@ -153,18 +153,21 @@ app.get('/locations', (req, res) => {
   });
 });
 
-// 10. Hyderabad Central Location
-app.get('/locations/hyderabad', (req, res) => {
+// 10. Location Detail (Verified Headquarters & Strategic Regional Hubs)
+app.get('/locations/:slug', (req, res) => {
   const locations = loadData('locations.json');
-  const location = locations.verifiedLocations.find(l => l.slug === 'hyderabad');
-  res.render('location-detail', { location });
-});
+  const slug = req.params.slug;
+  const verified = (locations.verifiedLocations || []).find(l => l.slug === slug || l.id === slug);
+  if (verified) {
+    return res.render('location-detail', { location: verified });
+  }
 
-// 11. Balapur Branch Location
-app.get('/locations/balapur', (req, res) => {
-  const locations = loadData('locations.json');
-  const location = locations.verifiedLocations.find(l => l.slug === 'balapur');
-  res.render('location-detail', { location });
+  const hub = (locations.regionalHubs || []).find(h => h.slug === slug || h.id === slug);
+  if (hub) {
+    return res.render('regional-hub-detail', { hub, locations });
+  }
+
+  res.status(404).render('404');
 });
 
 // 12. Hyderabad & Telangana Service Areas
@@ -301,6 +304,43 @@ app.patch('/api/cms/leads/:id', (req, res) => {
     return res.json({ success: true, lead });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// Export Leads as CSV (CMS)
+app.get('/api/cms/leads/export-csv', (req, res) => {
+  try {
+    const leads = loadData('leads.json');
+    const headers = ['Lead ID', 'Timestamp', 'Full Name', 'Company Name', 'Mobile Number', 'Email', 'Location', 'Product Required', 'Employee Count', 'Status', 'Message'];
+    
+    const escapeCsv = (str) => {
+      if (str === null || str === undefined) return '""';
+      const s = String(str).replace(/"/g, '""');
+      return `"${s}"`;
+    };
+
+    const rows = leads.map(l => [
+      escapeCsv(l.id),
+      escapeCsv(l.timestamp),
+      escapeCsv(l.fullName),
+      escapeCsv(l.companyName),
+      escapeCsv(l.mobileNumber),
+      escapeCsv(l.email),
+      escapeCsv(l.location),
+      escapeCsv(l.productOrService),
+      escapeCsv(l.employeeCount),
+      escapeCsv(l.status),
+      escapeCsv(l.message)
+    ].join(','));
+
+    const csvContent = [headers.join(','), ...rows].join('\r\n');
+
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="meenakshi-leads-${new Date().toISOString().split('T')[0]}.csv"`);
+    return res.status(200).send(csvContent);
+  } catch (err) {
+    console.error('Error exporting leads CSV:', err);
+    return res.status(500).send('Error generating CSV');
   }
 });
 

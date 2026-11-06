@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initFaqAccordion();
   initProductFilter();
+  initBiometricWizard();
   initLeadForm();
   initQuoteModal();
   initComparisonTool();
@@ -54,32 +55,149 @@ function initFaqAccordion() {
   });
 }
 
-/* Product Catalog Category Filter */
+/* Product Catalog Category Filter & Real-Time Search */
 function initProductFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const productCards = document.querySelectorAll('.product-card');
+  const searchInput = document.getElementById('productSearchInput');
+  const searchCount = document.getElementById('productSearchCount');
+
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let visibleCount = 0;
+    productCards.forEach(card => {
+      const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+      const cardBrand = (card.getAttribute('data-brand') || '').toLowerCase();
+      const cardText = (card.textContent || '').toLowerCase();
+
+      const matchesCat = (activeCategory === 'all' || cardCat.includes(activeCategory.toLowerCase()) || cardBrand.includes(activeCategory.toLowerCase()));
+      const matchesSearch = (!searchQuery || cardText.includes(searchQuery));
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (searchCount) {
+      if (visibleCount === productCards.length) {
+        searchCount.textContent = `Showing all ${productCards.length} verified models in stock`;
+      } else {
+        searchCount.textContent = `Showing ${visibleCount} of ${productCards.length} models matching filter`;
+      }
+    }
+  }
 
   if (filterBtns.length > 0 && productCards.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const category = btn.getAttribute('data-category');
-
-        productCards.forEach(card => {
-          const cardCat = card.getAttribute('data-category');
-          const cardBrand = card.getAttribute('data-brand');
-
-          if (category === 'all' || cardCat === category || cardBrand === category) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        activeCategory = btn.getAttribute('data-category');
+        applyFilters();
       });
     });
   }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+}
+
+/* Interactive Biometric System Selector / Wizard */
+function initBiometricWizard() {
+  const wizard = document.getElementById('selector-wizard');
+  if (!wizard) return;
+
+  const optButtons = wizard.querySelectorAll('.wizard-opt-btn');
+  const titleEl = document.getElementById('wizardResultTitle');
+  const descEl = document.getElementById('wizardResultDesc');
+  const waBtnEl = document.getElementById('wizardResultWaBtn');
+
+  const state = {
+    industry: 'Office',
+    size: 'small',
+    goal: 'attendance'
+  };
+
+  const recommendations = {
+    calc: function(ind, size, goal) {
+      if (goal === 'face' || ind === 'Pharma') {
+        return {
+          title: 'Biomax SpeedFace 5 AI Face Recognition Terminal',
+          desc: 'High-speed 0.2-second facial recognition with mask detection, anti-spoofing, and 50,000 face capacity. Zero physical contact required.',
+          model: 'Biomax SpeedFace 5'
+        };
+      }
+      if (goal === 'access') {
+        if (size === 'industrial' || size === 'large') {
+          return {
+            title: 'eSSL Multi-Door Access Controller + 600 lbs EM Locks',
+            desc: 'Centralized network access control for multi-door facilities with fire alarm integration and anti-passback security.',
+            model: 'eSSL Multi-Door Access Controller'
+          };
+        }
+        return {
+          title: 'eSSL K30 Pro Biometric Terminal + 600 lbs Electromagnetic Lock',
+          desc: 'Integrated fingerprint attendance and door lock release kit with exit button and battery backup.',
+          model: 'eSSL K30 Pro with EM Lock Kit'
+        };
+      }
+      if (ind === 'Factory' || size === 'industrial') {
+        return {
+          title: 'Biomax Bio-5000 Industrial Biometric Machine',
+          desc: 'Rugged industrial terminal with 5,000 fingerprint capacity, fast verification for dusty or rough factory hands, and dual LAN/WiFi.',
+          model: 'Biomax Bio-5000'
+        };
+      }
+      if (ind === 'Gym') {
+        return {
+          title: 'eSSL SilkBio 100TC Multi-Biometric System',
+          desc: 'SilkID optical fingerprint + face reader integrated with gym membership expiry access control.',
+          model: 'eSSL SilkBio 100TC'
+        };
+      }
+      if (size === 'medium' || size === 'large') {
+        return {
+          title: 'eSSL SilkBio 100TC Multi-Biometric Terminal',
+          desc: 'Dual face and fingerprint recognition with push data technology and seamless payroll software sync.',
+          model: 'eSSL SilkBio 100TC'
+        };
+      }
+      return {
+        title: 'eSSL K30 Pro Biometric Attendance Machine',
+        desc: 'India’s most dependable fingerprint attendance device for small offices with battery backup and USB/TCP/IP export.',
+        model: 'eSSL K30 Pro'
+      };
+    }
+  };
+
+  optButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-type');
+      const val = btn.getAttribute('data-val');
+
+      btn.closest('.wizard-options').querySelectorAll('.wizard-opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      state[type] = val;
+      const rec = recommendations.calc(state.industry, state.size, state.goal);
+
+      if (titleEl) titleEl.textContent = rec.title;
+      if (descEl) descEl.textContent = rec.desc;
+      if (waBtnEl) {
+        const text = `Hello Meenakshi Technologies, I used your System Finder for ${state.industry} (${state.size} staff, requirement: ${state.goal}). Please send quotation for ${rec.model}.`;
+        waBtnEl.href = `https://wa.me/916301593064?text=${encodeURIComponent(text)}`;
+      }
+    });
+  });
 }
 
 /* Lead & Contact Form Submission (Validation + AJAX to /api/enquiry + WhatsApp Fallback) */

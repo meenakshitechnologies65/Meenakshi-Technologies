@@ -1821,3 +1821,48 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   BIOMETRIC SYSTEM SELECTOR WIZARD COMPONENT
+   ========================================================================== */
+.wizard-opt-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.wizard-opt-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.wizard-opt-btn.active {
+  background: linear-gradient(135deg, #0066cc 0%, #00b4d8 100%);
+  border-color: #38bdf8;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.35);
+}
+
+@media (max-width: 768px) {
+  .wizard-container {
+    padding: 1.5rem 1rem !important;
+  }
+  .wizard-result-box {
+    padding: 1.25rem !important;
+  }
+  #wizardResultTitle {
+    font-size: 1.3rem !important;
+  }
+}
+
+

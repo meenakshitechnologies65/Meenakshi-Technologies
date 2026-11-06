@@ -27,6 +27,7 @@ const routes = [
   '/privacy-policy',
   '/terms-and-conditions',
   '/admin',
+  '/api/cms/leads/export-csv',
   '/sitemap.xml',
   '/robots.txt',
   '/css/style.css',

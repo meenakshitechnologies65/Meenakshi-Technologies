@@ -61,6 +61,68 @@
       ]
     }
   ],
+  "regionalHubs": [
+    {
+      "id": "hitech-city-hub",
+      "slug": "hitech-city-gachibowli",
+      "title": "Biometric Dealers in HITEC City & Gachibowli",
+      "type": "Cyberabad Corporate & IT Corridor Service Coverage",
+      "focus": "IT Parks, Corporate Headquarters, Data Centers & Coworking Spaces",
+      "targetLocalities": "HITEC City, Madhapur, Gachibowli, Financial District, Kondapur, Raidurg",
+      "description": "Meenakshi Technologies provides corporate IT enterprises in Cyberabad with high-security access control, frameless glass door electromagnetic locks, touchless AI face recognition terminals, and mobile app attendance synchronization. Same-day onsite engineer visits available across Cyber Towers, Mindspace, and Financial District.",
+      "recommendedSolutions": [
+        "Biomax SpeedFace 5 Walk-Through AI Face Recognition",
+        "eSSL F22 Ultra-Thin Biometric Glass Door Controller",
+        "Heavy Duty 600 lbs Electromagnetic Lock with U-Brackets",
+        "Automated Cloud Multi-Branch Attendance Integration"
+      ]
+    },
+    {
+      "id": "lb-nagar-hub",
+      "slug": "lb-nagar-dilsukhnagar",
+      "title": "Biometric Dealers in LB Nagar & Dilsukhnagar",
+      "type": "East Hyderabad Commercial & Educational Hub",
+      "focus": "Coaching Academies, Commercial Offices, Retail Stores & Diagnostic Centers",
+      "targetLocalities": "LB Nagar, Dilsukhnagar, Kothapet, Vanasthalipuram, Nagole, Saroornagar, Malakpet",
+      "description": "Serving the vibrant commercial and education corridor of East Hyderabad with rapid student RFID tap-and-go attendance, entry-level office fingerprint machines with battery backup, and Tally Prime payroll software integration.",
+      "recommendedSolutions": [
+        "eSSL K30 Pro with 4-Hour Battery Backup",
+        "eSSL Identix K21 Plug-and-Play USB Terminal",
+        "High-Speed Contactless RFID Student Cards & Readers",
+        "One-Click Tally Prime & Excel Payroll Sync"
+      ]
+    },
+    {
+      "id": "jeedimetla-hub",
+      "slug": "jeedimetla-pharma-zone",
+      "title": "Biometric & Cleanroom Access Dealers in Jeedimetla & Bollaram",
+      "type": "Pharmaceutical & Industrial Manufacturing Hub",
+      "focus": "Formulation Units, Cleanrooms, API Plants & Biotechnology Laboratories",
+      "targetLocalities": "Jeedimetla, Bollaram, Pashamylaram, Sanathnagar, Balanagar, Genome Valley",
+      "description": "Specialized biometric engineering for pharmaceutical manufacturers adhering to cGMP and 21 CFR Part 11 requirements. We deploy touchless face recognition terminals operable with safety masks and goggles, alongside 2-door interlocking airlock controller systems.",
+      "recommendedSolutions": [
+        "eSSL SilkBio-100TC Multi-Biometric Scanner",
+        "Biomax SpeedFace 5 with Mask & Temperature Detection",
+        "eSSL InBio 260 Cleanroom Airlock Interlocking Controller",
+        "Compliant 21 CFR Part 11 Audit Trail Logging"
+      ]
+    },
+    {
+      "id": "shamshabad-hub",
+      "slug": "shamshabad-adibatla-aerospace",
+      "title": "Biometric Dealers in Shamshabad & Adibatla",
+      "type": "Aviation, Logistics & Outer Ring Road Corridor",
+      "focus": "Air Cargo Hubs, Logistics Warehouses, Aerospace SEZ & Distribution Centers",
+      "targetLocalities": "Shamshabad, Adibatla, Mamidipally, Kothur, Maheshwaram, Thimmapur",
+      "description": "Providing heavy-duty biometric time tracking and perimeter door security for air logistics centers near Rajiv Gandhi International Airport and aerospace defense manufacturing units in Adibatla.",
+      "recommendedSolutions": [
+        "Biomax Bio-Finger 100 Commercial Capacity Terminal",
+        "Motorized Drop Bolt Locks & Perimeter EM Locks",
+        "Multi-Shift Logistics Roster Tracking Software",
+        "Contract Labor Rapid Biometric Registration"
+      ]
+    }
+  ],
   "hyderabadAreas": [
     { "name": "Balapur", "slug": "balapur", "zone": "South Hyderabad", "highlight": "Home to verified Meenakshi Technologies location with immediate onsite dispatch." },
     { "name": "LB Nagar", "slug": "lb-nagar", "zone": "East Hyderabad", "highlight": "Major commercial hub with bustling retail, corporate branches, and hospital installations." },
@@ -110,4 +172,3 @@
     { "name": "Bhadradri Kothagudem", "slug": "bhadradri-kothagudem", "focus": "Mining corporations, power generation plants, and paper manufacturing facilities." }
   ]
 }
-
