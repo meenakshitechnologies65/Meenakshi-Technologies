@@ -43,6 +43,8 @@ const routes = [
   '/images/products/essl-k30-pro.png',
   '/images/products/biomax-speedface-5.png',
   '/images/products/biomax-n-bm60.png',
+  '/images/products/biomax-bio-5000.png',
+  '/products/biomax-bio-5000-industrial-fingerprint-system',
   '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
   '/catalogues/essl-k30-pro-catalogue.pdf',
   '/catalogues/biomax-speedface-5-catalogue.pdf',

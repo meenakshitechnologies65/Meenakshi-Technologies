@@ -107,7 +107,12 @@ app.get(['/brochure', '/catalogue'], (req, res) => {
 // 4. Product Detail Page
 app.get('/products/:slug', (req, res) => {
   const products = loadData('products.json');
-  const product = products.find(p => p.slug === req.params.slug || p.id === req.params.slug);
+  const slugAliases = {
+    'biomax-bio-5000-industrial-fingerprint-system': 'biomax-bio-finger-100-fingerprint-attendance',
+    'essl-multi-door-access-controller-c3-400': 'essl-inbio-260-access-controller-panel'
+  };
+  const targetSlug = slugAliases[req.params.slug] || req.params.slug;
+  const product = products.find(p => p.slug === targetSlug || p.id === targetSlug);
 
   if (!product) {
     return res.status(404).render('404');
