@@ -3,11 +3,11 @@
     {
       "id": "hyderabad-main",
       "slug": "hyderabad",
-      "title": "Meenakshi Technologies – Hyderabad Central Office",
+      "title": "Meenakshi Technologies – Gowlipura Central Office (Hyderabad)",
       "type": "Primary Business Location & Regional Headquarters",
       "address": {
-        "streetAddress": "Meenakshi Technologies, Near Charminar / Santosh Nagar Ring Road",
-        "addressLocality": "Hyderabad",
+        "streetAddress": "Meenakshi Technologies, Near Gandhi Statue, 18-7-751, Outside Gowlipura",
+        "addressLocality": "Gowlipura, Hyderabad",
         "addressRegion": "Telangana",
         "postalCode": "500053",
         "addressCountry": "IN"
@@ -19,9 +19,9 @@
       "telephone": "+91-6301593064",
       "email": "meenakshitechnologies65@gmail.com",
       "openingHours": "Mo-Sa 09:30-19:30",
-      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3047629,78.4530547,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad!3m6!1s0x3bcb998ed73d905b:0x8fff8136f685f7af!8m2!3d17.3459799!4d78.479843!15sCh5iaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWRaICIeYmlvbWV0cmljIGRlYWxlcnMgaW4gaHlkZXJhYmFkkgEYc2VjdXJpdHlfc3lzdGVtX3N1cHBsaWVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5HZDJGdFkyTjNFQUXgAQD6AQUIlAIQOw!16s%2Fg%2F11qnq_8w6p?entry=ttu",
-      "embedMapUrl": "https://maps.google.com/maps?q=17.3459799,78.479843&hl=en&z=15&output=embed",
-      "description": "Our central Hyderabad location serves corporate offices, IT parks, retail showrooms, educational institutions and commercial establishments across Greater Hyderabad with same-day consultations, hardware demonstrations, and prompt installation assistance.",
+      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3459799,78.479843,17z/data=!4m6!3m5!1s0x3bcb998ed73d905b:0x8fff8136f685f7af!8m2!3d17.3459799!4d78.479843",
+      "embedMapUrl": "https://www.openstreetmap.org/export/embed.html?bbox=78.4748%2C17.3415%2C78.4848%2C17.3505&layer=mapnik&marker=17.3459799%2C78.479843",
+      "description": "Our central Gowlipura headquarters serves corporate offices, IT corridors, retail showrooms, educational institutions and commercial establishments across Greater Hyderabad with same-day hardware consultations, live biometric demonstrations, and prompt onsite installation.",
       "servicesAvailable": [
         "Biometric Device Demonstrations & Consultations",
         "eSSL and Biomax Hardware Stock Dispatch",
@@ -49,8 +49,8 @@
       "telephone": "+91-6301593064",
       "email": "meenakshitechnologies65@gmail.com",
       "openingHours": "Mo-Sa 09:30-19:30",
-      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3459462,78.327064,12z/data=!4m10!1m2!2m1!1sbiometric+dealers+in+hyderabad+balapur!3m6!1s0x3bcba32a595dbdf5:0x751584db54ecd738!8m2!3d17.309578!4d78.5152011!15sCiZiaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWQgYmFsYXB1clooIiZiaW9tZXRyaWMgZGVhbGVycyBpbiBoeWRlcmFiYWQgYmFsYXB1cpIBGHNlY3VyaXR5X3N5c3RlbV9zdXBwbGllcpoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyNXdiVnBYV1hwWFZYQnRWVE52ZWsxcVFteE9TRUpoVGxkb2MxRnJSUkFC4AEA-gEECHwQSA!16s%2Fg%2F11nq1lxkll?entry=ttu",
-      "embedMapUrl": "https://maps.google.com/maps?q=17.309578,78.5152011&hl=en&z=15&output=embed",
+      "mapUrl": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.309578,78.5152011,17z/data=!4m6!3m5!1s0x3bcba32a595dbdf5:0x751584db54ecd738!8m2!3d17.309578!4d78.5152011",
+      "embedMapUrl": "https://www.openstreetmap.org/export/embed.html?bbox=78.5102%2C17.3050%2C78.5202%2C17.3140&layer=mapnik&marker=17.309578%2C78.5152011",
       "description": "Our Balapur branch anchors our fast-response field engineering operations for South Hyderabad, Chandrayangutta, Falaknuma, LB Nagar, Saroornagar, Shamshabad Airport corridor, and Adibatla Aerospace SEZ.",
       "servicesAvailable": [
         "Local Customer Walk-in Consultations",

@@ -144,11 +144,11 @@ doc.rect(45, locCoverY, 5, 95).fill(BLUE);
 
 doc.fontSize(11).font('Helvetica-Bold').fillColor('#ffffff').text('DUAL VERIFIED HYDERABAD LOCATIONS', 60, locCoverY + 12);
 
-doc.fontSize(8.5).font('Helvetica-Bold').fillColor(CYAN).text('1. Hyderabad Central (HQ):', 60, locCoverY + 30);
-doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text('Near Charminar / Santosh Nagar Ring Road, Hyderabad 500053  |  GPS: 17.3459° N, 78.4798° E', 60, locCoverY + 42);
+doc.fontSize(8.5).font('Helvetica-Bold').fillColor(CYAN).text('1. Gowlipura Central (HQ):', 60, locCoverY + 30);
+doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text('Near Gandhi Statue, 18-7-751, Outside Gowlipura, Hyderabad 500053  |  GPS: 17.3459° N, 78.4798° E', 60, locCoverY + 42);
 
 doc.fontSize(8.5).font('Helvetica-Bold').fillColor(CYAN).text('2. Balapur Business Branch:', 60, locCoverY + 58);
-doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text('Balapur Main Road, Near DRDL / Kanchanbagh Sector, Hyderabad 500005  |  GPS: 17.3095° N, 78.5152° E', 60, locCoverY + 70);
+doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text('Balapur Main Road, Near DRDL / Kanchanbagh Sector, Balapur, Hyderabad 500005  |  GPS: 17.3095° N, 78.5152° E', 60, locCoverY + 70);
 
 // Cover Footer Helpline
 doc.fontSize(11).font('Helvetica-Bold').fillColor(CYAN).text('DIRECT ENGINEERING HELPLINE', 45, 715);
@@ -182,11 +182,11 @@ const locBoxHeight = 160;
 doc.roundedRect(35, curY, locBoxWidth, locBoxHeight, 8).fill(LIGHT_BG).stroke(BORDER_COLOR);
 doc.rect(35, curY, 4, locBoxHeight).fill(BLUE);
 
-doc.fontSize(11).font('Helvetica-Bold').fillColor(NAVY).text('1. Hyderabad Central HQ', 48, curY + 14);
+doc.fontSize(11).font('Helvetica-Bold').fillColor(NAVY).text('1. Gowlipura Central HQ', 48, curY + 14);
 doc.fontSize(8).font('Helvetica-Bold').fillColor(BLUE).text('CENTRAL ADMINISTRATIVE & DISPATCH DESK', 48, curY + 28);
 
 doc.fontSize(8.5).font('Helvetica').fillColor('#334155').text(
-  'Address: Near Charminar / Santosh Nagar Ring Road, Hyderabad, Telangana 500053.\n\n' +
+  'Address: Near Gandhi Statue, 18-7-751, Outside Gowlipura, Hyderabad, Telangana 500053.\n\n' +
   'Key Focus Areas: HITEC City, Madhapur, Gachibowli, Begumpet, Secunderabad, Dilsukhnagar, Charminar.\n\n' +
   'Coordinates: Lat 17.3459799, Lng 78.479843\n' +
   'Helpline: +91 6301593064\n' +
@@ -202,7 +202,7 @@ doc.fontSize(11).font('Helvetica-Bold').fillColor(NAVY).text('2. Balapur Busines
 doc.fontSize(8).font('Helvetica-Bold').fillColor(BLUE).text('FIELD ENGINEERING & STOCK DEPOT', 318, curY + 28);
 
 doc.fontSize(8.5).font('Helvetica').fillColor('#334155').text(
-  'Address: Balapur Main Road, Near DRDL / Kanchanbagh Sector, Hyderabad, Telangana 500005.\n\n' +
+  'Address: Balapur Main Road, Near DRDL / Kanchanbagh Sector, Balapur, Hyderabad, Telangana 500005.\n\n' +
   'Key Focus Areas: LB Nagar, Kothapet, Vanasthalipuram, Kanchanbagh, Chandrayangutta, Shamshabad, Adibatla.\n\n' +
   'Coordinates: Lat 17.309578, Lng 78.5152011\n' +
   'Helpline: +91 6301593064\n' +
