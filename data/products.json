@@ -6,7 +6,7 @@
     "brand": "eSSL",
     "category": "Fingerprint Biometric Devices",
     "tagline": "Standalone Fingerprint Time Attendance Terminal with Built-in Battery Backup",
-    "image": "/images/products/essl-k90-pro.svg",
+    "image": "/images/products/essl-k90-pro.png",
     "capacity": {
       "fingerprints": "1,000 templates",
       "cards": "1,000 RFID cards",
@@ -38,7 +38,8 @@
       "Hospitals, Clinics and Diagnostic Laboratories"
     ],
     "installationInfo": "Wall-mountable with standard bracket. Connects via CAT6 network cable to LAN router or standalone with USB.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/essl-k90-pro-catalogue.pdf"
   },
   {
     "id": "essl-k30-pro",
@@ -47,7 +48,7 @@
     "brand": "eSSL",
     "category": "Fingerprint Biometric Devices",
     "tagline": "Standalone Fingerprint Time Attendance with Built-in Battery Backup",
-    "image": "/images/products/essl-k30-pro.svg",
+    "image": "/images/products/essl-k30-pro.png",
     "capacity": {
       "fingerprints": "1,000 templates",
       "cards": "1,000 RFID cards",
@@ -79,7 +80,8 @@
       "Clinics and Diagnostic Centers"
     ],
     "installationInfo": "Wall-mountable with standard backplate. Connects directly to local LAN router via RJ45 CAT6 cable or standalone operation with USB pen drive.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/essl-k30-pro-catalogue.pdf"
   },
   {
     "id": "essl-silkbio-100tc",
@@ -88,7 +90,7 @@
     "brand": "eSSL",
     "category": "Face + Fingerprint Devices",
     "tagline": "Advanced Multi-Biometric Time Attendance & Access Control with SilkID",
-    "image": "/images/products/essl-silkbio-100tc.svg",
+    "image": "/images/products/essl-silkbio-100tc.png",
     "capacity": {
       "faces": "800 face templates",
       "fingerprints": "1,500 SilkID templates",
@@ -119,7 +121,8 @@
       "Hospitals and Healthcare Facilities"
     ],
     "installationInfo": "Flush or surface wall mount. Includes relay wiring terminals for fail-safe EM locks and emergency push buttons.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/essl-silkbio-100tc-catalogue.pdf"
   },
   {
     "id": "essl-uface-202",
@@ -128,7 +131,7 @@
     "brand": "eSSL",
     "category": "Face Recognition Machines",
     "tagline": "High-Capacity Multi-Biometric Time Attendance & Access Terminal",
-    "image": "/images/products/essl-uface-202.svg",
+    "image": "/images/products/essl-uface-202.png",
     "capacity": {
       "faces": "1,200 face templates (optional up to 3,000)",
       "fingerprints": "2,000 fingerprints",
@@ -158,7 +161,8 @@
       "Colleges, Universities & Multi-Floor Campuses"
     ],
     "installationInfo": "Heavy-duty steel mounting bracket. Supports standalone or centralized networked multi-device architecture.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/essl-uface-202-catalogue.pdf"
   },
   {
     "id": "essl-f22",
@@ -167,7 +171,7 @@
     "brand": "eSSL",
     "category": "Door Access Controllers",
     "tagline": "Ultra-Thin Fingerprint Time Attendance & Access Control with Wi-Fi",
-    "image": "/images/products/essl-f22.svg",
+    "image": "/images/products/essl-f22.png",
     "capacity": {
       "fingerprints": "3,000 templates",
       "cards": "5,000 RFID / Mifare cards",
@@ -195,7 +199,8 @@
       "Financial Institutions & Cash Vaults"
     ],
     "installationInfo": "Slim architectural form factor designed for wooden, aluminum, and glass door frames. Supports Wiegand slave readers.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/essl-f22-catalogue.pdf"
   },
   {
     "id": "essl-identix-k21",
@@ -204,7 +209,7 @@
     "brand": "eSSL",
     "category": "Fingerprint Biometric Devices",
     "tagline": "Economical Fingerprint Time Attendance Terminal for Startups & Small Offices",
-    "image": "/images/products/essl-identix-k21.svg",
+    "image": "/images/products/essl-identix-k21.png",
     "capacity": {
       "fingerprints": "500 templates",
       "cards": "500 RFID cards",
@@ -232,7 +237,8 @@
       "Co-working Spaces and Small Warehouses"
     ],
     "installationInfo": "Lightweight wall mount with included mounting screws. Operates directly via standard 5V power adapter.",
-    "popular": false
+    "popular": false,
+    "cataloguePdf": "/catalogues/essl-identix-k21-catalogue.pdf"
   },
   {
     "id": "biomax-speedface-5",
@@ -241,7 +247,7 @@
     "brand": "Biomax",
     "category": "Face Recognition Machines",
     "tagline": "AI-Powered Visible Light Facial Recognition & Access Control Terminal",
-    "image": "/images/products/biomax-speedface-5.svg",
+    "image": "/images/products/biomax-speedface-5.png",
     "capacity": {
       "faces": "6,000 face templates (Deep Learning AI)",
       "fingerprints": "6,000 fingerprints",
@@ -271,7 +277,8 @@
       "Gyms, Health Clubs & Premium Fitness Centers"
     ],
     "installationInfo": "Mounts on walls, desktop pedestals, or turnstile barrier brackets. Fully weatherproof and tamper-resistant.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/biomax-speedface-5-catalogue.pdf"
   },
   {
     "id": "biomax-bio-finger-100",
@@ -280,7 +287,7 @@
     "brand": "Biomax",
     "category": "Fingerprint Biometric Devices",
     "tagline": "Commercial High-Capacity Fingerprint & Card Attendance System",
-    "image": "/images/products/biomax-bio-finger-100.svg",
+    "image": "/images/products/biomax-bio-finger-100.png",
     "capacity": {
       "fingerprints": "5,000 fingerprint templates",
       "cards": "5,000 RFID cards",
@@ -307,7 +314,8 @@
       "Educational Institutions and Residential Schools"
     ],
     "installationInfo": "Standard wall mounting plate. Fast setup with Biomax attendance software and SQL database.",
-    "popular": false
+    "popular": false,
+    "cataloguePdf": "/catalogues/biomax-bio-finger-100-catalogue.pdf"
   },
   {
     "id": "biomax-n-bm60",
@@ -316,7 +324,7 @@
     "brand": "Biomax",
     "category": "Face + Fingerprint Devices",
     "tagline": "Compact Multi-Biometric Attendance Terminal with Built-in Cloud Connectivity",
-    "image": "/images/products/biomax-n-bm60.svg",
+    "image": "/images/products/biomax-n-bm60.png",
     "capacity": {
       "faces": "1,000 face templates",
       "fingerprints": "2,000 fingerprints",
@@ -345,7 +353,8 @@
       "Small Hospitals and Nursing Homes"
     ],
     "installationInfo": "Wall bracket with lock screw. Connects over Wi-Fi within minutes.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/biomax-n-bm60-catalogue.pdf"
   },
   {
     "id": "electromagnetic-lock-600lbs",
@@ -354,7 +363,7 @@
     "brand": "eSSL / SecureTech",
     "category": "Electromagnetic Locks",
     "tagline": "Fail-Safe Magnetic Lock for Single Wooden, Glass & Metal Doors",
-    "image": "/images/products/em-lock-600lbs.svg",
+    "image": "/images/products/electromagnetic-lock-600lbs.jpg",
     "capacity": {
       "holdingForce": "280 kg (600 lbs) linear holding force",
       "voltage": "12V DC or 24V DC (auto-switchable)",
@@ -382,7 +391,8 @@
       "Emergency Exits and High-Security Corridors"
     ],
     "installationInfo": "Installed on top door frame with armature plate on door leaf. Available with ZL brackets for inward swinging doors and U-brackets for glass doors.",
-    "popular": true
+    "popular": true,
+    "cataloguePdf": "/catalogues/electromagnetic-lock-600lbs-catalogue.pdf"
   },
   {
     "id": "drop-bolt-lock",
@@ -391,7 +401,7 @@
     "brand": "eSSL / SecureTech",
     "category": "Electromagnetic Locks",
     "tagline": "Concealed Motorized Drop Bolt Lock with Time Delay for Glass Doors",
-    "image": "/images/products/drop-bolt-lock.svg",
+    "image": "/images/products/drop-bolt-lock.png",
     "capacity": {
       "holdingForce": "1000 kg tensile strength",
       "operatingVoltage": "12V DC ±10%",
@@ -418,7 +428,8 @@
       "Laboratory Interlocking Air Showers"
     ],
     "installationInfo": "Top or header mounted. Frameless glass brackets available for bottom and top glass installation.",
-    "popular": false
+    "popular": false,
+    "cataloguePdf": "/catalogues/drop-bolt-lock-catalogue.pdf"
   },
   {
     "id": "essl-inbio-260",
@@ -427,7 +438,7 @@
     "brand": "eSSL",
     "category": "Door Access Controllers",
     "tagline": "Industrial 2-Door Biometric & RFID Networked Access Control Panel",
-    "image": "/images/products/essl-inbio-260.svg",
+    "image": "/images/products/essl-inbio-260.png",
     "capacity": {
       "fingerprints": "3,000 templates",
       "cards": "30,000 RFID cards",
@@ -456,7 +467,8 @@
       "Data Centers and Server Server Room Corridors"
     ],
     "installationInfo": "Enclosed in heavy-duty lockable metal box with power supply and battery backup space.",
-    "popular": false
+    "popular": false,
+    "cataloguePdf": "/catalogues/essl-inbio-260-catalogue.pdf"
   },
   {
     "id": "rfid-smart-cards-tags",
@@ -465,7 +477,7 @@
     "brand": "Meenakshi Technologies",
     "category": "RFID Card Readers",
     "tagline": "High-Frequency 13.56MHz Mifare & 125kHz EM Proximity Cards and Keyfobs",
-    "image": "/images/products/rfid-cards.svg",
+    "image": "/images/products/rfid-smart-cards-tags.png",
     "capacity": {
       "frequencies": "125 kHz EM-Marine / 13.56 MHz Mifare 1K S50",
       "readDistance": "3 to 10 cm depending on reader antenna",
@@ -491,7 +503,7 @@
       "Visitor Management Badges for Commercial Buildings"
     ],
     "installationInfo": "Ready to use out of box. Supported by ID card thermal printers (Zebra, Evolis, Magicard).",
-    "popular": false
+    "popular": false,
+    "cataloguePdf": "/catalogues/rfid-smart-cards-tags-catalogue.pdf"
   }
 ]
-

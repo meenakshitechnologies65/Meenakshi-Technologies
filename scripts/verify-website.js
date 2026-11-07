@@ -38,7 +38,13 @@ const routes = [
   '/images/tingirikar-teja.jpg',
   '/images/client-1.png',
   '/images/review-1.png',
-  '/images/products/essl-k30-pro.svg',
+  '/images/products/essl-k90-pro.png',
+  '/images/products/essl-k30-pro.png',
+  '/images/products/biomax-speedface-5.png',
+  '/images/products/biomax-n-bm60.png',
+  '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+  '/catalogues/essl-k30-pro-catalogue.pdf',
+  '/catalogues/biomax-speedface-5-catalogue.pdf',
   '/images/diagrams/biometric-workflow.svg'
 ];
 
