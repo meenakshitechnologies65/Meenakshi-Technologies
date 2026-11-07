@@ -98,6 +98,12 @@ app.get('/products', (req, res) => {
   res.render('products', { products });
 });
 
+// 3b. Official Brochure & Master Catalogue Page
+app.get(['/brochure', '/catalogue'], (req, res) => {
+  const products = loadData('products.json');
+  res.render('brochure', { products });
+});
+
 // 4. Product Detail Page
 app.get('/products/:slug', (req, res) => {
   const products = loadData('products.json');

@@ -5,6 +5,7 @@ const BASE_URL = 'http://localhost:3000';
 const routes = [
   '/',
   '/about',
+  '/brochure',
   '/products',
   '/products/essl-k90-pro-biometric-attendance',
   '/products/essl-k30-pro-biometric-attendance',

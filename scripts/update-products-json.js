@@ -68,3 +68,4 @@ products.forEach(p => {
 
 fs.writeFileSync(productsPath, JSON.stringify(products, null, 2), 'utf8');
 console.log('Successfully updated data/products.json with official images & PDF catalogues!');
+
