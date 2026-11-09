@@ -84,31 +84,6 @@
       </div>
     </div>
 
-    <!-- PWA & Smart Cache Control Utility Bar -->
-    <div class="footer-pwa-bar">
-      <div class="footer-pwa-left">
-        <span id="onlineStatusPill" class="status-pill status-online" title="Current Network Status">
-          <span class="status-dot"></span>
-          <span class="status-text">Online • Connected</span>
-        </span>
-        <span id="cacheStorageBadge" class="cache-badge" title="Local PWA Cache Storage">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          <span id="cacheStorageText">Cache: Calculating...</span>
-        </span>
-      </div>
-
-      <div class="footer-pwa-right">
-        <button id="pwaInstallFooterBtn" class="footer-utility-btn" style="display:none;" title="Install Meenakshi App to Home Screen">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span>Install Web App</span>
-        </button>
-        <button id="clearCacheBtn" class="footer-utility-btn" title="Refresh and clear offline stored website data">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-          <span>Clear Website Cache</span>
-        </button>
-      </div>
-    </div>
-
     <!-- Footer Bottom -->
     <div class="footer-bottom">
       <p>&copy; <%= new Date().getFullYear() %> Meenakshi Technologies. All Rights Reserved. Founded by Tingirikar Teja. Registered in Hyderabad, Telangana, India.</p>
@@ -116,7 +91,6 @@
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms-and-conditions">Terms &amp; Conditions</a>
         <a href="/sitemap.xml">XML Sitemap</a>
-        <a href="/offline">Offline Mode</a>
       </div>
     </div>
   </div>
@@ -184,9 +158,6 @@
     </form>
   </div>
 </div>
-
-<!-- TOAST NOTIFICATION CONTAINER -->
-<div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
 <!-- Main Scripts -->
 <script src="/js/main.js?v=2026.8"></script>

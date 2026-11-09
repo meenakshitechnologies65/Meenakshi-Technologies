@@ -16,9 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initClientSlider();
   initVideoFilter();
   initAnalyticsTracking();
-  initServiceWorkerAndPWA();
-  initCacheManager();
-  initNetworkStatus();
+
+  // Ensure any legacy service worker and local caches are cleanly purged
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => {
+      regs.forEach(r => r.unregister());
+    });
+  }
+  if ('caches' in window) {
+    caches.keys().then(keys => {
+      keys.forEach(k => caches.delete(k));
+    });
+  }
 });
 
 /* Mobile Menu Toggle */
@@ -1004,205 +1013,4 @@ function initDropdownNav() {
       });
     }
   });
-}
-
-/* ==========================================================================
-   PROGRESSIVE WEB APP (PWA) & SERVICE WORKER CONTROLLER
-   ========================================================================== */
-let deferredPwaPrompt = null;
-
-function initServiceWorkerAndPWA() {
-  // 1. Service Worker Registration
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js', { scope: '/' })
-        .then((reg) => {
-          console.log('[PWA] Service Worker registered successfully. Scope:', reg.scope);
-          
-          reg.addEventListener('updatefound', () => {
-            const installingWorker = reg.installing;
-            if (installingWorker) {
-              installingWorker.addEventListener('statechange', () => {
-                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  showToast('New version of Meenakshi Technologies is available. Tap Clear Cache to refresh.', 'info');
-                }
-              });
-            }
-          });
-        })
-        .catch((err) => {
-          console.warn('[PWA] Service Worker registration failed:', err);
-        });
-    });
-  }
-
-  // 2. Custom Install Prompt handling
-  const headerInstallBtn = document.getElementById('pwaInstallHeaderBtn');
-  const footerInstallBtn = document.getElementById('pwaInstallFooterBtn');
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPwaPrompt = e;
-
-    if (headerInstallBtn) headerInstallBtn.style.display = 'inline-flex';
-    if (footerInstallBtn) footerInstallBtn.style.display = 'inline-flex';
-  });
-
-  function triggerPwaInstall() {
-    if (!deferredPwaPrompt) return;
-    deferredPwaPrompt.prompt();
-    deferredPwaPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        showToast('Thank you! Meenakshi Technologies App is installing.', 'success');
-      }
-      deferredPwaPrompt = null;
-      if (headerInstallBtn) headerInstallBtn.style.display = 'none';
-      if (footerInstallBtn) footerInstallBtn.style.display = 'none';
-    });
-  }
-
-  if (headerInstallBtn) headerInstallBtn.addEventListener('click', triggerPwaInstall);
-  if (footerInstallBtn) footerInstallBtn.addEventListener('click', triggerPwaInstall);
-
-  window.addEventListener('appinstalled', () => {
-    showToast('Meenakshi Tech App installed on your device!', 'success');
-    if (headerInstallBtn) headerInstallBtn.style.display = 'none';
-    if (footerInstallBtn) footerInstallBtn.style.display = 'none';
-    deferredPwaPrompt = null;
-  });
-}
-
-/* ==========================================================================
-   SMART CACHE MANAGEMENT & STORAGE ESTIMATE
-   ========================================================================== */
-async function updateCacheStorageEstimate() {
-  const textEl = document.getElementById('cacheStorageText');
-  if (!textEl) return;
-
-  if ('storage' in navigator && 'estimate' in navigator.storage) {
-    try {
-      const { usage } = await navigator.storage.estimate();
-      if (typeof usage === 'number') {
-        const mbUsage = (usage / (1024 * 1024)).toFixed(1);
-        textEl.textContent = `Cache: ~${mbUsage} MB stored`;
-      } else {
-        textEl.textContent = 'Cache: Active';
-      }
-    } catch (e) {
-      textEl.textContent = 'Cache: Active';
-    }
-  } else {
-    textEl.textContent = 'Cache: Active';
-  }
-}
-
-function initCacheManager() {
-  updateCacheStorageEstimate();
-
-  const clearBtn = document.getElementById('clearCacheBtn');
-  if (clearBtn) {
-    clearBtn.addEventListener('click', async () => {
-      clearBtn.disabled = true;
-      clearBtn.innerHTML = `<span>Clearing...</span>`;
-
-      try {
-        if ('caches' in window) {
-          const cacheKeys = await caches.keys();
-          await Promise.all(cacheKeys.map(k => caches.delete(k)));
-        }
-
-        // Notify Service Worker
-        if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-          navigator.serviceWorker.controller.postMessage({ action: 'CLEAR_CACHE' });
-        }
-
-        showToast('Website cache cleared successfully. Refreshing latest content...', 'success');
-        await updateCacheStorageEstimate();
-
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1200);
-      } catch (err) {
-        showToast('Error clearing cache. Please try reloading the page.', 'error');
-        clearBtn.disabled = false;
-        clearBtn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-          <span>Clear Website Cache</span>
-        `;
-      }
-    });
-  }
-}
-
-/* ==========================================================================
-   NETWORK ONLINE / OFFLINE STATUS MONITOR
-   ========================================================================== */
-function initNetworkStatus() {
-  const pill = document.getElementById('onlineStatusPill');
-
-  function updateStatus(isOnline) {
-    if (!pill) return;
-    if (isOnline) {
-      pill.className = 'status-pill status-online';
-      pill.querySelector('.status-text').textContent = 'Online • Connected';
-      showToast('Internet connection active.', 'success', 2500);
-    } else {
-      pill.className = 'status-pill status-offline';
-      pill.querySelector('.status-text').textContent = 'Offline Mode Active';
-      showToast('You are currently offline. Emergency helpline (+91 6301593064) & cached catalogue remain accessible.', 'warning', 6000);
-    }
-  }
-
-  window.addEventListener('online', () => updateStatus(true));
-  window.addEventListener('offline', () => updateStatus(false));
-
-  if (!navigator.onLine && pill) {
-    updateStatus(false);
-  }
-}
-
-/* ==========================================================================
-   TOAST NOTIFICATION HELPER
-   ========================================================================== */
-function showToast(message, type = 'info', duration = 4000) {
-  let container = document.getElementById('toastContainer');
-  if (!container) {
-    container = document.createElement('div');
-    container.id = 'toastContainer';
-    container.className = 'toast-container';
-    document.body.appendChild(container);
-  }
-
-  const toast = document.createElement('div');
-  toast.className = `toast-item toast-${type}`;
-  
-  let icon = 'ℹ️';
-  if (type === 'success') icon = '✅';
-  else if (type === 'warning') icon = '⚠️';
-  else if (type === 'error') icon = '❌';
-
-  toast.innerHTML = `
-    <span class="toast-icon">${icon}</span>
-    <span class="toast-msg">${message}</span>
-    <button class="toast-close-btn" aria-label="Close notification">&times;</button>
-  `;
-
-  const closeBtn = toast.querySelector('.toast-close-btn');
-  closeBtn.addEventListener('click', () => {
-    toast.classList.add('fade-out');
-    setTimeout(() => toast.remove(), 300);
-  });
-
-  container.appendChild(toast);
-
-  requestAnimationFrame(() => {
-    toast.classList.add('visible');
-  });
-
-  setTimeout(() => {
-    if (toast.parentElement) {
-      toast.classList.add('fade-out');
-      setTimeout(() => toast.remove(), 300);
-    }
-  }, duration);
 }

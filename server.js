@@ -30,36 +30,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Root Service Worker endpoint with root scope allowance
-app.get('/sw.js', (req, res) => {
-  res.setHeader('Service-Worker-Allowed', '/');
-  res.setHeader('Content-Type', 'application/javascript');
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.sendFile(path.join(__dirname, 'public', 'sw.js'));
-});
-
-// Web App Manifest endpoint
-app.get('/site.webmanifest', (req, res) => {
-  res.setHeader('Content-Type', 'application/manifest+json');
-  res.setHeader('Cache-Control', 'public, max-age=86400');
-  res.sendFile(path.join(__dirname, 'public', 'site.webmanifest'));
-});
-
-// Serve static assets with smart Cache-Control headers
-app.use(express.static(path.join(__dirname, 'public'), {
-  setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.css') || filePath.endsWith('.js')) {
-      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-    } else if (/\.(jpg|jpeg|png|webp|svg|ico)$/i.test(filePath)) {
-      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
-    } else if (filePath.endsWith('.pdf')) {
-      res.setHeader('Cache-Control', 'public, max-age=86400');
-    }
-  }
-}));
-app.use('/images', express.static(path.join(__dirname, 'images'), {
-  maxAge: '7d'
-}));
+// Serve static assets
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Set up EJS template engine
 app.set('view engine', 'ejs');
@@ -368,10 +341,10 @@ app.get('/contact', (req, res) => {
   });
 });
 
-// 17. Legal Pages & Offline PWA Fallback
+// 17. Legal Pages
 app.get('/privacy-policy', (req, res) => res.render('privacy-policy'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms-and-conditions'));
-app.get('/offline', (req, res) => res.render('offline'));
+app.get('/offline', (req, res) => res.redirect(301, '/'));
 
 // 18. CMS Management v2.0 Administration Dashboard & Enterprise REST APIs
 const cmsRoutes = require('./cms/routes');
