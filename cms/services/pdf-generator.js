@@ -195,3 +195,4 @@ module.exports = {
   generateProductDatasheetPdf,
   generateCatalogPdf
 };
+
