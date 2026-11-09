@@ -1,6 +1,7 @@
 # ==============================================================================
 # MEENAKSHI TECHNOLOGIES - PRODUCTION DOCKER COMPOSE ORCHESTRATION
 # Server IP: 129.121.169.189
+# Environment: Loaded directly from .env file
 # Services: app (Node.js 22 LTS Express & CMS) + db (PostgreSQL 16) + redis (Redis 7)
 # ==============================================================================
 
@@ -17,6 +18,8 @@ services:
       dockerfile: Dockerfile
     container_name: meenakshi_app
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "80:3000"       # Web entrypoint for http://129.121.169.189/
       - "3000:3000"     # Direct Node API entrypoint for http://129.121.169.189:3000/
@@ -24,19 +27,19 @@ services:
       db:
         condition: service_healthy
     environment:
-      - NODE_ENV=production
-      - PORT=3000
-      - HOST=0.0.0.0
-      - SERVER_IP=129.121.169.189
-      - APP_URL=http://129.121.169.189
-      - BASE_URL=http://129.121.169.189
-      - TRUST_PROXY=1
-      - DATABASE_URL=postgres://${DB_USER:-meenakshi_user}:${DB_PASSWORD:-meenakshi_secure_password_2026}@db:5432/${DB_NAME:-meenakshi_cms}
-      - REDIS_URL=redis://redis:6379
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=${PORT:-3000}
+      - HOST=${HOST:-0.0.0.0}
+      - SERVER_IP=${SERVER_IP:-129.121.169.189}
+      - APP_URL=${APP_URL:-http://129.121.169.189}
+      - BASE_URL=${BASE_URL:-http://129.121.169.189}
+      - TRUST_PROXY=${TRUST_PROXY:-1}
+      - DATABASE_URL=${DATABASE_URL:-postgres://meenakshi_user:meenakshi_secure_password_2026@db:5432/meenakshi_cms}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379}
       - JWT_SECRET=${JWT_SECRET:-meenakshi_jwt_secret_production_2026_super_secure}
-      - PRIMARY_PHONE=+916301593064
-      - WHATSAPP_PHONE=916301593064
-      - PRIMARY_EMAIL=meenakshitechnologies65@gmail.com
+      - PRIMARY_PHONE=${PRIMARY_PHONE:-+916301593064}
+      - WHATSAPP_PHONE=${WHATSAPP_PHONE:-916301593064}
+      - PRIMARY_EMAIL=${PRIMARY_EMAIL:-meenakshitechnologies65@gmail.com}
     volumes:
       - cms_data:/app/data
       - catalogues_data:/app/public/catalogues
@@ -58,6 +61,8 @@ services:
     image: postgres:16-alpine
     container_name: meenakshi_db
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "127.0.0.1:5432:5432"
     environment:
@@ -85,6 +90,8 @@ services:
     image: redis:7-alpine
     container_name: meenakshi_redis
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
