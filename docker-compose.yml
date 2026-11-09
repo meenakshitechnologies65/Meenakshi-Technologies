@@ -1,6 +1,7 @@
 # ==============================================================================
-# MEENAKSHI TECHNOLOGIES - DOCKER COMPOSE ORCHESTRATION
-# Single unified application container (Node.js 22 Express & CMS) + Database (PostgreSQL 16) + Cache (Redis 7)
+# MEENAKSHI TECHNOLOGIES - PRODUCTION DOCKER COMPOSE ORCHESTRATION
+# Server IP: 129.121.169.189
+# Services: app (Node.js 22 LTS Express & CMS) + db (PostgreSQL 16) + redis (Redis 7)
 # ==============================================================================
 
 version: '3.8'
@@ -8,6 +9,7 @@ version: '3.8'
 services:
   # ----------------------------------------------------------------------------
   # 1. APPLICATION SERVICE: Full-Stack Web Platform & CMS v2.0
+  # Accessible at: http://129.121.169.189/ and http://129.121.169.189:3000/
   # ----------------------------------------------------------------------------
   app:
     build:
@@ -16,8 +18,8 @@ services:
     container_name: meenakshi_app
     restart: unless-stopped
     ports:
-      - "80:3000"     # Access directly via http://localhost/ (Standard Web Port)
-      - "3000:3000"   # Access directly via http://localhost:3000/
+      - "80:3000"       # Web entrypoint for http://129.121.169.189/
+      - "3000:3000"     # Direct Node API entrypoint for http://129.121.169.189:3000/
     depends_on:
       db:
         condition: service_healthy
@@ -25,6 +27,10 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - HOST=0.0.0.0
+      - SERVER_IP=129.121.169.189
+      - APP_URL=http://129.121.169.189
+      - BASE_URL=http://129.121.169.189
+      - TRUST_PROXY=1
       - DATABASE_URL=postgres://${DB_USER:-meenakshi_user}:${DB_PASSWORD:-meenakshi_secure_password_2026}@db:5432/${DB_NAME:-meenakshi_cms}
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=${JWT_SECRET:-meenakshi_jwt_secret_production_2026_super_secure}
@@ -46,13 +52,14 @@ services:
 
   # ----------------------------------------------------------------------------
   # 2. DATABASE SERVICE: PostgreSQL 16 Enterprise Relational Database
+  # Protected: Bound to 127.0.0.1 on the server to prevent public internet scanning
   # ----------------------------------------------------------------------------
   db:
     image: postgres:16-alpine
     container_name: meenakshi_db
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     environment:
       POSTGRES_DB: ${DB_NAME:-meenakshi_cms}
       POSTGRES_USER: ${DB_USER:-meenakshi_user}
@@ -72,13 +79,14 @@ services:
 
   # ----------------------------------------------------------------------------
   # 3. CACHE SERVICE: Redis 7 In-Memory Cache & Session Store
+  # Protected: Bound to 127.0.0.1 on the server for internal container access
   # ----------------------------------------------------------------------------
   redis:
     image: redis:7-alpine
     container_name: meenakshi_redis
     restart: unless-stopped
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
     volumes:
       - redis_data:/data
     networks:

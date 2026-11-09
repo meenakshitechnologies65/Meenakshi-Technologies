@@ -61,11 +61,11 @@ docker compose ps
 ```
 
 ### Step 4: Access Application
-- **Main Website**: [http://localhost/](http://localhost/) (Port 80) or [http://localhost:3000/](http://localhost:3000/) (Port 3000)
-- **CMS Admin Portal**: [http://localhost/admin](http://localhost/admin)
+- **Main Website**: [http://129.121.169.189/](http://129.121.169.189/) (Port 80) or [http://129.121.169.189:3000/](http://129.121.169.189:3000/) (Port 3000)
+- **CMS Admin Portal**: [http://129.121.169.189/admin](http://129.121.169.189/admin)
   - **Email**: `admin@meenakshi.com`
   - **Password**: `Meenakshi@2026`
-- **PostgreSQL Database**: Port `5432` (`meenakshi_cms`)
+- **PostgreSQL Database**: Port `5432` (`meenakshi_cms` - internal / localhost only)
 - **Redis Cache**: Port `6379`
 
 ---

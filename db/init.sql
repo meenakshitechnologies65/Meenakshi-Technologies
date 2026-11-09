@@ -290,7 +290,16 @@ VALUES (
     1
 ) ON CONFLICT (email) DO NOTHING;
 
--- SEED DEFAULT CONNECTED WEBSITE
+-- SEED DEFAULT CONNECTED WEBSITES
+INSERT INTO websites (id, name, site_url, platform, connection_status)
+VALUES (
+    'site_meenakshi_ip',
+    'Meenakshi Technologies Server IP',
+    'http://129.121.169.189',
+    'native',
+    'connected'
+) ON CONFLICT (site_url) DO NOTHING;
+
 INSERT INTO websites (id, name, site_url, platform, connection_status)
 VALUES (
     'site_meenakshi_main',

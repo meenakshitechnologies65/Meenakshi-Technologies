@@ -23,7 +23,9 @@ RUN apk add --no-cache dumb-init curl tzdata \
 
 ENV NODE_ENV=production \
     PORT=3000 \
-    HOST=0.0.0.0
+    HOST=0.0.0.0 \
+    SERVER_IP=129.121.169.189 \
+    APP_URL=http://129.121.169.189
 
 # Copy installed production dependencies
 COPY --from=dependencies /app/node_modules ./node_modules
