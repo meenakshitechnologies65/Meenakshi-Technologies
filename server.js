@@ -234,7 +234,10 @@ app.get('/contact', (req, res) => {
 app.get('/privacy-policy', (req, res) => res.render('privacy-policy'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms-and-conditions'));
 
-// 18. CMS Administration Dashboard
+// 18. CMS Management v2.0 Administration Dashboard & Enterprise REST APIs
+const cmsRoutes = require('./cms/routes');
+app.use('/api/v2', cmsRoutes);
+
 app.get(['/admin', '/cms'], (req, res) => {
   const leads = loadData('leads.json');
   const posts = loadData('blog-posts.json');
