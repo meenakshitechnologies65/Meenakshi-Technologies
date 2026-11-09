@@ -76,3 +76,4 @@ masterKeywords.forEach((k, idx) => {
 console.log(`Successfully seeded ${inserted} master keywords into CMS v2.0 database.`);
 const count = db.prepare('SELECT count(*) as total FROM keywords').get().total;
 console.log(`Total keywords in database now: ${count}`);
+
