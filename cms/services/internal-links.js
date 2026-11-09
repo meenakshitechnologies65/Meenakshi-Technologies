@@ -104,3 +104,4 @@ module.exports = {
   recommendInternalLinks,
   findOrphanPages
 };
+

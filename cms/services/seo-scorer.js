@@ -840,3 +840,4 @@ function analyzeArticleSEO(articleData = {}) {
 module.exports = {
   analyzeArticleSEO
 };
+

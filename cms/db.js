@@ -522,3 +522,4 @@ module.exports = {
   db,
   hashPassword
 };
+

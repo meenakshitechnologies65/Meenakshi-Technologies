@@ -25,3 +25,4 @@ console.log('Summary:', res.summary);
 console.log('Basic checks:', res.categories.basic.length);
 console.log('Advanced checks:', res.categories.advanced.length);
 console.log('Technical checks:', res.categories.technical.length);
+

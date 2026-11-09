@@ -74,3 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.blockEditor = new BlockEditor('blockCanvas', 'articleContent');
   }
 });
+

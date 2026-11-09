@@ -163,3 +163,4 @@ function generateSchema({
 module.exports = {
   generateSchema
 };
+

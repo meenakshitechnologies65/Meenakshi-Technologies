@@ -104,3 +104,4 @@ function analyzeCompetitors(targetKeyword = '') {
 module.exports = {
   analyzeCompetitors
 };
+
