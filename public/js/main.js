@@ -58,13 +58,18 @@ function initFaqAccordion() {
   });
 }
 
-/* Product Catalog Category Filter & Real-Time Search */
+/* Product Catalog Multi-Facet Filter (Brand + 10 Categories) & Real-Time Search */
 function initProductFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const brandBtns = document.querySelectorAll('.brand-filter-btn');
+  const catBtns = document.querySelectorAll('.category-filter-btn');
+  const legacyFilterBtns = document.querySelectorAll('.filter-btn:not(.brand-filter-btn):not(.category-filter-btn)');
   const productCards = document.querySelectorAll('.product-card');
   const searchInput = document.getElementById('productSearchInput');
   const searchCount = document.getElementById('productSearchCount');
+  const emptyState = document.getElementById('productEmptyState');
+  const resetBtn = document.getElementById('resetProductFiltersBtn');
 
+  let activeBrand = 'all';
   let activeCategory = 'all';
   let searchQuery = '';
 
@@ -73,12 +78,24 @@ function initProductFilter() {
     productCards.forEach(card => {
       const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
       const cardBrand = (card.getAttribute('data-brand') || '').toLowerCase();
+      const cardModel = (card.getAttribute('data-model') || '').toLowerCase();
       const cardText = (card.textContent || '').toLowerCase();
 
-      const matchesCat = (activeCategory === 'all' || cardCat.includes(activeCategory.toLowerCase()) || cardBrand.includes(activeCategory.toLowerCase()));
-      const matchesSearch = (!searchQuery || cardText.includes(searchQuery));
+      // Brand match
+      const matchesBrand = (activeBrand === 'all' || cardBrand.includes(activeBrand.toLowerCase()));
 
-      if (matchesCat && matchesSearch) {
+      // Category match
+      const matchesCat = (activeCategory === 'all' || cardCat.includes(activeCategory.toLowerCase()));
+
+      // Search match
+      const matchesSearch = (!searchQuery || 
+        cardText.includes(searchQuery) || 
+        cardModel.includes(searchQuery) || 
+        cardBrand.includes(searchQuery) || 
+        cardCat.includes(searchQuery)
+      );
+
+      if (matchesBrand && matchesCat && matchesSearch) {
         card.style.display = 'flex';
         visibleCount++;
       } else {
@@ -87,28 +104,71 @@ function initProductFilter() {
     });
 
     if (searchCount) {
-      if (visibleCount === productCards.length) {
-        searchCount.textContent = `Showing all ${productCards.length} verified models in stock`;
+      if (visibleCount === productCards.length && !searchQuery && activeBrand === 'all' && activeCategory === 'all') {
+        searchCount.textContent = `Showing all ${productCards.length} verified hardware models in stock`;
       } else {
-        searchCount.textContent = `Showing ${visibleCount} of ${productCards.length} models matching filter`;
+        searchCount.textContent = `Showing ${visibleCount} of ${productCards.length} verified models matching criteria`;
       }
+    }
+
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
     }
   }
 
-  if (filterBtns.length > 0 && productCards.length > 0) {
-    filterBtns.forEach(btn => {
+  // Brand Buttons
+  if (brandBtns.length > 0) {
+    brandBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        brandBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeCategory = btn.getAttribute('data-category');
+        activeBrand = btn.getAttribute('data-brand') || 'all';
         applyFilters();
       });
     });
   }
 
+  // Category Buttons
+  if (catBtns.length > 0) {
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+  }
+
+  // Legacy filter buttons fallback
+  if (legacyFilterBtns.length > 0) {
+    legacyFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        legacyFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+  }
+
+  // Search input
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+
+  // Reset Button
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      activeBrand = 'all';
+      activeCategory = 'all';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      brandBtns.forEach((b, i) => i === 0 ? b.classList.add('active') : b.classList.remove('active'));
+      catBtns.forEach((b, i) => i === 0 ? b.classList.add('active') : b.classList.remove('active'));
       applyFilters();
     });
   }

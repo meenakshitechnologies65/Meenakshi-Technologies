@@ -609,25 +609,29 @@
 
     <!-- Category Filter Tabs -->
     <div class="product-filters">
-      <button class="filter-btn active" data-category="all">All Solutions</button>
-      <button class="filter-btn" data-category="eSSL">eSSL Devices</button>
-      <button class="filter-btn" data-category="Biomax">Biomax Devices</button>
-      <button class="filter-btn" data-category="Fingerprint Biometric Devices">Fingerprint Machines</button>
-      <button class="filter-btn" data-category="Face Recognition Machines">Face Recognition</button>
-      <button class="filter-btn" data-category="Electromagnetic Locks">Door EM Locks</button>
+      <button class="filter-btn active category-filter-btn" data-category="all">All Hardware</button>
+      <button class="filter-btn brand-filter-btn" data-brand="eSSL">eSSL Security</button>
+      <button class="filter-btn brand-filter-btn" data-brand="BioMax">BioMax Security</button>
+      <button class="filter-btn category-filter-btn" data-category="Biometric Fingerprint Attendance Machines">Fingerprint Scanners</button>
+      <button class="filter-btn category-filter-btn" data-category="Face Recognition Attendance Machines">Face Recognition AI</button>
+      <button class="filter-btn category-filter-btn" data-category="Advanced Access Control Systems">Access Controllers</button>
+      <button class="filter-btn category-filter-btn" data-category="Door Locking Systems">EM Locks &amp; Bolts</button>
+      <button class="filter-btn category-filter-btn" data-category="Turnstile and Entrance Management">Turnstiles &amp; Barriers</button>
     </div>
 
     <!-- Products Grid -->
     <div class="products-grid">
       <% products.forEach(prod => { %>
-        <div class="product-card" data-category="<%= prod.category %>" data-brand="<%= prod.brand %>">
+        <div class="product-card" data-category="<%= prod.category %>" data-brand="<%= prod.brand %>" data-model="<%= prod.model || prod.name %>">
           <div class="product-thumb">
-            <span class="product-brand-tag"><%= prod.brand %></span>
-            <img src="<%= prod.image %>" alt="<%= prod.name %> Biometric Attendance Hyderabad" loading="lazy">
+            <span class="product-brand-tag" style="<%= prod.brand === 'BioMax' ? 'background:#059669;' : 'background:#0284c7;' %>"><%= prod.brand %></span>
+            <img src="<%= prod.image %>" alt="<%= prod.name %> Biometric Attendance Hyderabad" loading="lazy" onerror="this.onerror=null; this.src='/images/products/essl-k90-pro.png';">
           </div>
           <div class="product-info">
             <span class="product-category-name"><%= prod.category %></span>
-            <h3 class="product-name"><%= prod.name %></h3>
+            <h3 class="product-name" style="font-size: 1.25rem;">
+              <a href="/products/<%= prod.slug %>" style="color: inherit; text-decoration: none;"><%= prod.name %></a>
+            </h3>
             <p class="product-tagline"><%= prod.tagline %></p>
 
             <div class="product-specs-list">
@@ -645,10 +649,13 @@
 
             <div class="product-card-actions">
               <div class="actions-row">
+                <a href="/products/<%= prod.slug %>" class="btn btn-outline btn-sm" style="color:#0b2545; border-color:#cbd5e1; font-weight:700;">
+                  <span>Specs &rarr;</span>
+                </a>
                 <button class="btn btn-primary btn-sm open-quote-modal-btn" data-product-name="<%= prod.name %>">
                   <span>Get Quote</span>
                 </button>
-                <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20please%20share%20quotation%20and%20availability%20for%20<%= encodeURIComponent(prod.name) %>." 
+                <a href="https://wa.me/916301593064?text=Hello%20Meenakshi%20Technologies%2C%20please%20share%20quotation%20and%20availability%20for%20<%= encodeURIComponent(prod.name) %>%20(Model:%20<%= encodeURIComponent(prod.model || prod.name) %>)." 
                    target="_blank" 
                    rel="noopener" 
                    class="btn btn-whatsapp btn-sm"
@@ -657,20 +664,18 @@
                   <span>WhatsApp</span>
                 </a>
               </div>
-              <% if (prod.cataloguePdf) { %>
-                <a href="<%= prod.cataloguePdf %>" 
-                   download="<%= prod.name %>-Datasheet-Meenakshi-Technologies.pdf" 
-                   class="btn-pdf-download" 
-                   title="Download official PDF datasheet for <%= prod.name %>">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="12" y1="18" x2="12" y2="12"></line>
-                    <polyline points="9 15 12 18 15 15"></polyline>
-                  </svg>
-                  <span>Download PDF Datasheet</span>
-                </a>
-              <% } %>
+              <a href="/products/<%= prod.slug %>/datasheet.pdf" 
+                 download="<%= prod.slug %>-datasheet.pdf" 
+                 class="btn-pdf-download" 
+                 title="Download official PDF datasheet for <%= prod.name %>">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="12" y1="18" x2="12" y2="12"></line>
+                  <polyline points="9 15 12 18 15 15"></polyline>
+                </svg>
+                <span>Download PDF Datasheet</span>
+              </a>
             </div>
           </div>
         </div>

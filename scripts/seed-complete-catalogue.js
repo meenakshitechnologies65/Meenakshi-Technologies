@@ -1,0 +1,1254 @@
+/**
+ * Complete Product Catalogue Seeder for Meenakshi Technologies
+ * Covers all 10 categories with verified eSSL and BioMax specifications.
+ */
+
+const fs = require('node:fs');
+const path = require('node:path');
+const { db } = require('../cms/db.js');
+
+const products = [
+  // ==========================================
+  // CATEGORY 1: BIOMETRIC FINGERPRINT ATTENDANCE MACHINES
+  // ==========================================
+  {
+    id: 'prod_essl_k90_pro',
+    name: 'eSSL K90 Pro Biometric Attendance Machine',
+    slug: 'essl-k90-pro-biometric-attendance',
+    brand: 'eSSL',
+    model: 'K90 Pro',
+    category: 'Biometric Fingerprint Attendance Machines',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'High-speed fingerprint attendance with built-in battery backup and access control relay.',
+    shortDesc: 'Standalone fingerprint attendance terminal with 2,000 templates, 100,000 logs, and integrated battery backup.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '2,000 Fingerprint Templates',
+      cards: '2,000 RFID Cards',
+      transactions: '100,000 Audit Logs'
+    },
+    specs: {
+      biometricTechnology: '500 DPI Optical Fingerprint Sensor',
+      fingerprintCapacity: '2,000 Templates',
+      cardCapacity: '2,000 Proximity Cards (125 kHz)',
+      logCapacity: '100,000 Transaction Logs',
+      verificationSpeed: '<= 0.8 Seconds',
+      communication: 'TCP/IP Ethernet, USB Host',
+      display: '2.8-inch Color TFT Screen',
+      batteryBackup: 'Built-in Lithium-ion Battery (2 to 4 Hours Backup)',
+      accessControlInterface: 'Built-in 3rd Party Electric Lock, Door Sensor, Exit Button',
+      powerSupply: '12V DC, 1.5A',
+      operatingTemperature: '0°C to 45°C',
+      dimensions: '185 x 140 x 30 mm'
+    },
+    features: [
+      'Built-in battery backup ensures zero downtime during electrical outages',
+      'High-resolution 500 DPI optical sensor with scratch-resistant glass surface',
+      'Supports TCP/IP network communication for automated multi-branch sync',
+      'Integrated relay terminals for direct connection to 600lbs EM door locks'
+    ],
+    applications: [
+      'Corporate Offices & Tech Startups',
+      'Retail Stores & Supermarkets',
+      'Warehouses & Distribution Centers',
+      'Educational Institutions & Schools'
+    ],
+    installationInfo: 'Wall-mounted bracket with pre-drilled anchors. Connects to 230V AC adapter and local LAN switch via CAT6 cable.'
+  },
+  {
+    id: 'prod_essl_k30_pro',
+    name: 'eSSL K30 Pro Biometric Attendance Machine',
+    slug: 'essl-k30-pro-biometric-attendance',
+    brand: 'eSSL',
+    model: 'K30 Pro',
+    category: 'Biometric Fingerprint Attendance Machines',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'Compact office biometric attendance terminal with access control and internal battery backup.',
+    shortDesc: 'Reliable standalone fingerprint and RFID card system ideal for small to medium enterprises in Hyderabad.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/essl-k30-pro-catalogue.pdf',
+    capacity: {
+      fingerprints: '2,000 Fingerprints',
+      cards: '2,000 RFID Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      biometricTechnology: 'Optical Scratch-Proof Fingerprint Sensor',
+      fingerprintCapacity: '2,000 Templates',
+      cardCapacity: '2,000 EM RFID Cards',
+      logCapacity: '100,000 Records',
+      verificationSpeed: '<= 0.8 Seconds',
+      communication: 'TCP/IP, USB Host',
+      display: '2.8" Color Screen with GUI Menu',
+      batteryBackup: 'Internal Rechargeable Battery (Up to 3 Hours)',
+      accessControlInterface: 'Electric Lock, Exit Button, Door Sensor Relay',
+      powerSupply: '12V DC, 1.5A',
+      dimensions: '184 x 136 x 37 mm'
+    },
+    features: [
+      'Internal backup battery prevents lost attendance records during grid cuts',
+      'Fast 1:N fingerprint matching in under 0.8 seconds',
+      'Full compatibility with eSSL eTimeTrackLite and cloud attendance software',
+      'Multi-language voice prompts and bell scheduling'
+    ],
+    applications: [
+      'SME Offices & Consultancies',
+      'Medical Clinics & Diagnostic Centers',
+      'Accounting & CA Firms',
+      'Hospitality & Restaurants'
+    ],
+    installationInfo: 'Mount on standard interior flat wall away from direct sunlight glare. Pull 1 CAT6 cable for network communication.'
+  },
+  {
+    id: 'prod_biomax_nbm60',
+    name: 'BioMax N-BM60 Wi-Fi Biometric Attendance Machine',
+    slug: 'biomax-n-bm60-biometric-attendance-system',
+    brand: 'BioMax',
+    model: 'N-BM60',
+    category: 'Biometric Fingerprint Attendance Machines',
+    image: '/images/products/biomax-n-bm60.png',
+    tagline: 'Wireless cloud attendance machine with high-precision optical sensor and Wi-Fi connectivity.',
+    shortDesc: 'Compact, Wi-Fi enabled fingerprint and RFID terminal supporting cloud API push for multi-location offices.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '2,000 Fingerprint Templates',
+      cards: '2,000 RFID Cards',
+      transactions: '150,000 Audit Logs'
+    },
+    specs: {
+      biometricTechnology: 'Auto-Focus Optical Sensor with False Rejection Rejection',
+      fingerprintCapacity: '2,000 Templates',
+      cardCapacity: '2,000 Cards (125 kHz Proximity)',
+      logCapacity: '150,000 Records',
+      verificationSpeed: '<= 0.5 Seconds',
+      communication: 'Wi-Fi (802.11 b/g/n), TCP/IP, USB',
+      display: '2.8" TFT Color Display',
+      batteryBackup: 'Optional External Power Backup',
+      cloudSupport: 'Direct Push Data Protocol to Cloud Servers',
+      powerSupply: '5V DC 1A / 12V DC 1.5A',
+      dimensions: '180 x 135 x 35 mm'
+    },
+    features: [
+      'Built-in Wi-Fi module eliminates the need for physical network cabling',
+      'Real-time cloud push data updates central server within 2 seconds of punch',
+      'High-hardness 500 DPI optical sensor resistant to moisture and grease',
+      'Detailed employee shift reports with late-arrival and overtime analytics'
+    ],
+    applications: [
+      'Multi-Branch Retail Chains',
+      'Corporate Branches & Satellite Offices',
+      'Co-Working Spaces & Incubators',
+      'Fitness Centers & Health Clubs'
+    ],
+    installationInfo: 'Plug into 230V AC socket, configure Wi-Fi SSID and password via terminal keypad, and link to cloud server URL.'
+  },
+  {
+    id: 'prod_biomax_bio5000',
+    name: 'BioMax Bio-5000 Industrial Biometric Machine',
+    slug: 'biomax-bio-5000-industrial-fingerprint-system',
+    brand: 'BioMax',
+    model: 'Bio-5000',
+    category: 'Biometric Fingerprint Attendance Machines',
+    image: '/images/products/biomax-bio-5000.png',
+    tagline: 'Heavy-duty industrial terminal with 5,000 user capacity, rugged housing, and access control.',
+    shortDesc: 'Engineered for factories, pharma manufacturing plants, and harsh industrial environments with heavy footfall.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '5,000 Fingerprints',
+      cards: '5,000 RFID Cards',
+      transactions: '200,000 Transaction Logs'
+    },
+    specs: {
+      biometricTechnology: 'Industrial High-TIR Optical Sensor',
+      fingerprintCapacity: '5,000 Templates',
+      cardCapacity: '5,000 RFID Cards',
+      logCapacity: '200,000 Logs',
+      verificationSpeed: '<= 0.5 Seconds',
+      communication: 'TCP/IP, Wi-Fi, USB, Optional 4G SIM',
+      display: '4.3" TFT Touch Screen',
+      batteryBackup: 'Heavy-Duty Internal Battery (Up to 4 Hours)',
+      accessControlInterface: 'Full Relay (Wiegand In/Out, Lock, Sensor, Alarm)',
+      powerSupply: '12V DC 3A',
+      casingRating: 'Industrial Dust-Proof Casing'
+    },
+    features: [
+      'High capacity memory supports 5,000 workers across multi-shift factories',
+      'Dual optical and RFID verification handles worn or dirty fingertips',
+      'Full access control relay connects to turnstiles and heavy EM locks',
+      'Optional 4G SIM connectivity for remote infrastructure and construction sites'
+    ],
+    applications: [
+      'Pharma & Chemical Plants (Bollaram, Jeedimetla)',
+      'Fabrication & Metal Workshops (Balapur, Katedan)',
+      'Large Warehouses & Logistics Hubs (Shamshabad)',
+      'Government & Infrastructure Projects'
+    ],
+    installationInfo: 'Heavy-duty steel wall plate mounting. Compatible with turnstile brackets and industrial UPS power lines.'
+  },
+  {
+    id: 'prod_essl_identix_k21',
+    name: 'eSSL Identix K21 Fingerprint Attendance System',
+    slug: 'essl-identix-k21-fingerprint-attendance-system',
+    brand: 'eSSL',
+    model: 'Identix K21',
+    category: 'Biometric Fingerprint Attendance Machines',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'Economical, reliable biometric attendance machine with internal battery for budget-conscious offices.',
+    shortDesc: 'Entry-level eSSL attendance system with 1,000 fingerprint capacity, battery backup, and free desktop attendance utility.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '1,000 Fingerprints',
+      cards: '1,000 RFID Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      biometricTechnology: 'Optical Sensor 500 DPI',
+      fingerprintCapacity: '1,000 Templates',
+      cardCapacity: '1,000 Cards',
+      logCapacity: '100,000 Logs',
+      verificationSpeed: '<= 1.0 Second',
+      communication: 'TCP/IP, USB Host',
+      display: '2.8" Color TFT Display',
+      batteryBackup: 'Built-in Battery Backup (2 Hours)',
+      powerSupply: '12V DC 1.5A'
+    },
+    features: [
+      'Most cost-effective genuine eSSL fingerprint system with battery backup',
+      'Easy USB drive log download for sites without internet network cables',
+      'Complimentary desktop attendance management software included',
+      'Supports Indian statutory shift calculations'
+    ],
+    applications: [
+      'Small Offices (10–50 Employees)',
+      'Coaching Centers & Academies',
+      'Hardware & Automobile Retailers',
+      'Small Warehouses & Stockrooms'
+    ],
+    installationInfo: 'Simple 2-screw wall mounting with 12V power adapter plug.'
+  },
+
+  // ==========================================
+  // CATEGORY 2: FACE RECOGNITION ATTENDANCE MACHINES
+  // ==========================================
+  {
+    id: 'prod_biomax_speedface5',
+    name: 'BioMax SpeedFace 5 AI Face Recognition Terminal',
+    slug: 'biomax-speedface-5-ai-face-recognition-terminal',
+    brand: 'BioMax',
+    model: 'SpeedFace 5',
+    category: 'Face Recognition Attendance Machines',
+    image: '/images/products/biomax-speedface-5.png',
+    tagline: 'Next-generation Visible Light AI face recognition with live anti-spoofing and touchless verification.',
+    shortDesc: 'Industry-leading 0.3s touchless facial recognition terminal with 3,000 face templates, dual cameras, and Wi-Fi.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/biomax-speedface-5-catalogue.pdf',
+    capacity: {
+      faces: '3,000 Visible Light Faces',
+      fingerprints: '2,000 Fingerprints',
+      cards: '3,000 RFID Cards',
+      transactions: '150,000 Audit Logs'
+    },
+    specs: {
+      biometricTechnology: 'Visible Light AI Dynamic Face Recognition + Optical Fingerprint',
+      faceCapacity: '3,000 Facial Templates (1:N Match)',
+      fingerprintCapacity: '2,000 Templates',
+      cardCapacity: '3,000 Cards (125 kHz)',
+      logCapacity: '150,000 Transaction Records',
+      recognitionDistance: '0.5m to 2.0 meters (Touchless Walk-Through)',
+      verificationSpeed: '<= 0.35 Seconds',
+      cameras: 'Dual 2MP WDR Binocular Cameras (RGB + IR)',
+      antiSpoofing: 'Live Anti-Spoofing Algorithm (Rejects photos, videos, masks)',
+      communication: 'TCP/IP, Wi-Fi, USB',
+      display: '5.0-inch IPS HD Touch Screen',
+      accessControlInterface: 'Relay Output, Door Sensor, Exit Button, Wiegand Out',
+      operatingVoltage: '12V DC, 2A'
+    },
+    features: [
+      '100% touchless walk-through recognition from up to 2 meters away in 0.3 seconds',
+      'Live bi-optical AI camera rejects smartphone screens, printed photos, and replica masks',
+      'Accurate identification even in low light and high back-light sunlight conditions',
+      'Built-in full access control relay for glass doors, turnstiles, and speed gates'
+    ],
+    applications: [
+      'IT Multi-Nationals & Corporate HQs (Hitec City, Madhapur)',
+      'Hospitals, Cleanrooms & Pharma Laboratories (Genome Valley)',
+      'Modern High-Traffic Educational Campuses',
+      'Premium Coworking Spaces & Fitness Clubs'
+    ],
+    installationInfo: 'Mount at eye level (1.45m to 1.50m from floor). Connect to 12V DC power and Wi-Fi/LAN.'
+  },
+  {
+    id: 'prod_biomax_aiface4',
+    name: 'BioMax AI Face 4 Compact Facial Recognition Terminal',
+    slug: 'biomax-ai-face-4-compact-face-recognition',
+    brand: 'BioMax',
+    model: 'AI Face 4',
+    category: 'Face Recognition Attendance Machines',
+    image: '/images/products/biomax-speedface-5.png',
+    tagline: 'Compact, cost-effective AI face recognition terminal with QR code verification.',
+    shortDesc: 'Designed for corporate receptions and commercial offices seeking hygienic touchless attendance.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      faces: '1,500 Faces',
+      cards: '1,500 Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      biometricTechnology: 'Visible Light Dual Infrared Face Recognition',
+      faceCapacity: '1,500 Faces',
+      cardCapacity: '1,500 RFID Cards',
+      logCapacity: '100,000 Records',
+      verificationSpeed: '<= 0.4 Seconds',
+      communication: 'TCP/IP, Wi-Fi, USB',
+      display: '4.0" Color Touch Display',
+      accessControl: 'Lock Relay, Exit Switch Interface',
+      powerSupply: '12V DC 2A'
+    },
+    features: [
+      'Touchless biometric identification eliminates surface contamination',
+      'Integrated Wi-Fi module allows wire-free deployment on reception desks',
+      'Supports dynamic QR code visitor verification',
+      'Clear audio voice prompts and visual status confirmation'
+    ],
+    applications: [
+      'Corporate Executive Offices',
+      'Consulting & Professional Services',
+      'Boutique Hotels & Resorts',
+      'High-End Retail Showrooms'
+    ],
+    installationInfo: 'Wall mount or optional aluminum desktop angle stand.'
+  },
+  {
+    id: 'prod_essl_uface_202',
+    name: 'eSSL uFace 202 Multi-Biometric Attendance Machine',
+    slug: 'essl-uface-202-multi-biometric-attendance-machine',
+    brand: 'eSSL',
+    model: 'uFace 202',
+    category: 'Face Recognition Attendance Machines',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'High-reliability facial and fingerprint multi-biometric terminal with internal battery.',
+    shortDesc: 'Proven dual face and fingerprint attendance machine with 1,200 face capacity and battery backup.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      faces: '1,200 Face Templates',
+      fingerprints: '2,000 Fingerprints',
+      cards: '10,000 RFID Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      biometricTechnology: 'High-Resolution Infrared Face & Optical Fingerprint',
+      faceCapacity: '1,200 Templates',
+      fingerprintCapacity: '2,000 Templates',
+      cardCapacity: '10,000 Cards',
+      logCapacity: '100,000 Logs',
+      display: '4.3-inch Capacitive Touch Screen',
+      batteryBackup: 'Built-in Lithium Battery Backup',
+      communication: 'TCP/IP, USB Host',
+      accessControlInterface: '3rd Party Electric Lock, Door Sensor, Exit Button',
+      dimensions: '193.6 x 165 x 111 mm'
+    },
+    features: [
+      'Multi-modal verification: Face, Fingerprint, Card, or PIN combination',
+      'Built-in battery backup maintains active operation during electrical failure',
+      'Large 4.3" touchscreen for easy administrative enrollment and menu navigation',
+      'High card capacity (10,000) for large contractor workforces'
+    ],
+    applications: [
+      'Manufacturing Plants & Factories',
+      'Hospitals & Healthcare Clinics',
+      'Educational Institutions & Universities',
+      'Corporate Facilities Management'
+    ],
+    installationInfo: 'Wall-mount plate included. Recommended installation height: 1.5m.'
+  },
+
+  // ==========================================
+  // CATEGORY 3: ADVANCED MULTI-BIOMETRIC DEVICES
+  // ==========================================
+  {
+    id: 'prod_essl_silkbio100tc',
+    name: 'eSSL SilkBio-100TC Multi-Biometric Time Attendance',
+    slug: 'essl-silkbio-100tc-multi-biometric-attendance-machine',
+    brand: 'eSSL',
+    model: 'SilkBio-100TC',
+    category: 'Advanced Multi-Biometric Devices',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'Revolutionary SilkID fingerprint sensor combined with facial and card recognition.',
+    shortDesc: 'State-of-the-art SilkID sensor reads wet, dry, and rough fingers seamlessly with facial recognition backup.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      faces: '2,000 Faces',
+      fingerprints: '3,000 SilkID Fingerprints',
+      cards: '10,000 Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      biometricTechnology: 'SilkID Optical Sensor + Infrared Facial Recognition',
+      fingerprintCapacity: '3,000 Templates (Handles wet/rough fingers)',
+      faceCapacity: '2,000 Templates',
+      cardCapacity: '10,000 RFID Cards',
+      logCapacity: '100,000 Records',
+      verificationSpeed: '<= 0.8 Seconds',
+      communication: 'TCP/IP, USB Host',
+      display: '2.8" Color Screen',
+      accessControlInterface: 'Electric Lock, Door Sensor, Exit Button',
+      operatingVoltage: '12V DC 3A'
+    },
+    features: [
+      'SilkID sensor eliminates finger rejection issues common with elderly or industrial workers',
+      'Infrared face camera identifies users in complete darkness',
+      'Supports multi-verification security: Face + Fingerprint for ultra-secure areas',
+      'Advanced access control relay for electromagnetic door locks'
+    ],
+    applications: [
+      'Construction & Civil Engineering Sites',
+      'Pharmaceutical Manufacturing Cleanrooms',
+      'Commercial Printing & Packing Units',
+      'Bank Branches & Vault Rooms'
+    ],
+    installationInfo: 'Wall mount with standard 12V 3A power supply.'
+  },
+  {
+    id: 'prod_biomax_facemax7',
+    name: 'BioMax FaceMax 7 Palm & Face Recognition Terminal',
+    slug: 'biomax-facemax-7-palm-face-recognition-terminal',
+    brand: 'BioMax',
+    model: 'FaceMax 7',
+    category: 'Advanced Multi-Biometric Devices',
+    image: '/images/products/biomax-speedface-5.png',
+    tagline: '3-in-1 touchless palm vein, facial recognition, and fingerprint authentication powerhouse.',
+    shortDesc: 'Enterprise terminal with 5,000 faces, 3,000 palms, and 7-inch HD touchscreen for high-security facilities.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      faces: '5,000 Faces',
+      palms: '3,000 Palm Vein Templates',
+      fingerprints: '5,000 Fingerprints',
+      transactions: '200,000 Logs'
+    },
+    specs: {
+      biometricTechnology: '3D Palm Vein + Visible Light AI Face + Optical Fingerprint',
+      faceCapacity: '5,000 Faces',
+      palmCapacity: '3,000 Palms',
+      fingerprintCapacity: '5,000 Fingerprints',
+      logCapacity: '200,000 Transaction Logs',
+      verificationSpeed: '<= 0.35 Seconds',
+      communication: 'TCP/IP, Wi-Fi, USB',
+      display: '7.0" HD IPS Capacitive Touchscreen',
+      accessControlInterface: 'Relay Output, Wiegand In/Out, Alarm, Door Sensor',
+      powerSupply: '12V DC 3A'
+    },
+    features: [
+      'Palm vein authentication offers the highest biometric security level in the industry',
+      'Large 7" touchscreen display for high-visibility visual confirmation',
+      'Touchless operation maintains sanitary compliance in medical and clean environments',
+      'Enterprise user capacity handles massive 5,000+ employee rosters'
+    ],
+    applications: [
+      'Pharma & R&D Laboratories (Genome Valley, Hyderabad)',
+      'Data Centers & Server Rooms',
+      'Defense Establishments & DRDL Contractors (Kanchanbagh)',
+      'Corporate Headquarters'
+    ],
+    installationInfo: 'Wall mount or turnstile top-mount plate.'
+  },
+
+  // ==========================================
+  // CATEGORY 4: ADVANCED ACCESS CONTROL SYSTEMS (CONTROLLERS)
+  // ==========================================
+  {
+    id: 'prod_essl_inbio260',
+    name: 'eSSL InBio 260 Multi-Door Biometric Access Controller',
+    slug: 'essl-inbio-260-multi-door-controller',
+    brand: 'eSSL',
+    model: 'InBio 260',
+    category: 'Advanced Access Control Systems',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'Centralized 2-door network access controller with on-board fingerprint matching.',
+    shortDesc: 'Enterprise IP-based 2-door access control board managing readers, EM locks, and fire alarm integration.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '3,000 Fingerprint Templates',
+      cards: '30,000 RFID Cards',
+      transactions: '100,000 Audit Logs'
+    },
+    specs: {
+      doorControlCapacity: '2 Doors (Bi-directional in/out)',
+      readersSupported: '4 Readers (Wiegand or RS485 Fingerprint Readers)',
+      fingerprintCapacity: '3,000 Fingerprints on-board',
+      cardCapacity: '30,000 Cards',
+      logCapacity: '100,000 Records',
+      communication: 'TCP/IP, RS485',
+      auxiliaryInputs: '6 (2 Exit Buttons, 2 Door Sensors, 2 Aux Inputs)',
+      auxiliaryOutputs: '4 (2 Form-C Lock Relays, 2 Aux Relays)',
+      powerSupply: '9.6V - 14.4V DC',
+      enclosure: 'Metal Lockable Cabinet with Power Supply'
+    },
+    features: [
+      'Biometric matching is processed inside the secure server cabinet rather than at the door reader',
+      'Advanced access control features: Anti-passback, First-card opening, Multi-card authentication',
+      'Direct connection to fire alarm panel for automatic emergency door unlock',
+      'Real-time door status monitoring with forced-door and door-held-open alarms'
+    ],
+    applications: [
+      'Commercial Office Buildings & Tech Parks',
+      'Server Rooms & Network Operations Centers (NOC)',
+      'Banks, Currency Chests & Jewelers',
+      'Pharmaceutical Manufacturing Units'
+    ],
+    installationInfo: 'Central wall-mounted metal panel housing controller and backup battery.'
+  },
+  {
+    id: 'prod_essl_inbio460',
+    name: 'eSSL InBio 460 4-Door Biometric Access Controller',
+    slug: 'essl-inbio-460-four-door-access-controller',
+    brand: 'eSSL',
+    model: 'InBio 460',
+    category: 'Advanced Access Control Systems',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'High-density 4-door enterprise network biometric access controller.',
+    shortDesc: 'Controls up to 4 doors and 8 fingerprint/card readers with centralized management over TCP/IP.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '3,000 Fingerprints',
+      cards: '30,000 Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      doorControlCapacity: '4 Doors',
+      readersSupported: '8 Readers (Wiegand 26/34 or RS485)',
+      communication: 'TCP/IP, RS485',
+      relays: '4 Form-C Lock Relays, 4 Aux Relays',
+      powerSupply: '12V DC 5A Regulated Power Supply with Battery Backup'
+    },
+    features: [
+      'Centralizes 4 doors into a single controller, drastically reducing cabling costs',
+      'High-speed 400 MHz 32-bit CPU performs on-board biometric matching in milliseconds',
+      'Supports interlocking (airlock) between two doors for cleanroom containment',
+      'Tamper-proof lockable metal enclosure with key'
+    ],
+    applications: [
+      'Multi-Floor Corporate Offices',
+      'Hospitals & Isolation Wards',
+      'Industrial Manufacturing Facilities',
+      'Educational Campuses'
+    ],
+    installationInfo: 'Install in central server rack or electrical room. Pull 4-core shielded cable to each door.'
+  },
+  {
+    id: 'prod_biomax_c22',
+    name: 'BioMax C22 2-Door IP Network Access Controller',
+    slug: 'biomax-c22-two-door-access-controller',
+    brand: 'BioMax',
+    model: 'C22',
+    category: 'Advanced Access Control Systems',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'Reliable 2-door network access control panel with anti-passback and multi-card rules.',
+    shortDesc: 'IP-based two door access control board supporting Wiegand RFID readers and electromagnetic locks.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      cards: '20,000 RFID Cards',
+      transactions: '100,000 Logs'
+    },
+    specs: {
+      doorsControlled: '2 Doors',
+      readerPorts: '4 Wiegand Ports',
+      communication: 'TCP/IP Network',
+      lockRelays: '2 Form-C Relays',
+      powerSupply: '12V DC 5A Power Box'
+    },
+    features: [
+      'Cost-effective two-door access management for growing offices',
+      'Comprehensive software with real-time floor plan graphical monitoring',
+      'Scheduled door unlock times for business working hours',
+      'Anti-passback protection prevents card sharing'
+    ],
+    applications: [
+      'Corporate Offices & Startups',
+      'Warehouse Receiving & Shipping Bays',
+      'Stockrooms & Tool Cribs',
+      'Retail Back-Offices'
+    ],
+    installationInfo: 'Metal box with power supply and 12V 7Ah battery housing.'
+  },
+
+  // ==========================================
+  // CATEGORY 5: BIOMETRIC ACCESS CONTROL READERS
+  // ==========================================
+  {
+    id: 'prod_essl_f22',
+    name: 'eSSL F22 Ultra-Thin Fingerprint Access Control Terminal',
+    slug: 'essl-f22-ultra-thin-access-control-terminal',
+    brand: 'eSSL',
+    model: 'F22',
+    category: 'Biometric Access Control Readers',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'Sleek ultra-thin biometric fingerprint reader with Wi-Fi and door lock relay.',
+    shortDesc: 'Premium aesthetics designed for executive suites, glass doors, and modern reception entryways.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '3,000 Fingerprints',
+      cards: '5,000 RFID Cards',
+      transactions: '30,000 Logs'
+    },
+    specs: {
+      thickness: 'Ultra-thin profile (only 17mm depth)',
+      biometricSensor: 'BioID Optical Sensor (Dry/Wet finger recognition)',
+      fingerprintCapacity: '3,000 Templates',
+      cardCapacity: '5,000 Cards',
+      communication: 'Wi-Fi, TCP/IP, USB, RS485',
+      wiegand: 'Wiegand Input & Output',
+      display: '2.4" Color TFT Display',
+      accessControlInterface: 'Electric Lock, Door Sensor, Exit Button, Alarm'
+    },
+    features: [
+      'Ultra-thin slim design mounts cleanly on narrow door frames and aluminum mullions',
+      'BioID sensor provides exceptional accuracy on dry, rough, and wet fingerprints',
+      'Built-in Wi-Fi and Wiegand input/output for standalone or controller operation',
+      'Touch keypad with backlight for easy night operation'
+    ],
+    applications: [
+      'Executive Cabins & Boardrooms',
+      'Glass Door Office Entrances',
+      'IT Server Rooms & Labs',
+      'Architectural & Design Studios'
+    ],
+    installationInfo: 'Mount on door frame or adjacent wall at 1.4m height.'
+  },
+  {
+    id: 'prod_essl_fr1200',
+    name: 'eSSL FR1200 Waterproof Fingerprint Slave Reader',
+    slug: 'essl-fr1200-waterproof-slave-reader',
+    brand: 'eSSL',
+    model: 'FR1200',
+    category: 'Biometric Access Control Readers',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'IP65 outdoor waterproof fingerprint and RFID card slave reader.',
+    shortDesc: 'Connects directly to InBio controllers or standalone master devices via RS485 for secure exit authentication.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: 'Slave Reader (Transfers to Master / Controller)'
+    },
+    specs: {
+      sensor: 'Optical Fingerprint Sensor with Protective Glass',
+      cardReader: 'Built-in 125 kHz RFID Card Reader',
+      communication: 'RS485 to Master Device / InBio Controller',
+      waterproofRating: 'IP65 Rated Weatherproof Casing',
+      operatingVoltage: '12V DC',
+      dimensions: '102 x 50 x 37 mm'
+    },
+    features: [
+      'IP65 rated waterproof and dustproof construction for outdoor gate deployment',
+      'Compact narrow design fits on aluminum profile frames and metal fence posts',
+      'Buzzer and dual-color LED indication for access granted / access denied',
+      'Direct RS485 connection transmits templates securely up to 1,000 meters'
+    ],
+    applications: [
+      'Outdoor Gate Entry & Turnstiles',
+      'Factory Perimeter Doors',
+      'Exit Authentication for Two-Way Biometric Tracking',
+      'Car Parking Pedestrian Gates'
+    ],
+    installationInfo: 'Surface mount with 4-wire shielded cable connection to master unit.'
+  },
+
+  // ==========================================
+  // CATEGORY 6: DOOR LOCKING SYSTEMS
+  // ==========================================
+  {
+    id: 'prod_em_lock_600lbs',
+    name: 'Heavy Duty 600 lbs Electromagnetic Lock (EM Lock)',
+    slug: 'electromagnetic-door-lock-600lbs',
+    brand: 'eSSL / SecureTech',
+    model: 'EM-600LBS',
+    category: 'Door Locking Systems',
+    image: '/images/products/electromagnetic-door-lock-600lbs.png',
+    tagline: 'Fail-safe 280 kg holding force magnetic lock for commercial wooden, aluminum, and glass doors.',
+    shortDesc: 'The industry standard electromagnetic lock for corporate offices with fail-safe fire emergency protection.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      holdingForce: '600 lbs (280 kg) Holding Force',
+      voltage: '12V DC / 500mA'
+    },
+    specs: {
+      holdingForce: '600 lbs / 280 kg Clamping Force',
+      operatingVoltage: '12V DC or 24V DC (Selectable)',
+      currentDraw: '12V / 500mA, 24V / 250mA',
+      safetyType: 'Fail-Safe (Unlocks automatically when power is removed)',
+      casingMaterial: 'Anodized Aluminum Alloy',
+      armaturePlate: 'High-Tensile Zinc Plated Steel',
+      statusIndicator: 'Bi-Color LED (Red: Locked, Green: Unlocked)',
+      weight: '2.1 kg',
+      dimensions: 'Lock Body: 250 x 48 x 26 mm | Armature: 180 x 38 x 11 mm'
+    },
+    features: [
+      'Fail-safe mechanism guarantees immediate door release during electrical power outage or fire alarm',
+      'Anti-residual magnetism kick-off button ensures instant door opening without sticking',
+      'High-grade anodized aluminum body resists corrosion and vandalism',
+      'Compatible with U-brackets for frameless glass doors and ZL-brackets for inward doors'
+    ],
+    applications: [
+      'Corporate Office Main Entrances',
+      'Glass Door Partitions & Conference Rooms',
+      'Server Room Entry Points',
+      'Hospital Ward Doors'
+    ],
+    installationInfo: 'Fixed to door frame header. Armature plate fastened to door with rubber washer for self-alignment.'
+  },
+  {
+    id: 'prod_em_lock_1200lbs',
+    name: 'Heavy-Duty 1200 lbs Double Door Electromagnetic Lock',
+    slug: 'electromagnetic-door-lock-1200lbs',
+    brand: 'eSSL / SecureTech',
+    model: 'EM-1200LBS',
+    category: 'Door Locking Systems',
+    image: '/images/products/electromagnetic-door-lock-600lbs.png',
+    tagline: 'High-security 500 kg magnetic lock for heavy steel, armored, and external perimeter doors.',
+    shortDesc: 'Extreme holding force electromagnetic lock engineered for heavy industrial and bank vault doors.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      holdingForce: '1,200 lbs (500 kg) Holding Force',
+      voltage: '12V / 24V DC'
+    },
+    specs: {
+      holdingForce: '1,200 lbs / 500 kg',
+      operatingVoltage: '12V / 24V DC',
+      safetyType: 'Fail-Safe',
+      casing: 'High-strength aluminum body',
+      dimensions: '266 x 73 x 40 mm'
+    },
+    features: [
+      'Massive 500 kg holding force withstands violent physical kick attempts',
+      'Dual voltage design allows compatibility with 12V and 24V access panels',
+      'Built-in door status sensor relay (NO/NC/COM) reports forced entry',
+      'Industrial weather-treated coil prevents moisture damage'
+    ],
+    applications: [
+      'Factory Perimeter Heavy Metal Doors',
+      'Bank Cash Offices & Vault Rooms',
+      'Warehouse High-Value Inventory Gates',
+      'Pharmaceutical Secure Quarantine Rooms'
+    ],
+    installationInfo: 'Reinforced steel frame mounting with high-tensile anchor bolts.'
+  },
+  {
+    id: 'prod_electric_dropbolt',
+    name: 'Heavy-Duty Electric Drop Bolt Lock',
+    slug: 'electric-drop-bolt-lock',
+    brand: 'eSSL / SecureTech',
+    model: 'DB-100',
+    category: 'Door Locking Systems',
+    image: '/images/products/electromagnetic-door-lock-600lbs.png',
+    tagline: 'Motorized concealed electric drop bolt lock with auto-relock delay timer for 180° swing doors.',
+    shortDesc: 'Ideal for frameless glass doors swinging both inwards and outwards with automatic door alignment.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      holdingForce: '1,000 kg Holding Strength',
+      voltage: '12V DC'
+    },
+    specs: {
+      boltStructure: 'Solid Stainless Steel 16mm Diameter Throw',
+      holdingStrength: '1,000 kg',
+      delayTimer: '0, 3, 6, 9 Seconds Auto-Relock Delay',
+      operatingVoltage: '12V DC',
+      safetyType: 'Fail-Safe (Power off retracts bolt)',
+      dimensions: '205 x 35 x 40 mm'
+    },
+    features: [
+      'Solid stainless-steel deadbolt provides superior physical interlocking strength',
+      'Selectable 0-9 second delay timer ensures door stabilizes before bolt deploys',
+      'Concealed flush mounting preserves clean architectural aesthetics',
+      'Magnetic sensor verifies door alignment before shooting the deadbolt'
+    ],
+    applications: [
+      'Frameless Glass Doors Swinging Both In and Out',
+      'Executive Boardroom Double Doors',
+      'Commercial Bank Entries',
+      'Hotel Meeting Rooms'
+    ],
+    installationInfo: 'Installed in top header frame or with frameless glass clamp brackets.'
+  },
+  {
+    id: 'prod_smart_glass_lock',
+    name: 'Smart Fingerprint Frameless Glass Door Lock',
+    slug: 'smart-fingerprint-glass-door-lock',
+    brand: 'BioMax / eSSL',
+    model: 'GL-300',
+    category: 'Door Locking Systems',
+    image: '/images/products/electromagnetic-door-lock-600lbs.png',
+    tagline: 'Clamp-on standalone fingerprint and card lock with no drilling required on glass.',
+    shortDesc: 'Battery-operated standalone glass door lock featuring fingerprint, RFID card, passcode, and remote control.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      fingerprints: '300 Fingerprints',
+      cards: '300 RFID Cards',
+      passwords: '300 Passwords'
+    },
+    specs: {
+      doorThickness: '10mm - 12mm Frameless Glass Doors',
+      installationType: 'No-Drilling Clamp Installation',
+      biometricSensor: 'Semiconductor Live Fingerprint Sensor',
+      powerSource: '4 x AA Alkaline Batteries (1 Year Life)',
+      emergencyPower: 'USB Type-C Emergency Power Port',
+      unlockMethods: 'Fingerprint, RFID Card, PIN Code, Remote Control'
+    },
+    features: [
+      'Zero glass cutting or drilling needed—clamps firmly directly onto 10-12mm toughened glass',
+      'Rapid semiconductor fingerprint reader unlocks door in 0.3 seconds',
+      'Virtual fake passcode protection prevents onlookers from peeking your PIN',
+      'Built-in doorbell button and low-battery voice alert warning'
+    ],
+    applications: [
+      'Rented Corporate Office Glass Doors',
+      'Co-Working Private Cabins',
+      'Boutique Financial Consulting Offices',
+      'Clinic Doctor Chambers'
+    ],
+    installationInfo: 'Clamps directly onto single or double frameless glass door in under 30 minutes.'
+  },
+
+  // ==========================================
+  // CATEGORY 7: ACCESS CONTROL ACCESSORIES
+  // ==========================================
+  {
+    id: 'prod_exit_switches',
+    name: 'Exit Push Button & No-Touch Infrared Sensor Switch',
+    slug: 'exit-push-button-no-touch-infrared-switch',
+    brand: 'eSSL / BioMax',
+    model: 'EB-01 / NT-02',
+    category: 'Access Control Accessories',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'High-durability stainless steel push-to-exit and wave-to-open hygienic switches.',
+    shortDesc: 'Commercial egress switches tested to 500,000 cycles for access control door release.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      cycles: '500,000 Tested Cycles'
+    },
+    specs: {
+      material: 'Brushed 304 Stainless Steel Faceplate',
+      contactOutput: 'NO / NC / COM Contacts',
+      noTouchDetection: 'Optical IR Sensor (Detection Distance: 5–15 cm)',
+      operatingVoltage: '12V DC (No-Touch) / Dry Contact (Push)',
+      dimensions: '86 x 86 x 29 mm'
+    },
+    features: [
+      'Wave-to-open infrared technology allows hygienic touch-free door opening',
+      '500,000 cycle mechanical test ensures years of high-volume usage',
+      'Dual-color LED ring indicator (Blue: Standby, Green: Active Egress)',
+      'Universal single-gang electrical box fit'
+    ],
+    applications: [
+      'Office Interior Door Egress',
+      'Hospital OT & Scrub Rooms (No-Touch)',
+      'Server Rooms & Secure Areas',
+      'Factory Staff Exits'
+    ],
+    installationInfo: 'Mounted inside room next to door at standard switch height.'
+  },
+  {
+    id: 'prod_power_supply_12v',
+    name: '12V DC 5A Access Control Power Supply with Battery Charger',
+    slug: 'access-control-power-supply-12v-5a-battery-backup',
+    brand: 'eSSL / SecureTech',
+    model: 'PS-1205B',
+    category: 'Access Control Accessories',
+    image: '/images/products/essl-k30-pro.png',
+    tagline: 'Heavy-duty regulated switch-mode power unit with 7Ah battery backup float circuit.',
+    shortDesc: 'Provides continuous regulated 12V DC power to biometric terminals, EM locks, and readers with seamless battery transition.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      voltage: '12V DC 5A Output'
+    },
+    specs: {
+      inputVoltage: '190V - 240V AC 50Hz',
+      outputVoltage: '12V DC Regulated',
+      outputCurrent: '5 Amperes Continuous',
+      batterySupport: 'Supports 12V 7Ah Lead-Acid Battery (Optional)',
+      lockDelayTimer: '0 to 15 Seconds Adjustable Lock Release',
+      protection: 'Over-Current, Over-Voltage & Short-Circuit Protection',
+      casing: 'Lockable Ventilation-Cooled Steel Enclosure'
+    },
+    features: [
+      'Dedicated float charging circuit keeps 7Ah battery fully charged at all times',
+      'Automatic instant zero-lag transfer to battery power during AC mains failure',
+      'Built-in adjustable timer allows relay pulse duration customization',
+      'Protects expensive biometric controller boards from sudden voltage spikes'
+    ],
+    applications: [
+      'All Electromagnetic & Drop Bolt Lock Installations',
+      'Multi-Door Access Control Panels',
+      'Biometric Terminal Power Backing'
+    ],
+    installationInfo: 'Wall mount in electrical shaft or above false ceiling.'
+  },
+  {
+    id: 'prod_rfid_cards_fobs',
+    name: 'RFID Proximity Cards & Mifare 1K Smart Cards',
+    slug: 'rfid-proximity-cards-mifare-smart-cards',
+    brand: 'Meenakshi Technologies',
+    model: 'RFID-EM125 / MF1K',
+    category: 'Access Control Accessories',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'High-durability 125 kHz proximity cards, Mifare 13.56 MHz smart cards, and keyfobs.',
+    shortDesc: 'Pre-programmed tamper-proof employee badges compatible with all eSSL, BioMax, and standard Wiegand readers.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      frequency: '125 kHz / 13.56 MHz'
+    },
+    specs: {
+      frequencies: '125 kHz EM-4100 / 13.56 MHz ISO14443A Mifare Classic 1K',
+      material: 'High-Strength Glossy PVC Card / ABS Keyfob',
+      readDistance: '3 cm to 10 cm',
+      endurance: '100,000 Read/Write Cycles',
+      printability: 'Direct thermal transfer printable with ID card printers (Zebra, Evolis)'
+    },
+    features: [
+      'Pre-printed unique 10-digit serial numbers for rapid administrative enrollment',
+      'Waterproof, tear-resistant PVC construction for daily industrial handling',
+      'Mifare 1K encryption allows combined access control and cafeteria payment sync',
+      'Available as standard credit-card sized cards, rugged keyfobs, or wristbands'
+    ],
+    applications: [
+      'Employee ID Badges & Attendance',
+      'School & College Student Cards',
+      'Gated Community Resident Keyfobs',
+      'Gym & Club Membership Cards'
+    ],
+    installationInfo: 'Enrolled via master biometric terminal or USB desktop reader in seconds.'
+  },
+
+  // ==========================================
+  // CATEGORY 8: TURNSTILE AND ENTRANCE MANAGEMENT
+  // ==========================================
+  {
+    id: 'prod_turnstile_ts1000',
+    name: 'eSSL TS1000 Pro Semi-Automatic Tripod Turnstile',
+    slug: 'essl-ts1000-pro-tripod-turnstile',
+    brand: 'eSSL',
+    model: 'TS1000 Pro',
+    category: 'Turnstile and Entrance Management',
+    image: '/images/products/biomax-bio-5000.png',
+    tagline: 'Heavy-duty 304 stainless steel pedestrian tripod turnstile with anti-tailgating control.',
+    shortDesc: 'Regulates high-volume employee foot traffic in commercial lobbies, metro stations, and factories.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      throughput: '30 Persons per Minute Throughput'
+    },
+    specs: {
+      housingMaterial: 'SUS304 Stainless Steel Body (1.5mm Thickness)',
+      armLength: '500 mm Stainless Steel Rotating Arms',
+      throughputRate: 'Up to 30 Persons / Minute',
+      passageDirection: 'Bi-Directional or Single Direction Controlled',
+      emergencyRelease: 'Drop-Arm Mechanism (Drops arm automatically upon fire alarm)',
+      operatingVoltage: 'AC 100-240V, 50/60Hz',
+      readerIntegration: 'Mounting brackets for Face Recognition, Fingerprint & RFID Readers',
+      dimensions: '1200 x 980 x 280 mm'
+    },
+    features: [
+      'SUS304 stainless steel construction provides weatherproof anti-corrosion protection',
+      'Drop-arm emergency fire release drops arms automatically during evacuations',
+      'Anti-tailgating electromechanical locking mechanism ensures 1 person per scan',
+      'LED traffic direction arrows guide pedestrians with intuitive green/red lights'
+    ],
+    applications: [
+      'Corporate Headquarters & IT Tech Parks (Gachibowli)',
+      'Manufacturing Plant Employee Entrances (Patancheru)',
+      'Colleges, Universities & Sports Stadiums',
+      'Metro Stations & Commercial Towers'
+    ],
+    installationInfo: 'Floor anchored on reinforced concrete slab with concealed power and LAN conduit.'
+  },
+  {
+    id: 'prod_turnstile_flap_barrier',
+    name: 'eSSL FBL4000 High-Speed Flap Barrier Turnstile',
+    slug: 'essl-fbl4000-high-speed-flap-barrier',
+    brand: 'eSSL',
+    model: 'FBL4000',
+    category: 'Turnstile and Entrance Management',
+    image: '/images/products/biomax-speedface-5.png',
+    tagline: 'Elegant retractable acrylic flap barrier for prestigious corporate lobbies and high-speed flow.',
+    shortDesc: 'Ultra-fast pedestrian throughput (40 persons/min) with infrared safety anti-pinch sensors.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      throughput: '35 to 40 Persons per Minute'
+    },
+    specs: {
+      cabinetMaterial: 'SUS304 Stainless Steel with Tempered Glass Tops',
+      barrierMaterial: 'Retractable Red Acrylic Flaps',
+      passageWidth: '550 mm (Standard Lane) / 900 mm (Handicap Lane)',
+      sensors: '6 Pairs of Infrared Safety & Anti-Tailgating Sensors',
+      speed: '0.2s Flap Opening / Closing Time',
+      motorType: 'Heavy-Duty Brushless DC Motor'
+    },
+    features: [
+      'Whisper-quiet brushless DC motor provides ultra-fast 0.2s flap retraction',
+      'Multiple infrared safety beams prevent flaps from closing on passing pedestrians',
+      'Flaps retract into cabinet automatically in emergency fire situations',
+      'Premium corporate aesthetic complements modern architectural marble lobbies'
+    ],
+    applications: [
+      'Multinational Corporate Lobbies (Hitec City)',
+      'Government Secretariat & Municipal Buildings',
+      'High-Security Financial Data Centers',
+      'Airport Passenger Terminals'
+    ],
+    installationInfo: 'Precision anchor bolt installation on leveled marble or granite floor.'
+  },
+
+  // ==========================================
+  // CATEGORY 9: BOOM BARRIER SYSTEMS
+  // ==========================================
+  {
+    id: 'prod_boom_barrier_bg1000',
+    name: 'eSSL BG1000 High-Speed Automatic Vehicle Boom Barrier',
+    slug: 'essl-bg1000-automatic-vehicle-boom-barrier',
+    brand: 'eSSL',
+    model: 'BG1000',
+    category: 'Boom Barrier Systems',
+    image: '/images/products/electromagnetic-door-lock-600lbs.png',
+    tagline: 'High-speed 24V brushless DC motor barrier with 5 million cycle MCBF for parking control.',
+    shortDesc: 'Automates commercial parking gates, toll plazas, and industrial vehicle checkpoints with loop detection.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: true,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      boomLength: '3 to 6 Meters Telescopic Boom Arm',
+      speed: '1.5s to 3.0s Opening Speed'
+    },
+    specs: {
+      motorTechnology: '24V Brushless DC Motor with Planetary Gear Transmission',
+      openingSpeed: '1.5 Seconds (3m Arm) / 2.5s - 3.0s (6m Arm)',
+      boomArmLength: '3m to 6m Telescopic Octagonal Aluminum Arm',
+      mcbfCycles: '5,000,000 Cycles Mean Cycles Between Failures',
+      chassis: '2.0mm Cold-Rolled Steel with Thermostatic Powder Coating (IP54)',
+      sensorSupport: 'Loop Detector, Radar Vehicle Detector, Photoelectric Infrared Beams',
+      wirelessRemote: 'Up to 30 Meters Range (433 MHz)'
+    },
+    features: [
+      '24V brushless motor delivers ultra-smooth operation without overheating during peak traffic',
+      'Anti-smash radar vehicle detector prevents the boom arm from hitting vehicles or pedestrians',
+      'Manual release clutch allows effortless manual raising during power cuts',
+      'Integrates seamlessly with long-range UHF RFID readers for automated fleet entry'
+    ],
+    applications: [
+      'Corporate Tech Park Parking Gates',
+      'Gated Residential Communities & Apartments',
+      'Commercial Shopping Mall Basements',
+      'Factory Truck Receiving & Weighbridge Checkpoints'
+    ],
+    installationInfo: 'Concrete base plinth with 4 foundation anchor bolts and underground loop detector coil.'
+  },
+
+  // ==========================================
+  // CATEGORY 10: ADDITIONAL SECURITY PRODUCTS
+  // ==========================================
+  {
+    id: 'prod_dfmd_d1065s',
+    name: 'eSSL D1065S Multi-Zone Walk-Through Metal Detector (DFMD)',
+    slug: 'essl-d1065s-walk-through-metal-detector',
+    brand: 'eSSL',
+    model: 'D1065S',
+    category: 'Additional Security Products',
+    image: '/images/products/biomax-bio-5000.png',
+    tagline: '6-zone high-sensitivity security inspection door frame with traffic count display.',
+    shortDesc: 'Professional walk-through metal detector pinpointing concealed weapons across 6 distinct anatomical zones.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      zones: '6 Overlapping Detection Zones'
+    },
+    specs: {
+      detectionZones: '6 Interlaced Detection Zones (Left, Center, Right)',
+      sensitivityLevels: '100 Adjustable Sensitivity Levels per Zone',
+      displayPanel: 'Alphanumeric LCD Display with Pass and Alarm Counters',
+      alarmIndicators: 'Audible Sound Alarm + LED Light Bars on Both Door Pillars',
+      safetyStandards: 'Harmless to Pacemakers, Pregnant Women & Magnetic Media',
+      operatingVoltage: 'AC 100V - 240V 50/60Hz',
+      dimensions: '2210 x 810 x 480 mm'
+    },
+    features: [
+      '6 distinct detection zones locate the exact vertical position of concealed metal objects',
+      'High-traffic counter records total visitor throughput and alarm frequency',
+      'Password protection prevents unauthorized tampering with sensitivity settings',
+      'Modular lightweight design enables rapid 15-minute assembly and teardown'
+    ],
+    applications: [
+      'Corporate Headquarters & Auditoriums',
+      'Convention Centers & Exhibition Halls (HITEX, Hyderabad)',
+      'Government Courts & Police Checkpoints',
+      'Hotels, Cinema Halls & Shopping Malls'
+    ],
+    installationInfo: 'Assembles on flat interior floor with two upright panels and central control header.'
+  },
+  {
+    id: 'prod_hhmd_md300',
+    name: 'BioMax MD-300 Handheld Metal Detector (HHMD)',
+    slug: 'biomax-md-300-handheld-metal-detector',
+    brand: 'BioMax',
+    model: 'MD-300',
+    category: 'Additional Security Products',
+    image: '/images/products/essl-k90-pro.png',
+    tagline: 'High-sensitivity portable security wand with dual audio and vibration alert modes.',
+    shortDesc: 'Rugged, lightweight security inspection wand detecting ferrous and non-ferrous weapons.',
+    price: 0.0,
+    inStock: true,
+    isFeatured: false,
+    cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
+    capacity: {
+      battery: '9V Rechargeable / Alkaline Battery'
+    },
+    specs: {
+      detectionSensitivity: 'Detects a 25 Paisa Coin from 65mm / Pistol from 150mm',
+      alarmModes: 'Audible Buzzer + Red LED / Silent Vibration Mode',
+      powerSource: 'Standard 9V Battery or Ni-MH Rechargeable Battery',
+      weight: '400 grams (Ergonomic Grip)',
+      operatingCurrent: '< 50 mA'
+    },
+    features: [
+      'High sensitivity detects small blades, razor knives, and firearms',
+      'Silent vibration mode allows discreet alerting in sensitive environments',
+      'Low power consumption delivers up to 40 hours of continuous security patrol',
+      'Includes wrist strap and heavy-duty holster belt clip'
+    ],
+    applications: [
+      'Security Guard Frisking at Office Gates',
+      'VIP Protection & Event Security',
+      'Educational Exam Centers (Mobile Phone Detection)',
+      'Nightclubs, Pubs & Private Parties'
+    ],
+    installationInfo: 'Handheld portable operation; no installation required.'
+  }
+];
+
+// Write to data/products.json
+const productsJsonPath = path.join(__dirname, '..', 'data', 'products.json');
+fs.writeFileSync(productsJsonPath, JSON.stringify(products, null, 2), 'utf8');
+console.log(`[Catalogue Seed] Saved ${products.length} verified products to data/products.json.`);
+
+// Sync to SQLite database
+const insertOrReplace = db.prepare(`
+  INSERT INTO products (
+    id, website_id, name, model, brand, category, price, availability,
+    short_description, description_html, specifications_json, featured_image_url,
+    featured_image_alt, primary_brochure_pdf_id, datasheet_pdf_id, video_url,
+    seo_title, meta_description, slug, is_featured
+  ) VALUES (
+    ?, 'site_meenakshi_main', ?, ?, ?, ?, ?, ?,
+    ?, ?, ?, ?,
+    ?, ?, ?, ?,
+    ?, ?, ?, ?
+  )
+  ON CONFLICT(slug) DO UPDATE SET
+    name = excluded.name,
+    model = excluded.model,
+    brand = excluded.brand,
+    category = excluded.category,
+    price = excluded.price,
+    availability = excluded.availability,
+    short_description = excluded.short_description,
+    description_html = excluded.description_html,
+    specifications_json = excluded.specifications_json,
+    featured_image_url = excluded.featured_image_url,
+    featured_image_alt = excluded.featured_image_alt,
+    seo_title = excluded.seo_title,
+    meta_description = excluded.meta_description,
+    is_featured = excluded.is_featured
+`);
+
+products.forEach(p => {
+  insertOrReplace.run(
+    p.id,
+    p.name,
+    p.model || '',
+    p.brand,
+    p.category,
+    p.price || 0.0,
+    p.inStock ? 'in_stock' : 'out_of_stock',
+    p.shortDesc || p.tagline,
+    p.tagline,
+    JSON.stringify(p.specs || {}),
+    p.image,
+    `${p.name} in Hyderabad`,
+    p.cataloguePdf || null,
+    null,
+    '',
+    `${p.name} - Official Specs & Price Hyderabad`,
+    `Buy ${p.name} from Meenakshi Technologies Hyderabad. Authorized warranty, on-site installation, and best price quotation.`,
+    p.slug,
+    p.isFeatured ? 1 : 0
+  );
+});
+
+console.log(`[Catalogue Seed] Synced all ${products.length} products to CMS v2.0 SQLite database.`);

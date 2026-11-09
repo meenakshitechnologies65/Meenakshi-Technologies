@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInternalLinksTool();
   initSiteAuditTool();
   initLeadsManager();
+  initProductManagement();
 });
 
 /* ==========================================================================
@@ -563,8 +564,105 @@ async function loadGscTelemetry() {
 }
 
 /* ==========================================================================
-   MODULE 8: PRODUCTS MANAGEMENT
+   MODULE 8: PRODUCTS MANAGEMENT (eSSL, BioMax, 10 Categories & PDF Datasheets)
    ========================================================================== */
+let allProductsCache = [];
+
+function initProductManagement() {
+  const toggleBtn = document.getElementById('toggleNewProductBtn');
+  const cancelBtn = document.getElementById('cancelNewProductBtn');
+  const formContainer = document.getElementById('newProductFormContainer');
+  const form = document.getElementById('newProductForm');
+  const searchInput = document.getElementById('adminProductSearch');
+  const brandFilter = document.getElementById('adminProductBrandFilter');
+  const catFilter = document.getElementById('adminProductCategoryFilter');
+
+  if (toggleBtn && formContainer) {
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = formContainer.style.display === 'none';
+      formContainer.style.display = isHidden ? 'block' : 'none';
+      toggleBtn.textContent = isHidden ? '✕ Close Form' : '+ Add New Product';
+    });
+  }
+
+  if (cancelBtn && formContainer) {
+    cancelBtn.addEventListener('click', () => {
+      formContainer.style.display = 'none';
+      if (toggleBtn) toggleBtn.textContent = '+ Add New Product';
+    });
+  }
+
+  // Real-time filtering in Admin
+  function filterAdminProducts() {
+    const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    const brand = (brandFilter ? brandFilter.value : 'all').toLowerCase();
+    const cat = (catFilter ? catFilter.value : 'all').toLowerCase();
+
+    const rows = document.querySelectorAll('.admin-product-row');
+    rows.forEach(row => {
+      const rowName = row.getAttribute('data-name') || '';
+      const rowBrand = row.getAttribute('data-brand') || '';
+      const rowCat = row.getAttribute('data-category') || '';
+      const text = row.textContent.toLowerCase();
+
+      const matchQ = !q || text.includes(q) || rowName.includes(q);
+      const matchBrand = brand === 'all' || rowBrand.includes(brand);
+      const matchCat = cat === 'all' || rowCat.includes(cat);
+
+      row.style.display = (matchQ && matchBrand && matchCat) ? '' : 'none';
+    });
+  }
+
+  if (searchInput) searchInput.addEventListener('input', filterAdminProducts);
+  if (brandFilter) brandFilter.addEventListener('change', filterAdminProducts);
+  if (catFilter) catFilter.addEventListener('change', filterAdminProducts);
+
+  // Add Product Form Submit
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name'),
+        brand: formData.get('brand'),
+        model: formData.get('model'),
+        category: formData.get('category'),
+        featured_image_url: formData.get('image') || '/images/products/essl-k90-pro.png',
+        tagline: formData.get('tagline'),
+        description: formData.get('tagline'),
+        availability: 'in_stock',
+        capacity: {
+          fingerprints: formData.get('capacity_users') || 'Commercial Grade',
+          transactions: formData.get('capacity_logs') || '100,000 Logs'
+        },
+        specs: {
+          communication: formData.get('connectivity') || 'TCP/IP, USB Host'
+        }
+      };
+
+      try {
+        const res = await fetch('/api/v2/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Product successfully added to catalog!');
+          form.reset();
+          if (formContainer) formContainer.style.display = 'none';
+          if (toggleBtn) toggleBtn.textContent = '+ Add New Product';
+          loadProductsList();
+        } else {
+          alert('Error: ' + (data.error || 'Failed to create product'));
+        }
+      } catch (err) {
+        alert('Failed to connect to server: ' + err.message);
+      }
+    });
+  }
+}
+
 async function loadProductsList() {
   const tbody = document.getElementById('productsTableBody');
   if (!tbody) return;
@@ -573,26 +671,36 @@ async function loadProductsList() {
     const res = await fetch('/api/v2/products');
     const data = await res.json();
     if (data.success && data.products) {
-      tbody.innerHTML = data.products.map(p => `
-        <tr>
-          <td>
-            <div style="display:flex; align-items:center; gap:0.75rem;">
-              <img src="${p.featured_image_url || '/images/products/essl-k90-pro.png'}" style="width:40px; height:40px; object-fit:contain; border-radius:4px; background:#fff; border:1px solid #e2e8f0;">
-              <div>
-                <strong>${p.name}</strong>
-                <div style="font-size:0.75rem; color:var(--cms-muted);">${p.model || p.slug}</div>
+      allProductsCache = data.products;
+      tbody.innerHTML = data.products.map(p => {
+        const specs = typeof p.specs === 'string' ? JSON.parse(p.specs || '{}') : (p.specs || {});
+        const cap = typeof p.capacity === 'string' ? JSON.parse(p.capacity || '{}') : (p.capacity || {});
+        const userCap = cap.fingerprints || cap.faces || cap.holdingForce || 'Standard';
+
+        return `
+          <tr class="admin-product-row" data-name="${(p.name || '').toLowerCase()}" data-brand="${(p.brand || '').toLowerCase()}" data-category="${(p.category || '').toLowerCase()}">
+            <td>
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <img src="${p.featured_image_url || '/images/products/essl-k90-pro.png'}" style="width:42px; height:42px; object-fit:contain; border-radius:6px; background:#fff; border:1px solid #e2e8f0; padding:2px;" onerror="this.src='/images/products/essl-k90-pro.png';">
+                <div>
+                  <strong>${p.name}</strong>
+                  <div style="font-size:0.75rem; color:var(--cms-muted);">${p.model ? 'Model: ' + p.model + ' • ' : ''}${p.slug}</div>
+                </div>
               </div>
-            </div>
-          </td>
-          <td>${p.brand}</td>
-          <td>${p.category}</td>
-          <td>₹${p.price ? p.price.toLocaleString() : 'Enquire'}</td>
-          <td><span class="score-pill ${p.availability === 'in_stock' ? 'pass' : 'critical'}">${p.availability.replace('_', ' ').toUpperCase()}</span></td>
-          <td>
-            <a href="/products/${p.slug}" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm">Inspect ↗</a>
-          </td>
-        </tr>
-      `).join('');
+            </td>
+            <td><span class="badge-pill">${p.brand}</span></td>
+            <td style="font-size:0.85rem;">${p.category}</td>
+            <td style="font-size:0.8rem; color:var(--cms-muted);">${userCap}</td>
+            <td><span class="score-pill pass">IN STOCK</span></td>
+            <td>
+              <div style="display:flex; gap:0.35rem; align-items:center;">
+                <a href="/products/${p.slug}" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm" title="View live page">Inspect ↗</a>
+                <a href="/products/${p.slug}/datasheet.pdf" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm" style="border-color:#0284c7; color:#0284c7;" title="Download PDF datasheet">PDF 📥</a>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
     }
   } catch (err) {
     tbody.innerHTML = '<tr><td colspan="6" style="color:var(--cms-danger); text-align:center;">Failed to load products.</td></tr>';

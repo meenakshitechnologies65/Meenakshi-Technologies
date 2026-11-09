@@ -9,6 +9,7 @@ const compression = require('compression');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
+const { generateProductDatasheetPdf, generateCatalogPdf } = require('./cms/services/pdf-generator');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -104,15 +105,117 @@ app.get(['/brochure', '/catalogue'], (req, res) => {
   res.render('brochure', { products });
 });
 
+// 3c. Dynamic Product PDF Datasheet Generation
+app.get('/products/:slug/datasheet.pdf', (req, res) => {
+  const products = loadData('products.json');
+  let product = products.find(p => p.slug === req.params.slug || p.id === req.params.slug);
+  
+  if (!product) {
+    const slugAliases = {
+      'biomax-speedface-5-ai-terminal': 'biomax-speedface-5-ai-face-recognition-terminal',
+      'biomax-speedface-5': 'biomax-speedface-5-ai-face-recognition-terminal',
+      'essl-k90': 'essl-k90-pro-biometric-attendance',
+      'essl-k30': 'essl-k30-pro-biometric-attendance',
+      'biomax-bio-5000': 'biomax-bio-5000-industrial-fingerprint-system',
+      'essl-multi-door-access-controller-c3-400': 'essl-c3-400-four-door-access-controller'
+    };
+    const targetSlug = slugAliases[req.params.slug];
+    if (targetSlug) {
+      product = products.find(p => p.slug === targetSlug || p.id === targetSlug);
+    }
+  }
+
+  if (!product) {
+    return res.status(404).send('Product datasheet not found');
+  }
+
+  generateProductDatasheetPdf(product, res);
+});
+
+// 3d. Dynamic Multi-Product Catalogues & Category PDF Downloads
+app.get('/catalogues/download', (req, res) => {
+  const products = loadData('products.json');
+  const brand = req.query.brand || null;
+  const category = req.query.category || null;
+  let title = 'Complete Product Catalogue 2026';
+  if (brand) title = `${brand} Biometric & Access Control Catalogue 2026`;
+  else if (category) title = `${category} Catalogue 2026`;
+
+  generateCatalogPdf({ title, brand, category, products }, res);
+});
+
+// 3e. Branded Manufacturer & System Catalogues PDF Route
+app.get('/catalogues/:filename', (req, res, next) => {
+  const filename = req.params.filename.toLowerCase();
+  const staticPath = path.join(__dirname, 'public', 'catalogues', req.params.filename);
+  if (fs.existsSync(staticPath)) {
+    return res.sendFile(staticPath);
+  }
+
+  const products = loadData('products.json');
+
+  if (filename.includes('essl')) {
+    return generateCatalogPdf({
+      title: 'eSSL Biometric & Access Control Catalogue 2026',
+      brand: 'eSSL',
+      products
+    }, res);
+  }
+  if (filename.includes('biomax')) {
+    return generateCatalogPdf({
+      title: 'BioMax Biometric & Security Catalogue 2026',
+      brand: 'BioMax',
+      products
+    }, res);
+  }
+  if (filename.includes('access-control') || filename.includes('door-locking')) {
+    return generateCatalogPdf({
+      title: 'Access Control & Door Locking Systems Catalogue 2026',
+      products: products.filter(p => 
+        (p.category || '').includes('Access Control') || 
+        (p.category || '').includes('Door Locking') || 
+        (p.category || '').includes('Accessories')
+      )
+    }, res);
+  }
+  if (filename.includes('turnstile') || filename.includes('barrier')) {
+    return generateCatalogPdf({
+      title: 'Entrance Management, Turnstiles & Boom Barriers Catalogue 2026',
+      products: products.filter(p => 
+        (p.category || '').includes('Turnstile') || 
+        (p.category || '').includes('Boom Barrier') || 
+        (p.category || '').includes('Security')
+      )
+    }, res);
+  }
+  if (filename.endsWith('.pdf')) {
+    return generateCatalogPdf({
+      title: 'Meenakshi Technologies Master Catalogue 2026',
+      products
+    }, res);
+  }
+  next();
+});
+
 // 4. Product Detail Page
 app.get('/products/:slug', (req, res) => {
   const products = loadData('products.json');
-  const slugAliases = {
-    'biomax-bio-5000-industrial-fingerprint-system': 'biomax-bio-finger-100-fingerprint-attendance',
-    'essl-multi-door-access-controller-c3-400': 'essl-inbio-260-access-controller-panel'
-  };
-  const targetSlug = slugAliases[req.params.slug] || req.params.slug;
-  const product = products.find(p => p.slug === targetSlug || p.id === targetSlug);
+  let product = products.find(p => p.slug === req.params.slug || p.id === req.params.slug);
+
+  if (!product) {
+    const slugAliases = {
+      'biomax-speedface-5-ai-terminal': 'biomax-speedface-5-ai-face-recognition-terminal',
+      'biomax-speedface-5': 'biomax-speedface-5-ai-face-recognition-terminal',
+      'essl-k90': 'essl-k90-pro-biometric-attendance',
+      'essl-k30': 'essl-k30-pro-biometric-attendance',
+      'biomax-bio-5000': 'biomax-bio-5000-industrial-fingerprint-system',
+      'essl-multi-door-access-controller-c3-400': 'essl-c3-400-four-door-access-controller'
+    };
+    const targetSlug = slugAliases[req.params.slug];
+    if (targetSlug) {
+      product = products.find(p => p.slug === targetSlug || p.id === targetSlug);
+    }
+  }
 
   if (!product) {
     return res.status(404).render('404');
