@@ -70,7 +70,9 @@ async function run() {
 
     // 6. Navigation Dropdowns & PWA elements in HTML
     assert('Homepage contains hierarchical dropdown nav', homeRes.body.includes('class="nav-dropdown"'));
-    assert('Homepage contains pwaInstallHeaderBtn', homeRes.body.includes('id="pwaInstallHeaderBtn"'));
+    assert('Navigation Install App button is removed as requested', !homeRes.body.includes('id="pwaInstallHeaderBtn"'));
+    assert('Navigation contains optimized Verified Locations dropdown', homeRes.body.includes('nav-dropdown-locations') && homeRes.body.includes('nav-locations-toggle'));
+    assert('Footer contains pwaInstallFooterBtn', homeRes.body.includes('id="pwaInstallFooterBtn"'));
     assert('Homepage contains onlineStatusPill', homeRes.body.includes('id="onlineStatusPill"'));
     assert('Homepage contains clearCacheBtn', homeRes.body.includes('id="clearCacheBtn"'));
     assert('Homepage contains cacheStorageBadge', homeRes.body.includes('id="cacheStorageBadge"'));
@@ -96,3 +98,4 @@ async function run() {
 }
 
 run();
+
