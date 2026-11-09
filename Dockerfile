@@ -51,7 +51,7 @@ EXPOSE 3000
 
 # Container Healthcheck
 HEALTHCHECK --interval=20s --timeout=5s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:3000/ || exit 1
+    CMD curl -f http://129.121.169.189:3000/ || exit 1
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "server.js"]
