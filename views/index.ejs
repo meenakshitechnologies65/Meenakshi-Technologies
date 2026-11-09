@@ -65,7 +65,7 @@
       <!-- Hero Visual Card -->
       <div class="hero-visual-card">
         <div class="hero-terminal-mock">
-          <img src="/images/products/essl-silkbio-100tc.svg" alt="eSSL SilkBio Multi-Biometric Machine" style="width:100%; height:auto;">
+          <img src="/images/products/essl-silkbio-100tc.png" alt="eSSL SilkBio Multi-Biometric Machine" style="width:100%; height:auto; object-fit:contain;" width="400" height="300" onerror="this.onerror=null; this.src='/images/products/essl-k90-pro.png';">
         </div>
         <div class="hero-card-footer">
           <span class="hero-verified-tag">
@@ -1175,14 +1175,23 @@
     <div class="videos-grid" id="videosGrid">
       <% if (typeof videos !== 'undefined' && videos.length > 0) { %>
         <% videos.forEach(video => { %>
-          <div class="video-card" data-category="<%= video.category %>">
-            <div class="video-embed-frame">
-              <iframe src="<%= video.embedUrl %>" 
-                      title="<%= video.title %>" 
-                      loading="lazy" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen>
-              </iframe>
+          <div class="video-card" data-category="<%= video.category %>" data-video-id="<%= video.id %>">
+            <div class="video-thumbnail-container" data-video-id="<%= video.id %>" data-video-title="<%= video.title %>">
+              <img src="https://img.youtube.com/vi/<%= video.id %>/hqdefault.jpg" 
+                   alt="<%= video.title %> - Biometric Installation Demo Hyderabad" 
+                   class="video-thumbnail-img" 
+                   loading="lazy" 
+                   width="480" 
+                   height="360"
+                   onerror="this.onerror=null; this.src='/images/youtube-fallback.svg';">
+              <div class="video-play-overlay">
+                <div class="video-play-button" aria-label="Play Video">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <span class="video-duration-badge">Watch Demo</span>
+              </div>
             </div>
             <div class="video-card-body">
               <div class="video-meta-badges">

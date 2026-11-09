@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccessControlSimulator();
   initClientSlider();
   initVideoFilter();
+  initYouTubeVideoPlayers();
   initAnalyticsTracking();
 
   // Ensure any legacy service worker and local caches are cleanly purged
@@ -972,23 +973,27 @@ function initVideoFilter() {
 function initDropdownNav() {
   const dropdownToggles = document.querySelectorAll('.nav-dropdown .dropdown-toggle');
   
-  dropdownToggles.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const parentDropdown = btn.closest('.nav-dropdown');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      
-      // Close other dropdowns
-      document.querySelectorAll('.nav-dropdown').forEach(d => {
-        if (d !== parentDropdown) {
-          d.classList.remove('open');
-          const t = d.querySelector('.dropdown-toggle');
-          if (t) t.setAttribute('aria-expanded', 'false');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      // On mobile view (<= 991px), first tap toggles dropdown instead of navigating away
+      if (window.innerWidth <= 991) {
+        const parentDropdown = toggle.closest('.nav-dropdown');
+        const isOpen = parentDropdown && parentDropdown.classList.contains('open');
+        
+        if (!isOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          document.querySelectorAll('.nav-dropdown').forEach(d => {
+            if (d !== parentDropdown) {
+              d.classList.remove('open');
+              const t = d.querySelector('.dropdown-toggle');
+              if (t) t.setAttribute('aria-expanded', 'false');
+            }
+          });
+          parentDropdown.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
         }
-      });
-      
-      parentDropdown.classList.toggle('open', !isExpanded);
-      btn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+      }
     });
   });
 
@@ -1012,5 +1017,28 @@ function initDropdownNav() {
         if (t) t.setAttribute('aria-expanded', 'false');
       });
     }
+  });
+}
+
+/* ==========================================================================
+   YOUTUBE THUMBNAIL CARD PLAYER CONTROLLER
+   ========================================================================== */
+function initYouTubeVideoPlayers() {
+  const containers = document.querySelectorAll('.video-thumbnail-container');
+  containers.forEach(container => {
+    container.addEventListener('click', () => {
+      const videoId = container.getAttribute('data-video-id');
+      const title = container.getAttribute('data-video-title') || 'Installation Video';
+      if (!videoId) return;
+
+      container.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" 
+                title="${title}" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen 
+                class="video-active-iframe">
+        </iframe>
+      `;
+    });
   });
 }

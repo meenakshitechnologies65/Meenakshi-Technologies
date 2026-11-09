@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ytBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#031926"/>
+      <stop offset="50%" stop-color="#0b2545"/>
+      <stop offset="100%" stop-color="#134074"/>
+    </linearGradient>
+    <linearGradient id="ytRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0000"/>
+      <stop offset="100%" stop-color="#cc0000"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#ytBg)"/>
+  
+  <!-- Subtle decorative grid -->
+  <circle cx="240" cy="160" r="110" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3"/>
+  
+  <!-- YouTube Play Button Box -->
+  <rect x="200" y="125" width="80" height="56" rx="16" fill="url(#ytRed)" filter="drop-shadow(0 6px 14px rgba(255,0,0,0.5))"/>
+  <polygon points="233,141 255,153 233,165" fill="#ffffff"/>
+
+  <!-- Brand Typography -->
+  <text x="240" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">MEENAKSHI TECHNOLOGIES</text>
+  <text x="240" y="248" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle">On-Site Biometric &amp; Access Control Demo</text>
+  <text x="240" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Hyderabad, Telangana &bull; +91 6301593064</text>
+</svg>

@@ -198,14 +198,23 @@
     <div class="videos-grid" style="margin-top: 2rem;">
       <% if (typeof videos !== 'undefined' && videos.length > 0) { %>
         <% videos.slice(0, 3).forEach(video => { %>
-          <div class="video-card">
-            <div class="video-embed-frame">
-              <iframe src="<%= video.embedUrl %>" 
-                      title="<%= video.title %>" 
-                      loading="lazy" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen>
-              </iframe>
+          <div class="video-card" data-video-id="<%= video.id %>">
+            <div class="video-thumbnail-container" data-video-id="<%= video.id %>" data-video-title="<%= video.title %>">
+              <img src="https://img.youtube.com/vi/<%= video.id %>/hqdefault.jpg" 
+                   alt="<%= video.title %> - On-Site Field Installation Hyderabad" 
+                   class="video-thumbnail-img" 
+                   loading="lazy" 
+                   width="480" 
+                   height="360"
+                   onerror="this.onerror=null; this.src='/images/youtube-fallback.svg';">
+              <div class="video-play-overlay">
+                <div class="video-play-button" aria-label="Play Video">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <span class="video-duration-badge">Watch Video</span>
+              </div>
             </div>
             <div class="video-card-body">
               <div class="video-meta-badges">

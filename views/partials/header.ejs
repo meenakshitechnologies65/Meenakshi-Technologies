@@ -43,158 +43,100 @@
       </div>
     </a>
 
-    <!-- Hierarchical Desktop & Mobile Navigation Menu with High-Brightness & Vibrant Colors -->
+    <!-- Primary 4-Item Navigation Menu -->
     <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
-      <a href="/" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">Home</a>
-      
-      <a href="/about" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">About Us</a>
+      <a href="/" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">HOME</a>
 
-      <!-- 1. Biometric Products Dropdown -->
+      <!-- PRODUCTS WITH CLEAN CATEGORY DROPDOWN -->
       <div class="nav-dropdown">
-        <button class="nav-link dropdown-toggle <%= typeof activePage !== 'undefined' && (activePage === 'biometric' || activePage === 'products') ? 'active' : '' %>" aria-haspopup="true" aria-expanded="false">
-          <span class="nav-item-icon">⚡</span>
-          <span>Biometric Products</span>
+        <a href="/products" class="nav-link dropdown-toggle <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>" aria-haspopup="true" aria-expanded="false">
+          <span>PRODUCTS</span>
           <svg class="dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="dropdown-menu">
-          <a href="/products" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-cyan">🖲️</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-products">
+          <a href="/products" class="dropdown-item dropdown-item-all">
+            <span class="dropdown-icon-badge badge-cyan">📦</span>
             <div class="dropdown-content">
-              <strong>All 27+ Biometric Hardware</strong>
-              <small>Complete 2026 catalogue with verified specs</small>
+              <strong>All Products Catalogue</strong>
+              <small>Explore all 27+ biometric &amp; access systems</small>
             </div>
           </a>
           <a href="/services/biometric-attendance-systems-hyderabad" class="dropdown-item">
             <span class="dropdown-icon-badge badge-blue">⏱️</span>
             <div class="dropdown-content">
-              <strong>Biometric Attendance Systems</strong>
-              <small>Fingerprint, face &amp; RFID time tracking</small>
+              <strong>Biometric Attendance Machines</strong>
+              <small>Time attendance &amp; shift management</small>
             </div>
           </a>
-          <a href="/services/essl-biometric-dealers-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-indigo">🏢</span>
+          <a href="/services/fingerprint-attendance-machines-hyderabad" class="dropdown-item">
+            <span class="dropdown-icon-badge badge-indigo">👆</span>
             <div class="dropdown-content">
-              <strong>eSSL Biometric Devices</strong>
-              <small>K30 Pro, K90 Pro, Identix &amp; InBio controllers</small>
-            </div>
-          </a>
-          <a href="/services/biomax-biometric-dealers-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-sky">🤖</span>
-            <div class="dropdown-content">
-              <strong>BioMax Biometric Systems</strong>
-              <small>SpeedFace AI, Bio-5000 &amp; FaceMax-7</small>
+              <strong>Fingerprint Devices</strong>
+              <small>Optical &amp; SilkID fingerprint scanners</small>
             </div>
           </a>
           <a href="/services/face-recognition-attendance-machines-hyderabad" class="dropdown-item">
             <span class="dropdown-icon-badge badge-purple">👤</span>
             <div class="dropdown-content">
-              <strong>Face Recognition Terminals</strong>
-              <small>Touchless AI, anti-spoofing &amp; mask detection</small>
+              <strong>Face Recognition Devices</strong>
+              <small>Touchless AI &amp; mask-detection terminals</small>
             </div>
           </a>
-          <a href="/guide/biometric-dealers-hyderabad" class="dropdown-item dropdown-item-featured">
-            <span class="dropdown-icon-badge badge-amber">📖</span>
+          <a href="/services/essl-biometric-dealers-hyderabad" class="dropdown-item">
+            <span class="dropdown-icon-badge badge-sky">🏢</span>
             <div class="dropdown-content">
-              <strong>3,000-Word Biometric Guide</strong>
-              <small>Official Hyderabad business purchasing guide</small>
+              <strong>eSSL Biometric Devices</strong>
+              <small>K30 Pro, K90 Pro, Identix &amp; InBio panels</small>
             </div>
           </a>
-        </div>
-      </div>
-
-      <!-- 2. Access Control Dropdown -->
-      <div class="nav-dropdown">
-        <button class="nav-link dropdown-toggle <%= typeof activePage !== 'undefined' && activePage === 'access' ? 'active' : '' %>" aria-haspopup="true" aria-expanded="false">
-          <span class="nav-item-icon">🔐</span>
-          <span>Access Control</span>
-          <svg class="dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="dropdown-menu">
+          <a href="/services/biomax-biometric-dealers-hyderabad" class="dropdown-item">
+            <span class="dropdown-icon-badge badge-cyan">🤖</span>
+            <div class="dropdown-content">
+              <strong>Biomax Biometric Devices</strong>
+              <small>SpeedFace AI, Bio-5000 &amp; FaceMax-7</small>
+            </div>
+          </a>
           <a href="/services/door-access-control-systems-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-blue">🚪</span>
+            <span class="dropdown-icon-badge badge-red">🚪</span>
             <div class="dropdown-content">
-              <strong>Door Access Control Systems</strong>
-              <small>Offices, server rooms &amp; industrial security</small>
+              <strong>Access Control Systems</strong>
+              <small>Standalone &amp; multi-door security locks</small>
             </div>
           </a>
           <a href="/services/electromagnetic-door-locks-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-red">🧲</span>
+            <span class="dropdown-icon-badge badge-amber">🧲</span>
             <div class="dropdown-content">
-              <strong>Electromagnetic EM Locks</strong>
-              <small>600 lbs &amp; 1200 lbs tensile holding force</small>
+              <strong>Advanced Access Control</strong>
+              <small>600/1200 lbs EM locks, brackets &amp; controllers</small>
             </div>
           </a>
-          <a href="/products" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-indigo">🎛️</span>
+          <a href="/products?category=Access+Control" class="dropdown-item">
+            <span class="dropdown-icon-badge badge-emerald">💳</span>
             <div class="dropdown-content">
-              <strong>Multi-Door Controllers &amp; Panels</strong>
-              <small>eSSL C3-400, inBio &amp; BioMax controllers</small>
+              <strong>RFID Devices</strong>
+              <small>Proximity readers, smart cards &amp; key fobs</small>
             </div>
           </a>
-        </div>
-      </div>
-
-      <!-- 3. Software & Solutions -->
-      <a href="/services/payroll-management-software-integration" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'software' ? 'active' : '' %>">Software &amp; Payroll</a>
-
-      <!-- 4. OPTIMIZED LOCATIONS DROPDOWN NAVIGATION -->
-      <div class="nav-dropdown nav-dropdown-locations">
-        <button class="nav-link dropdown-toggle nav-locations-toggle <%= typeof activePage !== 'undefined' && activePage === 'locations' ? 'active' : '' %>" aria-haspopup="true" aria-expanded="false" title="Verified Locations in Hyderabad">
-          <span class="nav-loc-icon">📍</span>
-          <span>Verified Locations</span>
-          <span class="nav-loc-pill">2 Offices</span>
-          <svg class="dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="dropdown-menu dropdown-menu-locations">
-          <!-- Office 1: Gowlipura Central -->
-          <a href="/locations/hyderabad" class="dropdown-item dropdown-location-item">
-            <span class="dropdown-icon-badge badge-emerald">🏢</span>
+          <a href="/services#cctv" class="dropdown-item">
+            <span class="dropdown-icon-badge badge-blue">📹</span>
             <div class="dropdown-content">
-              <div class="loc-header-line">
-                <strong>1. Gowlipura Central Office (HQ)</strong>
-                <span class="loc-mini-tag">Headquarters</span>
-              </div>
-              <small>Near Gandhi Statue, Outside Gowlipura, Hyderabad 500053</small>
-              <span class="loc-view-map">View Details &amp; Google Map &rarr;</span>
+              <strong>CCTV Systems</strong>
+              <small>Surveillance &amp; commercial security cameras</small>
             </div>
           </a>
-
-          <!-- Office 2: Balapur Hub -->
-          <a href="/locations/balapur" class="dropdown-item dropdown-location-item">
-            <span class="dropdown-icon-badge badge-emerald">🏢</span>
+          <a href="/services/payroll-management-software-integration" class="dropdown-item dropdown-item-featured">
+            <span class="dropdown-icon-badge badge-cyan">💻</span>
             <div class="dropdown-content">
-              <div class="loc-header-line">
-                <strong>2. Balapur Business Hub</strong>
-                <span class="loc-mini-tag">Branch Office</span>
-              </div>
-              <small>Balapur Main Road, Near DRDL Sector, Hyderabad 500005</small>
-              <span class="loc-view-map">View Details &amp; Google Map &rarr;</span>
-            </div>
-          </a>
-
-          <!-- All Locations Overview -->
-          <a href="/locations" class="dropdown-item dropdown-location-directory">
-            <span class="dropdown-icon-badge badge-cyan">🗺️</span>
-            <div class="dropdown-content">
-              <strong>Dual Office Directory &amp; Full Maps</strong>
-              <small>Explore both physical locations with route directions</small>
-            </div>
-          </a>
-
-          <!-- Service Coverage Areas -->
-          <a href="/service-areas" class="dropdown-item dropdown-item-featured">
-            <span class="dropdown-icon-badge badge-blue">📍</span>
-            <div class="dropdown-content">
-              <strong>Hyderabad &amp; Telangana Coverage</strong>
-              <small>HITEC City, Gachibowli, Secunderabad, Dilsukhnagar, LB Nagar</small>
+              <strong>Attendance and Payroll Software</strong>
+              <small>Automated salary, leave &amp; cloud sync</small>
             </div>
           </a>
         </div>
       </div>
 
-      <a href="/brochure" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'brochure' ? 'active' : '' %>">Brochure</a>
+      <a href="/about" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">ABOUT US</a>
 
-      <a href="/contact" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">Contact Us</a>
+      <a href="/contact" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">CONTACT US</a>
     </nav>
 
     <!-- Header Actions (WhatsApp Enquiry & Mobile Hamburger Menu) -->

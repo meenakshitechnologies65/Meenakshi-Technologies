@@ -3584,6 +3584,87 @@ button, input, select, textarea {
   box-shadow: 0 12px 28px rgba(2, 132, 199, 0.16);
 }
 
+.video-thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  display: block;
+}
+
+.video-thumbnail-container:hover .video-thumbnail-img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(3, 25, 38, 0.35);
+  transition: background 0.3s ease;
+}
+
+.video-thumbnail-container:hover .video-play-overlay {
+  background: rgba(3, 25, 38, 0.15);
+}
+
+.video-play-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5), 0 0 0 3px rgba(255, 255, 255, 0.85);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.video-play-button svg {
+  margin-left: 3px;
+}
+
+.video-thumbnail-container:hover .video-play-button {
+  transform: scale(1.15);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.7), 0 0 0 5px rgba(255, 255, 255, 0.95);
+}
+
+.video-duration-badge {
+  background: rgba(3, 25, 38, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.video-active-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .video-embed-frame {
   position: relative;
   width: 100%;
