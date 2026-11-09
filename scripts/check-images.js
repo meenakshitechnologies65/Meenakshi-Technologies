@@ -23,3 +23,4 @@ products.forEach((p, idx) => {
 });
 
 console.log(`\nExisting: ${existingCount}, Missing: ${missingCount}`);
+

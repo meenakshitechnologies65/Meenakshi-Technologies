@@ -35,17 +35,24 @@
   <meta name="twitter:description" content="<%= pageDesc %>">
   <meta name="twitter:image" content="<%= pageOgImage %>">
 
-  <!-- Favicon & Mobile Icons -->
-  <link rel="icon" type="image/png" href="/images/logo.png">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  <!-- Favicon & PWA Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#031926">
+  <meta name="application-name" content="Meenakshi Tech">
+  <meta name="apple-mobile-web-app-title" content="Meenakshi Tech">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <!-- Preconnect to Google Fonts -->
+  <!-- Resource Hints & Font Performance -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://www.google.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->

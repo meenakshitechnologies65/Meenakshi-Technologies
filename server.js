@@ -20,11 +20,46 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static assets
+// Security Headers & Policy Enforcement
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(self)');
+  res.setHeader('Content-Security-Policy', "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https://www.youtube.com https://fonts.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https://www.youtube.com https://www.google.com https://maps.google.com; connect-src 'self' https:;");
+  next();
+});
+
+// Root Service Worker endpoint with root scope allowance
+app.get('/sw.js', (req, res) => {
+  res.setHeader('Service-Worker-Allowed', '/');
+  res.setHeader('Content-Type', 'application/javascript');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.sendFile(path.join(__dirname, 'public', 'sw.js'));
+});
+
+// Web App Manifest endpoint
+app.get('/site.webmanifest', (req, res) => {
+  res.setHeader('Content-Type', 'application/manifest+json');
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.sendFile(path.join(__dirname, 'public', 'site.webmanifest'));
+});
+
+// Serve static assets with smart Cache-Control headers
 app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: '1d'
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.css') || filePath.endsWith('.js')) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(jpg|jpeg|png|webp|svg|ico)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+    } else if (filePath.endsWith('.pdf')) {
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+    }
+  }
 }));
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/images', express.static(path.join(__dirname, 'images'), {
+  maxAge: '7d'
+}));
 
 // Set up EJS template engine
 app.set('view engine', 'ejs');
@@ -333,9 +368,10 @@ app.get('/contact', (req, res) => {
   });
 });
 
-// 17. Legal Pages
+// 17. Legal Pages & Offline PWA Fallback
 app.get('/privacy-policy', (req, res) => res.render('privacy-policy'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms-and-conditions'));
+app.get('/offline', (req, res) => res.render('offline'));
 
 // 18. CMS Management v2.0 Administration Dashboard & Enterprise REST APIs
 const cmsRoutes = require('./cms/routes');
@@ -352,8 +388,35 @@ app.get(['/admin', '/cms'], (req, res) => {
    API ENDPOINTS
    ========================================================================== */
 
+// Lightweight in-memory rate limiter for lead submissions (max 10 submissions per 15 minutes per IP)
+const enquiryRateLimitMap = new Map();
+const ENQUIRY_RATE_LIMIT = 10;
+const ENQUIRY_WINDOW_MS = 15 * 60 * 1000;
+
+function enquiryRateLimiter(req, res, next) {
+  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+  const now = Date.now();
+  const clientData = enquiryRateLimitMap.get(clientIp) || { count: 0, resetTime: now + ENQUIRY_WINDOW_MS };
+
+  if (now > clientData.resetTime) {
+    clientData.count = 0;
+    clientData.resetTime = now + ENQUIRY_WINDOW_MS;
+  }
+
+  if (clientData.count >= ENQUIRY_RATE_LIMIT) {
+    return res.status(429).json({
+      success: false,
+      message: 'Too many enquiry requests from your IP. Please call our direct helpline at +91 6301593064.'
+    });
+  }
+
+  clientData.count++;
+  enquiryRateLimitMap.set(clientIp, clientData);
+  next();
+}
+
 // Lead / Contact Form Submission
-app.post('/api/enquiry', (req, res) => {
+app.post('/api/enquiry', enquiryRateLimiter, (req, res) => {
   try {
     const {
       fullName,
@@ -541,9 +604,16 @@ app.get('/sitemap.xml', (req, res) => {
     { loc: `${baseUrl}/contact`, priority: '0.9', changefreq: 'monthly' }
   ];
 
-  // Dynamic Product URLs
+  // Dynamic Product URLs with Google Image metadata
   products.forEach(p => {
-    urls.push({ loc: `${baseUrl}/products/${p.slug}`, priority: '0.85', changefreq: 'monthly' });
+    const item = { loc: `${baseUrl}/products/${p.slug}`, priority: '0.85', changefreq: 'monthly' };
+    if (p.image) {
+      item.image = {
+        loc: `${baseUrl}${p.image.startsWith('/') ? '' : '/'}${p.image}`,
+        title: `${p.name} - ${p.brand || 'Biometric'} Attendance & Access Control`
+      };
+    }
+    urls.push(item);
   });
 
   // Dynamic Solution URLs
@@ -562,13 +632,20 @@ app.get('/sitemap.xml', (req, res) => {
   });
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
   urls.forEach(u => {
     xml += `  <url>\n`;
     xml += `    <loc>${u.loc}</loc>\n`;
     xml += `    <changefreq>${u.changefreq}</changefreq>\n`;
     xml += `    <priority>${u.priority}</priority>\n`;
+    if (u.image) {
+      const cleanTitle = u.image.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${u.image.loc}</image:loc>\n`;
+      xml += `      <image:title>${cleanTitle}</image:title>\n`;
+      xml += `    </image:image>\n`;
+    }
     xml += `  </url>\n`;
   });
 
