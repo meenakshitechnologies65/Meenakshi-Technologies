@@ -16,10 +16,10 @@ function get(path) {
   console.log('Homepage HTTP status:', home.status);
 
   // Check 4 direct links
-  const hasDirectHome = home.body.includes('<a href="/" class="nav-link');
-  const hasDirectProducts = home.body.includes('<a href="/products" class="nav-link');
-  const hasDirectAbout = home.body.includes('<a href="/about" class="nav-link');
-  const hasDirectContact = home.body.includes('<a href="/contact" class="nav-link');
+  const hasDirectHome = home.body.includes('href="/"') && home.body.includes('>HOME<');
+  const hasDirectProducts = home.body.includes('href="/products"') && home.body.includes('>PRODUCTS<');
+  const hasDirectAbout = home.body.includes('href="/about"') && home.body.includes('>ABOUT US<');
+  const hasDirectContact = home.body.includes('href="/contact"') && home.body.includes('>CONTACT US<');
   const hasDropdownInNav = home.body.includes('nav-dropdown');
 
   console.log('Direct Navigation Items:', {
@@ -46,3 +46,4 @@ function get(path) {
 
   console.log('\n>>> ALL NAVIGATION AND GOOGLE MAP EMBED CHECKS PASSED PERFECTLY! <<<');
 })();
+

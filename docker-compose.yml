@@ -1,0 +1,149 @@
+# ==============================================================================
+# MEENAKSHI TECHNOLOGIES - PRODUCTION DOCKER COMPOSE ORCHESTRATION
+# Services: Frontend (Nginx) + Backend (Node.js 22) + Database (PostgreSQL 16) + Cache (Redis 7)
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # ----------------------------------------------------------------------------
+  # 1. FRONTEND: NGINX Web Server, Static Asset Engine & Reverse Proxy
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: meenakshi_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./images:/usr/share/nginx/html/images:ro
+      - nginx_logs:/var/log/nginx
+    networks:
+      - meenakshi_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthz"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # ----------------------------------------------------------------------------
+  # 2. BACKEND: Node.js 22 Express, CMS v2.0, PDF Generation & SSR App
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: meenakshi_backend
+    restart: unless-stopped
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+      - DATABASE_URL=postgres://${DB_USER:-meenakshi_user}:${DB_PASSWORD:-meenakshi_secure_password_2026}@db:5432/${DB_NAME:-meenakshi_cms}
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:-meenakshi_jwt_secret_production_2026_super_secure}
+      - PRIMARY_PHONE=+916301593064
+      - WHATSAPP_PHONE=916301593064
+      - PRIMARY_EMAIL=meenakshitechnologies65@gmail.com
+    volumes:
+      - cms_data:/app/data
+      - catalogues_data:/app/public/catalogues
+      - uploads_data:/app/public/uploads
+    networks:
+      - meenakshi_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # ----------------------------------------------------------------------------
+  # 3. DATABASE: PostgreSQL 16 Enterprise Relational Database Service
+  # ----------------------------------------------------------------------------
+  db:
+    image: postgres:16-alpine
+    container_name: meenakshi_db
+    restart: unless-stopped
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${DB_NAME:-meenakshi_cms}
+      POSTGRES_USER: ${DB_USER:-meenakshi_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-meenakshi_secure_password_2026}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    networks:
+      - meenakshi_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-meenakshi_user} -d ${DB_NAME:-meenakshi_cms}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ----------------------------------------------------------------------------
+  # 4. CACHE: Redis 7 High-Speed In-Memory Cache & Session Store
+  # ----------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: meenakshi_redis
+    restart: unless-stopped
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - meenakshi_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+# ==============================================================================
+# PERSISTENT STORAGE VOLUMES
+# ==============================================================================
+volumes:
+  postgres_data:
+    name: meenakshi_postgres_data
+  cms_data:
+    name: meenakshi_cms_data
+  catalogues_data:
+    name: meenakshi_catalogues_data
+  uploads_data:
+    name: meenakshi_uploads_data
+  redis_data:
+    name: meenakshi_redis_data
+  nginx_logs:
+    name: meenakshi_nginx_logs
+
+# ==============================================================================
+# CONTAINER NETWORK BRIDGING
+# ==============================================================================
+networks:
+  meenakshi_network:
+    name: meenakshi_network
+    driver: bridge

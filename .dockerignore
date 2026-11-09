@@ -1,0 +1,33 @@
+# Git and IDE configuration
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.suo
+*.user
+
+# Dependencies and caches
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+
+# Local SQLite temporary WAL and SHM files
+data/*.sqlite-shm
+data/*.sqlite-wal
+
+# Local test and debug scripts
+scripts/test-*
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Documentation and temporary drafts
+brain/
+tmp/
