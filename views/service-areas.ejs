@@ -27,7 +27,7 @@
     <p class="section-subtext">Direct technician dispatch from our Hyderabad Central and Balapur service hubs.</p>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+  <div class="service-areas-grid" style="margin-bottom: 4rem;">
     <% hyderabadAreas.forEach(area => { %>
       <div id="<%= area.slug %>" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
         <span style="font-size: 0.72rem; color: #0066cc; font-weight: 700; text-transform: uppercase;"><%= area.zone %></span>
@@ -50,7 +50,7 @@
     <p class="section-subtext">Express courier delivery of eSSL and Biomax machines, plus scheduled site engineer visits.</p>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+  <div class="service-areas-grid">
     <% telanganaDistricts.forEach(dist => { %>
       <div id="<%= dist.slug %>" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
         <h3 style="font-size: 1.2rem; font-weight: 800; color: #0b2545; margin-bottom: 0.4rem;"><%= dist.name %> District</h3>

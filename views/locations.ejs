@@ -151,7 +151,7 @@
     <h3 style="font-size: 1.5rem; font-weight: 800; color: #0b2545; margin-bottom: 0.5rem;">Hyderabad City Local Service Coverage</h3>
     <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1.8rem;">We provide same-day product delivery and field engineer service across all 29 major Hyderabad zones:</p>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+    <div class="locations-directory-grid">
       <% hyderabadAreas.forEach(area => { %>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #0b2545; margin-bottom: 0.2rem;"><%= area.name %></h4>
@@ -167,7 +167,7 @@
     <h3 style="font-size: 1.5rem; font-weight: 800; color: #0b2545; margin-bottom: 0.5rem;">Telangana Regional &amp; Industrial Districts Coverage</h3>
     <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1.8rem;">Comprehensive supply, courier dispatch, and onsite implementation across all 16 major industrial districts:</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+    <div class="locations-directory-grid">
       <% telanganaDistricts.forEach(dist => { %>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
           <h4 style="font-size: 1rem; font-weight: 700; color: #0b2545; margin-bottom: 0.2rem;"><%= dist.name %> District</h4>
