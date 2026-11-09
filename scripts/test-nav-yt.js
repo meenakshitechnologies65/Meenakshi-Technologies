@@ -59,3 +59,4 @@ function get(path) {
     process.exit(1);
   }
 })();
+

@@ -43,99 +43,11 @@
       </div>
     </a>
 
-    <!-- Primary 4-Item Navigation Menu -->
+    <!-- Primary 4-Item Direct Navigation Menu -->
     <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
       <a href="/" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">HOME</a>
-
-      <!-- PRODUCTS WITH CLEAN CATEGORY DROPDOWN -->
-      <div class="nav-dropdown">
-        <a href="/products" class="nav-link dropdown-toggle <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>" aria-haspopup="true" aria-expanded="false">
-          <span>PRODUCTS</span>
-          <svg class="dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </a>
-        <div class="dropdown-menu dropdown-menu-products">
-          <a href="/products" class="dropdown-item dropdown-item-all">
-            <span class="dropdown-icon-badge badge-cyan">📦</span>
-            <div class="dropdown-content">
-              <strong>All Products Catalogue</strong>
-              <small>Explore all 27+ biometric &amp; access systems</small>
-            </div>
-          </a>
-          <a href="/services/biometric-attendance-systems-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-blue">⏱️</span>
-            <div class="dropdown-content">
-              <strong>Biometric Attendance Machines</strong>
-              <small>Time attendance &amp; shift management</small>
-            </div>
-          </a>
-          <a href="/services/fingerprint-attendance-machines-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-indigo">👆</span>
-            <div class="dropdown-content">
-              <strong>Fingerprint Devices</strong>
-              <small>Optical &amp; SilkID fingerprint scanners</small>
-            </div>
-          </a>
-          <a href="/services/face-recognition-attendance-machines-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-purple">👤</span>
-            <div class="dropdown-content">
-              <strong>Face Recognition Devices</strong>
-              <small>Touchless AI &amp; mask-detection terminals</small>
-            </div>
-          </a>
-          <a href="/services/essl-biometric-dealers-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-sky">🏢</span>
-            <div class="dropdown-content">
-              <strong>eSSL Biometric Devices</strong>
-              <small>K30 Pro, K90 Pro, Identix &amp; InBio panels</small>
-            </div>
-          </a>
-          <a href="/services/biomax-biometric-dealers-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-cyan">🤖</span>
-            <div class="dropdown-content">
-              <strong>Biomax Biometric Devices</strong>
-              <small>SpeedFace AI, Bio-5000 &amp; FaceMax-7</small>
-            </div>
-          </a>
-          <a href="/services/door-access-control-systems-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-red">🚪</span>
-            <div class="dropdown-content">
-              <strong>Access Control Systems</strong>
-              <small>Standalone &amp; multi-door security locks</small>
-            </div>
-          </a>
-          <a href="/services/electromagnetic-door-locks-hyderabad" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-amber">🧲</span>
-            <div class="dropdown-content">
-              <strong>Advanced Access Control</strong>
-              <small>600/1200 lbs EM locks, brackets &amp; controllers</small>
-            </div>
-          </a>
-          <a href="/products?category=Access+Control" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-emerald">💳</span>
-            <div class="dropdown-content">
-              <strong>RFID Devices</strong>
-              <small>Proximity readers, smart cards &amp; key fobs</small>
-            </div>
-          </a>
-          <a href="/services#cctv" class="dropdown-item">
-            <span class="dropdown-icon-badge badge-blue">📹</span>
-            <div class="dropdown-content">
-              <strong>CCTV Systems</strong>
-              <small>Surveillance &amp; commercial security cameras</small>
-            </div>
-          </a>
-          <a href="/services/payroll-management-software-integration" class="dropdown-item dropdown-item-featured">
-            <span class="dropdown-icon-badge badge-cyan">💻</span>
-            <div class="dropdown-content">
-              <strong>Attendance and Payroll Software</strong>
-              <small>Automated salary, leave &amp; cloud sync</small>
-            </div>
-          </a>
-        </div>
-      </div>
-
+      <a href="/products" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">PRODUCTS</a>
       <a href="/about" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">ABOUT US</a>
-
       <a href="/contact" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">CONTACT US</a>
     </nav>
 
