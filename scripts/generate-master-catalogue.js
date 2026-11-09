@@ -190,7 +190,7 @@ doc.fontSize(8.5).font('Helvetica').fillColor('#334155').text(
   'Key Focus Areas: HITEC City, Madhapur, Gachibowli, Begumpet, Secunderabad, Dilsukhnagar, Charminar.\n\n' +
   'Coordinates: Lat 17.3459799, Lng 78.479843\n' +
   'Helpline: +91 6301593064\n' +
-  'Google Maps: Verified Listing',
+  'Google Maps: maps.google.com/?q=17.3459799,78.479843',
   48, curY + 44, { width: 232, lineGap: 2 }
 );
 
@@ -206,7 +206,7 @@ doc.fontSize(8.5).font('Helvetica').fillColor('#334155').text(
   'Key Focus Areas: LB Nagar, Kothapet, Vanasthalipuram, Kanchanbagh, Chandrayangutta, Shamshabad, Adibatla.\n\n' +
   'Coordinates: Lat 17.309578, Lng 78.5152011\n' +
   'Helpline: +91 6301593064\n' +
-  'Google Maps: Verified Listing',
+  'Google Maps: maps.google.com/?q=17.309578,78.5152011',
   318, curY + 44, { width: 232, lineGap: 2 }
 );
 
