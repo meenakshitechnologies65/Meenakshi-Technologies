@@ -1,52 +1,23 @@
 # ==============================================================================
-# MEENAKSHI TECHNOLOGIES - PRODUCTION DOCKER COMPOSE ORCHESTRATION
-# Services: Frontend (Nginx) + Backend (Node.js 22) + Database (PostgreSQL 16) + Cache (Redis 7)
+# MEENAKSHI TECHNOLOGIES - DOCKER COMPOSE ORCHESTRATION
+# Single unified application container (Node.js 22 Express & CMS) + Database (PostgreSQL 16) + Cache (Redis 7)
 # ==============================================================================
 
 version: '3.8'
 
 services:
   # ----------------------------------------------------------------------------
-  # 1. FRONTEND: NGINX Web Server, Static Asset Engine & Reverse Proxy
+  # 1. APPLICATION SERVICE: Full-Stack Web Platform & CMS v2.0
   # ----------------------------------------------------------------------------
-  frontend:
-    build:
-      context: .
-      dockerfile: frontend/Dockerfile
-    container_name: meenakshi_frontend
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      backend:
-        condition: service_healthy
-    volumes:
-      - ./public:/usr/share/nginx/html:ro
-      - ./images:/usr/share/nginx/html/images:ro
-      - nginx_logs:/var/log/nginx
-    networks:
-      - meenakshi_network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/healthz"]
-      interval: 15s
-      timeout: 3s
-      retries: 3
-      start_period: 5s
-
-  # ----------------------------------------------------------------------------
-  # 2. BACKEND: Node.js 22 Express, CMS v2.0, PDF Generation & SSR App
-  # ----------------------------------------------------------------------------
-  backend:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: meenakshi_backend
+    container_name: meenakshi_app
     restart: unless-stopped
-    expose:
-      - "3000"
     ports:
-      - "3000:3000"
+      - "80:3000"     # Access directly via http://localhost/ (Standard Web Port)
+      - "3000:3000"   # Access directly via http://localhost:3000/
     depends_on:
       db:
         condition: service_healthy
@@ -74,14 +45,12 @@ services:
       start_period: 10s
 
   # ----------------------------------------------------------------------------
-  # 3. DATABASE: PostgreSQL 16 Enterprise Relational Database Service
+  # 2. DATABASE SERVICE: PostgreSQL 16 Enterprise Relational Database
   # ----------------------------------------------------------------------------
   db:
     image: postgres:16-alpine
     container_name: meenakshi_db
     restart: unless-stopped
-    expose:
-      - "5432"
     ports:
       - "5432:5432"
     environment:
@@ -102,14 +71,12 @@ services:
       start_period: 10s
 
   # ----------------------------------------------------------------------------
-  # 4. CACHE: Redis 7 High-Speed In-Memory Cache & Session Store
+  # 3. CACHE SERVICE: Redis 7 In-Memory Cache & Session Store
   # ----------------------------------------------------------------------------
   redis:
     image: redis:7-alpine
     container_name: meenakshi_redis
     restart: unless-stopped
-    expose:
-      - "6379"
     ports:
       - "6379:6379"
     volumes:
@@ -137,11 +104,9 @@ volumes:
     name: meenakshi_uploads_data
   redis_data:
     name: meenakshi_redis_data
-  nginx_logs:
-    name: meenakshi_nginx_logs
 
 # ==============================================================================
-# CONTAINER NETWORK BRIDGING
+# NETWORK BRIDGING
 # ==============================================================================
 networks:
   meenakshi_network:

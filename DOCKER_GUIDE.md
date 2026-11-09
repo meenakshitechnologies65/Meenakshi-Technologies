@@ -1,38 +1,28 @@
 # Docker Deployment Guide – Meenakshi Technologies 2026 Platform
 
-This guide outlines the production-ready containerized architecture for **Meenakshi Technologies** (`https://www.meenakshitechnologies.org/`).
+This project uses a unified **Single Dockerfile** architecture for the application, combined with a dedicated **PostgreSQL 16 database service** and **Redis cache** in `docker-compose.yml`.
 
 ---
 
 ## 1. System Architecture
 
-The containerized stack is composed of 4 coordinated microservices:
-
 ```
                   +---------------------------+
                   |  Client Browser / User    |
                   +-------------+-------------+
-                                |  HTTP (80) / HTTPS (443)
+                                |  HTTP Port 80 or 3000
                                 v
                +---------------------------------+
-               |      frontend (Nginx 1.27)      |
-               |  - Gzip & Brotli Compression    |
-               |  - Static Asset Edge Caching    |
-               |  - Reverse Proxy & SSL Term.    |
-               +----------------+----------------+
-                                |  Proxy HTTP (backend:3000)
-                                v
-               +---------------------------------+
-               |       backend (Node.js 22)      |
-               |  - Express SSR (EJS Views)      |
-               |  - CMS v2.0 REST APIs           |
+               |        app (Node.js 22)         |
+               |  - Express Server & EJS SSR     |
+               |  - CMS v2.0 REST & Lead APIs    |
                |  - PDF Catalogue Generator      |
                |  - Embedded SQLite WAL Sync     |
                +-------+-----------------+-------+
                        |                 |
         SQL (5432)     v                 v   TCP (6379)
 +---------------------------+   +---------------------------+
-|      db (PostgreSQL 16)   |   |      redis (Redis 7)      |
+|       db (Postgres 16)    |   |      redis (Redis 7)      |
 |  - Enterprise Relational  |   |  - Session Store          |
 |  - Auto-bootstrapped DDL  |   |  - Response Rate Limiter  |
 |  - Persistent Volumes     |   |  - Micro-Caching Layer    |
@@ -45,39 +35,33 @@ The containerized stack is composed of 4 coordinated microservices:
 
 | File | Purpose |
 |---|---|
-| [`Dockerfile`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/Dockerfile) | Multi-stage Node.js 22 Alpine backend container build |
-| [`backend/Dockerfile`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/backend/Dockerfile) | Dedicated backend Dockerfile for decoupled CI/CD |
-| [`frontend/Dockerfile`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/frontend/Dockerfile) | Nginx 1.27 Alpine web server & reverse proxy container |
-| [`frontend/nginx.conf`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/frontend/nginx.conf) | Nginx configuration (gzip, static caching, 50MB upload, proxy headers) |
-| [`db/init.sql`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/db/init.sql) | PostgreSQL schema initialization script with initial super admin seeding |
-| [`docker-compose.yml`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/docker-compose.yml) | Multi-container composition connecting frontend, backend, db, and redis |
-| [`.env.example`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/.env.example) | Environment variables template |
-| [`.dockerignore`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/.dockerignore) | Excludes node_modules, logs, and temporary files from build contexts |
+| [`Dockerfile`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/Dockerfile) | **Single unified Dockerfile**: Multi-stage Node.js 22 LTS Alpine build containerizing the full application. |
+| [`docker-compose.yml`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/docker-compose.yml) | Orchestrates the application container (`app`), PostgreSQL database (`db`), and Redis cache (`redis`). |
+| [`db/init.sql`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/db/init.sql) | Auto-executed SQL bootstrap script creating all relational tables and seeding the Super Admin. |
+| [`.env.example`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/.env.example) | Environment variable template for database credentials, ports, and secrets. |
+| [`.dockerignore`](file:///c:/Users/pc/Desktop/Meenakshi%20Technologies%202026%20New%20Website/.dockerignore) | Excludes `node_modules`, test scripts, and local temporary files from the build context. |
 
 ---
 
 ## 3. Quick Start Instructions
 
-### Step 1: Copy Environment Variables
+### Step 1: Copy Environment Template
 ```bash
 cp .env.example .env
 ```
-*(Optionally modify `.env` to update database passwords or JWT secret).*
 
-### Step 2: Build & Start All Services
+### Step 2: Build & Start All Containers
 ```bash
 docker compose up -d --build
 ```
 
-### Step 3: Verify Running Services
+### Step 3: Check Running Containers
 ```bash
 docker compose ps
 ```
-All containers (`meenakshi_frontend`, `meenakshi_backend`, `meenakshi_db`, `meenakshi_redis`) will report `healthy` status.
 
-### Step 4: Access the Application
-- **Main Website**: [http://localhost/](http://localhost/) (via Nginx on Port 80)
-- **Direct Backend**: [http://localhost:3000/](http://localhost:3000/) (Port 3000)
+### Step 4: Access Application
+- **Main Website**: [http://localhost/](http://localhost/) (Port 80) or [http://localhost:3000/](http://localhost:3000/) (Port 3000)
 - **CMS Admin Portal**: [http://localhost/admin](http://localhost/admin)
   - **Email**: `admin@meenakshi.com`
   - **Password**: `Meenakshi@2026`
@@ -88,50 +72,17 @@ All containers (`meenakshi_frontend`, `meenakshi_backend`, `meenakshi_db`, `meen
 
 ## 4. Useful Docker Commands
 
-### View Live Logs
+### Live Logs
 ```bash
-# View logs from all services
-docker compose logs -f
-
-# View only backend application logs
-docker compose logs -f backend
-
-# View only Nginx web server access & error logs
-docker compose logs -f frontend
+docker compose logs -f app
 ```
 
-### Restart Services
+### Stop Services (Preserving Database & Volumes)
 ```bash
-docker compose restart
-```
-
-### Stop Services
-```bash
-# Stop containers without losing database data
 docker compose down
-
-# Stop containers and remove persistent volumes (WARNING: Deletes database!)
-docker compose down -v
 ```
 
-### Execute Database Shell
+### PostgreSQL Database Shell
 ```bash
 docker compose exec db psql -U meenakshi_user -d meenakshi_cms
-```
-
----
-
-## 5. Persistent Storage & Backups
-
-The following Docker named volumes safeguard all application data:
-
-1. `meenakshi_postgres_data`: Stores PostgreSQL database files.
-2. `meenakshi_cms_data`: Stores local SQLite database (`cms_v2.sqlite`) and JSON leads.
-3. `meenakshi_catalogues_data`: Stores all dynamically generated PDF catalogues.
-4. `meenakshi_uploads_data`: Stores CMS media library image uploads.
-5. `meenakshi_redis_data`: Stores Redis cache snapshots.
-
-### Creating a Database Backup
-```bash
-docker compose exec db pg_dump -U meenakshi_user meenakshi_cms > backup_$(date +%Y%m%d).sql
 ```

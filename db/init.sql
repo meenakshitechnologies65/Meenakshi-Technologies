@@ -299,3 +299,4 @@ VALUES (
     'native',
     'connected'
 ) ON CONFLICT (site_url) DO NOTHING;
+
