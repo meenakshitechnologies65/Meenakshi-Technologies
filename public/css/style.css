@@ -1,15 +1,17 @@
 /* ==========================================================================
-   MEENAKSHI TECHNOLOGIES - CORPORATE DESIGN SYSTEM
-   Theme: Royal Blue (#0B2545, #134074), Dark Navy (#031926), Metallic Silver (#E2E8F0)
+   MEENAKSHI TECHNOLOGIES - PREMIUM HIGH-TECH LUXURY DESIGN SYSTEM
+   Theme: Deep Obsidian Charcoal (#070A0F, #0E131F, #141B2D),
+          Metallic Platinum Silver (#E2E8F0, #CBD5E1, #94A3B8),
+          Radiant Saffron & Gold Accents (#F59E0B, #FBBF24, #D97706)
    ========================================================================== */
 
 :root {
-  --color-primary-dark: #031926;
-  --color-navy: #0b2545;
-  --color-royal-blue: #134074;
-  --color-blue-accent: #0066cc;
-  --color-blue-light: #00b4d8;
-  --color-blue-subtle: #eef4f8;
+  --color-primary-dark: #070a0f;
+  --color-navy: #0e131f;
+  --color-royal-blue: #141b2d;
+  --color-blue-accent: #f59e0b;
+  --color-blue-light: #fbbf24;
+  --color-blue-subtle: #fffbeb;
   --color-white: #ffffff;
   --color-silver: #e2e8f0;
   --color-silver-light: #f8fafc;
@@ -19,8 +21,16 @@
   --color-whatsapp: #25d366;
   --color-whatsapp-dark: #128c7e;
   --color-amber: #f59e0b;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fbbf24;
+  --color-gold-dark: #d97706;
+  --color-gold-glow: rgba(245, 158, 11, 0.35);
+  --color-charcoal-deep: #070a0f;
+  --color-charcoal-surface: #0e131f;
+  --color-charcoal-card: #141b2d;
   --color-emerald: #10b981;
   --color-border: #cbd5e1;
+  --color-border-subtle: rgba(226, 232, 240, 0.15);
   
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
@@ -29,7 +39,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 25px rgba(0, 180, 216, 0.25);
+  --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.3);
   
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -115,10 +125,10 @@ input, select, textarea {
    TOP BAR (Quick Contact & Verified Locations)
    ========================================================================== */
 .top-bar {
-  background-color: #021420;
+  background-color: #05080e;
   color: #cbd5e1;
   font-size: 0.85rem;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
   padding: 0.55rem 0;
 }
 
@@ -147,11 +157,11 @@ input, select, textarea {
 }
 
 .top-bar-link:hover {
-  color: #38bdf8;
+  color: #fbbf24;
 }
 
 .top-bar-phone .top-bar-icon-phone {
-  color: #38bdf8;
+  color: #f59e0b;
 }
 
 .phone-number-bright {
@@ -201,7 +211,7 @@ input, select, textarea {
 }
 
 .top-bar-coverage {
-  color: #7dd3fc;
+  color: #fbbf24;
   font-weight: 600;
 }
 
@@ -216,11 +226,11 @@ input, select, textarea {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(3, 25, 38, 0.96);
+  background: rgba(7, 10, 16, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 2px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 4px 24px rgba(2, 132, 199, 0.2), 0 2px 8px rgba(0, 0, 0, 0.35);
+  border-bottom: 2px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.08);
   transition: background var(--transition-normal);
 }
 
@@ -264,7 +274,7 @@ input, select, textarea {
 
 .brand-subtitle {
   font-size: 0.72rem;
-  color: #38bdf8;
+  color: #fbbf24;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -277,7 +287,7 @@ input, select, textarea {
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #e2e8f0;
   font-size: 0.94rem;
   font-weight: 600;
   padding: 0.45rem 0.35rem;
@@ -291,12 +301,12 @@ input, select, textarea {
 }
 
 .nav-link:hover {
-  color: #38bdf8;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+  color: #fbbf24;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 
 .nav-link.active {
-  color: #38bdf8;
+  color: #fbbf24;
   font-weight: 700;
 }
 
@@ -307,8 +317,8 @@ input, select, textarea {
   left: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, #0284c7, #38bdf8);
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
   border-radius: 2px;
   transition: width var(--transition-normal);
 }
@@ -381,15 +391,18 @@ input, select, textarea {
 }
 
 .btn-primary {
-  background-color: var(--color-blue-accent);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #070a0f !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
 }
 
 .btn-primary:hover {
-  background-color: #0052a3;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.45);
+  color: #000000 !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
 }
 
 .btn-whatsapp {
@@ -437,14 +450,15 @@ input, select, textarea {
 }
 
 /* ==========================================================================
-   HERO BANNER
+   HERO BANNER - DEEP CHARCOAL & SAFFRON GOLD HIGH-TECH AESTHETIC
    ========================================================================== */
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-navy) 50%, #0c2e59 100%);
+  background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 40%), linear-gradient(135deg, #070a0f 0%, #0d131f 60%, #131c2d 100%);
   color: #ffffff;
   padding: 4.5rem 0 5.5rem;
   overflow: hidden;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .hero-section::before {
@@ -454,7 +468,7 @@ input, select, textarea {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.18) 0%, rgba(11, 37, 69, 0) 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(13, 19, 31, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -472,8 +486,8 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.4rem;
@@ -482,16 +496,17 @@ input, select, textarea {
 .hero-badge-dot {
   width: 8px;
   height: 8px;
-  background: var(--color-whatsapp);
+  background: #f59e0b;
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--color-whatsapp);
+  box-shadow: 0 0 10px #f59e0b;
 }
 
 .hero-badge-text {
   font-size: 0.82rem;
-  font-weight: 600;
-  color: #bae6fd;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .hero-title {
@@ -504,7 +519,7 @@ input, select, textarea {
 }
 
 .hero-title-accent {
-  background: linear-gradient(120deg, #38bdf8 0%, #ffffff 80%);
+  background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -512,7 +527,7 @@ input, select, textarea {
 .hero-subheading {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #93c5fd;
+  color: #fde68a;
   margin-bottom: 1.2rem;
   line-height: 1.4;
 }
@@ -548,7 +563,7 @@ input, select, textarea {
 .hero-stat-val {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: #fbbf24;
   line-height: 1.1;
 }
 
@@ -560,11 +575,11 @@ input, select, textarea {
 }
 
 .hero-visual-card {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(14, 19, 31, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: var(--radius-xl);
   padding: 1.8rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.15);
   position: relative;
 }
 
@@ -1214,8 +1229,8 @@ input, select, textarea {
 
 .product-card:hover {
   transform: translateY(-6px);
-  border-color: #93c5fd;
-  box-shadow: var(--shadow-xl);
+  border-color: #f59e0b;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 0 20px rgba(245, 158, 11, 0.2);
 }
 
 .product-thumb {
@@ -1247,8 +1262,9 @@ input, select, textarea {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: var(--color-navy);
-  color: #ffffff;
+  background: #0e131f;
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
   font-size: 0.72rem;
   font-weight: 800;
   padding: 0.25rem 0.6rem;
@@ -1265,8 +1281,8 @@ input, select, textarea {
 
 .product-category-name {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-blue-accent);
+  font-weight: 800;
+  color: #d97706;
   text-transform: uppercase;
   margin-bottom: 0.3rem;
 }
@@ -1336,9 +1352,9 @@ input, select, textarea {
   padding: 0.52rem 0.85rem;
   font-size: 0.84rem;
   font-weight: 700;
-  color: #0369a1;
-  background: #f0f9ff;
-  border: 1.5px solid #bae6fd;
+  color: #b45309;
+  background: #fffbeb;
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -1349,14 +1365,14 @@ input, select, textarea {
 
 .btn-pdf-download svg {
   flex-shrink: 0;
-  color: #0284c7;
+  color: #d97706;
   transition: transform var(--transition-fast);
 }
 
 .btn-pdf-download:hover {
-  background: #0284c7;
-  color: #ffffff;
-  border-color: #0284c7;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #000000;
+  border-color: #d97706;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
   transform: translateY(-1px);
 }
@@ -2387,12 +2403,19 @@ input, select, textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     padding: 6px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    background: rgba(245, 158, 11, 0.12);
+    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    transition: all 0.2s ease;
+  }
+  
+  .mobile-menu-btn:hover, .mobile-menu-btn:focus {
+    background: rgba(245, 158, 11, 0.25);
+    border-color: #fbbf24;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
   }
   
   .nav-menu {
@@ -2401,14 +2424,16 @@ input, select, textarea {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #031926;
+    background: linear-gradient(180deg, #070a10 0%, #0d121c 100%);
     flex-direction: column;
     padding: 1.25rem 1.5rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(56, 189, 248, 0.3);
-    border-bottom: 2px solid #38bdf8;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.15);
+    border-top: 1px solid rgba(245, 158, 11, 0.35);
+    border-bottom: 3px solid #f59e0b;
     max-height: 85vh;
     overflow-y: auto;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
   
   .nav-menu.active {
@@ -2417,9 +2442,27 @@ input, select, textarea {
 
   .nav-link {
     width: 100%;
-    padding: 0.85rem 0.5rem;
+    padding: 0.95rem 1rem;
     font-size: 1.05rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.1);
+    padding-left: 1.25rem;
+  }
+
+  .nav-link.active {
+    color: #fbbf24;
+    font-weight: 700;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.03) 100%);
+    border-left: 3.5px solid #f59e0b;
+    padding-left: 1.25rem;
   }
   
   /* Responsive Headings */
@@ -2501,9 +2544,11 @@ input, select, textarea {
     left: 0;
     right: 0;
     z-index: 99990;
-    background: #031926;
-    border-top: 1.5px solid rgba(56, 189, 248, 0.4);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    background: rgba(7, 10, 16, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 2px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.75), 0 0 20px rgba(245, 158, 11, 0.15);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
@@ -2516,27 +2561,31 @@ input, select, textarea {
     padding: 0.85rem 0.5rem;
     font-weight: 700;
     font-size: 0.95rem;
-    color: #ffffff !important;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   .mobile-sticky-call {
-    background: #0b2545;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #121a28 0%, #070a10 100%);
+    border-right: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24 !important;
+  }
+
+  .mobile-sticky-call svg {
+    color: #fbbf24;
   }
 
   .mobile-sticky-call:active {
-    background: #134074;
+    background: #1a2538;
   }
 
   .mobile-sticky-whatsapp {
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
     color: #ffffff !important;
   }
 
   .mobile-sticky-whatsapp:active {
-    background: #128c7e;
+    background: #0e7266;
   }
 
   .mobile-sticky-btn svg {
@@ -4425,11 +4474,11 @@ input, select, textarea {
 }
 
 /* ==========================================================================
-   HAMBURGER BUTTON & MOBILE DRAWER (BRIGHT WHITE & ACCESSIBLE)
+   HAMBURGER BUTTON & MOBILE DRAWER (DEEP CHARCOAL & SAFFRON GOLD)
    ========================================================================== */
 .mobile-menu-btn {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
   border-radius: 8px;
   padding: 0.55rem;
   cursor: pointer;
@@ -4437,9 +4486,10 @@ input, select, textarea {
   transition: all 0.2s ease;
 }
 
-.mobile-menu-btn:hover {
-  background: rgba(56, 189, 248, 0.25);
-  border-color: #38bdf8;
+.mobile-menu-btn:hover, .mobile-menu-btn:focus {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: #fbbf24;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
 }
 
 .hamburger-bar {
@@ -4452,9 +4502,15 @@ input, select, textarea {
   border-radius: 2px;
 }
 
+.mobile-menu-btn[aria-expanded="true"] {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
+}
+
 .mobile-menu-btn[aria-expanded="true"] .hamburger-bar:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
-  background-color: #38bdf8;
+  background-color: #fbbf24;
 }
 
 .mobile-menu-btn[aria-expanded="true"] .hamburger-bar:nth-child(2) {
@@ -4463,7 +4519,7 @@ input, select, textarea {
 
 .mobile-menu-btn[aria-expanded="true"] .hamburger-bar:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
-  background-color: #38bdf8;
+  background-color: #f59e0b;
 }
 
 /* Mobile Dropdown Behavior */
@@ -4484,20 +4540,40 @@ input, select, textarea {
     top: 100%;
     left: 0;
     right: 0;
-    background: #031926;
-    border-top: 1px solid rgba(56, 189, 248, 0.3);
-    border-bottom: 2px solid #38bdf8;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    padding: 1rem 1.25rem;
+    background: linear-gradient(180deg, #070a10 0%, #0d121c 100%);
+    border-top: 1px solid rgba(245, 158, 11, 0.35);
+    border-bottom: 3px solid #f59e0b;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.15);
+    padding: 1.25rem 1.5rem;
     max-height: 85vh;
     overflow-y: auto;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .nav-link {
     width: 100%;
-    padding: 0.75rem 0.5rem;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.95rem 1rem;
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.1);
+    padding-left: 1.25rem;
+  }
+
+  .nav-link.active {
+    color: #fbbf24;
+    font-weight: 700;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.03) 100%);
+    border-left: 3.5px solid #f59e0b;
+    padding-left: 1.25rem;
   }
 
   .nav-dropdown {
@@ -4509,9 +4585,17 @@ input, select, textarea {
   .dropdown-toggle {
     width: 100%;
     justify-content: space-between;
-    padding: 0.75rem 0.5rem;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.95rem 1rem;
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .dropdown-toggle:hover {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.1);
   }
 
   .dropdown-menu {
@@ -4519,10 +4603,11 @@ input, select, textarea {
     display: none;
     box-shadow: none;
     border: none;
-    border-left: 2px solid #38bdf8;
+    border-left: 2.5px solid #f59e0b;
     margin-left: 0.75rem;
-    padding: 0.4rem 0.5rem;
-    background: rgba(255, 255, 255, 0.04);
+    margin-top: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(18, 26, 40, 0.95);
     border-radius: 8px;
     opacity: 1;
     visibility: visible;
@@ -4537,7 +4622,15 @@ input, select, textarea {
   }
 
   .dropdown-menu .dropdown-item {
-    color: #e2e8f0;
+    color: #cbd5e1;
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.12);
   }
 
   .dropdown-menu .dropdown-item strong {
@@ -4549,8 +4642,13 @@ input, select, textarea {
   }
 
   .dropdown-location-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+
+  .dropdown-location-item:hover {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
   }
 
   .nav-dropdown.open .dropdown-menu {

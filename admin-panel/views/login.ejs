@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Authentication | Meenakshi Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #06090e;
+      --bg-surface: #0c121c;
+      --bg-card: #121a28;
+      --bg-card-hover: #172235;
+      --border-subtle: rgba(226, 232, 240, 0.12);
+      --border-focus: rgba(245, 158, 11, 0.5);
+      --text-white: #ffffff;
+      --text-silver: #e2e8f0;
+      --text-muted: #94a3b8;
+      --gold-primary: #f59e0b;
+      --gold-light: #fbbf24;
+      --gold-dark: #d97706;
+      --gold-glow: rgba(245, 158, 11, 0.25);
+      --accent-emerald: #10b981;
+      --accent-ruby: #ef4444;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top center, #131d2e 0%, #06090e 70%);
+      color: var(--text-silver);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background grid */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2.25rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 40px -10px var(--gold-glow);
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .login-header {
+      margin-bottom: 2rem;
+    }
+
+    .login-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .login-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .auth-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid var(--gold-primary);
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 1.75rem;
+      font-size: 0.825rem;
+      color: var(--text-silver);
+    }
+
+    .auth-banner strong {
+      color: var(--gold-light);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Alerts */
+    .alert {
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.45;
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+    }
+
+    /* Primary Google Button */
+    .btn-google {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      background: #ffffff;
+      color: #1f2937;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.95rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-google:hover {
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-google svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.75rem 0;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--text-silver);
+      margin-bottom: 0.5rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem 0.85rem 2.85rem;
+      color: var(--text-white);
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+      background: var(--bg-card-hover);
+    }
+
+    .btn-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+      color: #000000;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.95rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Footer / Security Info */
+    .login-footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .security-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    .security-tag svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    .back-home {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-home:hover {
+      color: var(--gold-light);
+    }
+
+    .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(0, 0, 0, 0.25);
+      border-top-color: #000000;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="brand-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      Meenakshi CyberShield
+    </div>
+
+    <div class="login-header">
+      <h1 class="login-title">Admin Authentication</h1>
+      <p class="login-subtitle">Secure management portal for Meenakshi Technologies biometric systems, catalog & customer enquiries.</p>
+    </div>
+
+    <div class="auth-banner">
+      Restricted to authorized administrator:<br>
+      <strong><%= authorizedEmail %></strong>
+    </div>
+
+    <% if (error) { %>
+      <div class="alert alert-error">
+        <svg style="width:18px;height:18px;flex-shrink:0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <div><%= error %></div>
+      </div>
+    <% } %>
+
+    <% if (message === 'logged_out') { %>
+      <div class="alert alert-success">
+        <svg style="width:18px;height:18px;flex-shrink:0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <div>You have been safely logged out. Session destroyed.</div>
+      </div>
+    <% } %>
+
+    <!-- STEP 1: GOOGLE OAUTH 2.0 (Primary) -->
+    <a href="/admin/auth/google" class="btn-google" id="btnGoogleAuth">
+      <svg viewBox="0 0 24 24">
+        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.28v3.15C3.26 21.36 7.33 24 12 24z"/>
+        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.28C.46 8.2.005 10.04.005 12s.455 3.8 1.275 5.42l4-3.15z"/>
+        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.28 6.58l4 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+      </svg>
+      Sign in with Google Account
+    </a>
+
+    <div class="divider">or Direct 2FA Email OTP</div>
+
+    <!-- STEP 2: DIRECT AUTHORIZED EMAIL OTP (2FA by default) -->
+    <form id="emailOtpForm">
+      <div class="form-group">
+        <label class="form-label" for="adminEmailInput">Administrator Email</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <input 
+            type="email" 
+            id="adminEmailInput" 
+            class="form-input" 
+            value="<%= authorizedEmail %>" 
+            placeholder="meenakshitechnologies65@gmail.com" 
+            required
+            autocomplete="email"
+          >
+        </div>
+      </div>
+
+      <div id="formFeedback" style="display:none; margin-bottom:1rem; font-size:0.85rem;"></div>
+
+      <button type="submit" class="btn-submit" id="btnRequestOtp">
+        <span class="spinner" id="btnSpinner"></span>
+        <span id="btnText">Request 6-Digit Verification OTP</span>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <div class="security-tag">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>256-bit AES & 2FA Enforced</span>
+      </div>
+      <a href="/" class="back-home">&larr; Return to Website</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('emailOtpForm');
+    const emailInput = document.getElementById('adminEmailInput');
+    const btnSubmit = document.getElementById('btnRequestOtp');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const btnText = document.getElementById('btnText');
+    const feedback = document.getElementById('formFeedback');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim().toLowerCase();
+
+      // UI Loading state
+      btnSubmit.disabled = true;
+      btnSpinner.style.display = 'inline-block';
+      btnText.textContent = 'Generating 6-digit OTP...';
+      feedback.style.display = 'none';
+
+      try {
+        const response = await fetch('/admin/auth/email-otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          feedback.style.display = 'block';
+          feedback.style.color = '#34d399';
+          feedback.textContent = data.message || 'OTP sent! Redirecting to verification...';
+          setTimeout(() => {
+            window.location.href = data.redirectUrl || '/admin/verify-otp';
+          }, 800);
+        } else {
+          feedback.style.display = 'block';
+          feedback.style.color = '#f87171';
+          feedback.textContent = data.error || data.message || 'Authentication error. Access denied.';
+          btnSubmit.disabled = false;
+          btnSpinner.style.display = 'none';
+          btnText.textContent = 'Request 6-Digit Verification OTP';
+        }
+      } catch (err) {
+        feedback.style.display = 'block';
+        feedback.style.color = '#f87171';
+        feedback.textContent = 'Network error or server unreachable. Please try again.';
+        btnSubmit.disabled = false;
+        btnSpinner.style.display = 'none';
+        btnText.textContent = 'Request 6-Digit Verification OTP';
+      }
+    });
+  </script>
+</body>
+</html>
+

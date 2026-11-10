@@ -31,8 +31,12 @@ services:
       - PORT=${PORT:-3000}
       - HOST=${HOST:-0.0.0.0}
       - SERVER_IP=${SERVER_IP:-129.121.169.189}
-      - APP_URL=${APP_URL:-http://129.121.169.189}
-      - BASE_URL=${BASE_URL:-http://129.121.169.189}
+      - APP_URL=${APP_URL:-https://meenakshitechnologies.in}
+      - BASE_URL=${BASE_URL:-https://meenakshitechnologies.in}
+      - WEBSITE_URL=${WEBSITE_URL:-https://meenakshitechnologies.in}
+      - AUTHORIZED_ADMIN_EMAIL=${AUTHORIZED_ADMIN_EMAIL:-meenakshitechnologies65@gmail.com}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-}
       - TRUST_PROXY=${TRUST_PROXY:-1}
       - DATABASE_URL=${DATABASE_URL:-postgres://meenakshi_user:meenakshi_secure_password_2026@db:5432/meenakshi_cms}
       - REDIS_URL=${REDIS_URL:-redis://redis:6379}

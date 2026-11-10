@@ -21,6 +21,27 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Native Cookie Parser Middleware (Safe, Zero-dependency)
+app.use((req, res, next) => {
+  req.cookies = {};
+  const cookieHeader = req.headers.cookie;
+  if (cookieHeader) {
+    cookieHeader.split(';').forEach(c => {
+      const parts = c.split('=');
+      if (parts.length >= 2) {
+        const name = parts[0].trim();
+        const value = parts.slice(1).join('=').trim();
+        try {
+          req.cookies[name] = decodeURIComponent(value);
+        } catch (_) {
+          req.cookies[name] = value;
+        }
+      }
+    });
+  }
+  next();
+});
+
 // Security Headers & Policy Enforcement
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -37,7 +58,10 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Set up EJS template engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', [
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'admin-panel', 'views')
+]);
 
 // Utility helper to load JSON data
 function loadData(file) {
@@ -347,16 +371,24 @@ app.get('/privacy-policy', (req, res) => res.render('privacy-policy'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms-and-conditions'));
 app.get('/offline', (req, res) => res.redirect(301, '/'));
 
-// 18. CMS Management v2.0 Administration Dashboard & Enterprise REST APIs
+// 18. SECURE ADMIN PORTAL & CMS MANAGEMENT v2.0
+// Protected by Google OAuth 2.0 & 2FA OTP whitelisted strictly to meenakshitechnologies65@gmail.com
+const { requireAdminAuth } = require('./backend/middleware/authMiddleware');
+const authRoutes = require('./backend/routes/authRoutes');
+const adminRoutes = require('./backend/routes/adminRoutes');
 const cmsRoutes = require('./cms/routes');
-app.use('/api/v2', cmsRoutes);
 
-app.get(['/admin', '/cms'], (req, res) => {
-  const leads = loadData('leads.json');
-  const posts = loadData('blog-posts.json');
-  const products = loadData('products.json');
-  res.render('admin', { leads, posts, products });
-});
+// Public Admin Authentication Routes (Login, Google OAuth, 2FA OTP, Logout)
+app.use('/admin', authRoutes);
+
+// Protected Admin Dashboard & APIs (Super Admin Access Only)
+app.use('/admin', adminRoutes);
+
+// Protect Enterprise CMS REST APIs with backend authentication middleware
+app.use('/api/v2', requireAdminAuth, cmsRoutes);
+
+// Alias /cms to /admin
+app.get('/cms', (req, res) => res.redirect('/admin'));
 
 /* ==========================================================================
    API ENDPOINTS

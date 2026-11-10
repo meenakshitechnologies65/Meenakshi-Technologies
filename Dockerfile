@@ -25,7 +25,8 @@ ENV NODE_ENV=production \
     PORT=3000 \
     HOST=0.0.0.0 \
     SERVER_IP=129.121.169.189 \
-    APP_URL=http://129.121.169.189
+    APP_URL=https://meenakshitechnologies.in \
+    BASE_URL=https://meenakshitechnologies.in
 
 # Copy installed production dependencies
 COPY --from=dependencies /app/node_modules ./node_modules
@@ -33,6 +34,9 @@ COPY --from=dependencies /app/node_modules ./node_modules
 # Copy application source code directly from root
 COPY package*.json ./
 COPY server.js ./
+COPY backend/ ./backend/
+COPY admin-panel/ ./admin-panel/
+COPY frontend/ ./frontend/
 COPY cms/ ./cms/
 COPY data/ ./data/
 COPY images/ ./images/
