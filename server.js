@@ -10,6 +10,7 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const { generateProductDatasheetPdf, generateCatalogPdf } = require('./cms/services/pdf-generator');
+const { sendNewLeadEmail } = require('./backend/services/emailService');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -464,6 +465,17 @@ app.post('/api/enquiry', enquiryRateLimiter, (req, res) => {
     saveData('leads.json', leads);
 
     console.log(`[Lead Captured] #${newLead.id} from ${fullName} (${mobileNumber}) for ${newLead.productOrService}`);
+
+    // Asynchronously dispatch notification email to meenakshitechnologies65@gmail.com
+    sendNewLeadEmail(newLead)
+      .then(emailRes => {
+        if (emailRes && emailRes.error) {
+          console.warn(`[Lead Email Notice] #${newLead.id} fallback: ${emailRes.error}`);
+        } else {
+          console.log(`[Lead Email Dispatched] #${newLead.id} sent to meenakshitechnologies65@gmail.com`);
+        }
+      })
+      .catch(err => console.error('[Lead Email Error]', err.message));
 
     return res.json({
       success: true,

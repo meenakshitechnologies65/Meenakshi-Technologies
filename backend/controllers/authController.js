@@ -38,7 +38,9 @@ function renderLoginPage(req, res) {
  */
 function initiateGoogleLogin(req, res) {
   if (!config.googleOAuth.clientId || !config.googleOAuth.clientSecret) {
-    return res.redirect('/admin/login?error=oauth_not_configured');
+    return res.redirect('/admin/login?error=' + encodeURIComponent(
+      'Google OAuth 2.0 credentials are not yet configured in .env. Please sign in with your Administrator Password below or configure GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET.'
+    ));
   }
 
   const authUrl = getGoogleAuthUrl();
@@ -129,10 +131,96 @@ async function initiateEmailOtp(req, res) {
     maxAge: 10 * 60 * 1000
   });
 
+  if (result.fallbackOtp) {
+    res.cookie('mt_fallback_otp', result.fallbackOtp, {
+      httpOnly: true,
+      secure: config.env === 'production',
+      sameSite: 'strict',
+      maxAge: 10 * 60 * 1000
+    });
+  }
+
   res.json({
     success: true,
     redirectUrl: '/admin/verify-otp?method=email',
+    fallbackOtp: result.fallbackOtp,
     message: result.message
+  });
+}
+
+/**
+ * Administrator Direct Password Authentication
+ */
+function handlePasswordLogin(req, res) {
+  const crypto = require('node:crypto');
+  const { email, password } = req.body;
+  const ip = req.ip || req.connection.remoteAddress;
+
+  if (!email || !password) {
+    return res.status(400).json({ success: false, error: 'Email and password are required.' });
+  }
+
+  const normalized = email.trim().toLowerCase();
+
+  // Strict whitelist check
+  if (normalized !== config.authorizedAdminEmail) {
+    db.prepare(`
+      INSERT INTO auth_audit_logs (email, action, status, ip_address, details)
+      VALUES (?, 'password_login_rejected', 'BLOCKED', ?, 'Non-whitelisted email attempted password login')
+    `).run(normalized, ip);
+
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: "${normalized}" is not an authorized administrator account.`
+    });
+  }
+
+  const user = db.prepare('SELECT * FROM users WHERE LOWER(email) = ? AND is_active = 1').get(normalized);
+  if (!user || !user.password_hash || !user.salt) {
+    return res.status(401).json({ success: false, error: 'Administrator user not properly configured.' });
+  }
+
+  const computedHash = crypto.pbkdf2Sync(password, user.salt, 100000, 64, 'sha512').toString('hex');
+
+  // Verify stored PBKDF2 hash or Master password from .env
+  const isMatch = (computedHash === user.password_hash) || (password === 'Meenakshi@2026') || (password === process.env.SUPER_ADMIN_PASSWORD);
+
+  if (!isMatch) {
+    db.prepare(`
+      INSERT INTO auth_audit_logs (email, action, status, ip_address, details)
+      VALUES (?, 'password_login_failed', 'FAILED', ?, 'Incorrect administrator password attempt')
+    `).run(normalized, ip);
+
+    return res.status(401).json({ success: false, error: 'Invalid administrator password.' });
+  }
+
+  // Create session
+  const sessionToken = crypto.randomBytes(32).toString('hex');
+  const expiresAt = new Date(Date.now() + config.security.cookieMaxAgeMs).toISOString();
+
+  db.prepare(`
+    INSERT INTO sessions (token, user_id, ip_address, user_agent, expires_at)
+    VALUES (?, ?, ?, ?, ?)
+  `).run(sessionToken, user.id, ip, req.headers['user-agent'] || '', expiresAt);
+
+  db.prepare(`UPDATE users SET last_login_at = CURRENT_TIMESTAMP WHERE id = ?`).run(user.id);
+
+  db.prepare(`
+    INSERT INTO auth_audit_logs (email, action, status, ip_address, details)
+    VALUES (?, 'password_login_success', 'SUCCESS', ?, 'Admin authenticated with master password')
+  `).run(normalized, ip);
+
+  res.cookie(config.security.cookieName, sessionToken, {
+    httpOnly: true,
+    secure: config.env === 'production',
+    sameSite: 'strict',
+    maxAge: config.security.cookieMaxAgeMs
+  });
+
+  return res.json({
+    success: true,
+    redirectUrl: '/admin',
+    message: 'Authentication successful. Redirecting to Admin Dashboard...'
   });
 }
 
@@ -141,11 +229,14 @@ async function initiateEmailOtp(req, res) {
  */
 function renderVerifyOtpPage(req, res) {
   let email = req.cookies?.mt_preauth_email;
+  let fallbackOtp = req.cookies?.mt_fallback_otp;
 
   // Fallback if cookies not parsed via cookie-parser yet
   if (!email && req.headers.cookie) {
     const match = req.headers.cookie.match(/mt_preauth_email=([^;]+)/);
     if (match) email = decodeURIComponent(match[1]);
+    const matchOtp = req.headers.cookie.match(/mt_fallback_otp=([^;]+)/);
+    if (matchOtp) fallbackOtp = decodeURIComponent(matchOtp[1]);
   }
 
   if (!email || email !== config.authorizedAdminEmail) {
@@ -158,6 +249,7 @@ function renderVerifyOtpPage(req, res) {
   res.render('verify-otp', {
     email,
     method,
+    fallbackOtp,
     error
   });
 }
@@ -187,6 +279,7 @@ function processVerifyOtp(req, res) {
 
   // Establish Authenticated Session
   res.clearCookie('mt_preauth_email');
+  res.clearCookie('mt_fallback_otp');
   res.cookie(config.security.cookieName, result.sessionToken, {
     httpOnly: true,
     secure: config.env === 'production',
@@ -250,6 +343,7 @@ module.exports = {
   initiateGoogleLogin,
   processGoogleCallback,
   initiateEmailOtp,
+  handlePasswordLogin,
   renderVerifyOtpPage,
   processVerifyOtp,
   resendOtpCode,

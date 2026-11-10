@@ -72,12 +72,18 @@ async function generateAndSendOtp(email, ipAddress = '') {
   // Dispatch email
   await sendAdminOtpEmail(normalizedEmail, otpCode);
 
+  const isMockSmtp = !config.smtp.pass || config.smtp.pass === 'your-app-password';
+  const fallbackOtp = isMockSmtp ? otpCode : null;
+
   return {
     success: true,
     otpId,
     email: normalizedEmail,
+    fallbackOtp,
     expiresInSeconds: config.otp.expiresInMs / 1000,
-    message: `Verification code sent to ${normalizedEmail}`
+    message: fallbackOtp 
+      ? `Verification code dispatched! (Setup Mode OTP: ${fallbackOtp})` 
+      : `Verification code sent to ${normalizedEmail}`
   };
 }
 

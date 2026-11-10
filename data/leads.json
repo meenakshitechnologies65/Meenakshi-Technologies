@@ -1,5 +1,44 @@
 [
   {
+    "id": "mway84upsdu",
+    "timestamp": "2026-11-10T17:13:13.105Z",
+    "fullName": "Dr. Suresh Reddy",
+    "companyName": "Genome Bio Labs",
+    "email": "suresh@genomebiolabs.com",
+    "mobileNumber": "+919988776655",
+    "location": "Genome Valley, Hyderabad",
+    "productOrService": "Face Recognition Attendance Machines",
+    "employeeCount": "50-200 Employees",
+    "message": "Need 4 touchless face recognition terminals with cleanroom interlocking.",
+    "status": "new"
+  },
+  {
+    "id": "mway6gy9g4k",
+    "timestamp": "2026-11-10T17:11:55.473Z",
+    "fullName": "Test Customer Ramesh",
+    "companyName": "Hyderabad Pharma Ltd",
+    "email": "ramesh.customer@example.com",
+    "mobileNumber": "+91 98765 43210",
+    "location": "HITEC City, Hyderabad",
+    "productOrService": "eSSL K30 Pro Biometric Attendance Machine",
+    "employeeCount": "50-200 Employees",
+    "message": "We require 2 biometric machines with door access control integration.",
+    "status": "new"
+  },
+  {
+    "id": "mway5qx536i",
+    "timestamp": "2026-11-10T17:11:21.737Z",
+    "fullName": "Test Customer Ramesh",
+    "companyName": "Hyderabad Pharma Ltd",
+    "email": "ramesh.customer@example.com",
+    "mobileNumber": "+91 98765 43210",
+    "location": "HITEC City, Hyderabad",
+    "productOrService": "eSSL K30 Pro Biometric Attendance Machine",
+    "employeeCount": "50-200 Employees",
+    "message": "We require 2 biometric machines with door access control integration.",
+    "status": "new"
+  },
+  {
     "id": "mwavql9ja6a",
     "timestamp": "2026-11-10T16:03:35.335Z",
     "fullName": "Dr. Suresh Reddy",

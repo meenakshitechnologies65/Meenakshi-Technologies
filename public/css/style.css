@@ -2486,6 +2486,29 @@ input, select, textarea {
     padding-left: 1.45rem !important;
     box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
   }
+
+  .nav-menu.active .nav-link::after {
+    content: '›' !important;
+    position: static !important;
+    display: inline-block !important;
+    font-size: 1.6rem !important;
+    line-height: 1 !important;
+    color: #f59e0b !important;
+    font-weight: 700 !important;
+    margin-left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    bottom: auto !important;
+    left: auto !important;
+    transition: transform 0.2s ease, color 0.2s ease !important;
+  }
+
+  .nav-menu.active .nav-link:hover::after,
+  .nav-menu.active .nav-link.active::after {
+    color: #fbbf24 !important;
+    transform: translateX(4px) !important;
+  }
   
   /* Responsive Headings */
   h1, .hero-title, .pillar-page-header h1 {
@@ -2644,11 +2667,21 @@ input, select, textarea {
   }
 
   .brand-title {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
+    line-height: 1.15 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
   }
 
   .brand-subtitle {
-    display: none;
+    display: block !important;
+    font-size: 0.62rem !important;
+    color: #fbbf24 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin-top: 1px !important;
   }
 
   /* Compact Circular WhatsApp Button in Header */
@@ -4629,6 +4662,29 @@ input, select, textarea {
     box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
   }
 
+  .nav-menu.active .nav-link::after {
+    content: '›' !important;
+    position: static !important;
+    display: inline-block !important;
+    font-size: 1.6rem !important;
+    line-height: 1 !important;
+    color: #f59e0b !important;
+    font-weight: 700 !important;
+    margin-left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    bottom: auto !important;
+    left: auto !important;
+    transition: transform 0.2s ease, color 0.2s ease !important;
+  }
+
+  .nav-menu.active .nav-link:hover::after,
+  .nav-menu.active .nav-link.active::after {
+    color: #fbbf24 !important;
+    transform: translateX(4px) !important;
+  }
+
   .nav-dropdown {
     width: 100%;
     flex-direction: column;
@@ -4722,4 +4778,86 @@ input, select, textarea {
 .product-card {
   content-visibility: auto;
   contain-intrinsic-size: 320px 420px;
+}
+
+/* ==========================================================================
+   RESPONSIVE "SEND A BUSINESS ENQUIRY" SECTION & CONTACT FORMS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-form-card {
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 14px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .contact-form-card h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .contact-form-card p {
+    font-size: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .form-group {
+    margin-bottom: 0.85rem !important;
+  }
+
+  .form-label {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .form-control {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS */
+    padding: 0.75rem 0.95rem !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .enquiry-form button[type="submit"] {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0.85rem 1.25rem !important;
+  }
+
+  .quote-modal-card {
+    width: 92% !important;
+    max-width: 440px !important;
+    padding: 1.5rem 1.15rem !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-card {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .contact-form-card h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .enquiry-form button[type="submit"] {
+    font-size: 0.95rem !important;
+  }
 }

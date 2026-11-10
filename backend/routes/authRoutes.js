@@ -31,6 +31,9 @@ router.get('/auth/google/callback', authController.processGoogleCallback);
 // 3. Direct Email OTP Flow (Whitelisted to meenakshitechnologies65@gmail.com)
 router.post('/auth/email-otp', otpLimiter, authController.initiateEmailOtp);
 
+// 3.5. Direct Administrator Password Login (Whitelisted to meenakshitechnologies65@gmail.com)
+router.post('/auth/password', loginLimiter, authController.handlePasswordLogin);
+
 // 4. Two-Factor (2FA) OTP Verification
 router.get('/verify-otp', authController.renderVerifyOtpPage);
 router.post('/verify-otp', loginLimiter, authController.processVerifyOtp);

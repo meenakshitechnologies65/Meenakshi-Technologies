@@ -285,6 +285,14 @@
     
     <div class="target-email"><%= email %></div>
 
+    <% if (typeof fallbackOtp !== 'undefined' && fallbackOtp) { %>
+      <div class="alert alert-success" style="border: 1.5px dashed #f59e0b; background: rgba(245, 158, 11, 0.15); color: #fbbf24; margin-bottom: 1.25rem; text-align: center;">
+        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; color: #94a3b8;">Setup Mode Verification Code:</span>
+        <strong style="font-size: 1.5rem; letter-spacing: 6px; color: #ffffff; background: #000; padding: 4px 12px; border-radius: 6px; display: inline-block; font-family: monospace;"><%= fallbackOtp %></strong>
+        <br><small style="color: #cbd5e1; font-size: 0.75rem; margin-top: 4px; display: inline-block;">(Displayed directly because Gmail App Password is being configured)</small>
+      </div>
+    <% } %>
+
     <div id="feedbackBox" style="display:none;"></div>
 
     <form id="otpVerifyForm">
