@@ -20,6 +20,7 @@ router.get('/dashboard', adminController.renderDashboard);
 router.get('/api/audit-logs', adminController.getAuditLogs);
 
 // 3. Product Management APIs
+router.get('/api/products/:slug/schema', adminController.getProductSchema);
 router.post('/api/products', adminController.createProduct);
 router.put('/api/products/:slug', adminController.updateProduct);
 router.delete('/api/products/:slug', adminController.deleteProduct);

@@ -63,9 +63,11 @@
         background: #080c14 !important;
         border-bottom: 2px solid rgba(245, 158, 11, 0.4) !important;
       }
+
       .nav-menu {
         display: none !important;
       }
+
       .nav-menu.active {
         display: flex !important;
         flex-direction: column !important;
@@ -86,6 +88,7 @@
         max-height: 85vh !important;
         overflow-y: auto !important;
       }
+
       .nav-menu.active .nav-link,
       .site-header .nav-menu.active .nav-link {
         display: flex !important;
@@ -107,6 +110,7 @@
         text-decoration: none !important;
         transition: all 0.2s ease !important;
       }
+
       .brand-title {
         font-size: 1rem !important;
         line-height: 1.15 !important;
@@ -139,6 +143,7 @@
         left: auto !important;
         transition: transform 0.2s ease, color 0.2s ease !important;
       }
+
       .nav-menu.active .nav-link:hover::after,
       .nav-menu.active .nav-link.active::after {
         color: #fbbf24 !important;
@@ -154,6 +159,7 @@
         padding-left: 1.45rem !important;
         box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25) !important;
       }
+
       .nav-menu.active .nav-link.active,
       .site-header .nav-menu.active .nav-link.active {
         color: #fbbf24 !important;
@@ -165,6 +171,7 @@
         padding-left: 1.45rem !important;
         box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
       }
+
       .mobile-menu-btn {
         display: flex !important;
         flex-direction: column !important;
@@ -184,11 +191,14 @@
         position: relative !important;
         z-index: 10001 !important;
       }
-      .mobile-menu-btn:hover, .mobile-menu-btn:focus {
+
+      .mobile-menu-btn:hover,
+      .mobile-menu-btn:focus {
         background: #111726 !important;
         border-color: #fbbf24 !important;
         box-shadow: 0 0 18px rgba(251, 191, 36, 0.6) !important;
       }
+
       .mobile-menu-btn .icon-hamburger {
         display: block !important;
         width: 24px !important;
@@ -196,6 +206,7 @@
         stroke: #fbbf24 !important;
         filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.65)) !important;
       }
+
       .mobile-menu-btn .icon-close {
         display: none !important;
         width: 24px !important;
@@ -203,12 +214,15 @@
         stroke: #fbbf24 !important;
         filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.65)) !important;
       }
+
       .mobile-menu-btn[aria-expanded="true"] .icon-hamburger {
         display: none !important;
       }
+
       .mobile-menu-btn[aria-expanded="true"] .icon-close {
         display: block !important;
       }
+
       .mobile-menu-btn .hamburger-bar {
         display: none !important;
       }
@@ -228,11 +242,13 @@
     <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
       <a href="/"
         class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">HOME</a>
-      <a href="/products" class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">PRODUCTS</a>
+      <a href="/products"
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">PRODUCTS</a>
       <a href="/about"
         class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">ABOUT US</a>
       <a href="/contact"
-        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">CONTACT US</a>
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">CONTACT
+        US</a>
     </nav>
 
     <!-- Header Actions (WhatsApp Enquiry & Mobile Hamburger Menu) -->
@@ -249,13 +265,15 @@
 
       <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
         <!-- SVG Menu Icon (Default Hamburger in Saffron Gold) -->
-        <svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
         <!-- SVG Close Icon (When Opened) -->
-        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>

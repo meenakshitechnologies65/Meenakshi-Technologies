@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('../config');
 const { db } = require('../database/db');
+const productSchemaService = require('../services/productSchemaService');
 
 // Helper to load JSON
 function loadData(file) {
@@ -87,11 +88,15 @@ function getAuditLogs(req, res) {
 }
 
 /**
- * Create New Product
+ * Create New Product with Dynamic Schema Generation
  */
 function createProduct(req, res) {
   try {
-    const { name, brand, model, category, tagline, shortDesc, features, capacity, specs } = req.body;
+    const { 
+      name, brand, model, sku, category, tagline, shortDesc, 
+      features, capacity, specs, price, currency, inStock, condition 
+    } = req.body;
+
     if (!name || !brand) {
       return res.status(400).json({ success: false, error: 'Product name and brand are required.' });
     }
@@ -99,18 +104,29 @@ function createProduct(req, res) {
     const products = loadData('products.json');
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+    const generatedSku = sku || (model 
+      ? `${brand.toUpperCase()}-${model.replace(/[^a-zA-Z0-9]+/g, '-')}` 
+      : `MT-${slug}`);
+
+    const numericPrice = (price !== undefined && price !== null && price !== '') ? Number(price) : 0;
+    const isAvailable = inStock !== false && inStock !== 'false';
+
     const newProduct = {
       id: `prod_${Date.now()}`,
       name,
       slug,
       brand,
       model: model || brand,
+      sku: generatedSku,
       category: category || 'Biometric Fingerprint Attendance Machines',
       image: req.body.image || '/images/products/essl-k90-pro.png',
       tagline: tagline || '',
       shortDesc: shortDesc || tagline || name,
-      price: 0,
-      inStock: true,
+      price: numericPrice,
+      currency: currency || 'INR',
+      inStock: isAvailable,
+      condition: condition || 'https://schema.org/NewCondition',
+      availability: isAvailable ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       isFeatured: false,
       cataloguePdf: '/catalogues/meenakshi-technologies-product-catalogue-2026.pdf',
       capacity: capacity || { fingerprints: '2,000 Templates', cards: '2,000 Cards', transactions: '100,000 Logs' },
@@ -121,14 +137,16 @@ function createProduct(req, res) {
     products.unshift(newProduct);
     saveData('products.json', products);
 
-    res.json({ success: true, product: newProduct });
+    const schema = productSchemaService.generateProductSchema(newProduct);
+
+    res.json({ success: true, product: newProduct, schema });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 }
 
 /**
- * Update Product
+ * Update Product with Dynamic Schema Regeneration
  */
 function updateProduct(req, res) {
   try {
@@ -140,10 +158,48 @@ function updateProduct(req, res) {
       return res.status(404).json({ success: false, error: 'Product not found.' });
     }
 
-    products[index] = { ...products[index], ...req.body, slug: products[index].slug };
+    const current = products[index];
+    const updates = { ...req.body };
+
+    if (updates.price !== undefined) {
+      updates.price = (updates.price !== null && updates.price !== '') ? Number(updates.price) : 0;
+    }
+    if (updates.inStock !== undefined) {
+      updates.inStock = updates.inStock !== false && updates.inStock !== 'false';
+      updates.availability = updates.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock';
+    }
+    if (!updates.sku && current.sku) {
+      updates.sku = current.sku;
+    }
+
+    products[index] = { ...current, ...updates, slug: current.slug };
     saveData('products.json', products);
 
-    res.json({ success: true, product: products[index] });
+    const schema = productSchemaService.generateProductSchema(products[index]);
+
+    res.json({ success: true, product: products[index], schema });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+}
+
+/**
+ * Get Dynamic Product Schema for Inspection & Testing
+ */
+function getProductSchema(req, res) {
+  try {
+    const { slug } = req.params;
+    const products = loadData('products.json');
+    const product = products.find(p => p.slug === slug || p.id === slug);
+
+    if (!product) {
+      return res.status(404).json({ success: false, error: 'Product not found.' });
+    }
+
+    const schema = productSchemaService.generateProductSchema(product);
+    const breadcrumbs = productSchemaService.generateProductBreadcrumbs(product);
+
+    res.json({ success: true, schema, breadcrumbs, product });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
@@ -246,6 +302,7 @@ module.exports = {
   createProduct,
   updateProduct,
   deleteProduct,
+  getProductSchema,
   updateLeadStatus,
   addVideo,
   deleteVideo

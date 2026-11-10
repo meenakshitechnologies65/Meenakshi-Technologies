@@ -1,5 +1,44 @@
 [
   {
+    "id": "mwazkccyp5a",
+    "timestamp": "2026-11-10T17:50:42.322Z",
+    "fullName": "Dr. Suresh Reddy",
+    "companyName": "Genome Bio Labs",
+    "email": "suresh@genomebiolabs.com",
+    "mobileNumber": "+919988776655",
+    "location": "Genome Valley, Hyderabad",
+    "productOrService": "Face Recognition Attendance Machines",
+    "employeeCount": "50-200 Employees",
+    "message": "Need 4 touchless face recognition terminals with cleanroom interlocking.",
+    "status": "new"
+  },
+  {
+    "id": "mwaytose78q",
+    "timestamp": "2026-11-10T17:29:58.718Z",
+    "fullName": "teja suryavamshi",
+    "companyName": "",
+    "email": "vedupolytechnicrabujji@gmail.com",
+    "mobileNumber": "9876543210",
+    "location": "balapur",
+    "productOrService": "Biometric Attendance Machine",
+    "employeeCount": "1-20 Employees",
+    "message": "k/n",
+    "status": "new"
+  },
+  {
+    "id": "mwayaukhatp",
+    "timestamp": "2026-11-10T17:15:19.745Z",
+    "fullName": "teja suryavamshi",
+    "companyName": "",
+    "email": "vedupolytechnicrabujji@gmail.com",
+    "mobileNumber": "9876543210",
+    "location": "balapur",
+    "productOrService": "Biometric Attendance Machine",
+    "employeeCount": "1-20 Employees",
+    "message": "x",
+    "status": "new"
+  },
+  {
     "id": "mway84upsdu",
     "timestamp": "2026-11-10T17:13:13.105Z",
     "fullName": "Dr. Suresh Reddy",

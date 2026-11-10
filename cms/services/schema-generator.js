@@ -6,7 +6,7 @@
 
 function generateSchema({
   type = 'Article',
-  siteUrl = 'http://localhost:3000',
+  siteUrl = 'https://meenakshitechnologies.in',
   data = {}
 }) {
   const baseOrg = {
@@ -75,27 +75,33 @@ function generateSchema({
         url = siteUrl
       } = data;
 
-      return {
+      const productSchema = {
         '@context': 'https://schema.org',
         '@type': 'Product',
         'name': name,
-        'model': model,
+        'model': model || undefined,
         'brand': {
           '@type': 'Brand',
           'name': brand
         },
         'sku': sku || undefined,
         'image': imageUrl.startsWith('http') ? imageUrl : `${siteUrl}${imageUrl}`,
-        'description': description,
-        'offers': {
+        'description': description
+      };
+
+      if (Number(price) > 0) {
+        productSchema.offers = {
           '@type': 'Offer',
           'url': url.startsWith('http') ? url : `${siteUrl}${url}`,
           'priceCurrency': currency,
-          'price': price > 0 ? price.toFixed(2) : undefined,
+          'price': Number(price).toFixed(2),
           'availability': availability === 'out_of_stock' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
+          'itemCondition': 'https://schema.org/NewCondition',
           'seller': baseOrg
-        }
-      };
+        };
+      }
+
+      return productSchema;
     }
 
     case 'LocalBusiness': {

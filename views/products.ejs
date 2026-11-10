@@ -6,33 +6,19 @@
 
 <!-- ItemList Schema for Product Catalog -->
 <script type="application/ld+json">
-{
+<%- JSON.stringify(typeof catalogItemListJsonLd !== 'undefined' ? catalogItemListJsonLd : {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Meenakshi Technologies Biometric & Access Control Catalog 2026",
-  "description": "Verified manufacturer specifications for eSSL and BioMax biometric attendance machines, face recognition systems, and access control equipment in Hyderabad.",
-  "numberOfItems": <%= products.length %>,
-  "itemListElement": [
-    <% products.forEach((prod, index) => { %>
-      {
-        "@type": "ListItem",
-        "position": <%= index + 1 %>,
-        "item": {
-          "@type": "Product",
-          "name": "<%= prod.name %>",
-          "url": "https://meenakshitechnologies.in/products/<%= prod.slug %>",
-          "image": "https://meenakshitechnologies.in<%= prod.image %>",
-          "brand": {
-            "@type": "Brand",
-            "name": "<%= prod.brand %>"
-          },
-          "category": "<%= prod.category %>",
-          "description": "<%= prod.shortDesc || prod.tagline %>"
-        }
-      }<%= index < products.length - 1 ? ',' : '' %>
-    <% }) %>
-  ]
-}
+  "description": "Verified manufacturer specifications for genuine eSSL and BioMax biometric attendance machines, AI face recognition terminals, and door access controllers in Hyderabad.",
+  "numberOfItems": products.length,
+  "itemListElement": products.map((prod, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": prod.name,
+    "url": "https://meenakshitechnologies.in/products/" + prod.slug
+  }))
+}, null, 2) %>
 </script>
 
 <!-- Breadcrumb Schema -->

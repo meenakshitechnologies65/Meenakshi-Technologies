@@ -44,7 +44,11 @@
       "Warehouses & Distribution Centers",
       "Educational Institutions & Schools"
     ],
-    "installationInfo": "Wall-mounted bracket with pre-drilled anchors. Connects to 230V AC adapter and local LAN switch via CAT6 cable."
+    "installationInfo": "Wall-mounted bracket with pre-drilled anchors. Connects to 230V AC adapter and local LAN switch via CAT6 cable.",
+    "sku": "ESSL-K90-PRO",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_k30_pro",
@@ -90,7 +94,11 @@
       "Accounting & CA Firms",
       "Hospitality & Restaurants"
     ],
-    "installationInfo": "Mount on standard interior flat wall away from direct sunlight glare. Pull 1 CAT6 cable for network communication."
+    "installationInfo": "Mount on standard interior flat wall away from direct sunlight glare. Pull 1 CAT6 cable for network communication.",
+    "sku": "ESSL-K30-PRO",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_nbm60",
@@ -136,7 +144,11 @@
       "Co-Working Spaces & Incubators",
       "Fitness Centers & Health Clubs"
     ],
-    "installationInfo": "Plug into 230V AC socket, configure Wi-Fi SSID and password via terminal keypad, and link to cloud server URL."
+    "installationInfo": "Plug into 230V AC socket, configure Wi-Fi SSID and password via terminal keypad, and link to cloud server URL.",
+    "sku": "BIOMAX-N-BM60",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_bio5000",
@@ -182,7 +194,11 @@
       "Large Warehouses & Logistics Hubs (Shamshabad)",
       "Government & Infrastructure Projects"
     ],
-    "installationInfo": "Heavy-duty steel wall plate mounting. Compatible with turnstile brackets and industrial UPS power lines."
+    "installationInfo": "Heavy-duty steel wall plate mounting. Compatible with turnstile brackets and industrial UPS power lines.",
+    "sku": "BIOMAX-BIO-5000",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_identix_k21",
@@ -226,7 +242,11 @@
       "Hardware & Automobile Retailers",
       "Small Warehouses & Stockrooms"
     ],
-    "installationInfo": "Simple 2-screw wall mounting with 12V power adapter plug."
+    "installationInfo": "Simple 2-screw wall mounting with 12V power adapter plug.",
+    "sku": "ESSL-IDENTIX-K21",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_speedface5",
@@ -275,7 +295,11 @@
       "Modern High-Traffic Educational Campuses",
       "Premium Coworking Spaces & Fitness Clubs"
     ],
-    "installationInfo": "Mount at eye level (1.45m to 1.50m from floor). Connect to 12V DC power and Wi-Fi/LAN."
+    "installationInfo": "Mount at eye level (1.45m to 1.50m from floor). Connect to 12V DC power and Wi-Fi/LAN.",
+    "sku": "BIOMAX-SPEEDFACE-5",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_aiface4",
@@ -319,7 +343,11 @@
       "Boutique Hotels & Resorts",
       "High-End Retail Showrooms"
     ],
-    "installationInfo": "Wall mount or optional aluminum desktop angle stand."
+    "installationInfo": "Wall mount or optional aluminum desktop angle stand.",
+    "sku": "BIOMAX-AI-FACE-4",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_uface_202",
@@ -365,7 +393,11 @@
       "Educational Institutions & Universities",
       "Corporate Facilities Management"
     ],
-    "installationInfo": "Wall-mount plate included. Recommended installation height: 1.5m."
+    "installationInfo": "Wall-mount plate included. Recommended installation height: 1.5m.",
+    "sku": "ESSL-UFACE-202",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_silkbio100tc",
@@ -411,7 +443,11 @@
       "Commercial Printing & Packing Units",
       "Bank Branches & Vault Rooms"
     ],
-    "installationInfo": "Wall mount with standard 12V 3A power supply."
+    "installationInfo": "Wall mount with standard 12V 3A power supply.",
+    "sku": "ESSL-SILKBIO-100TC",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_facemax7",
@@ -457,7 +493,11 @@
       "Defense Establishments & DRDL Contractors (Kanchanbagh)",
       "Corporate Headquarters"
     ],
-    "installationInfo": "Wall mount or turnstile top-mount plate."
+    "installationInfo": "Wall mount or turnstile top-mount plate.",
+    "sku": "BIOMAX-FACEMAX-7",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_inbio260",
@@ -502,7 +542,11 @@
       "Banks, Currency Chests & Jewelers",
       "Pharmaceutical Manufacturing Units"
     ],
-    "installationInfo": "Central wall-mounted metal panel housing controller and backup battery."
+    "installationInfo": "Central wall-mounted metal panel housing controller and backup battery.",
+    "sku": "ESSL-INBIO-260",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_inbio460",
@@ -542,7 +586,11 @@
       "Industrial Manufacturing Facilities",
       "Educational Campuses"
     ],
-    "installationInfo": "Install in central server rack or electrical room. Pull 4-core shielded cable to each door."
+    "installationInfo": "Install in central server rack or electrical room. Pull 4-core shielded cable to each door.",
+    "sku": "ESSL-INBIO-460",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_biomax_c22",
@@ -581,7 +629,11 @@
       "Stockrooms & Tool Cribs",
       "Retail Back-Offices"
     ],
-    "installationInfo": "Metal box with power supply and 12V 7Ah battery housing."
+    "installationInfo": "Metal box with power supply and 12V 7Ah battery housing.",
+    "sku": "BIOMAX-C22",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_f22",
@@ -624,7 +676,11 @@
       "IT Server Rooms & Labs",
       "Architectural & Design Studios"
     ],
-    "installationInfo": "Mount on door frame or adjacent wall at 1.4m height."
+    "installationInfo": "Mount on door frame or adjacent wall at 1.4m height.",
+    "sku": "ESSL-F22",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_essl_fr1200",
@@ -663,7 +719,11 @@
       "Exit Authentication for Two-Way Biometric Tracking",
       "Car Parking Pedestrian Gates"
     ],
-    "installationInfo": "Surface mount with 4-wire shielded cable connection to master unit."
+    "installationInfo": "Surface mount with 4-wire shielded cable connection to master unit.",
+    "sku": "ESSL-FR1200",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_em_lock_600lbs",
@@ -706,7 +766,11 @@
       "Server Room Entry Points",
       "Hospital Ward Doors"
     ],
-    "installationInfo": "Fixed to door frame header. Armature plate fastened to door with rubber washer for self-alignment."
+    "installationInfo": "Fixed to door frame header. Armature plate fastened to door with rubber washer for self-alignment.",
+    "sku": "MT-EM-600LBS",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_em_lock_1200lbs",
@@ -745,7 +809,11 @@
       "Warehouse High-Value Inventory Gates",
       "Pharmaceutical Secure Quarantine Rooms"
     ],
-    "installationInfo": "Reinforced steel frame mounting with high-tensile anchor bolts."
+    "installationInfo": "Reinforced steel frame mounting with high-tensile anchor bolts.",
+    "sku": "MT-EM-1200LBS-DBL",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_electric_dropbolt",
@@ -785,7 +853,11 @@
       "Commercial Bank Entries",
       "Hotel Meeting Rooms"
     ],
-    "installationInfo": "Installed in top header frame or with frameless glass clamp brackets."
+    "installationInfo": "Installed in top header frame or with frameless glass clamp brackets.",
+    "sku": "MT-DB-100-BOLT",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_smart_glass_lock",
@@ -826,7 +898,11 @@
       "Boutique Financial Consulting Offices",
       "Clinic Doctor Chambers"
     ],
-    "installationInfo": "Clamps directly onto single or double frameless glass door in under 30 minutes."
+    "installationInfo": "Clamps directly onto single or double frameless glass door in under 30 minutes.",
+    "sku": "MT-GL-300-GLASS",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_exit_switches",
@@ -864,7 +940,11 @@
       "Server Rooms & Secure Areas",
       "Factory Staff Exits"
     ],
-    "installationInfo": "Mounted inside room next to door at standard switch height."
+    "installationInfo": "Mounted inside room next to door at standard switch height.",
+    "sku": "MT-EB-NT-SWITCH",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_power_supply_12v",
@@ -903,7 +983,11 @@
       "Multi-Door Access Control Panels",
       "Biometric Terminal Power Backing"
     ],
-    "installationInfo": "Wall mount in electrical shaft or above false ceiling."
+    "installationInfo": "Wall mount in electrical shaft or above false ceiling.",
+    "sku": "MT-PS-1205B-CHG",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_rfid_cards_fobs",
@@ -941,7 +1025,11 @@
       "Gated Community Resident Keyfobs",
       "Gym & Club Membership Cards"
     ],
-    "installationInfo": "Enrolled via master biometric terminal or USB desktop reader in seconds."
+    "installationInfo": "Enrolled via master biometric terminal or USB desktop reader in seconds.",
+    "sku": "MT-RFID-MF1K-CARDS",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_turnstile_ts1000",
@@ -982,7 +1070,11 @@
       "Colleges, Universities & Sports Stadiums",
       "Metro Stations & Commercial Towers"
     ],
-    "installationInfo": "Floor anchored on reinforced concrete slab with concealed power and LAN conduit."
+    "installationInfo": "Floor anchored on reinforced concrete slab with concealed power and LAN conduit.",
+    "sku": "ESSL-TS1000-PRO",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_turnstile_flap_barrier",
@@ -1021,7 +1113,11 @@
       "High-Security Financial Data Centers",
       "Airport Passenger Terminals"
     ],
-    "installationInfo": "Precision anchor bolt installation on leveled marble or granite floor."
+    "installationInfo": "Precision anchor bolt installation on leveled marble or granite floor.",
+    "sku": "ESSL-FBL4000",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_boom_barrier_bg1000",
@@ -1062,7 +1158,11 @@
       "Commercial Shopping Mall Basements",
       "Factory Truck Receiving & Weighbridge Checkpoints"
     ],
-    "installationInfo": "Concrete base plinth with 4 foundation anchor bolts and underground loop detector coil."
+    "installationInfo": "Concrete base plinth with 4 foundation anchor bolts and underground loop detector coil.",
+    "sku": "ESSL-BG1000",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_dfmd_d1065s",
@@ -1102,7 +1202,11 @@
       "Government Courts & Police Checkpoints",
       "Hotels, Cinema Halls & Shopping Malls"
     ],
-    "installationInfo": "Assembles on flat interior floor with two upright panels and central control header."
+    "installationInfo": "Assembles on flat interior floor with two upright panels and central control header.",
+    "sku": "ESSL-D1065S",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   },
   {
     "id": "prod_hhmd_md300",
@@ -1140,6 +1244,10 @@
       "Educational Exam Centers (Mobile Phone Detection)",
       "Nightclubs, Pubs & Private Parties"
     ],
-    "installationInfo": "Handheld portable operation; no installation required."
+    "installationInfo": "Handheld portable operation; no installation required.",
+    "sku": "BIOMAX-MD-300",
+    "currency": "INR",
+    "condition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
   }
 ]

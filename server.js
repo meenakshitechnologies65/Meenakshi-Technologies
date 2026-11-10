@@ -11,6 +11,7 @@ const path = require('path');
 const fs = require('fs');
 const { generateProductDatasheetPdf, generateCatalogPdf } = require('./cms/services/pdf-generator');
 const { sendNewLeadEmail } = require('./backend/services/emailService');
+const productSchemaService = require('./backend/services/productSchemaService');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -130,7 +131,8 @@ app.get('/about', (req, res) => {
 // 3. Products Catalog
 app.get('/products', (req, res) => {
   const products = loadData('products.json');
-  res.render('products', { products });
+  const catalogItemListJsonLd = productSchemaService.generateCatalogItemList(products);
+  res.render('products', { products, catalogItemListJsonLd });
 });
 
 // 3b. Official Brochure & Master Catalogue Page
@@ -255,7 +257,27 @@ app.get('/products/:slug', (req, res) => {
     return res.status(404).render('404');
   }
 
-  res.render('product-detail', { product });
+  const productJsonLd = productSchemaService.generateProductSchema(product);
+  const breadcrumbJsonLd = productSchemaService.generateProductBreadcrumbs(product);
+
+  res.render('product-detail', { 
+    product,
+    productJsonLd,
+    breadcrumbJsonLd
+  });
+});
+
+// 4b. Dynamic Product Schema Inspector API (JSON-LD)
+app.get('/api/products/:slug/schema', (req, res) => {
+  const products = loadData('products.json');
+  let product = products.find(p => p.slug === req.params.slug || p.id === req.params.slug);
+  if (!product) {
+    return res.status(404).json({ error: 'Product not found' });
+  }
+  res.json({
+    product: productSchemaService.generateProductSchema(product),
+    breadcrumb: productSchemaService.generateProductBreadcrumbs(product)
+  });
 });
 
 // 5. Main Solutions / Services

@@ -751,6 +751,31 @@
                 </div>
               </div>
 
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+                <div class="cms-form-group">
+                  <label class="cms-form-label">SKU / Model Identifier *</label>
+                  <input type="text" name="sku" class="cms-input" placeholder="e.g. ESSL-K90-PRO">
+                </div>
+                <div class="cms-form-group">
+                  <label class="cms-form-label">Actual Selling Price (INR, Optional)</label>
+                  <input type="number" name="price" class="cms-input" min="0" step="1" placeholder="e.g. 6500 (0 = Quote on Request)">
+                </div>
+                <div class="cms-form-group">
+                  <label class="cms-form-label">Stock Availability</label>
+                  <select name="inStock" class="cms-select">
+                    <option value="true">In Stock (Immediate Dispatch)</option>
+                    <option value="false">Out of Stock</option>
+                  </select>
+                </div>
+                <div class="cms-form-group">
+                  <label class="cms-form-label">Condition</label>
+                  <select name="condition" class="cms-select">
+                    <option value="https://schema.org/NewCondition">New Condition (Manufacturer Sealed)</option>
+                    <option value="https://schema.org/RefurbishedCondition">Refurbished</option>
+                  </select>
+                </div>
+              </div>
+
               <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
                 <div class="cms-form-group">
                   <label class="cms-form-label">User Capacity</label>
@@ -782,36 +807,51 @@
             <table class="cms-table-v2">
               <thead>
                 <tr>
-                  <th>Product Details</th>
+                  <th>Product Details &amp; SKU</th>
                   <th>Brand</th>
                   <th>Category</th>
-                  <th>Specs &amp; Capacity</th>
+                  <th>Actual Price (INR)</th>
                   <th>Availability</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody id="productsTableBody">
                 <% products.forEach(p => { %>
-                  <tr class="admin-product-row" data-name="<%= p.name.toLowerCase() %>" data-brand="<%= p.brand.toLowerCase() %>" data-category="<%= p.category.toLowerCase() %>">
+                  <tr class="admin-product-row" id="product-row-<%= p.slug %>" data-name="<%= p.name.toLowerCase() %>" data-brand="<%= p.brand.toLowerCase() %>" data-category="<%= p.category.toLowerCase() %>" data-slug="<%= p.slug %>">
                     <td>
                       <div style="display:flex; align-items:center; gap:0.75rem;">
                         <img src="<%= p.image %>" style="width:42px; height:42px; object-fit:contain; border-radius:6px; background:#fff; border:1px solid #e2e8f0; padding:2px;" onerror="this.src='/images/products/essl-k90-pro.png';">
                         <div>
                           <strong><%= p.name %></strong>
-                          <div style="font-size:0.75rem; color:var(--cms-muted);"><%= p.model ? 'Model: ' + p.model + ' • ' : '' %><%= p.slug %></div>
+                          <div style="font-size:0.75rem; color:var(--cms-muted); display:flex; align-items:center; gap:0.4rem; margin-top:2px;">
+                            <span class="badge-pill" style="font-family:monospace; background:rgba(2,132,199,0.15); color:#0284c7; border:1px solid rgba(2,132,199,0.3); font-size:0.7rem; padding:0.1rem 0.4rem;">SKU: <%= p.sku || 'N/A' %></span>
+                            <span><%= p.model ? 'Model: ' + p.model : '' %></span>
+                          </div>
                         </div>
                       </div>
                     </td>
                     <td><span class="badge-pill"><%= p.brand %></span></td>
                     <td style="font-size:0.85rem;"><%= p.category %></td>
-                    <td style="font-size:0.8rem; color:var(--cms-muted);">
-                      <%= p.capacity ? (p.capacity.fingerprints || p.capacity.faces || p.capacity.holdingForce || 'Standard') : 'Verified' %>
+                    <td style="font-size:0.85rem; font-weight:700;">
+                      <% if (p.price && Number(p.price) > 0) { %>
+                        <span style="color:#059669;">₹<%= Number(p.price).toLocaleString('en-IN') %></span>
+                      <% } else { %>
+                        <span style="color:var(--cms-muted); font-size:0.75rem; font-style:italic;">Quote on Request</span>
+                      <% } %>
                     </td>
-                    <td><span class="score-pill pass">IN STOCK</span></td>
                     <td>
-                      <div style="display:flex; gap:0.35rem; align-items:center;">
-                        <a href="/products/<%= p.slug %>" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm" title="View live product page">Inspect ↗</a>
+                      <% if (p.inStock !== false && p.availability !== 'https://schema.org/OutOfStock' && p.availability !== 'out_of_stock') { %>
+                        <span class="score-pill pass">IN STOCK</span>
+                      <% } else { %>
+                        <span class="score-pill warning">OUT OF STOCK</span>
+                      <% } %>
+                    </td>
+                    <td>
+                      <div style="display:flex; gap:0.35rem; align-items:center; flex-wrap:wrap;">
+                        <a href="/products/<%= p.slug %>" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm" title="View live product page">View ↗</a>
                         <a href="/products/<%= p.slug %>/datasheet.pdf" target="_blank" class="cms-btn cms-btn-outline cms-btn-sm" style="border-color:#0284c7; color:#0284c7;" title="Download PDF datasheet">PDF 📥</a>
+                        <button type="button" class="cms-btn cms-btn-outline cms-btn-sm view-product-schema-btn" data-slug="<%= p.slug %>" style="border-color:#10b981; color:#10b981;" title="View dynamic Schema.org JSON-LD structured data">Schema ⚙️</button>
+                        <button type="button" class="cms-btn cms-btn-primary cms-btn-sm edit-product-btn" data-slug="<%= p.slug %>" title="Edit product price, SKU, stock status">Edit ✏️</button>
                       </div>
                     </td>
                   </tr>
@@ -1075,6 +1115,270 @@
     </main>
   </div>
 </div>
+
+<!-- ==================================================================
+     SCHEMA PREVIEW MODAL (GOOGLE SEARCH CONSOLE COMPLIANCE)
+     ================================================================== -->
+<div id="schemaPreviewModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:99999; align-items:center; justify-content:center; padding:1.5rem; backdrop-filter:blur(4px);">
+  <div style="background:#0f172a; border:1px solid #334155; border-radius:14px; max-width:760px; width:100%; max-height:90vh; display:flex; flex-direction:column; box-shadow:0 25px 50px -12px rgba(0,0,0,0.7);">
+    <div style="padding:1.25rem 1.5rem; border-bottom:1px solid #334155; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h3 id="schemaModalTitle" style="margin:0; font-size:1.15rem; color:#f8fafc; font-weight:800;">⚙️ Product JSON-LD Schema (Schema.org / GSC Valid)</h3>
+        <span id="schemaModalSubtitle" style="font-size:0.8rem; color:#94a3b8;">Canonical Domain: https://meenakshitechnologies.in</span>
+      </div>
+      <button type="button" id="closeSchemaModalBtn" style="background:transparent; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer; line-height:1;">&times;</button>
+    </div>
+    <div style="padding:1.25rem 1.5rem; overflow-y:auto; flex:1;">
+      <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem; flex-wrap:wrap;">
+        <span class="score-pill pass" style="font-size:0.75rem;">✓ Schema.org Product</span>
+        <span class="score-pill pass" style="font-size:0.75rem;">✓ Zero Fabricated Reviews</span>
+        <span id="schemaOfferBadge" class="score-pill pass" style="font-size:0.75rem;">✓ Offer Status Evaluated</span>
+      </div>
+      <pre style="background:#020617; color:#38bdf8; border:1px solid #1e293b; border-radius:8px; padding:1rem; font-size:0.82rem; font-family:Consolas, Monaco, monospace; overflow-x:auto; white-space:pre-wrap; margin:0;"><code id="schemaModalCode">Loading schema...</code></pre>
+    </div>
+    <div style="padding:1rem 1.5rem; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center;">
+      <span id="schemaCopyStatus" style="font-size:0.8rem; color:#10b981; font-weight:600;"></span>
+      <div style="display:flex; gap:0.5rem;">
+        <button type="button" id="copySchemaBtn" class="cms-btn cms-btn-outline" style="border-color:#38bdf8; color:#38bdf8;">📋 Copy JSON-LD</button>
+        <button type="button" id="dismissSchemaModalBtn" class="cms-btn cms-btn-primary">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================================================================
+     EDIT PRODUCT MODAL (PRICE, SKU, AVAILABILITY & DETAILS)
+     ================================================================== -->
+<div id="editProductModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:99998; align-items:center; justify-content:center; padding:1.5rem; backdrop-filter:blur(4px);">
+  <div style="background:#0f172a; border:1px solid #334155; border-radius:14px; max-width:800px; width:100%; max-height:92vh; display:flex; flex-direction:column; box-shadow:0 25px 50px -12px rgba(0,0,0,0.7);">
+    <div style="padding:1.25rem 1.5rem; border-bottom:1px solid #334155; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h3 style="margin:0; font-size:1.15rem; color:#f8fafc; font-weight:800;">✏️ Edit Product Specifications &amp; Pricing</h3>
+        <span style="font-size:0.8rem; color:#94a3b8;">Updates immediately regenerate Google Search Console structured data</span>
+      </div>
+      <button type="button" id="closeEditModalBtn" style="background:transparent; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer; line-height:1;">&times;</button>
+    </div>
+    <div style="padding:1.25rem 1.5rem; overflow-y:auto; flex:1;">
+      <form id="editProductForm">
+        <input type="hidden" id="editProductSlug" name="slug">
+        
+        <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+          <div class="cms-form-group">
+            <label class="cms-form-label">Product Name *</label>
+            <input type="text" id="editProductName" name="name" class="cms-input" required>
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Brand *</label>
+            <input type="text" id="editProductBrand" name="brand" class="cms-input" required>
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Model Code *</label>
+            <input type="text" id="editProductModel" name="model" class="cms-input" required>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+          <div class="cms-form-group">
+            <label class="cms-form-label">Category *</label>
+            <select id="editProductCategory" name="category" class="cms-select" required>
+              <option value="Biometric Fingerprint Attendance Machines">Biometric Fingerprint Attendance Machines</option>
+              <option value="Face Recognition Attendance Machines">Face Recognition Attendance Machines</option>
+              <option value="Advanced Multi-Biometric Devices">Advanced Multi-Biometric Devices</option>
+              <option value="Advanced Access Control Systems">Advanced Access Control Systems</option>
+              <option value="Biometric Access Control Readers">Biometric Access Control Readers</option>
+              <option value="Door Locking Systems">Door Locking Systems</option>
+              <option value="Access Control Accessories">Access Control Accessories</option>
+              <option value="Turnstile and Entrance Management">Turnstile and Entrance Management</option>
+              <option value="Boom Barrier Systems">Boom Barrier Systems</option>
+              <option value="Additional Security Products">Additional Security Products</option>
+            </select>
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Product Image Path / URL</label>
+            <input type="text" id="editProductImage" name="image" class="cms-input">
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+          <div class="cms-form-group">
+            <label class="cms-form-label">Manufacturer SKU *</label>
+            <input type="text" id="editProductSku" name="sku" class="cms-input" required placeholder="e.g. ESSL-K90-PRO">
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Actual Price (INR, 0 = Quote)</label>
+            <input type="number" id="editProductPrice" name="price" class="cms-input" min="0" step="1" placeholder="e.g. 6500">
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Stock Availability</label>
+            <select id="editProductInStock" name="inStock" class="cms-select">
+              <option value="true">In Stock</option>
+              <option value="false">Out of Stock</option>
+            </select>
+          </div>
+          <div class="cms-form-group">
+            <label class="cms-form-label">Item Condition</label>
+            <select id="editProductCondition" name="condition" class="cms-select">
+              <option value="https://schema.org/NewCondition">New Condition</option>
+              <option value="https://schema.org/RefurbishedCondition">Refurbished</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cms-form-group" style="margin-bottom:0.75rem;">
+          <label class="cms-form-label">Tagline / Short Description *</label>
+          <textarea id="editProductShortDesc" name="shortDesc" class="cms-textarea" rows="3" required></textarea>
+        </div>
+      </form>
+    </div>
+    <div style="padding:1rem 1.5rem; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center;">
+      <span id="editProductStatus" style="font-size:0.8rem; font-weight:600;"></span>
+      <div style="display:flex; gap:0.5rem;">
+        <button type="button" id="cancelEditModalBtn" class="cms-btn cms-btn-outline">Cancel</button>
+        <button type="button" id="saveEditProductBtn" class="cms-btn cms-btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Admin Product Schema & Edit Modal Event Handlers
+document.addEventListener('DOMContentLoaded', () => {
+  const schemaModal = document.getElementById('schemaPreviewModal');
+  const editModal = document.getElementById('editProductModal');
+  const schemaCode = document.getElementById('schemaModalCode');
+  const schemaTitle = document.getElementById('schemaModalTitle');
+  const schemaOfferBadge = document.getElementById('schemaOfferBadge');
+  const copyBtn = document.getElementById('copySchemaBtn');
+  const copyStatus = document.getElementById('schemaCopyStatus');
+
+  // Open Schema Modal
+  document.querySelectorAll('.view-product-schema-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const slug = btn.getAttribute('data-slug');
+      if (!slug) return;
+      schemaCode.textContent = 'Fetching live generated schema...';
+      schemaModal.style.display = 'flex';
+      copyStatus.textContent = '';
+
+      try {
+        const res = await fetch(`/admin/api/products/${slug}/schema`);
+        const data = await res.json();
+        if (data.success && data.schema) {
+          schemaTitle.textContent = `⚙️ ${data.product.name} (JSON-LD)`;
+          if (data.schema.offers) {
+            schemaOfferBadge.textContent = `✓ Offer Active: ₹${data.schema.offers.price}`;
+            schemaOfferBadge.className = 'score-pill pass';
+          } else {
+            schemaOfferBadge.textContent = 'ℹ️ Quotation on Request (No Fake Offer)';
+            schemaOfferBadge.className = 'score-pill warning';
+          }
+          schemaCode.textContent = JSON.stringify(data.schema, null, 2);
+        } else {
+          schemaCode.textContent = JSON.stringify(data, null, 2);
+        }
+      } catch (err) {
+        schemaCode.textContent = 'Error loading schema: ' + err.message;
+      }
+    });
+  });
+
+  // Copy Schema Button
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(schemaCode.textContent).then(() => {
+        copyStatus.textContent = '✓ Copied to clipboard!';
+        setTimeout(() => { copyStatus.textContent = ''; }, 3000);
+      });
+    });
+  }
+
+  // Close Schema Modal
+  const closeSchema = () => { schemaModal.style.display = 'none'; };
+  document.getElementById('closeSchemaModalBtn')?.addEventListener('click', closeSchema);
+  document.getElementById('dismissSchemaModalBtn')?.addEventListener('click', closeSchema);
+
+  // Open Edit Modal
+  document.querySelectorAll('.edit-product-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const slug = btn.getAttribute('data-slug');
+      if (!slug) return;
+      document.getElementById('editProductStatus').textContent = '';
+      editModal.style.display = 'flex';
+
+      try {
+        const res = await fetch(`/admin/api/products/${slug}/schema`);
+        const data = await res.json();
+        if (data.success && data.product) {
+          const p = data.product;
+          document.getElementById('editProductSlug').value = p.slug;
+          document.getElementById('editProductName').value = p.name || '';
+          document.getElementById('editProductBrand').value = p.brand || '';
+          document.getElementById('editProductModel').value = p.model || '';
+          document.getElementById('editProductCategory').value = p.category || 'Biometric Fingerprint Attendance Machines';
+          document.getElementById('editProductImage').value = p.image || '';
+          document.getElementById('editProductSku').value = p.sku || '';
+          document.getElementById('editProductPrice').value = p.price || 0;
+          document.getElementById('editProductInStock').value = (p.inStock !== false) ? 'true' : 'false';
+          document.getElementById('editProductCondition').value = p.condition || 'https://schema.org/NewCondition';
+          document.getElementById('editProductShortDesc').value = p.shortDesc || p.tagline || '';
+        }
+      } catch (err) {
+        alert('Failed to load product for editing: ' + err.message);
+      }
+    });
+  });
+
+  // Close Edit Modal
+  const closeEdit = () => { editModal.style.display = 'none'; };
+  document.getElementById('closeEditModalBtn')?.addEventListener('click', closeEdit);
+  document.getElementById('cancelEditModalBtn')?.addEventListener('click', closeEdit);
+
+  // Save Edit Product
+  document.getElementById('saveEditProductBtn')?.addEventListener('click', async () => {
+    const slug = document.getElementById('editProductSlug').value;
+    const statusEl = document.getElementById('editProductStatus');
+    statusEl.style.color = '#38bdf8';
+    statusEl.textContent = 'Saving changes & regenerating schema...';
+
+    const payload = {
+      name: document.getElementById('editProductName').value,
+      brand: document.getElementById('editProductBrand').value,
+      model: document.getElementById('editProductModel').value,
+      category: document.getElementById('editProductCategory').value,
+      image: document.getElementById('editProductImage').value,
+      sku: document.getElementById('editProductSku').value,
+      price: Number(document.getElementById('editProductPrice').value) || 0,
+      inStock: document.getElementById('editProductInStock').value === 'true',
+      condition: document.getElementById('editProductCondition').value,
+      shortDesc: document.getElementById('editProductShortDesc').value,
+      tagline: document.getElementById('editProductShortDesc').value
+    };
+
+    try {
+      const res = await fetch(`/admin/api/products/${slug}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.success) {
+        statusEl.style.color = '#10b981';
+        statusEl.textContent = '✓ Product and Schema updated successfully!';
+        setTimeout(() => {
+          editModal.style.display = 'none';
+          window.location.reload();
+        }, 1200);
+      } else {
+        statusEl.style.color = '#ef4444';
+        statusEl.textContent = 'Error: ' + (data.error || 'Failed to save');
+      }
+    } catch (err) {
+      statusEl.style.color = '#ef4444';
+      statusEl.textContent = 'Network error: ' + err.message;
+    }
+  });
+});
+</script>
 
 <!-- CLIENT SCRIPTS -->
 <script src="/js/live-seo.js"></script>
