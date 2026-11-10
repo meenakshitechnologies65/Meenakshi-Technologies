@@ -56,6 +56,100 @@
 
 <!-- STICKY MAIN HEADER -->
 <header class="site-header">
+  <style>
+    /* CRITICAL MOBILE NAVIGATION - BULLETPROOF HIGH-CONTRAST DARK THEME */
+    @media (max-width: 991px) {
+      .site-header {
+        background: #080c14 !important;
+        border-bottom: 2px solid rgba(245, 158, 11, 0.4) !important;
+      }
+      .nav-menu {
+        display: none !important;
+      }
+      .nav-menu.active {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background-color: #080c14 !important;
+        background: #080c14 !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        padding: 1.25rem 1.25rem 1.5rem !important;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.98), 0 10px 30px rgba(0, 0, 0, 0.9) !important;
+        border-top: 1px solid rgba(245, 158, 11, 0.35) !important;
+        border-bottom: 3.5px solid #f59e0b !important;
+        max-height: 85vh !important;
+        overflow-y: auto !important;
+      }
+      .nav-menu.active .nav-link,
+      .site-header .nav-menu.active .nav-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 1rem 1.25rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        color: #ffffff !important;
+        background-color: #121826 !important;
+        background: #121826 !important;
+        border: 1px solid rgba(255, 255, 255, 0.14) !important;
+        border-radius: 10px !important;
+        margin-bottom: 0.65rem !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+      }
+      .nav-menu.active .nav-link::after {
+        content: '›' !important;
+        font-size: 1.4rem !important;
+        line-height: 1 !important;
+        color: #f59e0b !important;
+        font-weight: 700 !important;
+      }
+      .nav-menu.active .nav-link:hover,
+      .nav-menu.active .nav-link:focus,
+      .site-header .nav-menu.active .nav-link:hover {
+        color: #fbbf24 !important;
+        background-color: #1a233a !important;
+        background: #1a233a !important;
+        border-color: #f59e0b !important;
+        padding-left: 1.45rem !important;
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25) !important;
+      }
+      .nav-menu.active .nav-link.active,
+      .site-header .nav-menu.active .nav-link.active {
+        color: #fbbf24 !important;
+        font-weight: 800 !important;
+        background-color: #1a233a !important;
+        background: #1a233a !important;
+        border: 1.5px solid #f59e0b !important;
+        border-left: 5px solid #f59e0b !important;
+        padding-left: 1.45rem !important;
+        box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
+      }
+      .mobile-menu-btn {
+        display: flex !important;
+        background-color: #0d1322 !important;
+        background: #0d1322 !important;
+        border: 1.5px solid #f59e0b !important;
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.3) !important;
+      }
+      .hamburger-bar {
+        background-color: #ffffff !important;
+      }
+      .mobile-menu-btn[aria-expanded="true"] .hamburger-bar {
+        background-color: #fbbf24 !important;
+      }
+    }
+  </style>
   <div class="container header-inner">
     <a href="/" class="brand-logo-wrap"
       title="Meenakshi Technologies - Biometric Attendance &amp; Access Control Hyderabad">
