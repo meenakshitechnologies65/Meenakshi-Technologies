@@ -19,3 +19,4 @@ function scan(dir) {
 }
 
 scan('.');
+
