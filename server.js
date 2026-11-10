@@ -65,7 +65,7 @@ function saveData(file, data) {
 // Global Template Middleware
 app.use((req, res, next) => {
   res.locals.currentYear = new Date().getFullYear();
-  res.locals.siteUrl = 'https://www.meenakshitechnologies.org';
+  res.locals.siteUrl = process.env.BASE_URL || 'https://meenakshitechnologies.in';
   res.locals.companyPhone = '+91 6301593064';
   res.locals.companyEmail = 'meenakshitechnologies65@gmail.com';
   res.locals.founderName = 'Tingirikar Teja';
@@ -557,7 +557,7 @@ app.post('/api/cms/posts', (req, res) => {
 
 // XML Sitemap
 app.get('/sitemap.xml', (req, res) => {
-  const baseUrl = 'https://www.meenakshitechnologies.org';
+  const baseUrl = (process.env.WEBSITE_URL || process.env.BASE_URL || 'https://meenakshitechnologies.in').replace(/\/$/, '').replace('http://', 'https://');
   const products = loadData('products.json');
   const solutions = loadData('solutions.json');
   const industries = loadData('industries.json');

@@ -2,9 +2,11 @@
   const pageTitle = (typeof title !== 'undefined' && title) ? title : 'Meenakshi Technologies | Biometric Attendance & Access Control Dealers Hyderabad';
   const pageDesc = (typeof metaDescription !== 'undefined' && metaDescription) ? metaDescription : 'Meenakshi Technologies provides biometric attendance machines, eSSL and Biomax systems, door access control, and payroll software in Hyderabad.';
   const pageKeywords = (typeof metaKeywords !== 'undefined' && metaKeywords) ? metaKeywords : 'Biometric Dealers in Hyderabad, Biometric Attendance Machine, eSSL, Biomax, Door Access Control';
-  const pageCanonical = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : 'https://www.meenakshitechnologies.org/';
+  const rawCanonical = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : 'https://meenakshitechnologies.in/';
+  const pageCanonical = rawCanonical.replace('https://meenakshitechnologies.in', 'https://meenakshitechnologies.in').replace('https://meenakshitechnologies.in', 'https://meenakshitechnologies.in');
   const pageOgType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website';
-  const pageOgImage = (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://www.meenakshitechnologies.org/images/logo.png';
+  const rawOgImage = (typeof ogImage !== 'undefined' && ogImage) ? ogImage : 'https://meenakshitechnologies.in/images/logo.png';
+  const pageOgImage = rawOgImage.replace('https://meenakshitechnologies.in', 'https://meenakshitechnologies.in');
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,15 +63,15 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://www.meenakshitechnologies.org/#organization",
+        "@id": "https://meenakshitechnologies.in/#organization",
         "name": "Meenakshi Technologies",
-        "url": "https://www.meenakshitechnologies.org/",
-        "logo": "https://www.meenakshitechnologies.org/images/logo.png",
+        "url": "https://meenakshitechnologies.in/",
+        "logo": "https://meenakshitechnologies.in/images/logo.png",
         "founder": {
           "@type": "Person",
           "name": "Tingirikar Teja",
           "jobTitle": "Founder of Meenakshi Technologies",
-          "image": "https://www.meenakshitechnologies.org/images/tingirikar-teja.jpg"
+          "image": "https://meenakshitechnologies.in/images/tingirikar-teja.jpg"
         },
         "contactPoint": {
           "@type": "ContactPoint",
@@ -85,12 +87,12 @@
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.meenakshitechnologies.org/locations/hyderabad#localbusiness",
+        "@id": "https://meenakshitechnologies.in/locations/hyderabad#localbusiness",
         "name": "Meenakshi Technologies - Gowlipura Central Location",
-        "image": "https://www.meenakshitechnologies.org/images/logo.png",
+        "image": "https://meenakshitechnologies.in/images/logo.png",
         "telephone": "+91-6301593064",
         "email": "meenakshitechnologies65@gmail.com",
-        "url": "https://www.meenakshitechnologies.org/locations/hyderabad",
+        "url": "https://meenakshitechnologies.in/locations/hyderabad",
         "hasMap": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.345985,78.4772681,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb998ed73d905b:0x8fff8136f685f7af!8m2!3d17.3459799!4d78.479843!16s%2Fg%2F11qnq_8w6p?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D",
         "address": {
           "@type": "PostalAddress",
@@ -115,12 +117,12 @@
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.meenakshitechnologies.org/locations/balapur#localbusiness",
+        "@id": "https://meenakshitechnologies.in/locations/balapur#localbusiness",
         "name": "Meenakshi Technologies - Balapur Location",
-        "image": "https://www.meenakshitechnologies.org/images/logo.png",
+        "image": "https://meenakshitechnologies.in/images/logo.png",
         "telephone": "+91-6301593064",
         "email": "meenakshitechnologies65@gmail.com",
-        "url": "https://www.meenakshitechnologies.org/locations/balapur",
+        "url": "https://meenakshitechnologies.in/locations/balapur",
         "hasMap": "https://www.google.com/maps/place/Meenakshi+Technologies/@17.3104815,78.5127545,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcba32a595dbdf5:0x751584db54ecd738!8m2!3d17.3104764!4d78.5153294!16s%2Fg%2F11nq1lxkll?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D",
         "address": {
           "@type": "PostalAddress",
@@ -145,11 +147,11 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.meenakshitechnologies.org/#website",
-        "url": "https://www.meenakshitechnologies.org/",
+        "@id": "https://meenakshitechnologies.in/#website",
+        "url": "https://meenakshitechnologies.in/",
         "name": "Meenakshi Technologies",
         "publisher": {
-          "@id": "https://www.meenakshitechnologies.org/#organization"
+          "@id": "https://meenakshitechnologies.in/#organization"
         }
       }
     ]

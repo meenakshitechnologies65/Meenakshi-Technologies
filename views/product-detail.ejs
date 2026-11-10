@@ -1,7 +1,7 @@
 <%- include('partials/head', { 
   title: `${product.name} (${product.brand}) Biometric & Access Control Hyderabad | Meenakshi Technologies`,
   metaDescription: `Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for ${product.name} by ${product.brand}. Same-day dispatch and onsite installation across Hyderabad.`,
-  canonicalUrl: `https://www.meenakshitechnologies.org/products/${product.slug}`,
+  canonicalUrl: `https://meenakshitechnologies.in/products/${product.slug}`,
   ogImage: product.image
 }) %>
 
@@ -11,7 +11,7 @@
   "@context": "https://schema.org/",
   "@type": "Product",
   "name": "<%= product.name %>",
-  "image": "https://www.meenakshitechnologies.org<%= product.image %>",
+  "image": "https://meenakshitechnologies.in<%= product.image %>",
   "description": "<%= product.shortDesc || product.tagline %>",
   "brand": {
     "@type": "Brand",
@@ -40,19 +40,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.meenakshitechnologies.org/"
+      "item": "https://meenakshitechnologies.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Products",
-      "item": "https://www.meenakshitechnologies.org/products"
+      "item": "https://meenakshitechnologies.in/products"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "<%= product.name %>",
-      "item": "https://www.meenakshitechnologies.org/products/<%= product.slug %>"
+      "item": "https://meenakshitechnologies.in/products/<%= product.slug %>"
     }
   ]
 }

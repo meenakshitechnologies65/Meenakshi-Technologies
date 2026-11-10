@@ -304,7 +304,7 @@ INSERT INTO websites (id, name, site_url, platform, connection_status)
 VALUES (
     'site_meenakshi_main',
     'Meenakshi Technologies Official',
-    'https://www.meenakshitechnologies.org',
+    'https://meenakshitechnologies.in',
     'native',
     'connected'
 ) ON CONFLICT (site_url) DO NOTHING;
