@@ -137,16 +137,50 @@
       }
       .mobile-menu-btn {
         display: flex !important;
-        background-color: #0d1322 !important;
-        background: #0d1322 !important;
-        border: 1.5px solid #f59e0b !important;
-        box-shadow: 0 0 10px rgba(245, 158, 11, 0.3) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+        border-radius: 10px !important;
+        background: #080c14 !important;
+        background-color: #080c14 !important;
+        border: 2px solid #f59e0b !important;
+        box-shadow: 0 0 14px rgba(245, 158, 11, 0.45) !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 10001 !important;
       }
-      .hamburger-bar {
-        background-color: #ffffff !important;
+      .mobile-menu-btn:hover, .mobile-menu-btn:focus {
+        background: #111726 !important;
+        border-color: #fbbf24 !important;
+        box-shadow: 0 0 18px rgba(251, 191, 36, 0.6) !important;
       }
-      .mobile-menu-btn[aria-expanded="true"] .hamburger-bar {
-        background-color: #fbbf24 !important;
+      .mobile-menu-btn .icon-hamburger {
+        display: block !important;
+        width: 24px !important;
+        height: 24px !important;
+        stroke: #fbbf24 !important;
+        filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.65)) !important;
+      }
+      .mobile-menu-btn .icon-close {
+        display: none !important;
+        width: 24px !important;
+        height: 24px !important;
+        stroke: #fbbf24 !important;
+        filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.65)) !important;
+      }
+      .mobile-menu-btn[aria-expanded="true"] .icon-hamburger {
+        display: none !important;
+      }
+      .mobile-menu-btn[aria-expanded="true"] .icon-close {
+        display: block !important;
+      }
+      .mobile-menu-btn .hamburger-bar {
+        display: none !important;
       }
     }
   </style>
@@ -184,6 +218,17 @@
       </a>
 
       <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
+        <!-- SVG Menu Icon (Default Hamburger in Saffron Gold) -->
+        <svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- SVG Close Icon (When Opened) -->
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
