@@ -2407,15 +2407,16 @@ input, select, textarea {
     height: 42px;
     padding: 6px;
     border-radius: 8px;
-    background: rgba(245, 158, 11, 0.12);
-    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    background: #070a10;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     transition: all 0.2s ease;
   }
   
   .mobile-menu-btn:hover, .mobile-menu-btn:focus {
-    background: rgba(245, 158, 11, 0.25);
-    border-color: #fbbf24;
-    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+    background: #0f172a;
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
   }
   
   .nav-menu {
@@ -2424,16 +2425,16 @@ input, select, textarea {
     top: 100%;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, #070a10 0%, #0d121c 100%);
+    background: #05070c;
     flex-direction: column;
-    padding: 1.25rem 1.5rem;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.15);
-    border-top: 1px solid rgba(245, 158, 11, 0.35);
+    padding: 1.25rem 1.25rem 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 3px solid #f59e0b;
     max-height: 85vh;
     overflow-y: auto;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
   
   .nav-menu.active {
@@ -2442,27 +2443,31 @@ input, select, textarea {
 
   .nav-link {
     width: 100%;
-    padding: 0.95rem 1rem;
-    font-size: 1.05rem;
-    color: #e2e8f0;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+    padding: 0.95rem 1.15rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0c111c;
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 8px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     transition: all 0.2s ease;
   }
 
   .nav-link:hover {
     color: #fbbf24;
-    background: rgba(245, 158, 11, 0.1);
-    padding-left: 1.25rem;
+    background: #141c2e;
+    border-color: rgba(245, 158, 11, 0.35);
+    padding-left: 1.35rem;
   }
 
   .nav-link.active {
     color: #fbbf24;
     font-weight: 700;
-    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.03) 100%);
-    border-left: 3.5px solid #f59e0b;
-    padding-left: 1.25rem;
+    background: #141c2e;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-left: 4px solid #f59e0b;
+    padding-left: 1.35rem;
   }
   
   /* Responsive Headings */
@@ -4474,22 +4479,23 @@ input, select, textarea {
 }
 
 /* ==========================================================================
-   HAMBURGER BUTTON & MOBILE DRAWER (DEEP CHARCOAL & SAFFRON GOLD)
+   HAMBURGER BUTTON & MOBILE DRAWER (SLEEK ULTRA-DARK DESIGN)
    ========================================================================== */
 .mobile-menu-btn {
-  background: rgba(245, 158, 11, 0.12);
-  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  background: #070a10;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   padding: 0.55rem;
   cursor: pointer;
   display: none;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .mobile-menu-btn:hover, .mobile-menu-btn:focus {
-  background: rgba(245, 158, 11, 0.25);
-  border-color: #fbbf24;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+  background: #0f172a;
+  border-color: #f59e0b;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
 }
 
 .hamburger-bar {
@@ -4503,9 +4509,9 @@ input, select, textarea {
 }
 
 .mobile-menu-btn[aria-expanded="true"] {
-  background: rgba(245, 158, 11, 0.22);
+  background: #0f172a;
   border-color: #f59e0b;
-  box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
 }
 
 .mobile-menu-btn[aria-expanded="true"] .hamburger-bar:nth-child(1) {
@@ -4540,39 +4546,45 @@ input, select, textarea {
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, #070a10 0%, #0d121c 100%);
-    border-top: 1px solid rgba(245, 158, 11, 0.35);
+    background: #05070c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 3px solid #f59e0b;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.15);
-    padding: 1.25rem 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 0, 0, 0.8);
+    padding: 1.25rem 1.25rem 1.5rem;
     max-height: 85vh;
     overflow-y: auto;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 
   .nav-link {
     width: 100%;
-    padding: 0.95rem 1rem;
-    font-size: 1.05rem;
-    color: #e2e8f0;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+    padding: 0.95rem 1.15rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0c111c;
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 8px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     transition: all 0.2s ease;
   }
 
   .nav-link:hover {
     color: #fbbf24;
-    background: rgba(245, 158, 11, 0.1);
-    padding-left: 1.25rem;
+    background: #141c2e;
+    border-color: rgba(245, 158, 11, 0.35);
+    padding-left: 1.35rem;
   }
 
   .nav-link.active {
     color: #fbbf24;
     font-weight: 700;
-    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.03) 100%);
-    border-left: 3.5px solid #f59e0b;
+    background: #141c2e;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-left: 4px solid #f59e0b;
+    padding-left: 1.35rem;
+  }
     padding-left: 1.25rem;
   }
 
