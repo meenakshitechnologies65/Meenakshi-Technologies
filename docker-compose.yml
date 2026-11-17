@@ -31,10 +31,17 @@ services:
       - PORT=${PORT:-3000}
       - HOST=${HOST:-0.0.0.0}
       - SERVER_IP=${SERVER_IP:-129.121.169.189}
-      - APP_URL=${APP_URL:-https://meenakshitechnologies.in}
-      - BASE_URL=${BASE_URL:-https://meenakshitechnologies.in}
-      - WEBSITE_URL=${WEBSITE_URL:-https://meenakshitechnologies.in}
+      - APP_URL=${APP_URL:-https://meenakshitechnologies.org}
+      - BASE_URL=${BASE_URL:-https://meenakshitechnologies.org}
+      - WEBSITE_URL=${WEBSITE_URL:-https://meenakshitechnologies.org}
       - AUTHORIZED_ADMIN_EMAIL=${AUTHORIZED_ADMIN_EMAIL:-meenakshitechnologies65@gmail.com}
+      - CONTACT_EMAIL=${CONTACT_EMAIL:-info@meenakshitechnologies.in}
+      - LEAD_NOTIFICATION_EMAIL=${LEAD_NOTIFICATION_EMAIL:-info@meenakshitechnologies.in}
+      - SMTP_HOST=${SMTP_HOST:-smtp.hostinger.com}
+      - SMTP_PORT=${SMTP_PORT:-465}
+      - SMTP_USER=${SMTP_USER:-info@meenakshitechnologies.in}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - SMTP_SECURE=${SMTP_SECURE:-true}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-}
       - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-}
       - TRUST_PROXY=${TRUST_PROXY:-1}
@@ -43,7 +50,7 @@ services:
       - JWT_SECRET=${JWT_SECRET:-meenakshi_jwt_secret_production_2026_super_secure}
       - PRIMARY_PHONE=${PRIMARY_PHONE:-+916301593064}
       - WHATSAPP_PHONE=${WHATSAPP_PHONE:-916301593064}
-      - PRIMARY_EMAIL=${PRIMARY_EMAIL:-meenakshitechnologies65@gmail.com}
+      - PRIMARY_EMAIL=${PRIMARY_EMAIL:-info@meenakshitechnologies.in}
     volumes:
       - cms_data:/app/data
       - catalogues_data:/app/public/catalogues
