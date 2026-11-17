@@ -4,6 +4,13 @@
  * Hyderabad, Telangana, India
  */
 
+// Load environment variables from .env
+try {
+  process.loadEnvFile();
+} catch (e) {
+  // .env file not present or already loaded
+}
+
 const express = require('express');
 const compression = require('compression');
 const cors = require('cors');
@@ -493,8 +500,10 @@ app.post('/api/enquiry', enquiryRateLimiter, (req, res) => {
       .then(emailRes => {
         if (emailRes && emailRes.error) {
           console.warn(`[Lead Email Notice] #${newLead.id} fallback: ${emailRes.error}`);
+        } else if (emailRes && emailRes.mockSent) {
+          console.warn(`[Lead Email Notice] #${newLead.id} saved to leads.json (SMTP password not configured in .env).`);
         } else {
-          console.log(`[Lead Email Dispatched] #${newLead.id} sent to info@meenakshitechnologies.in`);
+          console.log(`[Lead Email Dispatched] #${newLead.id} successfully sent to info@meenakshitechnologies.in`);
         }
       })
       .catch(err => console.error('[Lead Email Error]', err.message));

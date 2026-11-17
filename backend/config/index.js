@@ -4,6 +4,13 @@
  * All credentials and secrets are loaded from process.env with secure defaults.
  */
 
+// Load environment variables from .env
+try {
+  process.loadEnvFile();
+} catch (e) {
+  // .env file not present or already loaded
+}
+
 const path = require('node:path');
 
 const config = {
@@ -49,11 +56,11 @@ const config = {
   smtp: {
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: parseInt(process.env.SMTP_PORT || '587', 10),
-    secure: process.env.SMTP_SECURE === 'true',
+    secure: process.env.SMTP_SECURE === 'true' || parseInt(process.env.SMTP_PORT || '587', 10) === 465,
     user: process.env.SMTP_USER || 'meenakshitechnologies65@gmail.com',
     pass: process.env.SMTP_PASS || '',
-    fromName: 'Meenakshi Technologies Security',
-    fromEmail: process.env.SMTP_USER || 'meenakshitechnologies65@gmail.com'
+    fromName: process.env.SMTP_FROM_NAME || 'Meenakshi Technologies',
+    fromEmail: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || 'meenakshitechnologies65@gmail.com'
   },
 
   // Paths

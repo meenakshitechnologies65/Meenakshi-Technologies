@@ -9,35 +9,36 @@ const config = require('../config');
 let transporter = null;
 
 function getTransporter() {
-  if (transporter) return transporter;
-
-  const hasCreds = config.smtp.user && config.smtp.pass && config.smtp.pass !== 'your-app-password';
+  const hasCreds = config.smtp.user && config.smtp.pass && config.smtp.pass.trim() !== '' && config.smtp.pass !== 'your-app-password';
 
   if (hasCreds) {
-    transporter = nodemailer.createTransport({
+    return nodemailer.createTransport({
       host: config.smtp.host,
       port: config.smtp.port,
       secure: config.smtp.secure,
       auth: {
         user: config.smtp.user,
         pass: config.smtp.pass
+      },
+      tls: {
+        rejectUnauthorized: false
       }
     });
   } else {
     // Development / fallback transporter
-    transporter = {
+    return {
       sendMail: async (options) => {
         console.log('\n================== [EMAIL DISPATCH LOG] ==================');
+        console.log(`[NOTICE] Live SMTP password is not set in .env.`);
         console.log(`To: ${options.to}`);
+        console.log(`CC: ${options.cc || 'None'}`);
         console.log(`Subject: ${options.subject}`);
         console.log(`Text Body:\n${options.text || ''}`);
         console.log('==========================================================\n');
-        return { messageId: 'dev-mock-' + Date.now() };
+        return { messageId: 'dev-mock-' + Date.now(), mockSent: true };
       }
     };
   }
-
-  return transporter;
 }
 
 /**
