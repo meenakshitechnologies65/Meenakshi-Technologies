@@ -9,7 +9,10 @@ const config = require('../config');
 let transporter = null;
 
 function getTransporter() {
-  const hasCreds = config.smtp.user && config.smtp.pass && config.smtp.pass.trim() !== '' && config.smtp.pass !== 'your-app-password';
+  const hasCreds = config.smtp.user && config.smtp.pass && 
+    config.smtp.pass.trim() !== '' && 
+    config.smtp.pass !== 'your-app-password' &&
+    config.smtp.pass !== 'YourHostingerEmailPassword';
 
   if (hasCreds) {
     return nodemailer.createTransport({

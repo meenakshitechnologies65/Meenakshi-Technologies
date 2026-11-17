@@ -22,13 +22,17 @@ async function testEmail() {
   console.log('Primary Recipient:', config.leadNotificationEmail || 'info@meenakshitechnologies.in');
   console.log('Backup Admin:    ', config.authorizedAdminEmail || 'meenakshitechnologies65@gmail.com');
 
-  const isConfigured = config.smtp.user && config.smtp.pass && config.smtp.pass !== 'your-app-password';
+  const isConfigured = config.smtp.user && config.smtp.pass && 
+    config.smtp.pass !== 'your-app-password' && 
+    config.smtp.pass !== 'YourHostingerEmailPassword' && 
+    config.smtp.pass.trim() !== '';
 
   if (!isConfigured) {
-    console.log('\n❌ [STATUS] Real SMTP is NOT configured.');
-    console.log('   Current SMTP_PASS is either missing or still the default "your-app-password".');
-    console.log('   Enquiries are currently logged to console and saved to data/leads.json,');
-    console.log('   but CANNOT be delivered to the inbox without SMTP credentials.\n');
+    console.log('\n❌ [STATUS] Real SMTP password is NOT set yet.');
+    console.log('   In .env, line 48 is currently still the placeholder:');
+    console.log('   SMTP_PASS=' + config.smtp.pass);
+    console.log('\n   👉 TO RECEIVE FORM SUBMISSIONS IN YOUR INBOX:');
+    console.log('   Replace that placeholder with your REAL email password in .env and re-run this test!\n');
     return;
   }
 
