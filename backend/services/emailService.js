@@ -98,7 +98,8 @@ async function sendAdminOtpEmail(email, otpCode) {
  */
 async function sendNewLeadEmail(lead) {
   const mailer = getTransporter();
-  const recipient = config.authorizedAdminEmail || 'meenakshitechnologies65@gmail.com';
+  const primaryRecipient = config.leadNotificationEmail || 'info@meenakshitechnologies.in';
+  const adminBackupRecipient = config.authorizedAdminEmail || 'meenakshitechnologies65@gmail.com';
   const cleanPhone = (lead.mobileNumber || '').replace(/\D/g, '');
   const whatsappDigits = cleanPhone.length === 10 ? `91${cleanPhone}` : cleanPhone;
   const whatsappUrl = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent(
@@ -167,14 +168,14 @@ async function sendNewLeadEmail(lead) {
         <a href="tel:${lead.mobileNumber}" style="background: #0284c7; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-block; margin-right: 8px;">
           📞 Call Customer
         </a>
-        <a href="https://meenakshitechnologies.in/admin" target="_blank" style="background: #1e293b; color: #fbbf24; border: 1px solid #f59e0b; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-block;">
+        <a href="https://meenakshitechnologies.org/admin" target="_blank" style="background: #1e293b; color: #fbbf24; border: 1px solid #f59e0b; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-block;">
           🛡 Open CMS
         </a>
       </div>
 
       <p style="color: #64748b; font-size: 11px; text-align: center; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px;">
         Meenakshi Technologies Hyderabad • Dedicated Biometric Attendance & Access Control Solutions<br>
-        This lead was captured live from https://meenakshitechnologies.in at ${new Date(lead.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST.
+        This lead was captured live from https://meenakshitechnologies.org at ${new Date(lead.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST.
       </p>
     </div>
   `;
@@ -193,13 +194,14 @@ Employee Count: ${lead.employeeCount}
 Message: ${lead.message || 'None'}
 Timestamp: ${lead.timestamp}
 --------------------------------------------------
-Admin Portal: https://meenakshitechnologies.in/admin
+Admin Portal: https://meenakshitechnologies.org/admin
   `.trim();
 
   try {
     return await mailer.sendMail({
       from: `"${config.smtp.fromName}" <${config.smtp.fromEmail}>`,
-      to: recipient,
+      to: primaryRecipient,
+      cc: adminBackupRecipient !== primaryRecipient ? adminBackupRecipient : undefined,
       replyTo: lead.email || undefined,
       subject: `🔥 New Business Enquiry: ${lead.fullName} (${lead.productOrService}) - Meenakshi Technologies`,
       text,

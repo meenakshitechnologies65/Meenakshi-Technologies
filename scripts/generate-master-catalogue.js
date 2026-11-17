@@ -152,7 +152,7 @@ doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text('Balapur Main Road, 
 
 // Cover Footer Helpline
 doc.fontSize(11).font('Helvetica-Bold').fillColor(CYAN).text('DIRECT ENGINEERING HELPLINE', 45, 715);
-doc.fontSize(10).font('Helvetica').fillColor('#ffffff').text('Call / WhatsApp: +91 6301593064  |  Email: meenakshitechnologies65@gmail.com  |  www.meenakshitechnologies.in', 45, 732);
+doc.fontSize(10).font('Helvetica').fillColor('#ffffff').text('Call / WhatsApp: +91 6301593064  |  Email: meenakshitechnologies65@gmail.com  |  www.meenakshitechnologies.org', 45, 732);
 doc.fontSize(8).font('Helvetica').fillColor('#94a3b8').text('Serving: HITEC City • Madhapur • Gachibowli • Bachupally • Boduppal • Kothapet • LB Nagar • Secunderabad', 45, 750);
 
 
@@ -781,7 +781,7 @@ doc.fontSize(8).font('Helvetica').fillColor('#cbd5e1').text(
 doc.rect(45, cFootY + 112, 505, 1).fill('#1e293b');
 doc.fontSize(10).font('Helvetica-Bold').fillColor('#ffffff').text('Direct Helpline: ', 65, cFootY + 125, { continued: true });
 doc.font('Helvetica-Bold').fillColor(CYAN).text('+91 6301593064', { continued: true });
-doc.font('Helvetica').fillColor('#cbd5e1').text('   |   Email: meenakshitechnologies65@gmail.com   |   Web: www.meenakshitechnologies.in');
+doc.font('Helvetica').fillColor('#cbd5e1').text('   |   Email: meenakshitechnologies65@gmail.com   |   Web: www.meenakshitechnologies.org');
 
 // Founder Sign-Off
 const signY = 695;

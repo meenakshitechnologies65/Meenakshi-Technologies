@@ -1,7 +1,7 @@
 <%- include('partials/head', { 
   title: `${product.name} (${product.brand}) Biometric & Access Control Hyderabad | Meenakshi Technologies`,
   metaDescription: `Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for ${product.name} by ${product.brand}. Same-day dispatch and onsite installation across Hyderabad.`,
-  canonicalUrl: `https://meenakshitechnologies.in/products/${product.slug}`,
+  canonicalUrl: `https://meenakshitechnologies.org/products/${product.slug}`,
   ogImage: product.image
 }) %>
 
@@ -12,20 +12,20 @@
   "@type": "Product",
   "name": product.name,
   "description": product.shortDesc || product.tagline || product.name,
-  "image": ["https://meenakshitechnologies.in" + product.image],
-  "url": "https://meenakshitechnologies.in/products/" + product.slug,
+  "image": ["https://meenakshitechnologies.org" + product.image],
+  "url": "https://meenakshitechnologies.org/products/" + product.slug,
   "sku": product.sku || (product.model ? `${product.brand.toUpperCase()}-${product.model.replace(/[^a-zA-Z0-9]+/g, '-')}` : product.id),
   "brand": { "@type": "Brand", "name": product.brand },
   "category": product.category,
   ...(product.price && Number(product.price) > 0 ? {
     "offers": {
       "@type": "Offer",
-      "url": "https://meenakshitechnologies.in/products/" + product.slug,
+      "url": "https://meenakshitechnologies.org/products/" + product.slug,
       "priceCurrency": product.currency || "INR",
       "price": Number(product.price).toFixed(2),
       "availability": product.inStock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
       "itemCondition": product.condition || "https://schema.org/NewCondition",
-      "seller": { "@type": "Organization", "name": "Meenakshi Technologies", "url": "https://meenakshitechnologies.in" }
+      "seller": { "@type": "Organization", "name": "Meenakshi Technologies", "url": "https://meenakshitechnologies.org" }
     }
   } : {})
 }, null, 2) %>
@@ -37,9 +37,9 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meenakshitechnologies.in/" },
-    { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://meenakshitechnologies.in/products" },
-    { "@type": "ListItem", "position": 3, "name": product.name, "item": "https://meenakshitechnologies.in/products/" + product.slug }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meenakshitechnologies.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://meenakshitechnologies.org/products" },
+    { "@type": "ListItem", "position": 3, "name": product.name, "item": "https://meenakshitechnologies.org/products/" + product.slug }
   ]
 }, null, 2) %>
 </script>

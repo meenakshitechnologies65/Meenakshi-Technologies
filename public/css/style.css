@@ -2487,27 +2487,38 @@ input, select, textarea {
     box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
   }
 
-  .nav-menu.active .nav-link::after {
-    content: '›' !important;
-    position: static !important;
-    display: inline-block !important;
-    font-size: 1.6rem !important;
-    line-height: 1 !important;
-    color: #f59e0b !important;
-    font-weight: 700 !important;
-    margin-left: auto !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-    bottom: auto !important;
-    left: auto !important;
-    transition: transform 0.2s ease, color 0.2s ease !important;
+  /* Clean mobile arrow icon inside card */
+  .nav-menu .nav-chevron {
+    display: none;
   }
 
-  .nav-menu.active .nav-link:hover::after,
-  .nav-menu.active .nav-link.active::after {
-    color: #fbbf24 !important;
+  .nav-menu.active .nav-chevron {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #f59e0b !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    transition: transform 0.2s ease, stroke 0.2s ease !important;
+  }
+
+  .nav-menu.active .nav-link:hover .nav-chevron,
+  .nav-menu.active .nav-link.active .nav-chevron {
+    stroke: #fbbf24 !important;
     transform: translateX(4px) !important;
+  }
+
+  /* Completely disable pseudo-element arrow/underline on mobile */
+  .nav-menu.active .nav-link::after,
+  .nav-menu.active .nav-link::before,
+  .site-header .nav-menu.active .nav-link::after,
+  .site-header .nav-menu.active .nav-link::before {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    background: none !important;
   }
   
   /* Responsive Headings */
@@ -4662,27 +4673,38 @@ input, select, textarea {
     box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
   }
 
-  .nav-menu.active .nav-link::after {
-    content: '›' !important;
-    position: static !important;
-    display: inline-block !important;
-    font-size: 1.6rem !important;
-    line-height: 1 !important;
-    color: #f59e0b !important;
-    font-weight: 700 !important;
-    margin-left: auto !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-    bottom: auto !important;
-    left: auto !important;
-    transition: transform 0.2s ease, color 0.2s ease !important;
+  /* Clean mobile arrow icon inside card */
+  .nav-menu .nav-chevron {
+    display: none;
   }
 
-  .nav-menu.active .nav-link:hover::after,
-  .nav-menu.active .nav-link.active::after {
-    color: #fbbf24 !important;
+  .nav-menu.active .nav-chevron {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #f59e0b !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    transition: transform 0.2s ease, stroke 0.2s ease !important;
+  }
+
+  .nav-menu.active .nav-link:hover .nav-chevron,
+  .nav-menu.active .nav-link.active .nav-chevron {
+    stroke: #fbbf24 !important;
     transform: translateX(4px) !important;
+  }
+
+  /* Completely disable pseudo-element arrow/underline on mobile */
+  .nav-menu.active .nav-link::after,
+  .nav-menu.active .nav-link::before,
+  .site-header .nav-menu.active .nav-link::after,
+  .site-header .nav-menu.active .nav-link::before {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    background: none !important;
   }
 
   .nav-dropdown {

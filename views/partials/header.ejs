@@ -11,12 +11,12 @@
         </svg>
         <span class="phone-number-bright">+91 6301593064</span>
       </a>
-      <a href="mailto:meenakshitechnologies65@gmail.com" class="top-bar-link" title="Email Us">
+      <a href="mailto:info@meenakshitechnologies.in" class="top-bar-link" title="Email Us">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
           <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
-        <span>meenakshitechnologies65@gmail.com</span>
+        <span>info@meenakshitechnologies.in</span>
       </a>
       <a href="/locations" class="top-bar-badge-link" title="View Dual Verified Offices in Hyderabad">
         <span class="top-bar-badge-verified">
@@ -127,27 +127,39 @@
         line-height: 1.1 !important;
         margin-top: 1px !important;
       }
-      .nav-menu.active .nav-link::after {
-        content: '›' !important;
-        position: static !important;
-        display: inline-block !important;
-        font-size: 1.6rem !important;
-        line-height: 1 !important;
-        color: #f59e0b !important;
-        font-weight: 700 !important;
-        margin-left: auto !important;
-        width: auto !important;
-        height: auto !important;
-        background: none !important;
-        bottom: auto !important;
-        left: auto !important;
-        transition: transform 0.2s ease, color 0.2s ease !important;
+
+      /* Clean mobile arrow icon inside card */
+      .nav-menu .nav-chevron {
+        display: none;
       }
 
-      .nav-menu.active .nav-link:hover::after,
-      .nav-menu.active .nav-link.active::after {
-        color: #fbbf24 !important;
+      .nav-menu.active .nav-chevron {
+        display: inline-block !important;
+        width: 20px !important;
+        height: 20px !important;
+        stroke: #f59e0b !important;
+        flex-shrink: 0 !important;
+        margin-left: auto !important;
+        transition: transform 0.2s ease, stroke 0.2s ease !important;
+      }
+
+      .nav-menu.active .nav-link:hover .nav-chevron,
+      .nav-menu.active .nav-link.active .nav-chevron {
+        stroke: #fbbf24 !important;
         transform: translateX(4px) !important;
+      }
+
+      /* Completely disable pseudo-element arrow/underline on mobile */
+      .nav-menu.active .nav-link::after,
+      .nav-menu.active .nav-link::before,
+      .site-header .nav-menu.active .nav-link::after,
+      .site-header .nav-menu.active .nav-link::before {
+        content: none !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        border: none !important;
+        background: none !important;
       }
       .nav-menu.active .nav-link:hover,
       .nav-menu.active .nav-link:focus,
@@ -241,14 +253,25 @@
     <!-- Primary 4-Item Direct Navigation Menu -->
     <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
       <a href="/"
-        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">HOME</a>
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">
+        <span class="nav-text">HOME</span>
+        <svg class="nav-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
       <a href="/products"
-        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">PRODUCTS</a>
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">
+        <span class="nav-text">PRODUCTS</span>
+        <svg class="nav-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
       <a href="/about"
-        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">ABOUT US</a>
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">
+        <span class="nav-text">ABOUT US</span>
+        <svg class="nav-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
       <a href="/contact"
-        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">CONTACT
-        US</a>
+        class="nav-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">
+        <span class="nav-text">CONTACT US</span>
+        <svg class="nav-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
     </nav>
 
     <!-- Header Actions (WhatsApp Enquiry & Mobile Hamburger Menu) -->
@@ -277,9 +300,6 @@
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
       </button>
     </div>
   </div>

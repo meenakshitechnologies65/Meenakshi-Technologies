@@ -1,6 +1,6 @@
 # Step-by-Step Guide: Linking Your Domain to Server IP `129.121.169.189`
 
-This guide explains how to connect your domain (e.g., `meenakshitechnologies.in` and `www.meenakshitechnologies.in`) to your Dockerized server running at **`129.121.169.189`**.
+This guide explains how to connect your domain (e.g., `meenakshitechnologies.org` and `www.meenakshitechnologies.org`) to your Dockerized server running at **`129.121.169.189`**.
 
 ---
 
@@ -10,10 +10,10 @@ Log in to wherever you purchased your domain (such as **GoDaddy**, **Namecheap**
 
 | Type | Name / Host | Points to / Value | TTL | Purpose |
 |---|---|---|---|---|
-| **A** | `@` *(or leave blank)* | `129.121.169.189` | `Automatic` *(or `300`)* | Routes `meenakshitechnologies.in` to your server |
-| **A** | `www` | `129.121.169.189` | `Automatic` *(or `300`)* | Routes `www.meenakshitechnologies.in` to your server |
+| **A** | `@` *(or leave blank)* | `129.121.169.189` | `Automatic` *(or `300`)* | Routes `meenakshitechnologies.org` to your server |
+| **A** | `www` | `129.121.169.189` | `Automatic` *(or `300`)* | Routes `www.meenakshitechnologies.org` to your server |
 
-*(Alternatively, you can create a `CNAME` record for `www` with value `meenakshitechnologies.in`)*.
+*(Alternatively, you can create a `CNAME` record for `www` with value `meenakshitechnologies.org`)*.
 
 > [!NOTE]
 > DNS propagation typically takes between **5 to 30 minutes** (rarely up to a few hours depending on the registrar).
@@ -26,10 +26,10 @@ On your computer terminal (Command Prompt, PowerShell, or macOS/Linux Terminal),
 
 ```bash
 # Check apex domain
-nslookup meenakshitechnologies.in
+nslookup meenakshitechnologies.org
 
 # Check www subdomain
-nslookup www.meenakshitechnologies.in
+nslookup www.meenakshitechnologies.org
 ```
 
 **Expected output:**
@@ -52,9 +52,9 @@ Update the domain configuration lines:
 
 ```ini
 SERVER_IP=129.121.169.189
-APP_URL=https://www.meenakshitechnologies.in
-BASE_URL=https://www.meenakshitechnologies.in
-WEBSITE_URL=https://www.meenakshitechnologies.in
+APP_URL=https://www.meenakshitechnologies.org
+BASE_URL=https://www.meenakshitechnologies.org
+WEBSITE_URL=https://www.meenakshitechnologies.org
 ```
 
 Save and exit (`Ctrl + O`, then `Enter`, then `Ctrl + X`).
@@ -69,7 +69,7 @@ For security, Google rankings, and user trust, your domain should load over `htt
 1. Add your domain to a free [Cloudflare](https://dash.cloudflare.com/) account.
 2. In Cloudflare DNS, add:
    - `A` record `@` pointing to `129.121.169.189` with **Proxy status: Proxied (Orange cloud)**.
-   - `CNAME` record `www` pointing to `meenakshitechnologies.in` with **Proxy status: Proxied**.
+   - `CNAME` record `www` pointing to `meenakshitechnologies.org` with **Proxy status: Proxied**.
 3. In **SSL/TLS** settings on Cloudflare, set the encryption mode to **Flexible** or **Full**.
 4. Enable **Always Use HTTPS** in Cloudflare.
 5. *Done! Instant free SSL certificate with global DDoS protection and CDN caching.*
@@ -90,7 +90,7 @@ sudo nano /etc/nginx/sites-available/meenakshi
 Paste the following:
 ```nginx
 server {
-    server_name meenakshitechnologies.in www.meenakshitechnologies.in;
+    server_name meenakshitechnologies.org www.meenakshitechnologies.org;
 
     location / {
         proxy_pass http://127.0.0.1:3000;
@@ -112,7 +112,7 @@ sudo nginx -t
 sudo systemctl reload nginx
 
 # Generate SSL certificate (Certbot will auto-configure HTTPS & auto-renew)
-sudo certbot --nginx -d meenakshitechnologies.in -d www.meenakshitechnologies.in
+sudo certbot --nginx -d meenakshitechnologies.org -d www.meenakshitechnologies.org
 ```
 
 ---
@@ -130,7 +130,7 @@ docker compose restart app
 ## Step 6: Test Your Live Domain
 
 Open in your browser:
-- `https://www.meenakshitechnologies.in/`
-- `https://www.meenakshitechnologies.in/products`
-- `https://www.meenakshitechnologies.in/admin`
+- `https://www.meenakshitechnologies.org/`
+- `https://www.meenakshitechnologies.org/products`
+- `https://www.meenakshitechnologies.org/admin`
 

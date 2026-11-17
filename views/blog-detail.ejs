@@ -1,7 +1,7 @@
 <%- include('partials/head', { 
   title: post.metaTitle || post.title,
   metaDescription: post.metaDescription || post.summary,
-  canonicalUrl: `https://meenakshitechnologies.in/blog/${post.slug}`,
+  canonicalUrl: `https://meenakshitechnologies.org/blog/${post.slug}`,
   ogImage: post.featuredImage
 }) %>
 
@@ -11,7 +11,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "<%= post.title %>",
-  "image": "https://meenakshitechnologies.in<%= post.featuredImage || '/images/logo.png' %>",
+  "image": "https://meenakshitechnologies.org<%= post.featuredImage || '/images/logo.png' %>",
   "author": {
     "@type": "Person",
     "name": "<%= post.author %>",
@@ -22,7 +22,7 @@
     "name": "Meenakshi Technologies",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://meenakshitechnologies.in/images/logo.png"
+      "url": "https://meenakshitechnologies.org/images/logo.png"
     }
   },
   "datePublished": "<%= post.date %>",

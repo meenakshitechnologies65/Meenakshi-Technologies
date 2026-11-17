@@ -91,9 +91,9 @@ function saveData(file, data) {
 // Global Template Middleware
 app.use((req, res, next) => {
   res.locals.currentYear = new Date().getFullYear();
-  res.locals.siteUrl = process.env.BASE_URL || 'https://meenakshitechnologies.in';
+  res.locals.siteUrl = process.env.BASE_URL || 'https://meenakshitechnologies.org';
   res.locals.companyPhone = '+91 6301593064';
-  res.locals.companyEmail = 'meenakshitechnologies65@gmail.com';
+  res.locals.companyEmail = 'info@meenakshitechnologies.in';
   res.locals.founderName = 'Tingirikar Teja';
   next();
 });
@@ -488,13 +488,13 @@ app.post('/api/enquiry', enquiryRateLimiter, (req, res) => {
 
     console.log(`[Lead Captured] #${newLead.id} from ${fullName} (${mobileNumber}) for ${newLead.productOrService}`);
 
-    // Asynchronously dispatch notification email to meenakshitechnologies65@gmail.com
+    // Asynchronously dispatch notification email to info@meenakshitechnologies.in (and backup admin)
     sendNewLeadEmail(newLead)
       .then(emailRes => {
         if (emailRes && emailRes.error) {
           console.warn(`[Lead Email Notice] #${newLead.id} fallback: ${emailRes.error}`);
         } else {
-          console.log(`[Lead Email Dispatched] #${newLead.id} sent to meenakshitechnologies65@gmail.com`);
+          console.log(`[Lead Email Dispatched] #${newLead.id} sent to info@meenakshitechnologies.in`);
         }
       })
       .catch(err => console.error('[Lead Email Error]', err.message));
@@ -623,7 +623,7 @@ app.post('/api/cms/posts', (req, res) => {
 
 // XML Sitemap
 app.get('/sitemap.xml', (req, res) => {
-  const baseUrl = (process.env.WEBSITE_URL || process.env.BASE_URL || 'https://meenakshitechnologies.in').replace(/\/$/, '').replace('http://', 'https://');
+  const baseUrl = (process.env.WEBSITE_URL || process.env.BASE_URL || 'https://meenakshitechnologies.org').replace(/\/$/, '').replace('http://', 'https://');
   const products = loadData('products.json');
   const solutions = loadData('solutions.json');
   const industries = loadData('industries.json');

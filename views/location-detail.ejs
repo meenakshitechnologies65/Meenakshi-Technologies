@@ -1,7 +1,7 @@
 <%- include('partials/head', { 
   title: `${location.title} | Meenakshi Technologies`,
   metaDescription: `Verified physical location of Meenakshi Technologies in ${location.address.addressLocality}. Biometric attendance machine supply, installation, and support.`,
-  canonicalUrl: `https://meenakshitechnologies.in/locations/${location.slug}`
+  canonicalUrl: `https://meenakshitechnologies.org/locations/${location.slug}`
 }) %>
 
 <!-- Individual Location LocalBusiness Schema -->
@@ -10,10 +10,10 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "<%= location.title %>",
-  "image": "https://meenakshitechnologies.in/images/logo.png",
+  "image": "https://meenakshitechnologies.org/images/logo.png",
   "telephone": "<%= location.telephone %>",
   "email": "<%= location.email %>",
-  "url": "https://meenakshitechnologies.in/locations/<%= location.slug %>",
+  "url": "https://meenakshitechnologies.org/locations/<%= location.slug %>",
   "hasMap": "<%= location.mapUrl %>",
   "address": {
     "@type": "PostalAddress",

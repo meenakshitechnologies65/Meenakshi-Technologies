@@ -37,7 +37,7 @@ function generateProductDatasheetPdf(product, res) {
 
   doc.fillColor(darkNavy).fontSize(16).font('Helvetica-Bold').text('MEENAKSHI TECHNOLOGIES', 110, 48);
   doc.fillColor(slateMuted).fontSize(8.5).font('Helvetica').text('Biometric Attendance & Access Control Solutions | Hyderabad, Telangana', 110, 68);
-  doc.fillColor(primaryBlue).fontSize(8).font('Helvetica-Bold').text('Direct Helpline: +91 6301593064 | Email: meenakshitechnologies65@gmail.com', 110, 82);
+  doc.fillColor(primaryBlue).fontSize(8).font('Helvetica-Bold').text('Direct Helpline: +91 6301593064 | Email: info@meenakshitechnologies.in', 110, 82);
 
   // --- PRODUCT HEADER ---
   doc.moveDown(3);
@@ -178,7 +178,7 @@ function generateCatalogPdf({ title = 'Complete Product Catalogue 2026', brand =
     const capText = cap.fingerprints || cap.faces || cap.holdingForce || specs.fingerprintCapacity || 'Commercial Grade';
     doc.fillColor(slateMuted).fontSize(8).font('Helvetica').text(`Capacity: ${capText} | Logs: ${cap.transactions || specs.logCapacity || '100k'} | Connectivity: ${specs.communication || specs.connectivity || 'TCP/IP, USB'}`, 52, yPos + 34);
 
-    doc.fillColor(darkNavy).fontSize(8).font('Helvetica-Bold').text(`Datasheet: https://meenakshitechnologies.in/products/${p.slug}`, 52, yPos + 46);
+    doc.fillColor(darkNavy).fontSize(8).font('Helvetica-Bold').text(`Datasheet: https://meenakshitechnologies.org/products/${p.slug}`, 52, yPos + 46);
 
     yPos += 68;
   });
@@ -186,7 +186,7 @@ function generateCatalogPdf({ title = 'Complete Product Catalogue 2026', brand =
   // Footer
   const footerY = doc.page.height - 50;
   doc.rect(40, footerY, doc.page.width - 80, 30).fill('#f1f5f9');
-  doc.fillColor(slateMuted).fontSize(7.5).font('Helvetica').text('Meenakshi Technologies Hyderabad • Phone: +91 6301593064 • https://meenakshitechnologies.in/', 50, footerY + 10);
+  doc.fillColor(slateMuted).fontSize(7.5).font('Helvetica').text('Meenakshi Technologies Hyderabad • Phone: +91 6301593064 • Email: info@meenakshitechnologies.in • https://meenakshitechnologies.org/', 50, footerY + 10);
 
   doc.end();
 }

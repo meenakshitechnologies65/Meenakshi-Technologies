@@ -6,7 +6,7 @@
  * Zero fabricated reviews, ratings, or prices.
  */
 
-const CANONICAL_BASE_URL = 'https://meenakshitechnologies.in';
+const CANONICAL_BASE_URL = 'https://meenakshitechnologies.org';
 
 /**
  * Generate canonical Product JSON-LD structured data.

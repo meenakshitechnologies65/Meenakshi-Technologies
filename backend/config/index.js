@@ -10,9 +10,11 @@ const config = {
   env: process.env.NODE_ENV || 'production',
   port: parseInt(process.env.PORT || '3000', 10),
   host: process.env.HOST || '0.0.0.0',
-  appUrl: process.env.APP_URL || 'https://meenakshitechnologies.in',
-  baseUrl: process.env.BASE_URL || 'https://meenakshitechnologies.in',
-  websiteUrl: process.env.WEBSITE_URL || 'https://meenakshitechnologies.in',
+  appUrl: process.env.APP_URL || 'https://meenakshitechnologies.org',
+  baseUrl: process.env.BASE_URL || 'https://meenakshitechnologies.org',
+  websiteUrl: process.env.WEBSITE_URL || 'https://meenakshitechnologies.org',
+  contactEmail: process.env.CONTACT_EMAIL || 'info@meenakshitechnologies.in',
+  leadNotificationEmail: process.env.LEAD_NOTIFICATION_EMAIL || 'info@meenakshitechnologies.in',
 
   // Authorized Admin Gmail Account (Strictly Enforced)
   authorizedAdminEmail: (process.env.AUTHORIZED_ADMIN_EMAIL || 'meenakshitechnologies65@gmail.com').trim().toLowerCase(),
@@ -21,7 +23,7 @@ const config = {
   googleOAuth: {
     clientId: process.env.GOOGLE_CLIENT_ID || '',
     clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-    redirectUri: process.env.GOOGLE_REDIRECT_URI || `${process.env.BASE_URL || 'https://meenakshitechnologies.in'}/admin/auth/google/callback`,
+    redirectUri: process.env.GOOGLE_REDIRECT_URI || `${process.env.BASE_URL || 'https://meenakshitechnologies.org'}/admin/auth/google/callback`,
     authEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
     tokenEndpoint: 'https://oauth2.googleapis.com/token',
     userinfoEndpoint: 'https://www.googleapis.com/oauth2/v3/userinfo'

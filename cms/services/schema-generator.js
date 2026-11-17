@@ -6,7 +6,7 @@
 
 function generateSchema({
   type = 'Article',
-  siteUrl = 'https://meenakshitechnologies.in',
+  siteUrl = 'https://meenakshitechnologies.org',
   data = {}
 }) {
   const baseOrg = {
@@ -119,7 +119,7 @@ function generateSchema({
         'name': name,
         'image': `${siteUrl}/images/logo.png`,
         'telephone': telephone,
-        'email': 'meenakshitechnologies65@gmail.com',
+        'email': 'info@meenakshitechnologies.in',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': address,

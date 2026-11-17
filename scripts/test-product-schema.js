@@ -111,10 +111,10 @@ async function runTests() {
       if (!prodSchema.image || !Array.isArray(prodSchema.image) || prodSchema.image.length === 0) {
         throw new Error('Product schema missing image array');
       }
-      if (!prodSchema.image[0].startsWith('https://meenakshitechnologies.in')) {
+      if (!prodSchema.image[0].startsWith('https://meenakshitechnologies.org')) {
         throw new Error(`Product image URL is not canonical: ${prodSchema.image[0]}`);
       }
-      if (!prodSchema.url || !prodSchema.url.startsWith('https://meenakshitechnologies.in/products/')) {
+      if (!prodSchema.url || !prodSchema.url.startsWith('https://meenakshitechnologies.org/products/')) {
         throw new Error(`Product canonical URL invalid: ${prodSchema.url}`);
       }
       if (!prodSchema.sku || prodSchema.sku.trim() === '') {

@@ -3,5 +3,5 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://meenakshitechnologies.in/sitemap.xml
+Sitemap: https://meenakshitechnologies.org/sitemap.xml
 
