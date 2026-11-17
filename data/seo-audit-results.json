@@ -1,0 +1,2272 @@
+{
+  "totalUrls": 65,
+  "timestamp": "2026-11-17T16:48:19.486Z",
+  "totalIssues": 96,
+  "issuesSummary": [
+    {
+      "path": "/",
+      "issue": "Suboptimal Title Length: 86 chars (\"Meenakshi Technologies – Trusted Biometric &amp; Access Control Solutions in Hyderabad\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/",
+      "issue": "Suboptimal Description Length: 206 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/about",
+      "issue": "Suboptimal Description Length: 178 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products",
+      "issue": "Suboptimal Title Length: 99 chars (\"Biometric Attendance Machines &amp; Access Control Products Catalogue 2026 | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products",
+      "issue": "Suboptimal Description Length: 190 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services",
+      "issue": "Suboptimal Title Length: 76 chars (\"Biometric Attendance &amp; Access Control Solutions | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries",
+      "issue": "Suboptimal Title Length: 81 chars (\"Biometric Attendance &amp; Access Control for Industries | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/locations",
+      "issue": "Suboptimal Title Length: 74 chars (\"Biometric Dealers in Hyderabad &amp; Balapur – Verified Business Locations\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/locations/hyderabad",
+      "issue": "Suboptimal Title Length: 86 chars (\"Meenakshi Technologies – Gowlipura Central Office (Hyderabad) | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/locations/balapur",
+      "issue": "Suboptimal Title Length: 75 chars (\"Meenakshi Technologies – Balapur Business Location | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/guide/biometric-dealers-hyderabad",
+      "issue": "Suboptimal Title Length: 100 chars (\"Best Biometric Dealers in Hyderabad – eSSL &amp; Biomax Attendance Machines | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/guide/biometric-dealers-hyderabad",
+      "issue": "Suboptimal Description Length: 172 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog",
+      "issue": "Suboptimal Title Length: 71 chars (\"Biometric Knowledge Base &amp; Technology Blog | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-k90-pro-biometric-attendance",
+      "issue": "Suboptimal Title Length: 114 chars (\"eSSL K90 Pro Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-k90-pro-biometric-attendance",
+      "issue": "Suboptimal Description Length: 205 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-k30-pro-biometric-attendance",
+      "issue": "Suboptimal Title Length: 114 chars (\"eSSL K30 Pro Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-k30-pro-biometric-attendance",
+      "issue": "Suboptimal Description Length: 205 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-n-bm60-biometric-attendance-system",
+      "issue": "Suboptimal Title Length: 123 chars (\"BioMax N-BM60 Wi-Fi Biometric Attendance Machine (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-n-bm60-biometric-attendance-system",
+      "issue": "Suboptimal Description Length: 214 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-bio-5000-industrial-fingerprint-system",
+      "issue": "Suboptimal Title Length: 119 chars (\"BioMax Bio-5000 Industrial Biometric Machine (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-bio-5000-industrial-fingerprint-system",
+      "issue": "Suboptimal Description Length: 210 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-identix-k21-fingerprint-attendance-system",
+      "issue": "Suboptimal Title Length: 119 chars (\"eSSL Identix K21 Fingerprint Attendance System (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-identix-k21-fingerprint-attendance-system",
+      "issue": "Suboptimal Description Length: 210 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-speedface-5-ai-face-recognition-terminal",
+      "issue": "Suboptimal Title Length: 122 chars (\"BioMax SpeedFace 5 AI Face Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-speedface-5-ai-face-recognition-terminal",
+      "issue": "Suboptimal Description Length: 213 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-ai-face-4-compact-face-recognition",
+      "issue": "Suboptimal Title Length: 127 chars (\"BioMax AI Face 4 Compact Facial Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-ai-face-4-compact-face-recognition",
+      "issue": "Suboptimal Description Length: 218 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-uface-202-multi-biometric-attendance-machine",
+      "issue": "Suboptimal Title Length: 122 chars (\"eSSL uFace 202 Multi-Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-uface-202-multi-biometric-attendance-machine",
+      "issue": "Suboptimal Description Length: 213 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-silkbio-100tc-multi-biometric-attendance-machine",
+      "issue": "Suboptimal Title Length: 123 chars (\"eSSL SilkBio-100TC Multi-Biometric Time Attendance (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-silkbio-100tc-multi-biometric-attendance-machine",
+      "issue": "Suboptimal Description Length: 214 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-facemax-7-palm-face-recognition-terminal",
+      "issue": "Suboptimal Title Length: 128 chars (\"BioMax FaceMax 7 Palm &amp; Face Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-facemax-7-palm-face-recognition-terminal",
+      "issue": "Suboptimal Description Length: 219 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-inbio-260-multi-door-controller",
+      "issue": "Suboptimal Title Length: 126 chars (\"eSSL InBio 260 Multi-Door Biometric Access Controller (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-inbio-260-multi-door-controller",
+      "issue": "Suboptimal Description Length: 217 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-inbio-460-four-door-access-controller",
+      "issue": "Suboptimal Title Length: 122 chars (\"eSSL InBio 460 4-Door Biometric Access Controller (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-inbio-460-four-door-access-controller",
+      "issue": "Suboptimal Description Length: 213 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-c22-two-door-access-controller",
+      "issue": "Suboptimal Title Length: 121 chars (\"BioMax C22 2-Door IP Network Access Controller (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-c22-two-door-access-controller",
+      "issue": "Suboptimal Description Length: 212 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-f22-ultra-thin-access-control-terminal",
+      "issue": "Suboptimal Title Length: 128 chars (\"eSSL F22 Ultra-Thin Fingerprint Access Control Terminal (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-f22-ultra-thin-access-control-terminal",
+      "issue": "Suboptimal Description Length: 219 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-fr1200-waterproof-slave-reader",
+      "issue": "Suboptimal Title Length: 120 chars (\"eSSL FR1200 Waterproof Fingerprint Slave Reader (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-fr1200-waterproof-slave-reader",
+      "issue": "Suboptimal Description Length: 211 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-600lbs",
+      "issue": "Suboptimal Title Length: 135 chars (\"Heavy Duty 600 lbs Electromagnetic Lock (EM Lock) (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-600lbs",
+      "issue": "Suboptimal Description Length: 226 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-1200lbs",
+      "issue": "Suboptimal Title Length: 138 chars (\"Heavy-Duty 1200 lbs Double Door Electromagnetic Lock (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-1200lbs",
+      "issue": "Suboptimal Description Length: 229 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electric-drop-bolt-lock",
+      "issue": "Suboptimal Title Length: 120 chars (\"Heavy-Duty Electric Drop Bolt Lock (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/electric-drop-bolt-lock",
+      "issue": "Suboptimal Description Length: 211 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/smart-fingerprint-glass-door-lock",
+      "issue": "Suboptimal Title Length: 125 chars (\"Smart Fingerprint Frameless Glass Door Lock (BioMax / eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/smart-fingerprint-glass-door-lock",
+      "issue": "Suboptimal Description Length: 216 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/exit-push-button-no-touch-infrared-switch",
+      "issue": "Suboptimal Title Length: 136 chars (\"Exit Push Button &amp; No-Touch Infrared Sensor Switch (eSSL / BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/exit-push-button-no-touch-infrared-switch",
+      "issue": "Suboptimal Description Length: 227 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/access-control-power-supply-12v-5a-battery-backup",
+      "issue": "Suboptimal Title Length: 144 chars (\"12V DC 5A Access Control Power Supply with Battery Charger (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/access-control-power-supply-12v-5a-battery-backup",
+      "issue": "Suboptimal Description Length: 235 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/rfid-proximity-cards-mifare-smart-cards",
+      "issue": "Suboptimal Title Length: 139 chars (\"RFID Proximity Cards &amp; Mifare 1K Smart Cards (Meenakshi Technologies) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/rfid-proximity-cards-mifare-smart-cards",
+      "issue": "Suboptimal Description Length: 230 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-ts1000-pro-tripod-turnstile",
+      "issue": "Suboptimal Title Length: 120 chars (\"eSSL TS1000 Pro Semi-Automatic Tripod Turnstile (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-ts1000-pro-tripod-turnstile",
+      "issue": "Suboptimal Description Length: 211 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-fbl4000-high-speed-flap-barrier",
+      "issue": "Suboptimal Title Length: 119 chars (\"eSSL FBL4000 High-Speed Flap Barrier Turnstile (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-fbl4000-high-speed-flap-barrier",
+      "issue": "Suboptimal Description Length: 210 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-bg1000-automatic-vehicle-boom-barrier",
+      "issue": "Suboptimal Title Length: 126 chars (\"eSSL BG1000 High-Speed Automatic Vehicle Boom Barrier (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-bg1000-automatic-vehicle-boom-barrier",
+      "issue": "Suboptimal Description Length: 217 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-d1065s-walk-through-metal-detector",
+      "issue": "Suboptimal Title Length: 130 chars (\"eSSL D1065S Multi-Zone Walk-Through Metal Detector (DFMD) (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/essl-d1065s-walk-through-metal-detector",
+      "issue": "Suboptimal Description Length: 221 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-md-300-handheld-metal-detector",
+      "issue": "Suboptimal Title Length: 119 chars (\"BioMax MD-300 Handheld Metal Detector (HHMD) (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/products/biomax-md-300-handheld-metal-detector",
+      "issue": "Suboptimal Description Length: 210 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/biometric-attendance-systems-hyderabad",
+      "issue": "Suboptimal Description Length: 203 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/essl-biometric-dealers-hyderabad",
+      "issue": "Suboptimal Description Length: 207 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/biomax-biometric-dealers-hyderabad",
+      "issue": "Suboptimal Description Length: 195 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/face-recognition-attendance-machines-hyderabad",
+      "issue": "Suboptimal Title Length: 74 chars (\"Face Recognition Attendance Machines in Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/face-recognition-attendance-machines-hyderabad",
+      "issue": "Suboptimal Description Length: 191 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/fingerprint-attendance-machines-hyderabad",
+      "issue": "Suboptimal Description Length: 200 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/rfid-attendance-systems-hyderabad",
+      "issue": "Suboptimal Description Length: 202 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/door-access-control-systems-hyderabad",
+      "issue": "Suboptimal Description Length: 191 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/electromagnetic-door-locks-hyderabad",
+      "issue": "Suboptimal Description Length: 201 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/employee-attendance-management-solutions",
+      "issue": "Suboptimal Description Length: 191 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/payroll-management-software-integration",
+      "issue": "Suboptimal Description Length: 208 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/gym-management-software-hyderabad",
+      "issue": "Suboptimal Description Length: 200 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/biometric-installation-technical-support-hyderabad",
+      "issue": "Suboptimal Title Length: 84 chars (\"Biometric Installation &amp; Technical Support in Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/services/biometric-installation-technical-support-hyderabad",
+      "issue": "Suboptimal Description Length: 207 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-pharmaceutical-manufacturing",
+      "issue": "Suboptimal Title Length: 94 chars (\"Pharmaceutical Manufacturing Industries Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-manufacturing-companies",
+      "issue": "Suboptimal Title Length: 94 chars (\"Manufacturing Companies &amp; Factories Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-msme-small-business",
+      "issue": "Suboptimal Title Length: 98 chars (\"Micro, Small and Medium Enterprises (MSMEs) Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-large-scale-industries",
+      "issue": "Suboptimal Title Length: 92 chars (\"Large-Scale Industries &amp; Campuses Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-corporate-offices",
+      "issue": "Suboptimal Title Length: 90 chars (\"Corporate Offices &amp; IT Campuses Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-schools-colleges",
+      "issue": "Suboptimal Title Length: 93 chars (\"Schools &amp; Educational Institutions Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-hospitals-healthcare",
+      "issue": "Suboptimal Title Length: 92 chars (\"Hospitals &amp; Healthcare Facilities Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-gyms-fitness-centres",
+      "issue": "Suboptimal Title Length: 81 chars (\"Gyms &amp; Fitness Centres Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-warehouses-logistics",
+      "issue": "Suboptimal Title Length: 86 chars (\"Warehouses &amp; Logistics Hubs Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/industries/biometric-solutions-retail-commercial",
+      "issue": "Suboptimal Title Length: 89 chars (\"Retail &amp; Commercial Businesses Biometric Solutions Hyderabad | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog/best-biometric-dealers-hyderabad-guide",
+      "issue": "Suboptimal Title Length: 100 chars (\"Best Biometric Dealers in Hyderabad – eSSL &amp; Biomax Attendance Machines | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog/best-biometric-dealers-hyderabad-guide",
+      "issue": "Suboptimal Description Length: 172 chars",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog/essl-vs-biomax-biometric-machines-comparison",
+      "issue": "Suboptimal Title Length: 78 chars (\"eSSL vs Biomax Biometric Attendance Machines Compared | Meenakshi Technologies\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog/how-to-integrate-biometric-attendance-with-payroll",
+      "issue": "Suboptimal Title Length: 90 chars (\"Integrate Biometric Attendance with Tally &amp; Payroll | Meenakshi Technologies Hyderabad\")",
+      "severity": "MEDIUM"
+    },
+    {
+      "path": "/blog/electromagnetic-door-locks-guide-glass-doors",
+      "issue": "Suboptimal Title Length: 72 chars (\"EM Locks for Office Glass Doors Guide | Meenakshi Technologies Hyderabad\")",
+      "severity": "MEDIUM"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "statusCode": 200,
+      "title": "Meenakshi Technologies – Trusted Biometric &amp; Access Control Solutions in Hyderabad",
+      "titleLength": 86,
+      "description": "Meenakshi Technologies provides biometric attendance machines, fingerprint devices, face recognition systems, RFID attendance machines, door access control and payroll software in Hyderabad &amp; Telangana.",
+      "descriptionLength": 206,
+      "canonical": "https://meenakshitechnologies.org/",
+      "h1Count": 1,
+      "h1Text": [
+        "Meenakshi Technologies – Trusted Biometric &amp; Access Control Solutions in Hyderabad"
+      ],
+      "h2Count": 13,
+      "h3Count": 71,
+      "wordCount": 4975,
+      "totalImages": 65,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/about",
+      "statusCode": 200,
+      "title": "About Meenakshi Technologies &amp; Founder Tingirikar Teja | Hyderabad",
+      "titleLength": 70,
+      "description": "Learn about Meenakshi Technologies, founded by Tingirikar Teja. Premier biometric attendance, eSSL and Biomax access control systems and security solutions provider in Hyderabad.",
+      "descriptionLength": 178,
+      "canonical": "https://meenakshitechnologies.org/about",
+      "h1Count": 1,
+      "h1Text": [
+        "About Meenakshi Technologies"
+      ],
+      "h2Count": 3,
+      "h3Count": 5,
+      "wordCount": 731,
+      "totalImages": 22,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products",
+      "statusCode": 200,
+      "title": "Biometric Attendance Machines &amp; Access Control Products Catalogue 2026 | Meenakshi Technologies",
+      "titleLength": 99,
+      "description": "Complete verified catalogue of genuine eSSL and BioMax biometric attendance machines, AI face recognition terminals, access controllers, EM locks, turnstiles, and boom barriers in Hyderabad.",
+      "descriptionLength": 190,
+      "canonical": "https://meenakshitechnologies.org/products",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric Attendance &amp; Access Control Products"
+      ],
+      "h2Count": 28,
+      "h3Count": 11,
+      "wordCount": 2058,
+      "totalImages": 29,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services",
+      "statusCode": 200,
+      "title": "Biometric Attendance &amp; Access Control Solutions | Meenakshi Technologies",
+      "titleLength": 76,
+      "description": "Explore our 12 specialized biometric attendance, eSSL and Biomax hardware, door access controllers, EM locks, and payroll integration solutions in Hyderabad.",
+      "descriptionLength": 157,
+      "canonical": "https://meenakshitechnologies.org/services",
+      "h1Count": 1,
+      "h1Text": [
+        "Our Specialized Solutions"
+      ],
+      "h2Count": 12,
+      "h3Count": 1,
+      "wordCount": 573,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries",
+      "statusCode": 200,
+      "title": "Biometric Attendance &amp; Access Control for Industries | Meenakshi Technologies",
+      "titleLength": 81,
+      "description": "Specialized biometric solutions for Pharmaceutical Cleanrooms, Manufacturing, Corporate Offices, Gyms, Schools, and MSMEs in Hyderabad.",
+      "descriptionLength": 135,
+      "canonical": "https://meenakshitechnologies.org/industries",
+      "h1Count": 1,
+      "h1Text": [
+        "Industries We Serve"
+      ],
+      "h2Count": 10,
+      "h3Count": 1,
+      "wordCount": 792,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/locations",
+      "statusCode": 200,
+      "title": "Biometric Dealers in Hyderabad &amp; Balapur – Verified Business Locations",
+      "titleLength": 74,
+      "description": "Meenakshi Technologies operates two verified physical locations in Hyderabad and Balapur. Full Google Maps, directions, local phone support, and Telangana coverage.",
+      "descriptionLength": 164,
+      "canonical": "https://meenakshitechnologies.org/locations",
+      "h1Count": 1,
+      "h1Text": [
+        "Our Verified Hyderabad Locations &amp; Service Areas"
+      ],
+      "h2Count": 2,
+      "h3Count": 3,
+      "wordCount": 1018,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/locations/hyderabad",
+      "statusCode": 200,
+      "title": "Meenakshi Technologies – Gowlipura Central Office (Hyderabad) | Meenakshi Technologies",
+      "titleLength": 86,
+      "description": "Verified physical location of Meenakshi Technologies in Gowlipura, Hyderabad. Biometric attendance machine supply, installation, and support.",
+      "descriptionLength": 141,
+      "canonical": "https://meenakshitechnologies.org/locations/hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Meenakshi Technologies – Gowlipura Central Office (Hyderabad)"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 450,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/locations/balapur",
+      "statusCode": 200,
+      "title": "Meenakshi Technologies – Balapur Business Location | Meenakshi Technologies",
+      "titleLength": 75,
+      "description": "Verified physical location of Meenakshi Technologies in Balapur, Hyderabad. Biometric attendance machine supply, installation, and support.",
+      "descriptionLength": 139,
+      "canonical": "https://meenakshitechnologies.org/locations/balapur",
+      "h1Count": 1,
+      "h1Text": [
+        "Meenakshi Technologies – Balapur Business Location"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 453,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/service-areas",
+      "statusCode": 200,
+      "title": "Service Areas in Hyderabad &amp; Telangana | Meenakshi Technologies",
+      "titleLength": 67,
+      "description": "Local biometric attendance machine supply, installation, and technical assistance across Hyderabad localities and Telangana districts.",
+      "descriptionLength": 134,
+      "canonical": "https://meenakshitechnologies.org/service-areas",
+      "h1Count": 1,
+      "h1Text": [
+        "Hyderabad &amp; Telangana Service Coverage"
+      ],
+      "h2Count": 2,
+      "h3Count": 45,
+      "wordCount": 1021,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/guide/biometric-dealers-hyderabad",
+      "statusCode": 200,
+      "title": "Best Biometric Dealers in Hyderabad – eSSL &amp; Biomax Attendance Machines | Meenakshi Technologies",
+      "titleLength": 100,
+      "description": "Looking for the best biometric dealers in Hyderabad? Read our complete 2026 guide to eSSL and Biomax attendance machines, access control systems, pricing, and installation.",
+      "descriptionLength": 172,
+      "canonical": "https://meenakshitechnologies.org/guide/biometric-dealers-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Best Biometric Dealers in Hyderabad – Complete Guide to eSSL, Biomax Attendance Machines and Access Control Systems | Meenakshi Technologies"
+      ],
+      "h2Count": 22,
+      "h3Count": 7,
+      "wordCount": 3793,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/blog",
+      "statusCode": 200,
+      "title": "Biometric Knowledge Base &amp; Technology Blog | Meenakshi Technologies",
+      "titleLength": 71,
+      "description": "Guides, product comparisons, installation tutorials, and local Hyderabad biometric buying advice by Tingirikar Teja and Meenakshi Technologies.",
+      "descriptionLength": 143,
+      "canonical": "https://meenakshitechnologies.org/blog",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric Security &amp; Attendance Blog"
+      ],
+      "h2Count": 4,
+      "h3Count": 1,
+      "wordCount": 518,
+      "totalImages": 6,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/contact",
+      "statusCode": 200,
+      "title": "Contact Meenakshi Technologies | Hyderabad Biometric Dealers",
+      "titleLength": 60,
+      "description": "Contact Meenakshi Technologies for biometric attendance machines, eSSL &amp; Biomax hardware, access control locks in Hyderabad. Phone/WhatsApp: +91 6301593064.",
+      "descriptionLength": 160,
+      "canonical": "https://meenakshitechnologies.org/contact",
+      "h1Count": 1,
+      "h1Text": [
+        "Contact Meenakshi Technologies"
+      ],
+      "h2Count": 1,
+      "h3Count": 5,
+      "wordCount": 509,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-k90-pro-biometric-attendance",
+      "statusCode": 200,
+      "title": "eSSL K90 Pro Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 114,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL K90 Pro Biometric Attendance Machine by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 205,
+      "canonical": "https://meenakshitechnologies.org/products/essl-k90-pro-biometric-attendance",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL K90 Pro Biometric Attendance Machine"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 573,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-k30-pro-biometric-attendance",
+      "statusCode": 200,
+      "title": "eSSL K30 Pro Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 114,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL K30 Pro Biometric Attendance Machine by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 205,
+      "canonical": "https://meenakshitechnologies.org/products/essl-k30-pro-biometric-attendance",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL K30 Pro Biometric Attendance Machine"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 558,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-n-bm60-biometric-attendance-system",
+      "statusCode": 200,
+      "title": "BioMax N-BM60 Wi-Fi Biometric Attendance Machine (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 123,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax N-BM60 Wi-Fi Biometric Attendance Machine by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 214,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-n-bm60-biometric-attendance-system",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax N-BM60 Wi-Fi Biometric Attendance Machine"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 573,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-bio-5000-industrial-fingerprint-system",
+      "statusCode": 200,
+      "title": "BioMax Bio-5000 Industrial Biometric Machine (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 119,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax Bio-5000 Industrial Biometric Machine by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 210,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-bio-5000-industrial-fingerprint-system",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax Bio-5000 Industrial Biometric Machine"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 564,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-identix-k21-fingerprint-attendance-system",
+      "statusCode": 200,
+      "title": "eSSL Identix K21 Fingerprint Attendance System (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 119,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL Identix K21 Fingerprint Attendance System by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 210,
+      "canonical": "https://meenakshitechnologies.org/products/essl-identix-k21-fingerprint-attendance-system",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL Identix K21 Fingerprint Attendance System"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 524,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-speedface-5-ai-face-recognition-terminal",
+      "statusCode": 200,
+      "title": "BioMax SpeedFace 5 AI Face Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 122,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax SpeedFace 5 AI Face Recognition Terminal by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 213,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-speedface-5-ai-face-recognition-terminal",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax SpeedFace 5 AI Face Recognition Terminal"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 604,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-ai-face-4-compact-face-recognition",
+      "statusCode": 200,
+      "title": "BioMax AI Face 4 Compact Facial Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 127,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax AI Face 4 Compact Facial Recognition Terminal by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 218,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-ai-face-4-compact-face-recognition",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax AI Face 4 Compact Facial Recognition Terminal"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 522,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-uface-202-multi-biometric-attendance-machine",
+      "statusCode": 200,
+      "title": "eSSL uFace 202 Multi-Biometric Attendance Machine (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 122,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL uFace 202 Multi-Biometric Attendance Machine by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 213,
+      "canonical": "https://meenakshitechnologies.org/products/essl-uface-202-multi-biometric-attendance-machine",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL uFace 202 Multi-Biometric Attendance Machine"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 537,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-silkbio-100tc-multi-biometric-attendance-machine",
+      "statusCode": 200,
+      "title": "eSSL SilkBio-100TC Multi-Biometric Time Attendance (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 123,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL SilkBio-100TC Multi-Biometric Time Attendance by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 214,
+      "canonical": "https://meenakshitechnologies.org/products/essl-silkbio-100tc-multi-biometric-attendance-machine",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL SilkBio-100TC Multi-Biometric Time Attendance"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 538,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-facemax-7-palm-face-recognition-terminal",
+      "statusCode": 200,
+      "title": "BioMax FaceMax 7 Palm &amp; Face Recognition Terminal (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 128,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax FaceMax 7 Palm &amp; Face Recognition Terminal by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 219,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-facemax-7-palm-face-recognition-terminal",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax FaceMax 7 Palm &amp; Face Recognition Terminal"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 547,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-inbio-260-multi-door-controller",
+      "statusCode": 200,
+      "title": "eSSL InBio 260 Multi-Door Biometric Access Controller (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 126,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL InBio 260 Multi-Door Biometric Access Controller by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 217,
+      "canonical": "https://meenakshitechnologies.org/products/essl-inbio-260-multi-door-controller",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL InBio 260 Multi-Door Biometric Access Controller"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 566,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-inbio-460-four-door-access-controller",
+      "statusCode": 200,
+      "title": "eSSL InBio 460 4-Door Biometric Access Controller (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 122,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL InBio 460 4-Door Biometric Access Controller by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 213,
+      "canonical": "https://meenakshitechnologies.org/products/essl-inbio-460-four-door-access-controller",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL InBio 460 4-Door Biometric Access Controller"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 522,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-c22-two-door-access-controller",
+      "statusCode": 200,
+      "title": "BioMax C22 2-Door IP Network Access Controller (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 121,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax C22 2-Door IP Network Access Controller by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 212,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-c22-two-door-access-controller",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax C22 2-Door IP Network Access Controller"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 493,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-f22-ultra-thin-access-control-terminal",
+      "statusCode": 200,
+      "title": "eSSL F22 Ultra-Thin Fingerprint Access Control Terminal (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 128,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL F22 Ultra-Thin Fingerprint Access Control Terminal by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 219,
+      "canonical": "https://meenakshitechnologies.org/products/essl-f22-ultra-thin-access-control-terminal",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL F22 Ultra-Thin Fingerprint Access Control Terminal"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 536,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-fr1200-waterproof-slave-reader",
+      "statusCode": 200,
+      "title": "eSSL FR1200 Waterproof Fingerprint Slave Reader (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 120,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL FR1200 Waterproof Fingerprint Slave Reader by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 211,
+      "canonical": "https://meenakshitechnologies.org/products/essl-fr1200-waterproof-slave-reader",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL FR1200 Waterproof Fingerprint Slave Reader"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 536,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-600lbs",
+      "statusCode": 200,
+      "title": "Heavy Duty 600 lbs Electromagnetic Lock (EM Lock) (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 135,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for Heavy Duty 600 lbs Electromagnetic Lock (EM Lock) by eSSL / SecureTech. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 226,
+      "canonical": "https://meenakshitechnologies.org/products/electromagnetic-door-lock-600lbs",
+      "h1Count": 1,
+      "h1Text": [
+        "Heavy Duty 600 lbs Electromagnetic Lock (EM Lock)"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 576,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/electromagnetic-door-lock-1200lbs",
+      "statusCode": 200,
+      "title": "Heavy-Duty 1200 lbs Double Door Electromagnetic Lock (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 138,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for Heavy-Duty 1200 lbs Double Door Electromagnetic Lock by eSSL / SecureTech. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 229,
+      "canonical": "https://meenakshitechnologies.org/products/electromagnetic-door-lock-1200lbs",
+      "h1Count": 1,
+      "h1Text": [
+        "Heavy-Duty 1200 lbs Double Door Electromagnetic Lock"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 517,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/electric-drop-bolt-lock",
+      "statusCode": 200,
+      "title": "Heavy-Duty Electric Drop Bolt Lock (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 120,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for Heavy-Duty Electric Drop Bolt Lock by eSSL / SecureTech. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 211,
+      "canonical": "https://meenakshitechnologies.org/products/electric-drop-bolt-lock",
+      "h1Count": 1,
+      "h1Text": [
+        "Heavy-Duty Electric Drop Bolt Lock"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 525,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/smart-fingerprint-glass-door-lock",
+      "statusCode": 200,
+      "title": "Smart Fingerprint Frameless Glass Door Lock (BioMax / eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 125,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for Smart Fingerprint Frameless Glass Door Lock by BioMax / eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 216,
+      "canonical": "https://meenakshitechnologies.org/products/smart-fingerprint-glass-door-lock",
+      "h1Count": 1,
+      "h1Text": [
+        "Smart Fingerprint Frameless Glass Door Lock"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 526,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/exit-push-button-no-touch-infrared-switch",
+      "statusCode": 200,
+      "title": "Exit Push Button &amp; No-Touch Infrared Sensor Switch (eSSL / BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 136,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for Exit Push Button &amp; No-Touch Infrared Sensor Switch by eSSL / BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 227,
+      "canonical": "https://meenakshitechnologies.org/products/exit-push-button-no-touch-infrared-switch",
+      "h1Count": 1,
+      "h1Text": [
+        "Exit Push Button &amp; No-Touch Infrared Sensor Switch"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 514,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/access-control-power-supply-12v-5a-battery-backup",
+      "statusCode": 200,
+      "title": "12V DC 5A Access Control Power Supply with Battery Charger (eSSL / SecureTech) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 144,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for 12V DC 5A Access Control Power Supply with Battery Charger by eSSL / SecureTech. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 235,
+      "canonical": "https://meenakshitechnologies.org/products/access-control-power-supply-12v-5a-battery-backup",
+      "h1Count": 1,
+      "h1Text": [
+        "12V DC 5A Access Control Power Supply with Battery Charger"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 535,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/rfid-proximity-cards-mifare-smart-cards",
+      "statusCode": 200,
+      "title": "RFID Proximity Cards &amp; Mifare 1K Smart Cards (Meenakshi Technologies) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 139,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for RFID Proximity Cards &amp; Mifare 1K Smart Cards by Meenakshi Technologies. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 230,
+      "canonical": "https://meenakshitechnologies.org/products/rfid-proximity-cards-mifare-smart-cards",
+      "h1Count": 1,
+      "h1Text": [
+        "RFID Proximity Cards &amp; Mifare 1K Smart Cards"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 522,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-ts1000-pro-tripod-turnstile",
+      "statusCode": 200,
+      "title": "eSSL TS1000 Pro Semi-Automatic Tripod Turnstile (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 120,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL TS1000 Pro Semi-Automatic Tripod Turnstile by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 211,
+      "canonical": "https://meenakshitechnologies.org/products/essl-ts1000-pro-tripod-turnstile",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL TS1000 Pro Semi-Automatic Tripod Turnstile"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 541,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-fbl4000-high-speed-flap-barrier",
+      "statusCode": 200,
+      "title": "eSSL FBL4000 High-Speed Flap Barrier Turnstile (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 119,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL FBL4000 High-Speed Flap Barrier Turnstile by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 210,
+      "canonical": "https://meenakshitechnologies.org/products/essl-fbl4000-high-speed-flap-barrier",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL FBL4000 High-Speed Flap Barrier Turnstile"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 515,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-bg1000-automatic-vehicle-boom-barrier",
+      "statusCode": 200,
+      "title": "eSSL BG1000 High-Speed Automatic Vehicle Boom Barrier (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 126,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL BG1000 High-Speed Automatic Vehicle Boom Barrier by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 217,
+      "canonical": "https://meenakshitechnologies.org/products/essl-bg1000-automatic-vehicle-boom-barrier",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL BG1000 High-Speed Automatic Vehicle Boom Barrier"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 551,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/essl-d1065s-walk-through-metal-detector",
+      "statusCode": 200,
+      "title": "eSSL D1065S Multi-Zone Walk-Through Metal Detector (DFMD) (eSSL) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 130,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for eSSL D1065S Multi-Zone Walk-Through Metal Detector (DFMD) by eSSL. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 221,
+      "canonical": "https://meenakshitechnologies.org/products/essl-d1065s-walk-through-metal-detector",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL D1065S Multi-Zone Walk-Through Metal Detector (DFMD)"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 542,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/products/biomax-md-300-handheld-metal-detector",
+      "statusCode": 200,
+      "title": "BioMax MD-300 Handheld Metal Detector (HHMD) (BioMax) Biometric &amp; Access Control Hyderabad | Meenakshi Technologies",
+      "titleLength": 119,
+      "description": "Verified manufacturer specifications, user capacity, PDF datasheet download, and quotation for BioMax MD-300 Handheld Metal Detector (HHMD) by BioMax. Same-day dispatch and onsite installation across Hyderabad.",
+      "descriptionLength": 210,
+      "canonical": "https://meenakshitechnologies.org/products/biomax-md-300-handheld-metal-detector",
+      "h1Count": 1,
+      "h1Text": [
+        "BioMax MD-300 Handheld Metal Detector (HHMD)"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 510,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/biometric-attendance-systems-hyderabad",
+      "statusCode": 200,
+      "title": "Biometric Attendance Systems in Hyderabad | Meenakshi Technologies",
+      "titleLength": 66,
+      "description": "Modern automated workforce time tracking eliminating buddy punching, manual registers, and calculation errors. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 203,
+      "canonical": "https://meenakshitechnologies.org/services/biometric-attendance-systems-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric Attendance Systems in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 468,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/essl-biometric-dealers-hyderabad",
+      "statusCode": 200,
+      "title": "eSSL Biometric Devices in Hyderabad | Meenakshi Technologies",
+      "titleLength": 60,
+      "description": "Genuine eSSL time attendance machines and door controllers with manufacturer technical support and local warranty. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 207,
+      "canonical": "https://meenakshitechnologies.org/services/essl-biometric-dealers-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL Biometric Devices in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 465,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/biomax-biometric-dealers-hyderabad",
+      "statusCode": 200,
+      "title": "Biomax Biometric Devices in Hyderabad | Meenakshi Technologies",
+      "titleLength": 62,
+      "description": "Cutting-edge Biomax AI visible light face recognition and high-speed fingerprint attendance terminals. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 195,
+      "canonical": "https://meenakshitechnologies.org/services/biomax-biometric-dealers-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Biomax Biometric Devices in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 458,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/face-recognition-attendance-machines-hyderabad",
+      "statusCode": 200,
+      "title": "Face Recognition Attendance Machines in Hyderabad | Meenakshi Technologies",
+      "titleLength": 74,
+      "description": "Touchless AI facial geometry scanners for hygienic, non-contact employee clocking in milliseconds. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 191,
+      "canonical": "https://meenakshitechnologies.org/services/face-recognition-attendance-machines-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Face Recognition Attendance Machines in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 466,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/fingerprint-attendance-machines-hyderabad",
+      "statusCode": 200,
+      "title": "Fingerprint Attendance Machines in Hyderabad | Meenakshi Technologies",
+      "titleLength": 69,
+      "description": "Cost-effective, dependable biometric fingerprint terminals equipped with scratch-resistant 500 DPI sensors. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 200,
+      "canonical": "https://meenakshitechnologies.org/services/fingerprint-attendance-machines-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Fingerprint Attendance Machines in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 463,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/rfid-attendance-systems-hyderabad",
+      "statusCode": 200,
+      "title": "RFID Attendance Systems in Hyderabad | Meenakshi Technologies",
+      "titleLength": 61,
+      "description": "High-throughput contactless smart card and proximity card readers ideal for schools, colleges and turnstiles. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 202,
+      "canonical": "https://meenakshitechnologies.org/services/rfid-attendance-systems-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "RFID Attendance Systems in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 481,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/door-access-control-systems-hyderabad",
+      "statusCode": 200,
+      "title": "Door Access Control Systems in Hyderabad | Meenakshi Technologies",
+      "titleLength": 65,
+      "description": "Restricted door access systems utilizing biometric or card credentials to safeguard premises 24/7. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 191,
+      "canonical": "https://meenakshitechnologies.org/services/door-access-control-systems-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Door Access Control Systems in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 467,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/electromagnetic-door-locks-hyderabad",
+      "statusCode": 200,
+      "title": "Electromagnetic Door Locks in Hyderabad | Meenakshi Technologies",
+      "titleLength": 64,
+      "description": "Heavy-duty 600 lbs and 1200 lbs electromagnetic locks with custom brackets for glass, wood, and metal doors. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 201,
+      "canonical": "https://meenakshitechnologies.org/services/electromagnetic-door-locks-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Electromagnetic Door Locks in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 488,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/employee-attendance-management-solutions",
+      "statusCode": 200,
+      "title": "Employee Attendance Management in Hyderabad | Meenakshi Technologies",
+      "titleLength": 68,
+      "description": "End-to-end workforce scheduling, multi-shift assignment, late mark tracking, and leave management. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 191,
+      "canonical": "https://meenakshitechnologies.org/services/employee-attendance-management-solutions",
+      "h1Count": 1,
+      "h1Text": [
+        "Employee Attendance Management in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 462,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/payroll-management-software-integration",
+      "statusCode": 200,
+      "title": "Payroll Management Software in Hyderabad | Meenakshi Technologies",
+      "titleLength": 65,
+      "description": "Automated payroll calculation linking biometric punch logs directly with salary slips, PF, ESI, and TDS deductions. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 208,
+      "canonical": "https://meenakshitechnologies.org/services/payroll-management-software-integration",
+      "h1Count": 1,
+      "h1Text": [
+        "Payroll Management Software in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 470,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/gym-management-software-hyderabad",
+      "statusCode": 200,
+      "title": "Gym Management Software in Hyderabad | Meenakshi Technologies",
+      "titleLength": 61,
+      "description": "Biometric access control tied directly to membership validity, expiry lockout, and fee collection tracking. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 200,
+      "canonical": "https://meenakshitechnologies.org/services/gym-management-software-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Gym Management Software in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 463,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/services/biometric-installation-technical-support-hyderabad",
+      "statusCode": 200,
+      "title": "Biometric Installation &amp; Technical Support in Hyderabad | Meenakshi Technologies",
+      "titleLength": 84,
+      "description": "Onsite installation, LAN cabling, door lock alignment, software configuration, and quick-response troubleshooting. Supplied, installed, and supported across Hyderabad and Telangana by Meenakshi Technologies.",
+      "descriptionLength": 207,
+      "canonical": "https://meenakshitechnologies.org/services/biometric-installation-technical-support-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric Installation &amp; Technical Support in Hyderabad"
+      ],
+      "h2Count": 1,
+      "h3Count": 4,
+      "wordCount": 472,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "Service",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-pharmaceutical-manufacturing",
+      "statusCode": 200,
+      "title": "Pharmaceutical Manufacturing Industries Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 94,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Pharmaceutical Manufacturing Industries across Hyderabad and Telangana.",
+      "descriptionLength": 152,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-pharmaceutical-manufacturing",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Pharmaceutical Manufacturing Industries"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 446,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-manufacturing-companies",
+      "statusCode": 200,
+      "title": "Manufacturing Companies &amp; Factories Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 94,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Manufacturing Companies &amp; Factories across Hyderabad and Telangana.",
+      "descriptionLength": 152,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-manufacturing-companies",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Manufacturing Companies &amp; Factories"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 434,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-msme-small-business",
+      "statusCode": 200,
+      "title": "Micro, Small and Medium Enterprises (MSMEs) Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 98,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Micro, Small and Medium Enterprises (MSMEs) across Hyderabad and Telangana.",
+      "descriptionLength": 156,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-msme-small-business",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Micro, Small and Medium Enterprises (MSMEs)"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 445,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-large-scale-industries",
+      "statusCode": 200,
+      "title": "Large-Scale Industries &amp; Campuses Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 92,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Large-Scale Industries &amp; Campuses across Hyderabad and Telangana.",
+      "descriptionLength": 150,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-large-scale-industries",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Large-Scale Industries &amp; Campuses"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 438,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-corporate-offices",
+      "statusCode": 200,
+      "title": "Corporate Offices &amp; IT Campuses Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 90,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Corporate Offices &amp; IT Campuses across Hyderabad and Telangana.",
+      "descriptionLength": 148,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-corporate-offices",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Corporate Offices &amp; IT Campuses"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 438,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-schools-colleges",
+      "statusCode": 200,
+      "title": "Schools &amp; Educational Institutions Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 93,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Schools &amp; Educational Institutions across Hyderabad and Telangana.",
+      "descriptionLength": 151,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-schools-colleges",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Schools &amp; Educational Institutions"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 443,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-hospitals-healthcare",
+      "statusCode": 200,
+      "title": "Hospitals &amp; Healthcare Facilities Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 92,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Hospitals &amp; Healthcare Facilities across Hyderabad and Telangana.",
+      "descriptionLength": 150,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-hospitals-healthcare",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Hospitals &amp; Healthcare Facilities"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 431,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-gyms-fitness-centres",
+      "statusCode": 200,
+      "title": "Gyms &amp; Fitness Centres Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 81,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Gyms &amp; Fitness Centres across Hyderabad and Telangana.",
+      "descriptionLength": 139,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-gyms-fitness-centres",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Gyms &amp; Fitness Centres"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 436,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-warehouses-logistics",
+      "statusCode": 200,
+      "title": "Warehouses &amp; Logistics Hubs Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 86,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Warehouses &amp; Logistics Hubs across Hyderabad and Telangana.",
+      "descriptionLength": 144,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-warehouses-logistics",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Warehouses &amp; Logistics Hubs"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 433,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/industries/biometric-solutions-retail-commercial",
+      "statusCode": 200,
+      "title": "Retail &amp; Commercial Businesses Biometric Solutions Hyderabad | Meenakshi Technologies",
+      "titleLength": 89,
+      "description": "Biometric attendance and door access control solutions specifically tailored for Retail &amp; Commercial Businesses across Hyderabad and Telangana.",
+      "descriptionLength": 147,
+      "canonical": "https://meenakshitechnologies.org/industries/biometric-solutions-retail-commercial",
+      "h1Count": 1,
+      "h1Text": [
+        "Biometric &amp; Access Solutions for Retail &amp; Commercial Businesses"
+      ],
+      "h2Count": 1,
+      "h3Count": 3,
+      "wordCount": 430,
+      "totalImages": 2,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/blog/best-biometric-dealers-hyderabad-guide",
+      "statusCode": 200,
+      "title": "Best Biometric Dealers in Hyderabad – eSSL &amp; Biomax Attendance Machines | Meenakshi Technologies",
+      "titleLength": 100,
+      "description": "Looking for the best biometric dealers in Hyderabad? Read our complete 2026 guide to eSSL and Biomax attendance machines, access control systems, pricing, and installation.",
+      "descriptionLength": 172,
+      "canonical": "https://meenakshitechnologies.org/guide/biometric-dealers-hyderabad",
+      "h1Count": 1,
+      "h1Text": [
+        "Best Biometric Dealers in Hyderabad – Complete Guide to eSSL, Biomax Attendance Machines and Access Control Systems | Meenakshi Technologies"
+      ],
+      "h2Count": 22,
+      "h3Count": 7,
+      "wordCount": 3793,
+      "totalImages": 3,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/blog/essl-vs-biomax-biometric-machines-comparison",
+      "statusCode": 200,
+      "title": "eSSL vs Biomax Biometric Attendance Machines Compared | Meenakshi Technologies",
+      "titleLength": 78,
+      "description": "Comparing eSSL and Biomax biometric attendance machines for Hyderabad offices and factories. Compare fingerprint sensors, face recognition, cloud support, and pricing.",
+      "descriptionLength": 167,
+      "canonical": "https://meenakshitechnologies.org/blog/essl-vs-biomax-biometric-machines-comparison",
+      "h1Count": 1,
+      "h1Text": [
+        "eSSL vs Biomax Biometric Machines: Which Brand Is Right for Your Hyderabad Business?"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 577,
+      "totalImages": 4,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BlogPosting"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/blog/how-to-integrate-biometric-attendance-with-payroll",
+      "statusCode": 200,
+      "title": "Integrate Biometric Attendance with Tally &amp; Payroll | Meenakshi Technologies Hyderabad",
+      "titleLength": 90,
+      "description": "Learn how to connect biometric attendance punch data directly into Tally Prime, Excel, and HR payroll software to eliminate salary computation errors.",
+      "descriptionLength": 150,
+      "canonical": "https://meenakshitechnologies.org/blog/how-to-integrate-biometric-attendance-with-payroll",
+      "h1Count": 1,
+      "h1Text": [
+        "How to Integrate Biometric Attendance Machines with Tally &amp; Payroll Software"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 522,
+      "totalImages": 4,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BlogPosting"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    },
+    {
+      "path": "/blog/electromagnetic-door-locks-guide-glass-doors",
+      "statusCode": 200,
+      "title": "EM Locks for Office Glass Doors Guide | Meenakshi Technologies Hyderabad",
+      "titleLength": 72,
+      "description": "Learn how electromagnetic locks work, why 600 lbs holding force is standard for glass doors, and how U-brackets and fail-safe wiring ensure fire-safe security.",
+      "descriptionLength": 159,
+      "canonical": "https://meenakshitechnologies.org/blog/electromagnetic-door-locks-guide-glass-doors",
+      "h1Count": 1,
+      "h1Text": [
+        "Complete Guide to Electromagnetic (EM) Locks for Office Glass Doors"
+      ],
+      "h2Count": 0,
+      "h3Count": 4,
+      "wordCount": 519,
+      "totalImages": 4,
+      "imagesWithoutAlt": 0,
+      "schemaTypes": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BlogPosting"
+      ],
+      "hasPhoneCta": true,
+      "hasWhatsAppCta": true,
+      "hasEnquiryForm": true
+    }
+  ]
+}
